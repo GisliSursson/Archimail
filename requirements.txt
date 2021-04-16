@@ -1,1 +1,3 @@
 pandas
+eml_parser[filemagic]
+beautifulsoup4
