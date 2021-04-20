@@ -1,3 +1,4 @@
 pandas
 eml_parser[filemagic]
 beautifulsoup4
+nltk
