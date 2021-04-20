@@ -27,7 +27,7 @@ autres_stop = ['être', 'avoir', 'suis','es','est','sommes','êtes','sont','éta
                'auront','aurais','aurais','aurait','aurions','auriez','auraient', 'aie','aies','ait','ayons','ayez',
                'aient','eusse','eusses','eût','eussions','eussiez','eussent']
 # Ajout manuel de stopwords qui ne semblent pas être dans les frameworks utilisés
-autres_sw = ['www', 'http', 'je', 'tu', 'il', 'nous', 'vous', 'ils', 'elle', 'elles', 'on', 'leur', 'leurs', 'moi', 'toi',
+autres_sw = ['www', 'https', 'http', 'je', 'tu', 'il', 'nous', 'vous', 'ils', 'elle', 'elles', 'on', 'leur', 'leurs', 'moi', 'toi',
              'mon','ma','mes','ton','ta','tes','son','sa','ses','person','notre','nos','votre','vos','leur','leurs']
 chemin_actuel = dirname(abspath(__file__))
 
