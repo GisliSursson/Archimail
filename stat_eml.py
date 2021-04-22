@@ -26,19 +26,21 @@ autres_stop = ['être', 'avoir', 'suis','es','est','sommes','êtes','sont','éta
                'eut','eûmes','eûtes','eurent','aurai','auras','aura','aurons','aurez',
                'auront','aurais','aurais','aurait','aurions','auriez','auraient', 'aie','aies','ait','ayons','ayez',
                'aient','eusse','eusses','eût','eussions','eussiez','eussent']
+# Ajout manuel de stopwords qui ne semblent pas être dans les frameworhttp status code E+017
+# URLs qui sont dans les signatures, évitées pour gagner du temps. 
+url_a_eviter = ['http://www.chartes.psl.eu', 'https://fr.linkedin.com/in/victor-meynaud-72b2a3113/fr']
 # Ajout manuel de stopwords qui ne semblent pas être dans les frameworks utilisés
 autres_sw = ['www', 'https', 'http', 'je', 'tu', 'il', 'nous', 'vous', 'ils', 'elle', 'elles', 'on', 'leur', 'leurs', 'moi', 'toi',
              'mon','ma','mes','ton','ta','tes','son','sa','ses','person','notre','nos','votre','vos','leur','leurs']
 chemin_actuel = dirname(abspath(__file__))
 
-# regex = """(?i)\b((?:https?:(?:/{1,3}|[a-z0-9%])|[a-z0-9.\-]+[.](?:com|net|org|edu|gov|mil|aero|asia|biz|cat|coop|info|int|jobs|mobi|museum|name|post|pro|tel|travel|xxx|ac|ad|ae|af|ag|ai|al|am|an|ao|aq|ar|as|at|au|aw|ax|az|ba|bb|bd|be|bf|bg|bh|bi|bj|bm|bn|bo|br|bs|bt|bv|bw|by|bz|ca|cc|cd|cf|cg|ch|ci|ck|cl|cm|cn|co|cr|cs|cu|cv|cx|cy|cz|dd|de|dj|dk|dm|do|dz|ec|ee|eg|eh|er|es|et|eu|fi|fj|fk|fm|fo|fr|ga|gb|gd|ge|gf|gg|gh|gi|gl|gm|gn|gp|gq|gr|gs|gt|gu|gw|gy|hk|hm|hn|hr|ht|hu|id|ie|il|im|in|io|iq|ir|is|it|je|jm|jo|jp|ke|kg|kh|ki|km|kn|kp|kr|kw|ky|kz|la|lb|lc|li|lk|lr|ls|lt|lu|lv|ly|ma|mc|md|me|mg|mh|mk|ml|mm|mn|mo|mp|mq|mr|ms|mt|mu|mv|mw|mx|my|mz|na|nc|ne|nf|ng|ni|nl|no|np|nr|nu|nz|om|pa|pe|pf|pg|ph|pk|pl|pm|pn|pr|ps|pt|pw|py|qa|re|ro|rs|ru|rw|sa|sb|sc|sd|se|sg|sh|si|sj|Ja|sk|sl|sm|sn|so|sr|ss|st|su|sv|sx|sy|sz|tc|td|tf|tg|th|tj|tk|tl|tm|tn|to|tp|tr|tt|tv|tw|tz|ua|ug|uk|us|uy|uz|va|vc|ve|vg|vi|vn|vu|wf|ws|ye|yt|yu|za|zm|zw)/)(?:[^\s()<>{}\[\]]+|\([^\s()]*?\([^\s()]+\)[^\s()]*?\)|\([^\s]+?\))+(?:\([^\s()]*?\([^\s()]+\)[^\s()]*?\)|\([^\s]+?\)|[^\s`!()\[\]{};:'".,<>?«»“”‘’])|(?:(?<!@)[a-z0-9]+(?:[.\-][a-z0-9]+)*[.](?:com|net|org|edu|gov|mil|aero|asia|biz|cat|coop|info|int|jobs|mobi|museum|name|post|pro|tel|travel|xxx|ac|ad|ae|af|ag|ai|al|am|an|ao|aq|ar|as|at|au|aw|ax|az|ba|bb|bd|be|bf|bg|bh|bi|bj|bm|bn|bo|br|bs|bt|bv|bw|by|bz|ca|cc|cd|cf|cg|ch|ci|ck|cl|cm|cn|co|cr|cs|cu|cv|cx|cy|cz|dd|de|dj|dk|dm|do|dz|ec|ee|eg|eh|er|es|et|eu|fi|fj|fk|fm|fo|fr|ga|gb|gd|ge|gf|gg|gh|gi|gl|gm|gn|gp|gq|gr|gs|gt|gu|gw|gy|hk|hm|hn|hr|ht|hu|id|ie|il|im|in|io|iq|ir|is|it|je|jm|jo|jp|ke|kg|kh|ki|km|kn|kp|kr|kw|ky|kz|la|lb|lc|li|lk|lr|ls|lt|lu|lv|ly|ma|mc|md|me|mg|mh|mk|ml|mm|mn|mo|mp|mq|mr|ms|mt|mu|mv|mw|mx|my|mz|na|nc|ne|nf|ng|ni|nl|no|np|nr|nu|nz|om|pa|pe|pf|pg|ph|pk|pl|pm|pn|pr|ps|pt|pw|py|qa|re|ro|rs|ru|rw|sa|sb|sc|sd|se|sg|sh|si|sj|Ja|sk|sl|sm|sn|so|sr|ss|st|su|sv|sx|sy|sz|tc|td|tf|tg|th|tj|tk|tl|tm|tn|to|tp|tr|tt|tv|tw|tz|ua|ug|uk|us|uy|uz|va|vc|ve|vg|vi|vn|vu|wf|ws|ye|yt|yu|za|zm|zw)\b/?(?!@)))"""
 # On applique ici les recommandations INTERPARES sur les liens dans les mails
 def trouver_url(texte):
     # Regex non greedy
-    # url_group = re.findall(r"""(https?://.+\.[a-z]{2,3}|\/[^\s"']+)""",texte)
-    url_group = re.findall(r"""(https?:\/\/(?:www\.|(?!www))[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s]{2,}|www\.[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s]{2,}|https?:\/\/(?:www\.|(?!www))[a-zA-Z0-9]+\.[^\s]{2,}|www\.[a-zA-Z0-9]+\.[^\s]{2,})""", texte)
+    #url_group = re.findall(r"""(https?://.+\.[a-z]{2,3}|\/[^\s"'<>])*?""",texte)
+    url_group = re.findall(r"""(https?:\/\/(?:www\.|(?!www))[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s<>"']{2,}|www\.[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s<>"']{2,}|https?:\/\/(?:www\.|(?!www))[a-zA-Z0-9]+\.[^\s<>"']{2,}|www\.[a-zA-Z0-9]+\.[^\s<>"']{2,})""", texte)
     if url_group:
-        # print(url_group)
+        #print(url_group)
         # On met les résultats des recherchers dans des listes au cas où il y aurait plus d'une URL dans un mail
         liste_uri = []
         liste_statut = []
@@ -47,19 +49,22 @@ def trouver_url(texte):
         for url in url_group:
             url = str(url)
             uri = url
-            # Problèmes causés par les URL contenus dans des balises
-            if "<" or ">" not in uri:
-                 # On évite de considérer "www.example.com" et "www.example.com/" comme deux URL différentes
-                if uri[-1] == "/":
-                    uri = url[:-1]
+            # On évite de considérer "www.example.com" et "www.example.com/" comme deux URL différentes
+            if uri[-1] == "/" or uri[-1] == "\t":
+                uri = url[:-1]
+            if uri not in url_a_eviter:
                 if uri not in liste_uri:
+                    uri_testee = uri
                     try:
                         # Charger que le header est plus court que charger toute la page
-                        requests.head(url, timeout=5)
-                        req = requests.head(url, timeout=5)
+                        req = requests.head(uri_testee, timeout=5)
                         statut = str(req.status_code)
                         date_test = str(datetime.datetime.now())
-                        pers = str(re.findall(r'\/?(.+[a-z]{2,3}?)', uri)[0])
+                        pers = str(re.findall(r'\/\/(.+[a-z]{2}|\.com|\.net)?', uri_testee)[0])
+                        liste_uri.append(uri_testee)
+                        liste_statut.append(statut)
+                        liste_date_test.append(date_test)
+                        liste_pers.append(pers)
                     # Erreur retournée si le code renvoyé n'est pas du HTTP standard (requests.exceptions.ConnectionError)
                     except requests.exceptions.ConnectionError:
                         pass
@@ -80,25 +85,33 @@ def trouver_url(texte):
                         pass
                     except requests.exceptions.InvalidSchema:
                         pass
+                else:
+                    pass
             else:
                 pass
-            try:
-                liste_uri.append(uri)
-                liste_statut.append(statut)
-                liste_date_test.append(date_test)
-                liste_pers.append(pers)
-            # Erreurs si une des erreurs ci-dessus a été rencontrée. 
-            except ValueError:
-                pass
-            except UnboundLocalError:
-                pass
+            # liste_uri est une liste vide s'il n'y avait dans le mail que des URL à éviter
+            #if uri_testee:
+                #try:
+                    #liste_uri.append(uri_testee)
+                    #liste_statut.append(statut)
+                    #liste_date_test.append(date_test)
+                    #liste_pers.append(pers)
+                # Erreurs si une des erreurs ci-dessus a été rencontrée. 
+                #except NameError:
+                    #pass
+                #except ValueError:
+                    #pass
+                #except UnboundLocalError:
+                    #pass
+            #else:
+                #pass
         return liste_uri, liste_statut, liste_date_test, liste_pers      
 
 def liste_en_str(liste):
-    if liste is not None and len(liste) > 1:
+    if len(liste) == 1:
+        string = str(liste[0])
+    else:
         string = ','.join(str(valeur) for valeur in liste)
-    elif liste is not None:
-        string = str(liste)
     return string
 
 
@@ -161,7 +174,7 @@ def extraire_contenu_mail(mail):
         parsed_eml = ep.decode_email_bytes(raw_email)
         return parsed_eml
  
-with open(os.path.join(chemin_actuel,"perso","df_glob_2104.csv"), 'w') as f:
+with open(os.path.join(chemin_actuel,"perso","df_glob_2204.csv"), 'w') as f:
     writer = csv.writer(f, delimiter = ";")
     liste_col = ['nom_fichier', 'top_cinq_mots', 'url(s)', 'resultat_test_URL', 'date_test_URL', 'responsable_URL']
     writer.writerow(liste_col)   
@@ -180,20 +193,28 @@ with open(os.path.join(chemin_actuel,"perso","df_glob_2104.csv"), 'w') as f:
                 string = ','.join(str(valeur) for valeur in top)
                 liste_val.append(string)
                 try:
+                    liste_test = []
                     liste_uri, liste_statut, liste_date_test, liste_pers = trouver_url(texte)
                     # print(trouver_url(texte))
                     #if liste_uri is not None and liste_statut is not None and liste_date_test is not None and liste_pers is not None:
                     nb_url += 1
-                    uri = liste_en_str(liste_uri)
-                    statut = liste_en_str(liste_statut)
-                    date_test = liste_en_str(liste_date_test)
-                    pers = liste_en_str(liste_pers)
-                    liste_val.append(uri)
-                    liste_val.append(statut)
-                    liste_val.append(date_test)
-                    liste_val.append(pers)
+                    # liste_uri sera une liste vide si il n'y avait dans le mail que des URL marquées comme à éviter
+                    if len(liste_uri) != 0:
+                        uri = liste_en_str(liste_uri)
+                        statut = liste_en_str(liste_statut)
+                        date_test = liste_en_str(liste_date_test)
+                        pers = liste_en_str(liste_pers)
+                        liste_test.append(uri)
+                        liste_test.append(str(statut))
+                        liste_test.append(date_test)
+                        liste_test.append(pers)
+                # Si aucune URL a été trouvée dans le mail, trouver_url retourne None
                 except TypeError:
                     pass
+                if liste_test: 
+                    liste_val = liste_val + liste_test
+                #if len(liste_val) > 2:
+                    #print(liste_val[3])
                 writer.writerow(liste_val)
     print("Nombre de mails traités : " + str(mail))
     print("Nombre d'URL traitées : " + str(nb_url))
