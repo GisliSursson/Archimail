@@ -60,7 +60,7 @@ def trouver_url(texte):
                         req = requests.head(uri_testee, timeout=5)
                         statut = str(req.status_code)
                         date_test = str(datetime.datetime.now())
-                        pers = str(re.findall(r'\/\/(.+[a-z]{2}|\.com|\.net)?', uri_testee)[0])
+                        pers = str(re.findall(r'/{2}([a-zA-Z0-9\.-]+\.[a-z]{2,3})?', uri_testee)[0])
                         liste_uri.append(uri_testee)
                         liste_statut.append(statut)
                         liste_date_test.append(date_test)
@@ -174,7 +174,7 @@ def extraire_contenu_mail(mail):
         parsed_eml = ep.decode_email_bytes(raw_email)
         return parsed_eml
  
-with open(os.path.join(chemin_actuel,"perso","df_glob_2204.csv"), 'w') as f:
+with open(os.path.join(chemin_actuel,"perso","df_glob_2204_2.csv"), 'w') as f:
     writer = csv.writer(f, delimiter = ";")
     liste_col = ['nom_fichier', 'top_cinq_mots', 'url(s)', 'resultat_test_URL', 'date_test_URL', 'responsable_URL']
     writer.writerow(liste_col)   
