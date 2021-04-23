@@ -115,22 +115,33 @@ def liste_en_str(liste):
     return string
 
 # Difficile de ne pas attraper autre chose que les noms en regex.
-def supprimer_noms_propres(texte, dico):
-    noms_group = re.findall(r"[^A-Z[a-zà-ÿ]+\s]([M\.]?[Mme]?[Mr\.?]?[onsieur]?[adame]?[A-ZÀ-Ÿ][a-zà-ÿ\-]+\s[A-ZÀ-Ÿ][a-zà-ÿ\-]+)\s[^A-Z]", texte)
-    if noms_group:
+def supprimer_noms_propres(texte):
+    #noms_group = re.findall(r"([M\.]?[Mme]?[Mr\.?]?[onsieur]?[adame]?[A-ZÀ-ŸÉÊÈ][a-zà-ÿ\-éêè]+\s[A-ZÀ-ŸÉÊÈ][a-zà-ÿ\-éêè]+)\s|\.[^A-ZÀ-ŸÉÊÈ]", texte)
+    #if noms_group:
+        #for index, nom in enumerate(noms_group):
+    sp = spacy_fr(texte)
+    pers_list = []
+    mauvais_char = False
+    index = 0
+    # L'algorithme de Spacy attribue le label "PER" à ce qu'il pense être un nom de personne (reconnaissance d'entités nommées)
+    pers_list.append([element for element in sp.ents if element.label_ == 'PER'])
+    # Pb: matche aussi les noms de personnages "historiques", les titres ("monsieur") et ceux dans les url
+    try:
+        # PB : 23/04 laisse passer certains noms propres
         texte_trav = texte
-        for index, nom in enumerate(noms_group):
-            print(nom)
-            nom_split = nom.split(" ")
-            for element in nom_split:
-                if element.lower() not in dico:
-                    print(nom)
-                    texte_trav = texte_trav.replace(nom, "")
-                else:
-                    pass
+        for element in pers_list:
+            for nom in element:
+                nom_str = str(nom.text)
+                for lettre in nom_str:
+                    if lettre.isnumeric() or lettre in [";", "/", "_", "<", ">", "^"]:
+                        mauvais_char = True
+                        break
+                if mauvais_char is False:
+                    texte_trav = texte_trav.replace(nom_str, "")
+                    index += 1
         return index, texte_trav
-    else:
-        return 0, texte
+    except:
+        return index, texte
 
 def traitement_nlt(texte): 
     """ xxx
@@ -190,55 +201,54 @@ def extraire_contenu_mail(mail):
         ep = eml_parser.EmlParser(include_raw_body=True, include_attachment_data=False)
         parsed_eml = ep.decode_email_bytes(raw_email)
         return parsed_eml
- 
+  
 with open(os.path.join(chemin_actuel,"perso","df_glob_2304.csv"), 'w') as f:
-    with open(os.path.join(chemin_actuel,"nouns.txt"), 'r') as dico:
-        dico = dico.read()
-        dico_fr = dico.split("\n")
-        writer = csv.writer(f, delimiter = ";")
-        liste_col = ['nom_fichier', 'top_cinq_mots', 'url(s)', 'resultat_test_URL', 'date_test_URL', 'responsable_URL']
-        writer.writerow(liste_col)   
-        mail = 0
-        nb_url = 0
-        nb_noms = 0    
-        for root, dirs, files in os.walk(os.path.join(chemin_actuel,"perso","mail_enc"), topdown=True):
-            for index, name in enumerate(files):
-                filename = os.path.join(root, name)
-                if filename.endswith(".eml"):
-                    mail += 1
-                    liste_val = []
-                    data = extraire_contenu_mail(filename)
-                    texte = data["body"][0]["content"]
-                    compte_nom, texte = supprimer_noms_propres(texte, dico_fr)
-                    nb_noms += compte_nom
-                    liste_val.append(filename)
-                    top = traitement_nlt(texte)
-                    string = ','.join(str(valeur) for valeur in top)
-                    liste_val.append(string)
-                    try:
-                        liste_test = []
-                        liste_uri, liste_statut, liste_date_test, liste_pers = trouver_url(texte)
-                        # print(trouver_url(texte))
-                        #if liste_uri is not None and liste_statut is not None and liste_date_test is not None and liste_pers is not None:
-                        nb_url += 1
-                        # liste_uri sera une liste vide si il n'y avait dans le mail que des URL marquées comme à éviter
-                        if len(liste_uri) != 0:
-                            uri = liste_en_str(liste_uri)
-                            statut = liste_en_str(liste_statut)
-                            date_test = liste_en_str(liste_date_test)
-                            pers = liste_en_str(liste_pers)
-                            liste_test.append(uri)
-                            liste_test.append(str(statut))
-                            liste_test.append(date_test)
-                            liste_test.append(pers)
-                    # Si aucune URL a été trouvée dans le mail, trouver_url retourne None
-                    except TypeError:
-                        pass
-                    if liste_test: 
-                        liste_val = liste_val + liste_test
-                    #if len(liste_val) > 2:
-                        #print(liste_val[3])
-                    writer.writerow(liste_val)
+    writer = csv.writer(f, delimiter = ";")
+    liste_col = ['nom_fichier', 'top_cinq_mots', 'url(s)', 'resultat_test_URL', 'date_test_URL', 'responsable_URL']
+    writer.writerow(liste_col)   
+    mail = 0
+    nb_url = 0
+    nb_noms = 0    
+    for root, dirs, files in os.walk(os.path.join(chemin_actuel,"perso","mail_enc"), topdown=True):
+        for index, name in enumerate(files):
+            filename = os.path.join(root, name)
+            if filename.endswith(".eml"):
+                mail += 1
+                liste_val = []
+                data = extraire_contenu_mail(filename)
+                texte = data["body"][0]["content"]
+                compte_nom, texte_sans_noms = supprimer_noms_propres(texte)
+                nb_noms += compte_nom
+                liste_val.append(filename)
+                top = traitement_nlt(texte_sans_noms)
+                print(top)
+                string = ','.join(str(valeur) for valeur in top)
+                liste_val.append(string)
+                try:
+                    liste_test = []
+                    # On ne lance pas la fonction sur texte_sans_nom au cas où des noms auraient été supprimés d'URL
+                    liste_uri, liste_statut, liste_date_test, liste_pers = trouver_url(texte)
+                    # print(trouver_url(texte))
+                    #if liste_uri is not None and liste_statut is not None and liste_date_test is not None and liste_pers is not None:
+                    nb_url += 1
+                    # liste_uri sera une liste vide si il n'y avait dans le mail que des URL marquées comme à éviter
+                    if len(liste_uri) != 0:
+                        uri = liste_en_str(liste_uri)
+                        statut = liste_en_str(liste_statut)
+                        date_test = liste_en_str(liste_date_test)
+                        pers = liste_en_str(liste_pers)
+                        liste_test.append(uri)
+                        liste_test.append(str(statut))
+                        liste_test.append(date_test)
+                        liste_test.append(pers)
+                # Si aucune URL a été trouvée dans le mail, trouver_url retourne None
+                except TypeError:
+                    pass
+                if liste_test: 
+                    liste_val = liste_val + liste_test
+                #if len(liste_val) > 2:
+                    #print(liste_val[3])
+                writer.writerow(liste_val)
     print("Nombre de mails traités : " + str(mail))
     print("Nombre d'URL traitées : " + str(nb_url))
     print("Nombre de noms propres supprimés : " + str(nb_noms))
