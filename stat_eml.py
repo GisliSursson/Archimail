@@ -144,6 +144,25 @@ def trouver_noms_propres(texte):
     except:
         return index, None
 
+def url_wayback(url):
+    """ xxx
+        Selon sa documentation, l'API de la Wayback Machine ne retourne que la capture la plus proche dans le temps au moment
+        de la requête. 
+    """
+    url_api = "http://archive.org/wayback/available?url=" + url
+    req = requests.get(url_api, timeout=5)
+    resp = json.loads(str(req.text))
+    print(resp)
+    if resp["archived_snapshots"]:
+        status = resp["archived_snapshots"]["closest"]["status"]
+        print(status)
+        available = resp["archived_snapshots"]["closest"]["available"]
+        url_2 = resp["archived_snapshots"]["closest"]["url"]
+        time = resp["archived_snapshots"]["closest"]["timestamp"]
+        return status, available, url_2, time
+    else:
+        return None
+
 def traitement_nlt(texte): 
     """ xxx
 
@@ -204,9 +223,10 @@ def extraire_contenu_mail(mail):
         parsed_eml = ep.decode_email_bytes(raw_email)
         return parsed_eml
   
-with open(os.path.join(chemin_actuel,"perso","df_glob_2704.csv"), 'w') as f:
+with open(os.path.join(chemin_actuel,"perso","test_wayback.csv"), 'w') as f:
     writer = csv.writer(f, delimiter = ";")
-    liste_col = ['nom_fichier', 'top_trois_mots', 'url(s)', 'resultat_test_URL', 'date_test_URL', 'responsable_URL']
+    liste_col = ['nom_fichier', 'top_trois_mots', 'url(s)', 'resultat_test_URL', 'date_test_URL', 'responsable_URL', "internet_archive_status"
+                 , "internet_archive_dispo", "internet_archive_url", "internet_archive_timestamp"]
     writer.writerow(liste_col)   
     mail = 0
     nb_url = 0
@@ -227,7 +247,7 @@ with open(os.path.join(chemin_actuel,"perso","df_glob_2704.csv"), 'w') as f:
                 nb_noms += compte_nom
                 liste_val.append(filename)
                 top = traitement_nlt(texte)
-                print(top)
+                #print(top)
                 string = ','.join(str(valeur) for valeur in top)
                 liste_val.append(string)
                 try:
@@ -247,11 +267,30 @@ with open(os.path.join(chemin_actuel,"perso","df_glob_2704.csv"), 'w') as f:
                         liste_test.append(str(statut))
                         liste_test.append(date_test)
                         liste_test.append(pers)
+                        liste_wb = []
+                        liste_stat_wb = []
+                        liste_avai_wb = []
+                        liste_lien_wb = []
+                        liste_time_wb = []
+                        for uris in liste_uri:
+                            status, available, lien, time = url_wayback(uris)
+                            liste_stat_wb.append(status)
+                            liste_avai_wb.append(available)
+                            liste_lien_wb.append(lien)
+                            liste_time_wb.append(time)
+                        stat_wb_str = liste_en_str(liste_stat_wb)
+                        avai_wb_str = liste_en_str(liste_avai_wb)
+                        lien_wb_str = liste_en_str(liste_lien_wb)
+                        time_wb_str = liste_en_str(liste_time_wb)
+                        liste_wb.append(stat_wb_str)
+                        liste_wb.append(avai_wb_str)
+                        liste_wb.append(lien_wb_str)
+                        liste_wb.append(time_wb_str)
                 # Si aucune URL a été trouvée dans le mail, trouver_url retourne None
                 except TypeError:
                     pass
                 if liste_test: 
-                    liste_val = liste_val + liste_test
+                    liste_val = liste_val + liste_test + liste_wb
                 #if len(liste_val) > 2:
                     #print(liste_val[3])
                 writer.writerow(liste_val)
