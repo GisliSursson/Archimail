@@ -31,7 +31,7 @@ autres_stop = ['être', 'avoir', 'suis','es','est','sommes','êtes','sont','éta
 url_a_eviter = ['http://www.chartes.psl.eu', 'https://fr.linkedin.com/in/victor-meynaud-72b2a3113/fr']
 # Ajout manuel de stopwords qui ne semblent pas être dans les frameworks utilisés
 autres_sw = ['www', 'https', 'http', 'je', 'tu', 'il', 'nous', 'vous', 'ils', 'elle', 'elles', 'on', 'leur', 'leurs', 'moi', 'toi',
-             'mon','ma','mes','ton','ta','tes','son','sa','ses','person','notre','nos','votre','vos','leur','leurs']
+             'mon','ma','mes','ton','ta','tes','son','sa','ses','person','notre','nos','votre','vos','leur','leurs', 'très']
 chemin_actuel = dirname(abspath(__file__))
 
 # On applique ici les recommandations INTERPARES sur les liens dans les mails
@@ -115,7 +115,7 @@ def liste_en_str(liste):
     return string
 
 # Difficile de ne pas attraper autre chose que les noms en regex.
-def supprimer_noms_propres(texte):
+def trouver_noms_propres(texte):
     #noms_group = re.findall(r"([M\.]?[Mme]?[Mr\.?]?[onsieur]?[adame]?[A-ZÀ-ŸÉÊÈ][a-zà-ÿ\-éêè]+\s[A-ZÀ-ŸÉÊÈ][a-zà-ÿ\-éêè]+)\s|\.[^A-ZÀ-ŸÉÊÈ]", texte)
     #if noms_group:
         #for index, nom in enumerate(noms_group):
@@ -126,9 +126,9 @@ def supprimer_noms_propres(texte):
     # L'algorithme de Spacy attribue le label "PER" à ce qu'il pense être un nom de personne (reconnaissance d'entités nommées)
     pers_list.append([element for element in sp.ents if element.label_ == 'PER'])
     # Pb: matche aussi les noms de personnages "historiques", les titres ("monsieur") et ceux dans les url
+    liste_noms = []
     try:
         # PB : 23/04 laisse passer certains noms propres
-        texte_trav = texte
         for element in pers_list:
             for nom in element:
                 nom_str = str(nom.text)
@@ -137,11 +137,12 @@ def supprimer_noms_propres(texte):
                         mauvais_char = True
                         break
                 if mauvais_char is False:
-                    texte_trav = texte_trav.replace(nom_str, "")
+                    liste_noms.append(nom_str)
                     index += 1
-        return index, texte_trav
+        return index, list(set(liste_noms))
+    # Si aucun nom propre n'a été trouvé
     except:
-        return index, texte
+        return index, None
 
 def traitement_nlt(texte): 
     """ xxx
@@ -179,15 +180,16 @@ def traitement_nlt(texte):
     # On crée un dict du type {mot:fréquence}
     freq_dict = dict((word, freq) for word, freq in frequence.items())
     # On prend le top cinq des mots les plus fréquents
-    top_cinq = sorted(freq_dict.keys(), reverse=True)[0:5]
+    # Le top est limité à 3 selon les recommandaitions des AN pour la balise "tag" (SEDA 2.1)
+    top_trois = sorted(freq_dict.keys(), reverse=True)[0:3]
     # Classement par ordre alphabétique
-    top_cinq = sorted(top_cinq)
+    top_trois = sorted(top_trois)
     # On utilise Spacy pour la lemmatisation car il est mieux entraîné pour le français que 
     # NLTK.
     liste_lem = []
     # On crée une liste des lemmes des cinq mots les plus fréquents. Par exemple, si le mot est "chantait",
     # le lemme sera "chanter".
-    for element in top_cinq:
+    for element in top_trois:
         sp = spacy_fr(element)
         for element in sp:
             lemme = element.lemma_
@@ -202,9 +204,9 @@ def extraire_contenu_mail(mail):
         parsed_eml = ep.decode_email_bytes(raw_email)
         return parsed_eml
   
-with open(os.path.join(chemin_actuel,"perso","df_glob_2304.csv"), 'w') as f:
+with open(os.path.join(chemin_actuel,"perso","df_glob_2704.csv"), 'w') as f:
     writer = csv.writer(f, delimiter = ";")
-    liste_col = ['nom_fichier', 'top_cinq_mots', 'url(s)', 'resultat_test_URL', 'date_test_URL', 'responsable_URL']
+    liste_col = ['nom_fichier', 'top_trois_mots', 'url(s)', 'resultat_test_URL', 'date_test_URL', 'responsable_URL']
     writer.writerow(liste_col)   
     mail = 0
     nb_url = 0
@@ -217,10 +219,14 @@ with open(os.path.join(chemin_actuel,"perso","df_glob_2304.csv"), 'w') as f:
                 liste_val = []
                 data = extraire_contenu_mail(filename)
                 texte = data["body"][0]["content"]
-                compte_nom, texte_sans_noms = supprimer_noms_propres(texte)
+                compte_nom, liste_noms = trouver_noms_propres(texte)
+                if liste_noms:
+                    #print(liste_noms)
+                    for nom in liste_noms:
+                        texte = texte.replace(nom, "")
                 nb_noms += compte_nom
                 liste_val.append(filename)
-                top = traitement_nlt(texte_sans_noms)
+                top = traitement_nlt(texte)
                 print(top)
                 string = ','.join(str(valeur) for valeur in top)
                 liste_val.append(string)
@@ -251,5 +257,5 @@ with open(os.path.join(chemin_actuel,"perso","df_glob_2304.csv"), 'w') as f:
                 writer.writerow(liste_val)
     print("Nombre de mails traités : " + str(mail))
     print("Nombre d'URL traitées : " + str(nb_url))
-    print("Nombre de noms propres supprimés : " + str(nb_noms))
+    print("Nombre d'éléments détectés comme des noms propres : " + str(nb_noms))
     print("Temps de calcul (en secondes) : " + str(time.time() - start_time))
