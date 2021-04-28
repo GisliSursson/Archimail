@@ -5,6 +5,14 @@ from odf.opendocument import OpenDocumentText
 from odf.text import P
 from stat_eml import traiter_mails
 
+directory = "resultat"
+dir_par_dummy = "dummy"
+dir_dummy_mails = "dummy_mails"
+parent_dir = "/home/User/Documents"
+path = os.path.join(chemin_actuel, directory)
+path_2 = os.path.join(chemin_actuel, dir_par_dummy, dir_dummy_mails)
+os.mkdir(path_2)
+
 chemin_actuel = dirname(abspath(__file__))
 rand = random.randint(0, 10)
 nb_mails = random.randint(100, 200)
@@ -82,13 +90,6 @@ create_dummy_pdf(rand)
 create_dummy_odt(lorem, rand, rand_2)
 create_dummy_mails(lorem, nb_mails, rand_2)
 # Directory
-directory = "resultat"
-dir_par_dummy = "dummy"
-dir_dummy_mails = "dummy_mails"
-parent_dir = "/home/User/Documents"
-path = os.path.join(chemin_actuel, directory)
-path_2 = os.path.join(chemin_actuel, dir_par_dummy, dir_dummy_mails)
-os.mkdir(path_2)
 output = os.path.join(chemin_actuel,"resultat","resultat_test.csv")
 source = os.path.join(chemin_actuel,"dummy","dummy_mails")
 traiter_mails(source, output)
