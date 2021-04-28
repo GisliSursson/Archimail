@@ -319,4 +319,4 @@ def traiter_mails(source, output):
 
 #output = os.path.join(chemin_actuel,"perso","test_wayback_2804a.csv")
 #source = os.path.join(chemin_actuel,"perso","mail_enc")
-traiter_mails(source, output)
+#traiter_mails(source, output)
