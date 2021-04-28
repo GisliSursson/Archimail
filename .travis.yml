@@ -1,0 +1,15 @@
+# langage du test
+language: python
+# version
+python:
+  - 3.8
+# on lance le script de test
+script:
+  - pytest --count=100 -v -s test.py
+# notifications par email
+notifications:
+  email:
+    recipients:
+      - victor.meynaud@chartes.psl.eu
+    on_success: never
+    on_failure: always

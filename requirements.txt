@@ -2,3 +2,8 @@ pandas
 eml_parser[filemagic]
 beautifulsoup4
 nltk
+emails
+odfpy
+dummypdf
+pytest
+pytest-repeat
