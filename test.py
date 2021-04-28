@@ -5,13 +5,13 @@ from odf.opendocument import OpenDocumentText
 from odf.text import P
 from stat_eml import traiter_mails
 
-directory = "resultat"
-dir_par_dummy = "dummy"
-dir_dummy_mails = "dummy_mails"
-parent_dir = "/home/User/Documents"
-path = os.path.join(chemin_actuel, directory)
-path_2 = os.path.join(chemin_actuel, dir_par_dummy, dir_dummy_mails)
-os.mkdir(path_2)
+#directory = "resultat"
+#dir_par_dummy = "dummy"
+#dir_dummy_mails = "dummy_mails"
+#parent_dir = "/home/User/Documents"
+#path = os.path.join(chemin_actuel, directory)
+#path_2 = os.path.join(chemin_actuel, dir_par_dummy, dir_dummy_mails)
+#os.mkdir(path_2)
 
 chemin_actuel = dirname(abspath(__file__))
 rand = random.randint(0, 10)

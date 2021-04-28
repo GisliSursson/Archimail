@@ -1,4 +1,4 @@
 env_ce/
 perso/
-dummy/
-resultat/
+*.pdf
+*.odt
