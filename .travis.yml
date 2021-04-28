@@ -5,6 +5,7 @@ python:
   - 3.8
 # on lance le script de test
 script:
+  - python -m spacy download fr_core_news_sm
   - pytest --count=100 -v -s test.py
 # notifications par email
 notifications:
