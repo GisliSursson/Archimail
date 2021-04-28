@@ -32,7 +32,7 @@ adress = ["timlinux@hotmail.com",
 "dieman@aol.com",
 "gator@me.com"]
 
-
+@pytest.fixture
 def create_dummy_pdf(nombre):
     for x in range(1,nombre):
         bashCommand = "dummypdf -f ./dummy/test_{a}.pdf -n {b}".format(a=str(x), b=str(random.randint(1, 20)))
@@ -85,11 +85,15 @@ def create_dummy_mails(lorem, iter, rand):
         with open("./dummy/dummy_mails/test_{a}.eml".format(a=str(x)), "w") as mail:
             mail.write(s)
         
-
-create_dummy_pdf(rand)
-create_dummy_odt(lorem, rand, rand_2)
-create_dummy_mails(lorem, nb_mails, rand_2)
-# Directory
-output = os.path.join(chemin_actuel,"resultat","resultat_test.csv")
-source = os.path.join(chemin_actuel,"dummy","dummy_mails")
-traiter_mails(source, output)
+@pytest.mark.repeat(1)
+def test_pj():
+    create_dummy_pdf(rand)
+    create_dummy_odt(lorem, rand, rand_2)
+@pytest.mark.repeat(1)
+def test_mails():
+    create_dummy_mails(lorem, nb_mails, rand_2)
+@pytest.mark.repeat(1)
+def test_traitement():
+    output = os.path.join(chemin_actuel,"resultat","resultat_test.csv")
+    source = os.path.join(chemin_actuel,"dummy","dummy_mails")
+    traiter_mails(source, output)
