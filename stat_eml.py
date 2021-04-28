@@ -317,6 +317,6 @@ def traiter_mails(source, output):
         print("Temps de calcul (en secondes) : " + str(time.time() - start_time))
 
 
-output = os.path.join(chemin_actuel,"perso","test_wayback_2804a.csv")
-source = os.path.join(chemin_actuel,"perso","mail_enc")
+#output = os.path.join(chemin_actuel,"perso","test_wayback_2804a.csv")
+#source = os.path.join(chemin_actuel,"perso","mail_enc")
 traiter_mails(source, output)
