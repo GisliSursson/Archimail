@@ -106,6 +106,7 @@ def create_dummy_odt(lorem, iter, rand):
     print("Fait ODT")
 
 def create_dummy_mails(lorem, iter, rand):
+    orig = lorem
     liste_odt = []
     liste_pdf = []
     for root, dirs, files in os.walk(os.path.join("./dummy")):
@@ -117,10 +118,9 @@ def create_dummy_mails(lorem, iter, rand):
                 liste_pdf.append(str(filename))
             else:
                 pass
-    nb_lorem = random.randint(1, 2)
-    lorem = lorem * nb_lorem
-    lorem_inser = list(filter(None, re.split("\W", lorem)))
     for x in range(1, iter):
+        lorem = orig
+        lorem_inser = list(filter(None, re.split("\s", lorem)))
         nb = random.randint(0, 1)
         nb_lien = random.randint(0, 1)
         nb_noms = random.randint(0, 1)
