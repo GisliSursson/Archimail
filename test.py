@@ -1,4 +1,4 @@
-import emails, PyPDF2, random, os
+import emails, random, os
 from os.path import dirname, abspath
 import subprocess
 from odf.opendocument import OpenDocumentText
