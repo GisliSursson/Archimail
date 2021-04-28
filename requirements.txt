@@ -7,3 +7,4 @@ odfpy
 dummypdf
 pytest
 pytest-repeat
+spacy
