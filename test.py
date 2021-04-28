@@ -24,13 +24,18 @@ adress = ["timlinux@hotmail.com",
 "dieman@aol.com",
 "gator@me.com"]
 
-directory = "resultat"
-dir_par_dummy = "dummy"
-dir_dummy_mails = "dummy_mails"
-parent_dir = "/home/User/Documents"
-path = os.path.join(chemin_actuel, directory)
-path_2 = os.path.join(chemin_actuel, dir_par_dummy, dir_dummy_mails)
-os.mkdir(path_2)
+try:
+    directory = "resultat"
+    dir_par_dummy = "dummy"
+    dir_dummy_mails = "dummy_mails"
+    parent_dir = "/home/User/Documents"
+    path = os.path.join(chemin_actuel, directory)
+    os.mkdir(path)
+    path_2 = os.path.join(chemin_actuel, dir_par_dummy, dir_dummy_mails)
+    os.mkdir(path_2)
+    print("creations")
+except:
+    pass
 
 def create_dummy_pdf(nombre):
     for x in range(1,nombre):
@@ -92,7 +97,8 @@ create_dummy_odt(lorem, rand, rand_2)
 create_dummy_mails(lorem, nb_mails, rand_2)
     
 output = os.path.join(chemin_actuel,"resultat","resultat_test.csv")
+print(output)
 source = os.path.join(chemin_actuel,"dummy","dummy_mails")
-
+print(source)
 
 traiter_mails(source, output)
