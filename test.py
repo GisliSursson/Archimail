@@ -5,14 +5,6 @@ from odf.opendocument import OpenDocumentText
 from odf.text import P
 from stat_eml import traiter_mails
 
-#directory = "resultat"
-#dir_par_dummy = "dummy"
-#dir_dummy_mails = "dummy_mails"
-#parent_dir = "/home/User/Documents"
-#path = os.path.join(chemin_actuel, directory)
-#path_2 = os.path.join(chemin_actuel, dir_par_dummy, dir_dummy_mails)
-#os.mkdir(path_2)
-
 chemin_actuel = dirname(abspath(__file__))
 rand = random.randint(0, 10)
 nb_mails = random.randint(100, 200)
@@ -32,7 +24,14 @@ adress = ["timlinux@hotmail.com",
 "dieman@aol.com",
 "gator@me.com"]
 
-@pytest.fixture
+directory = "resultat"
+dir_par_dummy = "dummy"
+dir_dummy_mails = "dummy_mails"
+parent_dir = "/home/User/Documents"
+path = os.path.join(chemin_actuel, directory)
+path_2 = os.path.join(chemin_actuel, dir_par_dummy, dir_dummy_mails)
+os.mkdir(path_2)
+
 def create_dummy_pdf(nombre):
     for x in range(1,nombre):
         bashCommand = "dummypdf -f ./dummy/test_{a}.pdf -n {b}".format(a=str(x), b=str(random.randint(1, 20)))
@@ -85,15 +84,15 @@ def create_dummy_mails(lorem, iter, rand):
         with open("./dummy/dummy_mails/test_{a}.eml".format(a=str(x)), "w") as mail:
             mail.write(s)
         
-@pytest.mark.repeat(1)
-def test_pj():
-    create_dummy_pdf(rand)
-    create_dummy_odt(lorem, rand, rand_2)
-@pytest.mark.repeat(1)
-def test_mails():
-    create_dummy_mails(lorem, nb_mails, rand_2)
-@pytest.mark.repeat(1)
-def test_traitement():
-    output = os.path.join(chemin_actuel,"resultat","resultat_test.csv")
-    source = os.path.join(chemin_actuel,"dummy","dummy_mails")
-    traiter_mails(source, output)
+
+create_dummy_pdf(rand)
+create_dummy_odt(lorem, rand, rand_2)
+
+
+create_dummy_mails(lorem, nb_mails, rand_2)
+    
+output = os.path.join(chemin_actuel,"resultat","resultat_test.csv")
+source = os.path.join(chemin_actuel,"dummy","dummy_mails")
+
+
+traiter_mails(source, output)

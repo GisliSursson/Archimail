@@ -5,6 +5,4 @@ nltk
 emails
 odfpy
 dummypdf
-pytest
-pytest-repeat
 spacy
