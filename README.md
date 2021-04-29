@@ -2,7 +2,8 @@
 
 Ce projet a été réalisé dans le cadre d'un stage de fin d'étude au Conseil d'Etat dans le cadre du Master 2 de l'Ecole nationale des chartes (année universitaire 2020-2021).
 
-![](./images/enc.jpeg) ![](./images/ce.jpeg) 
+<img src="./images/enc.jpeg" alt="enc" width="50%" height="50%"/>
+<img src="./images/ce.jpeg" alt="ce" width="50%" height="50%"/>
 
 ## Objectif
 
