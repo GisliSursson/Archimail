@@ -13,4 +13,4 @@ notifications:
     recipients:
       - victor.meynaud@chartes.psl.eu
     on_success: never
-    on_failure: always
+    on_failure: never
