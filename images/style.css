@@ -1,8 +1,7 @@
-.row {
-    display: flex;
+#left {
+    float: left;
   }
+#right {
+    float: right;
+  }  
   
-  .column {
-    flex: 50%;
-    padding: 5px;
-  }
