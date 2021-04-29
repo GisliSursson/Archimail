@@ -1,7 +1,11 @@
-#left {
+.column {
     float: left;
+    width: 33.33%;
+    padding: 5px;
   }
-#right {
-    float: right;
-  }  
   
+.row::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
