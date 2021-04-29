@@ -1,14 +1,14 @@
-<link href="./images/style.css" rel="stylesheet"/>
-
 # Archimail
 
 Ce projet a été réalisé dans le cadre d'un stage de fin d'étude au Conseil d'Etat dans le cadre du Master 2 de l'Ecole nationale des chartes (année universitaire 2020-2021).
 
+| [![ENC](./images/enc.jpeg)] | [![CE](./images/ce.jpeg)] |
+
  <div class="row">
-  <div class="column">
+  <div class="column" id="left">
     <img src="./images/enc.jpeg" alt="enc" width="30%" height="30%"/>
   </div>
-  <div class="column">
+  <div class="column" id="right">
     <img src="./images/ce.jpeg" alt="ce" width="30%" height="30%"/>
   </div>
 </div> 
