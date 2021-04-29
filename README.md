@@ -1,9 +1,16 @@
+(setq markdown-css-paths '("./images/style.css"))
 # Archimail
 
 Ce projet a été réalisé dans le cadre d'un stage de fin d'étude au Conseil d'Etat dans le cadre du Master 2 de l'Ecole nationale des chartes (année universitaire 2020-2021).
 
-<img src="./images/enc.jpeg" alt="enc" width="50%" height="50%"/>
-<img src="./images/ce.jpeg" alt="ce" width="50%" height="50%"/>
+ <div class="row">
+  <div class="column">
+    <img src="./images/enc.jpeg" alt="enc" width="30%" height="30%"/>
+  </div>
+  <div class="column">
+    <img src="./images/ce.jpeg" alt="ce" width="30%" height="30%"/>
+  </div>
+</div> 
 
 ## Objectif
 
