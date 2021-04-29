@@ -1,5 +1,7 @@
 env_ce/
 perso/
+resultat/
+dummy/
 *.pdf
 *.odt
 *.eml
