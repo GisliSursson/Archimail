@@ -4,8 +4,8 @@ Ce projet a été réalisé dans le cadre d'un stage de fin d'étude au Conseil 
 
 
 <p float="left">
-  <img src="./images/enc.jpeg" alt="enc" width="30%" height="30%" />
-  <img src="./images/ce.jpeg" alt="ce" width="30%" height="30%" /> 
+  <img src="./images/enc.jpeg" alt="enc" width="40%" height="40%" />
+  <img src="./images/ce.jpeg" alt="ce" width="40%" height="40%" /> 
 </p>
 
 <!-- 
