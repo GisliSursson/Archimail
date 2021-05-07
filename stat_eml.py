@@ -1,4 +1,8 @@
-import datetime, json, eml_parser, os, csv, spacy, re, requests
+import datetime, json, eml_parser, os, csv, spacy, re, requests, zipfile, lxml
+from bs4 import BeautifulSoup
+from io import StringIO
+from lxml import etree
+from datetime import timezone
 from typing import Dict
 import pandas as pd
 from bs4 import BeautifulSoup
@@ -11,7 +15,10 @@ from nltk.tokenize import word_tokenize
 from spacy.lang.fr.stop_words import STOP_WORDS as spacy_stop
 import time
 
-start_time = time.time()
+dt = datetime.datetime.now(timezone.utc)
+utc_time = dt.replace(tzinfo=timezone.utc)
+start_time = utc_time.now()
+#start_time = time.time()
 # On contrôlera par rapport à deux listes de stopwords
 spacy_fr = spacy.load('fr_core_news_md')
 nltk_stop = nltk.corpus.stopwords.words('french')
@@ -28,7 +35,7 @@ autres_stop = ['être', 'avoir', 'suis','es','est','sommes','êtes','sont','éta
                'aient','eusse','eusses','eût','eussions','eussiez','eussent']
 # Ajout manuel de stopwords qui ne semblent pas être dans les frameworhttp status code E+017
 # URLs qui sont dans les signatures, évitées pour gagner du temps. 
-url_a_eviter = ['http://www.chartes.psl.eu', 'https://fr.linkedin.com/in/victor-meynaud-72b2a3113/fr']
+url_a_eviter = ['http://www.chartes.psl.eu', 'https://fr.linkedin.com/in/victor-meynaud-72b2a3113/fr', 'http://www.enc-sorbonne.fr']
 # Ajout manuel de stopwords qui ne semblent pas être dans les frameworks utilisés
 autres_sw = ['www', 'https', 'http', 'je', 'tu', 'il', 'nous', 'vous', 'ils', 'elle', 'elles', 'on', 'leur', 'leurs', 'moi', 'toi',
              'mon','ma','mes','ton','ta','tes','son','sa','ses','person','notre','nos','votre','vos','leur','leurs', 'très']
@@ -59,7 +66,8 @@ def trouver_url(texte):
                         # Charger que le header est plus court que charger toute la page
                         req = requests.head(uri_testee, timeout=5)
                         statut = str(req.status_code)
-                        date_test = str(datetime.datetime.now())
+                        date_test = str(utc_time.now())
+                        #date_test = str(datetime.datetime.now(timezone.utc))
                         pers = str(re.findall(r'/{2}([a-zA-Z0-9\.-]+\.[a-z]{2,3})?', uri_testee)[0])
                         liste_uri.append(uri_testee)
                         liste_statut.append(statut)
@@ -153,7 +161,7 @@ def url_wayback(url):
     try:
         req = requests.get(url_api, timeout=5)
         resp = json.loads(str(req.text))
-    except requests.exceptions.ReadTimeout: # Si l'API a mis trop de temps à répondre
+    except requests.exceptions.ReadTimeout or requests.exceptions.ConnectTimeout: # Si l'API a mis trop de temps à répondre
         pass
     # Si elle ne trouve rien, l'API retourne un dict vide. 
     try:
@@ -228,6 +236,81 @@ def extraire_contenu_mail(mail):
         parsed_eml = ep.decode_email_bytes(raw_email)
         return parsed_eml
 
+def unzip(path):
+    """ Pour tout zip X, le décompresse en mettant le contenu dans un dossier X_unzip, supprime le zip original et retourne 1
+    (pour compteur)
+
+    """
+    dirname = os.path.dirname(path)
+    file = os.path.basename(path)
+    new_dir = str(file) + "_unzip"
+    new_path = os.path.join(dirname, new_dir)
+    os.mkdir(new_path)
+    with zipfile.ZipFile(path, 'r') as zip_ref:
+        zip_ref.extractall(new_path)
+    os.remove(path)
+    return 1
+
+def test_seda(path):
+    """ Test si le document est conforme au schéma SEDA 2.1 (schéma téléchargé le 06/05/21)
+"""
+    print("Document testé en tant que manifeste SEDA 2.1 : " + str(path))
+    xml_file = lxml.etree.parse(path)
+    schema_loc = os.path.join(chemin_actuel, "seda", "seda-2.1-main.xsd")
+    xml_validator = lxml.etree.XMLSchema(file=schema_loc)
+    is_valid = xml_validator.validate(xml_file)
+    if is_valid == True:
+        print("Votre manifeste est valide par rapport au SEDA 2.1!")
+    else:
+        raise Exception("Votre manifeste n'est pas valide par rapport au SEDA 2.1!")
+
+def donnees_perso(parsed_mail, path):
+    cibles = ["perso", "personnel", "vacance", "enfant"]
+    objet = (parsed_mail["header"]["subject"]).lower()
+    corps = (parsed_mail["body"][0]["content"]).lower()
+    with open("donnees_personnelles.csv", "w") as file:
+        f = csv.writer(file, delimiter=",")
+        for mot in cibles:
+            if mot in objet or mot in corps:
+                f.writerow(path)
+
+def enrichir_manifeste(csv, manifest):
+    print("Génération du manifeste enrichi...")
+    count = 0
+    nouv_man = manifest.replace(".xml", "") + "_new.xml"
+    manifest = open(manifest, "r")
+    source_xml = manifest.read()
+    soup = BeautifulSoup(source_xml, 'xml')
+    df = pd.read_csv(csv, sep=";", error_bad_lines=True)
+    for index, line in enumerate(df["nom_fichier"]):
+        id_mail = re.findall(r"(ID[0-9]+)\.eml$", line)
+        # original_tag = soup.ArchiveTransfer.DataObjectPackage.DescriptiveMetadata.ArchiveUnit['id' == id_mail]
+        original_tag = soup.find("ArchiveUnit", "id" == id_mail)
+        soup_extend = []
+        try:
+            for mot in df["top_trois_mots"][index].split(","):
+                # soup_append = BeautifulSoup('<tag>{x}</tag>'.format(x=mot), 'xml')
+                soup_extend.append('<tag>{x}</tag>'.format(x=mot))
+                count += 1
+                #new_tag.append(soup_append)
+        except AttributeError: #En cas de cellule vide dans la colonne top 3 mots
+            pass
+        original_tag.extend(soup_extend)
+        #print(original_tag)
+        #original_tag.replace_with(new_tag)
+        #print(original_tag)
+    print("Nombre de balises <tag> ajoutées : " + str(count))
+    print(str(soup))
+    with open(nouv_man, "w+") as text_file:    
+        text_file.write(str(soup))
+    manifest.close()
+    return nouv_man
+            
+def remplacer_man():
+    print("Suppression de l'ancien manifeste et remplacement par le nouveau...")
+    os.remove("manifest.xml")
+    os.rename('manifest_new.xml','manifest.xml')
+
 def traiter_mails(source, output):
     with open(output, 'w') as f:
         writer = csv.writer(f, delimiter = ";")
@@ -237,14 +320,20 @@ def traiter_mails(source, output):
         mail = 0
         nb_url = 0
         nb_noms = 0 
-        nb_wb = 0   
+        nb_wb = 0 
+        nb_zip = 0
         for root, dirs, files in os.walk(source, topdown=True):
             for index, name in enumerate(files):
                 filename = os.path.join(root, name)
+                if filename.endswith(".zip"):
+                    # On part du principe qu'il n'y a pas d'eml dans les zip
+                    count = unzip(filename)
+                    nb_zip += count
                 if filename.endswith(".eml"):
                     mail += 1
                     liste_val = []
                     data = extraire_contenu_mail(filename)
+                    donnees_perso(data, filename)
                     texte = data["body"][0]["content"]
                     compte_nom, liste_noms = trouver_noms_propres(texte)
                     if liste_noms:
@@ -254,18 +343,16 @@ def traiter_mails(source, output):
                     nb_noms += compte_nom
                     liste_val.append(filename)
                     top = traitement_nlt(texte)
-                    #print(top)
                     string = ','.join(str(valeur) for valeur in top)
                     liste_val.append(string)
                     try:
                         liste_test = []
                         # On ne lance pas la fonction sur texte_sans_nom au cas où des noms auraient été supprimés d'URL
                         liste_uri, liste_statut, liste_date_test, liste_pers = trouver_url(texte)
-                        # print(trouver_url(texte))
                         #if liste_uri is not None and liste_statut is not None and liste_date_test is not None and liste_pers is not None:
-                        nb_url += 1
                         # liste_uri sera une liste vide si il n'y avait dans le mail que des URL marquées comme à éviter
                         if len(liste_uri) != 0:
+                            nb_url += len(liste_uri)
                             uri = liste_en_str(liste_uri)
                             statut = liste_en_str(liste_statut)
                             date_test = liste_en_str(liste_date_test)
@@ -274,6 +361,7 @@ def traiter_mails(source, output):
                             liste_test.append(str(statut))
                             liste_test.append(date_test)
                             liste_test.append(pers)
+                            liste_val += liste_test
                             liste_wb = []
                             liste_stat_wb = []
                             liste_avai_wb = []
@@ -300,23 +388,30 @@ def traiter_mails(source, output):
                                 liste_wb.append(time_wb_str)
                             except NameError:
                                 pass
+                            try: 
+                                liste_val += liste_wb
+                            except:
+                                pass
                     # Si aucune URL a été trouvée dans le mail, trouver_url retourne None
                     except TypeError:
-                        pass
-                    try: 
-                        liste_val = liste_val + liste_test + liste_wb
-                    except:
                         pass
                     #if len(liste_val) > 2:
                         #print(liste_val[3])
                     writer.writerow(liste_val)
         print("Nombre de mails traités : " + str(mail))
         print("Nombre d'URL traitées : " + str(nb_url))
+        print("Nombre de ZIP décompressés : " + str(nb_zip))
         print("Nombre d'éléments détectés comme des noms propres : " + str(nb_noms))
         print("Nombre de requêtes faites à Internet Archive : " + str(nb_wb))
-        print("Temps de calcul (en secondes) : " + str(time.time() - start_time))
+        try:
+            print("Temps de calcul (en secondes) : " + str(utc_time.now() - start_time))
+        except:
+            pass
 
-
-#output = os.path.join(chemin_actuel,"perso","test_wayback_2804a.csv")
-#source = os.path.join(chemin_actuel,"perso","mail_enc")
+output = os.path.join(chemin_actuel,"perso","test_0705.csv")
+source = os.path.join(chemin_actuel,"perso","sip")
 #traiter_mails(source, output)
+manifest = os.path.join(source, "manifest.xml")
+nouv_man = enrichir_manifeste(output, manifest)
+remplacer_man()
+test_seda(man_fin)

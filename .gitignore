@@ -2,6 +2,12 @@ env_ce/
 perso/
 resultat/
 dummy/
+docProps/
+_rels/
+word/
+[Content_Types].xml
 *.pdf
 *.odt
 *.eml
+donnees_personnelles.csv
+stat_tag_brouillon,.py
