@@ -258,11 +258,14 @@ def test_seda(path):
     xml_file = lxml.etree.parse(path)
     schema_loc = os.path.join(chemin_actuel, "seda", "seda-2.1-main.xsd")
     xml_validator = lxml.etree.XMLSchema(file=schema_loc)
-    is_valid = xml_validator.validate(xml_file)
-    if is_valid == True:
-        print("Votre manifeste est valide par rapport au SEDA 2.1!")
-    else:
-        raise Exception("Votre manifeste n'est pas valide par rapport au SEDA 2.1!")
+    xml_validator.assert_(xml_file)
+    # Le code crashera avec message d'erreur si le manifeste n'est pas conforme au SEDA
+    print("Votre manifeste est valide par rapport au SEDA 2.1!")
+    #is_valid = xml_validator.validate(xml_file)
+    #if is_valid == True:
+        #print("Votre manifeste est valide par rapport au SEDA 2.1!")
+    #else:
+        #raise Exception("Votre manifeste n'est pas valide par rapport au SEDA 2.1!")
 
 def donnees_perso(parsed_mail, path):
     cibles = ["perso", "personnel", "vacance", "enfant"]
@@ -283,26 +286,52 @@ def enrichir_manifeste(csv, manifest):
     soup = BeautifulSoup(source_xml, 'xml')
     df = pd.read_csv(csv, sep=";", error_bad_lines=True)
     for index, line in enumerate(df["nom_fichier"]):
-        id_mail = re.findall(r"(ID[0-9]+)\.eml$", line)
+        id_binary_data_object = re.findall(r"(ID[0-9]+)\.eml$", line)[0]
+        # print('id_binary_data_object =================================================')
+        # print(id_binary_data_object)
         # original_tag = soup.ArchiveTransfer.DataObjectPackage.DescriptiveMetadata.ArchiveUnit['id' == id_mail]
-        original_tag = soup.find("ArchiveUnit", "id" == id_mail)
-        soup_extend = []
+        bdo_tag = soup.find("BinaryDataObject", {"id":id_binary_data_object})
+        # print('bdo_tag =================================================')
+        # print(bdo_tag)
+        id_data_object_group = bdo_tag.find_parent("DataObjectGroup")["id"]
+        # print('id_data_object_group =================================================')
+        # print(id_data_object_group)
+        reference_id = soup.find("DataObjectGroupReferenceId", string = id_data_object_group)
+        # print('reference_id =================================================')
+        # print(reference_id)
+        archive_unit = reference_id.find_parent("ArchiveUnit")
+        # print('archive_unit =================================================')
+        # print(archive_unit)
+        archive_unit_content = archive_unit.findChild("Content")
+        soup_extend = ""
         try:
             for mot in df["top_trois_mots"][index].split(","):
                 # soup_append = BeautifulSoup('<tag>{x}</tag>'.format(x=mot), 'xml')
-                soup_extend.append('<tag>{x}</tag>'.format(x=mot))
+                soup_extend += '<Tag>{x}</Tag>'.format(x=mot)
                 count += 1
                 #new_tag.append(soup_append)
         except AttributeError: #En cas de cellule vide dans la colonne top 3 mots
             pass
-        original_tag.extend(soup_extend)
+        #content = soup.new_tag('Content')
+        #content.string = soup_extend
+        #archive_unit_content.string = archive_unit_content.string.replace("</Content>", "") + soup_extend + "</Content>"
+        archive_unit_content.append(soup_extend)
         #print(original_tag)
         #original_tag.replace_with(new_tag)
         #print(original_tag)
     print("Nombre de balises <tag> ajoutées : " + str(count))
-    print(str(soup))
-    with open(nouv_man, "w+") as text_file:    
-        text_file.write(str(soup))
+    with open(nouv_man, "w+") as text_file:
+        # Le beautifier de Beautiful Soup crée des espaces inutiles
+        string = str(soup)
+        #string.replace("\n", "")
+        string = re.sub("&lt;", "<", string)
+        string = re.sub("&gt;", ">", string)
+        string = re.sub("&", "&amp;", string)
+        #string = re.sub(r'>([^\s])', "\s", string)
+        #string.replace("\s<", "")
+        #string.replace(">\s", "")
+        text_file.write(string)
+        #text_file.write(str(soup.prettify(formatter=None)).replace("&", "&amp;"))
     manifest.close()
     return nouv_man
             
@@ -413,5 +442,5 @@ source = os.path.join(chemin_actuel,"perso","sip")
 #traiter_mails(source, output)
 manifest = os.path.join(source, "manifest.xml")
 nouv_man = enrichir_manifeste(output, manifest)
-remplacer_man()
-test_seda(man_fin)
+#remplacer_man()
+test_seda(nouv_man)
