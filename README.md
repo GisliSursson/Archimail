@@ -8,12 +8,12 @@ L'objectif est de fournir un script complémentaire aux outils développés dans
 
 ## Grands principes
 
-Le script prend en entrée un SIP conforme au SEDA décompressé. Il retourne ce même SIP modifié, toujours conforme au SEDA, qu'il conviendra de zipper à nouveau. 
+Le script prend en entrée un SIP conforme au SEDA décompressé. Il retourne ce même SIP enrichi de nouvelles métadonnées, toujours conforme au SEDA, qu'il conviendra de zipper à nouveau. 
 
 Il repose sur 3 grands principes:
 
 - Enrichir le manifeste [SEDA](https://www.francearchives.fr/seda/index.html) avec des métadonnées type "mots-clefs" au niveau de chaque mail. Ces métadonnées complètent les métadonnées ajoutées habituellement par la pratique et qui se limitent aux plus hauts niveaux de description. 
-- Tester la validité des éventuelles URL trouvées dans les mails au moment du traitement.
+- Tester la validité des éventuelles URL trouvées dans les mails au moment du traitement et insérer la documentation de ces tests au format CSV dans le SIP.
 - Décompresser les éventuelles pièces jointes ZIP. 
 
 ## Fonctionnalités
@@ -21,13 +21,37 @@ Il repose sur 3 grands principes:
 Le script propose les fonctionnalités suivantes :
 
 - Détermination de 3 mots-clefs par mail (tokenisation, lemmatisation, évitement des noms propres) qui serviront de métadonnées de recherche basiques.
-- Insertion de ces métadonnées dans le manifest SEDA.
+- Enrichissement du manifeste SEDA avec ces métadonnées.
 - Décompression des éventuelles pièces jointes ZIP et suppression de fichiers ZIP originaux. 
 - Test des URLs ainsi que leur éventuel enregistrement par [Internet Archive](https://archive.org/web/).
 - Génération d'un fichier CSV rassemblant pour chaque mail les mots-clefs et les URLs testées. Ce fichier pourra être joint à un SIP. 
 - Génération d'un fichier CSV contenant la liste des mails qui auront été estimés comme contenant des données personnelles. Un révision humaine sera alors nécessaire pour en juger définitivement. 
 
-## Le CSV de pérennisation des URLs
+Plus de détail sur les fonctionnalités:
+
+### Enrichissement des métadonnées
+
+Le corps de chaque mail est parsé. En utilisant deux librairies de traitement automatique du langage naturel ([NLTK](https://www.nltk.org/) et ([Spacy](https://spacy.io/)), les mots sont tokenisés (suppression des mots outils etc...), lemmatisés (chaque mot est ramené à sa forme du dictionnaire) et classés par nombre d'occurences. Les trois mots qui ont le plus d'occurences sont retenus pour servir de mots-clefs et enrichir les métadonnées de description SEDA du mail. 
+
+Ces nouvelles métadonnées sont automatiquement insérées dans le manifeste SEDA selon l'exemple suivant :
+
+```xml
+<ArchiveUnit id="ID13">
+    <Content>
+        <DescriptionLevel>Item</DescriptionLevel>
+        <Title>0000000257-Création du compte Instagram.eml</Title>
+        <Tag>élément</Tag>
+        <Tag>étranger</Tag>
+        <Tag>événement</Tag>
+    </Content>
+    <DataObjectReference>
+        <DataObjectGroupReferenceId>ID11</DataObjectGroupReferenceId>
+    </DataObjectReference>
+</ArchiveUnit>
+
+```
+
+### Le CSV de pérennisation des URLs
 
 Le script génère un fichier CSV qui, pour chaque mail, comporte les colonnes suivantes:
 - Le nom du mail (chemin)
@@ -40,7 +64,7 @@ Le script génère un fichier CSV qui, pour chaque mail, comporte les colonnes s
 - Le lien vers cet enregistrement
 - Le timestamp de l'enregistrement
 
-Ce fichier a vocation à être inséré dans le SIP comme document de description complémentaire généré par les Archives. Il peut être documenté en SEDA de la façon suivante:
+Ce fichier est inséré dans le SIP comme document de description complémentaire généré par les Archives. Il est automatiquement documenté dans le manifeste de la manière suivante:
 
 ```xml
 <Content>
@@ -52,6 +76,25 @@ Ce fichier a vocation à être inséré dans le SIP comme document de descriptio
         <EventDetail>Fichier généré pour documentation par les Archives</EventDetail>
     </Event>
 </Content>
+````
+
+### Décompression des pièces jointes compressées
+
+Les formats compressés (.zip, .7z...) ne sont pas recommandés pour la pérennisation numérique. A l'heure de la réalisation de ce projet l'outil RESIP (v.2.3.0) ne permet pas de décompresser automatiquement les pièces jointes des mails. Le script réalise cette décompression automatiquement et, une fois celle-ci effectuée, supprime les fichiers compressés. Cette action est automatiquement documentée dans le manifeste SEDA selon l'exemple suivant:
+
+```xml
+<Content>
+    <DescriptionLevel>Item</DescriptionLevel>
+    <Title>foo_bar.7z</Title>
+    <Description>Veuillez trouver le document "foo_bar.7z" ci-joint</Description>
+    <CreatedDate>2017-03-03T14:46:00</CreatedDate>
+    <Event>
+        <EventType>Décompression</EventType>
+        <EventDateTime>2021-05-14T14:00:00</EventDateTime>
+        <EventDetail>Décompression d'un fichier du même nom au format .7z</EventDetail>
+    </Event>
+</Content>
+
 ````
 
 ## Installation
