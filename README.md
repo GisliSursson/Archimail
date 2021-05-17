@@ -27,6 +27,33 @@ Le script propose les fonctionnalités suivantes :
 - Génération d'un fichier CSV rassemblant pour chaque mail les mots-clefs et les URLs testées. Ce fichier pourra être joint à un SIP. 
 - Génération d'un fichier CSV contenant la liste des mails qui auront été estimés comme contenant des données personnelles. Un révision humaine sera alors nécessaire pour en juger définitivement. 
 
+## Le CSV de pérennisation des URLs
+
+Le script génère un fichier CSV qui, pour chaque mail, comporte les colonnes suivantes:
+- Le nom du mail (chemin)
+- Les 3 mots-clefs
+- Les URLs trouvées
+- Le statut du test (code HTTP)
+- Le timestamp du test
+- Le nom du responsable de l'URL (recommandation INTERPARES)
+- La disponibilité de l'enregistrement le plus récent dans la Wayback Machine (s'il existe)
+- Le lien vers cet enregistrement
+- Le timestamp de l'enregistrement
+
+Ce fichier a vocation à être inséré dans le SIP comme document de description complémentaire généré par les Archives. Il peut être documenté en SEDA de la façon suivante:
+
+```xml
+<Content>
+    <DescriptionLevel>Item</DescriptionLevel>
+    <Title>urls.csv</Title>
+    <Event>
+        <EventType>Création</EventType>
+        <EventDateTime>2021-05-14T14:00:00</EventDateTime>
+        <EventDetail>Fichier généré pour documentation par les Archives</EventDetail>
+    </Event>
+</Content>
+````
+
 ## Installation
 
 ### Prérequis
