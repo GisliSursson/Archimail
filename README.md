@@ -53,7 +53,7 @@ Ces nouvelles métadonnées sont automatiquement insérées dans le manifeste SE
 
 ### Le CSV de pérennisation des URLs
 
-Le script génère un fichier CSV qui, pour chaque mail, comporte les colonnes suivantes:
+Le script génère un fichier CSV (séparateur point-virgule) qui, pour chaque mail, comporte les colonnes suivantes:
 - Le nom du mail (chemin)
 - Les 3 mots-clefs
 - Les URLs trouvées
@@ -84,6 +84,7 @@ Exemple d'organisation des données dans le CSV:
 |--------------------|---------------------|---------------------------|-------------------|----------------------------|--------------------|------------------------|---------------------------------------------------------------------|----------------------------|
 | content/ID1197.eml | école, élève, stage | http://www.chartes.psl.eu | 200               | 2021-05-07 13:33:04.710089 | www.chartes.psl.eu | True                   | http://web.archive.org/web/20210418112501/http://www.chartes.psl.eu | 20210418112501             |
 
+S'il y a plusieurs éléments à afficher dans une cellule, ils sont séparés par une virgule.
 
 ### Décompression des pièces jointes compressées
 
