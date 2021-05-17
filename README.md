@@ -35,7 +35,7 @@ Le script génère un fichier CSV qui, pour chaque mail, comporte les colonnes s
 - Les URLs trouvées
 - Le statut du test (code HTTP)
 - Le timestamp du test
-- Le nom du responsable de l'URL (recommandation INTERPARES)
+- Le nom du responsable de l'URL (recommandation [INTERPARES](http://interpares.org/))
 - La disponibilité de l'enregistrement le plus récent dans la Wayback Machine (s'il existe)
 - Le lien vers cet enregistrement
 - Le timestamp de l'enregistrement
