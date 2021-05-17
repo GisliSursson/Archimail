@@ -33,6 +33,8 @@ Plus de détail sur les fonctionnalités:
 
 Le corps de chaque mail est parsé. En utilisant deux librairies de traitement automatique du langage naturel ([NLTK](https://www.nltk.org/) et [Spacy](https://spacy.io/)), les mots sont tokenisés (suppression des mots outils etc...), lemmatisés (chaque mot est ramené à sa forme du dictionnaire) et classés par nombre d'occurences. Les trois mots qui ont le plus d'occurences sont retenus pour servir de mots-clefs et enrichir les métadonnées de description SEDA du mail. 
 
+Le script utilise également les fonctions de classification des librairies citées afin d'éviter d'insérer dans les métadonnées des noms propres (*Named Entity Recognition*).
+
 Ces nouvelles métadonnées sont automatiquement insérées dans le manifeste SEDA selon l'exemple suivant :
 
 ```xml
@@ -50,6 +52,7 @@ Ces nouvelles métadonnées sont automatiquement insérées dans le manifeste SE
 </ArchiveUnit>
 
 ```
+NB : Ces fonctionnalités ne peuvent être utilisées à leur potentiel maximum qu'avec des données rédigées en langue française. 
 
 ### Le CSV de pérennisation des URLs
 
@@ -82,7 +85,7 @@ Exemple d'organisation des données dans le CSV:
 
 | nom_fichier        | top_trois_mots      | url(s)                    | resultat_test_url | date_test_url              | responsable_url    | internet_archive_dispo | internet_archive_url                                                | internet_archive_timestamp |
 |--------------------|---------------------|---------------------------|-------------------|----------------------------|--------------------|------------------------|---------------------------------------------------------------------|----------------------------|
-| content/ID1197.eml | école, élève, stage | http://www.chartes.psl.eu | 200               | 2021-05-07 13:33:04.710089 | www.chartes.psl.eu | True                   | http://web.archive.org/web/20210418112501/http://www.chartes.psl.eu | 20210418112501             |
+| content/ID1197.eml | foo, bar, test | http://www.mywebsite.com | 200               | 2021-05-07 13:33:04.710089 | www.mywebsite.com | True                   | http://web.archive.org/web/20210418112501/http://www.mywebsite.com | 20210418112501             |
 
 S'il y a plusieurs éléments à afficher dans une cellule, ils sont séparés par une virgule.
 
