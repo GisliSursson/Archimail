@@ -85,7 +85,7 @@ Exemple d'organisation des données dans le CSV:
 
 | nom_fichier        | top_trois_mots      | url(s)                    | resultat_test_url | date_test_url              | responsable_url    | internet_archive_dispo | internet_archive_url                                                | internet_archive_timestamp |
 |--------------------|---------------------|---------------------------|-------------------|----------------------------|--------------------|------------------------|---------------------------------------------------------------------|----------------------------|
-| content/ID1197.eml | foo, bar, test | http://www.mywebsite.com | 200               | 2021-05-07 13:33:04.710089 | www.mywebsite.com | True                   | http://web.archive.org/web/20210418112501/http://www.mywebsite.com | 20210418112501             |
+| content/ID1197.eml | foo, bar, test | https://www.conseil-etat.fr/ | 200               | 2021-05-07 13:33:04.710089 | www.conseil-etat.fr | True                   | http://web.archive.org/web/20210418112501/http://www.conseil-etat.fr | 20210418112501             |
 
 S'il y a plusieurs éléments à afficher dans une cellule, ils sont séparés par une virgule.
 
