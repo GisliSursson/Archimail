@@ -78,6 +78,13 @@ Ce fichier est inséré dans le SIP comme document de description complémentair
 </Content>
 ````
 
+Exemple d'organisation des données dans le CSV:
+
+| nom_fichier        | top_trois_mots      | url(s)                    | resultat_test_url | date_test_url              | responsable_url    | internet_archive_dispo | internet_archive_url                                                | internet_archive_timestamp |
+|--------------------|---------------------|---------------------------|-------------------|----------------------------|--------------------|------------------------|---------------------------------------------------------------------|----------------------------|
+| content/ID1197.eml | école, élève, stage | http://www.chartes.psl.eu | 200               | 2021-05-07 13:33:04.710089 | www.chartes.psl.eu | True                   | http://web.archive.org/web/20210418112501/http://www.chartes.psl.eu | 20210418112501             |
+
+
 ### Décompression des pièces jointes compressées
 
 Les formats compressés (.zip, .7z...) ne sont pas recommandés pour la pérennisation numérique. A l'heure de la réalisation de ce projet l'outil RESIP (v.2.3.0) ne permet pas de décompresser automatiquement les pièces jointes des mails. Le script réalise cette décompression automatiquement et, une fois celle-ci effectuée, supprime les fichiers compressés. Cette action est automatiquement documentée dans le manifeste SEDA selon l'exemple suivant:
