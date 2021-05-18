@@ -1,0 +1,226 @@
+<?xml version='1.0' encoding='utf-8' standalone='no'?>
+<rng:grammar xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:seda="fr:gouv:culture:archivesdefrance:seda:v2.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="fr:gouv:culture:archivesdefrance:seda:v2.1" datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes" ns="fr:gouv:culture:archivesdefrance:seda:v2.1">
+	<rng:start>
+		<rng:element name="ArchiveTransfer">
+			<xsd:annotation>
+				<xsd:documentation>Profil minimum pour les SIP avant enrichissement</xsd:documentation>
+			</xsd:annotation>
+			<rng:zeroOrMore>
+				<rng:attribute>
+					<rng:anyName />
+				</rng:attribute>
+			</rng:zeroOrMore>
+
+			<!-- Ne contraint rien avant la balise DataObjectPackage -->
+			<rng:zeroOrMore>
+				<rng:ref name="OpenType" />
+			</rng:zeroOrMore>
+
+			<!-- Balise DataObjectPackage -->
+			<rng:element name="DataObjectPackage">
+				<rng:optional>
+					<rng:attribute name="id">
+						<rng:data type="ID"/>
+					</rng:attribute>
+				</rng:optional>
+				<rng:optional>
+					<rng:attribute name="xml:id">
+						<rng:data type="ID"/>
+					</rng:attribute>
+				</rng:optional>
+
+				<!-- Ne contraint rien avant la balise DescriptiveMetadata contenant les UA. Les balises BinaryObject ne sont donc pas contraintes -->
+				<rng:zeroOrMore>
+					<rng:ref name="OpenType" />
+				</rng:zeroOrMore>
+
+				<!-- Balise DescriptiveMetadata -->
+				<rng:element name="DescriptiveMetadata">
+					<rng:zeroOrMore>
+						<rng:element name="ArchiveUnit">
+							<!-- Chaque balise ArchiveUnit doit respecter le modèle d'une unité d'archive, décrite ultérieurement dans ce profil -->
+							<rng:ref name="ArchiveUnitReference" />
+						</rng:element>
+					</rng:zeroOrMore>
+				</rng:element>
+
+				<!-- Balise ManagementMetadata -->
+				<rng:element name="ManagementMetadata">
+
+					<!-- Ne contraint rien dans le bloc ManagementMetadata -->
+					<rng:zeroOrMore>
+						<rng:ref name="OpenType" />
+					</rng:zeroOrMore>
+
+				</rng:element>
+			</rng:element>
+
+			<!-- Ne contraint rien après le bloc ManagementMetadata -->
+			<rng:zeroOrMore>
+				<rng:ref name="OpenType" />
+			</rng:zeroOrMore>
+
+		</rng:element>
+	</rng:start>
+
+	<!-- Patron d'élément libre utilisé pour les éléments non restreints -->
+	<rng:define name="OpenType">
+		<rng:element>
+			<rng:anyName>
+				<!-- Retire certaines balises du patron d'élément libre, afin que ces balises soient obligatoirement celles définies et contraintes -->
+				<rng:except>
+					<rng:name>ArchiveUnit</rng:name>
+				</rng:except>
+			</rng:anyName>
+			<rng:zeroOrMore>
+				<rng:choice>
+					<rng:attribute>
+						<rng:anyName/>
+					</rng:attribute>
+					<rng:text/>
+					<rng:ref name="OpenType"/>
+				</rng:choice>
+			</rng:zeroOrMore>
+		</rng:element>
+	</rng:define>
+
+	<!-- Patron d'élément libre utilisé pour les éléments non restreints dans la balise Content d'une UA -->
+	<!-- Ce second patron d'élément libre a été écrit pour répondre à la contrainte sur la balise Event qui ne doit s'appliquer que dans le Content d'une UA -->
+	<rng:define name="ArchiveUnitContentOpenType">
+		<rng:element>
+			<rng:anyName>
+				<!-- Retire certaines balises du patron d'élément libre, afin que ces balises soient obligatoirement celles définies et contraintes -->
+				<rng:except>
+					<rng:name>Language</rng:name>
+					<rng:name>Title</rng:name>
+					<rng:name>Description</rng:name>
+					<rng:name>Keyword</rng:name>
+					<rng:name>Event</rng:name>
+				</rng:except>
+			</rng:anyName>
+			<rng:zeroOrMore>
+				<rng:choice>
+					<rng:attribute>
+						<rng:anyName/>
+					</rng:attribute>
+					<rng:text/>
+					<rng:ref name="OpenType"/>
+				</rng:choice>
+			</rng:zeroOrMore>
+		</rng:element>
+	</rng:define>
+
+	<!-- Modèle d'une unité d'archive -->
+	<rng:define name="ArchiveUnitReference">
+
+		<xsd:annotation>
+			<xsd:documentation>Unité d'archive minimum</xsd:documentation>
+		</xsd:annotation>
+		<rng:attribute name="id">
+			<rng:data type="ID"/>
+		</rng:attribute>
+
+		<!-- Ne contraint rien avant la balise Content -->
+		<rng:zeroOrMore>
+			<rng:ref name="OpenType" />
+		</rng:zeroOrMore>
+
+		<!-- Balise Content, dont le contenu est contraint -->
+		<rng:element name="Content">
+
+			<!-- La balise DescriptionLevel est obligatoire et limitée à 1, contrairement au SEDA 2.1 -->
+			<rng:element name="DescriptionLevel">
+				<rng:data type="string"/>
+			</rng:element>
+
+			<!-- La balise Title est obligatoire et limitée à 1, contrairement au SEDA 2.1 -->
+			<rng:element name="Title">
+				<rng:data type="string"/>
+			</rng:element>
+
+
+			<!-- Ne contraint rien jusqu'à la balise Description -->
+			<rng:zeroOrMore>
+				<rng:ref name="ArchiveUnitContentOpenType" />
+			</rng:zeroOrMore>
+
+			<!-- Balise Description optionnelle, mais définie pour contraindre l'absence de balise -->
+			<rng:optional>
+				<rng:element name="Description">
+					<rng:data type="string"/>
+				</rng:element>
+			</rng:optional>
+
+			<!-- Ne contraint rien jusqu'à la balise Language -->
+			<rng:zeroOrMore>
+				<rng:ref name="ArchiveUnitContentOpenType" />
+			</rng:zeroOrMore>
+
+			<!-- Balise Language qui, si elle est présente, doit être unique et respecter le modèle défini ci dessous -->
+			<rng:optional>
+				<rng:element name="Language">
+					<rng:data type="string">
+						<rng:param name="pattern">[a-z]+-[A-Z]+</rng:param>
+					</rng:data>
+				</rng:element>
+			</rng:optional>
+
+			<!-- Ne contraint rien jusqu'à la balise OriginatingAgency -->
+			<rng:zeroOrMore>
+				<rng:ref name="ArchiveUnitContentOpenType" />
+			</rng:zeroOrMore>
+
+
+			<!-- Ne contraint plus rien jusqu'à la balise Event -->
+			<rng:zeroOrMore>
+				<rng:ref name="ArchiveUnitContentOpenType" />
+			</rng:zeroOrMore>
+
+			<!-- La balise Event est facultative et non limitée, comme en SEDA 2.1, mais si une balise Event est définie, alors elle a obligatoirement un EventDetail -->
+			<rng:zeroOrMore>
+				<rng:element name="Event">
+					<rng:zeroOrMore>
+						<rng:ref name="OpenType" />
+					</rng:zeroOrMore>
+					<rng:element name="EventDateTime"><rng:data type="string"/></rng:element>
+					<rng:element name="EventDetail"><rng:data type="string"/></rng:element>
+					<rng:zeroOrMore>
+						<rng:ref name="OpenType" />
+					</rng:zeroOrMore>
+				</rng:element>
+			</rng:zeroOrMore>
+
+			<!-- Ne contraint plus rien pour la balise Content -->
+			<rng:zeroOrMore>
+				<rng:ref name="ArchiveUnitContentOpenType" />
+			</rng:zeroOrMore>
+
+		</rng:element>
+
+		<!-- Après la balise Content, une UA peut déclarer d'autres UA, par référencement ou imbrication -->
+		<rng:zeroOrMore>
+			<rng:element name="ArchiveUnit">
+				<rng:choice>
+					<rng:ref name="ArchiveUnitReference" />
+					<rng:group>
+						<rng:element name="ArchiveUnitRefId">
+							<rng:data type="string"/>
+						</rng:element>
+						<rng:optional>
+							<rng:attribute name="id">
+								<rng:data type="string"/>
+							</rng:attribute>
+						</rng:optional>
+					</rng:group>
+				</rng:choice>
+			</rng:element>
+		</rng:zeroOrMore>
+
+		<!-- Ne contraint plus rien -->
+		<rng:zeroOrMore>
+			<rng:ref name="OpenType" />
+		</rng:zeroOrMore>
+
+	</rng:define>
+
+</rng:grammar>

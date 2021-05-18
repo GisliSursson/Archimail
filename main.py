@@ -15,11 +15,13 @@ from nltk.tokenize import word_tokenize
 from spacy.lang.fr.stop_words import STOP_WORDS as spacy_stop
 import time
 
+# Calcul du timestamp de lancement du script (UTC)
 dt = datetime.datetime.now(timezone.utc)
 utc_time = dt.replace(tzinfo=timezone.utc)
 start_time = utc_time.now()
-#start_time = time.time()
-# On contrôlera par rapport à deux listes de stopwords
+
+# Natural language processing
+# On deux listes de stopwords (mots-outils à éviter)
 spacy_fr = spacy.load('fr_core_news_md')
 nltk_stop = nltk.corpus.stopwords.words('french')
 # On décide que l'on doit supprimer toutes les formes des verbes être et avoir qui servent dans 
@@ -39,15 +41,26 @@ url_a_eviter = ['http://www.chartes.psl.eu', 'https://fr.linkedin.com/in/victor-
 # Ajout manuel de stopwords qui ne semblent pas être dans les frameworks utilisés
 autres_sw = ['www', 'https', 'http', 'je', 'tu', 'il', 'nous', 'vous', 'ils', 'elle', 'elles', 'on', 'leur', 'leurs', 'moi', 'toi',
              'mon','ma','mes','ton','ta','tes','son','sa','ses','person','notre','nos','votre','vos','leur','leurs', 'très']
+# Chemin où le script est exécuté
 chemin_actuel = dirname(abspath(__file__))
 
-# On applique ici les recommandations INTERPARES sur les liens dans les mails
 def trouver_url(texte):
-    # Regex non greedy
-    #url_group = re.findall(r"""(https?://.+\.[a-z]{2,3}|\/[^\s"'<>])*?""",texte)
+    """Fonction qui applique ici les recommandations INTERPARES pour la pérennisation numérique des liens
+    
+    :param texte: corps du mail à parser
+    :type texte: str
+    :return liste_uri: liste des uri trouvés
+    :rtype liste_uri: list
+    :return liste_statut: liste des codes HTTP
+    :rtype liste_uri: list
+    :return liste_date_test: liste des timestamps
+    :rtype liste_uri: list
+    :return liste_pers: liste des subdomain + domain + top-level domain
+    :rtype liste_uri: list
+    """
+    # On trouve les URL avec une regex non greedy
     url_group = re.findall(r"""(https?:\/\/(?:www\.|(?!www))[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s<>"']{2,}|www\.[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s<>"']{2,}|https?:\/\/(?:www\.|(?!www))[a-zA-Z0-9]+\.[^\s<>"']{2,}|www\.[a-zA-Z0-9]+\.[^\s<>"']{2,})""", texte)
     if url_group:
-        #print(url_group)
         # On met les résultats des recherchers dans des listes au cas où il y aurait plus d'une URL dans un mail
         liste_uri = []
         liste_statut = []
@@ -59,16 +72,18 @@ def trouver_url(texte):
             # On évite de considérer "www.example.com" et "www.example.com/" comme deux URL différentes
             if uri[-1] == "/" or uri[-1] == "\t":
                 uri = url[:-1]
+            # On évite les URL à éviter
             if uri not in url_a_eviter:
                 if uri not in liste_uri:
                     uri_testee = uri
                     try:
                         # Charger que le header est plus court que charger toute la page
+                        # On cherche les infos voulues...
                         req = requests.head(uri_testee, timeout=5)
                         statut = str(req.status_code)
                         date_test = str(utc_time.now())
-                        #date_test = str(datetime.datetime.now(timezone.utc))
                         pers = str(re.findall(r'/{2}([a-zA-Z0-9\.-]+\.[a-z]{2,3})?', uri_testee)[0])
+                        # ... on les append dans les listes
                         liste_uri.append(uri_testee)
                         liste_statut.append(statut)
                         liste_date_test.append(date_test)
@@ -76,46 +91,30 @@ def trouver_url(texte):
                     # Erreur retournée si le code renvoyé n'est pas du HTTP standard (requests.exceptions.ConnectionError)
                     except requests.exceptions.ConnectionError:
                         pass
-                        # statut = "[Errno -2]"
-                        # date_test = str(datetime.datetime.now())
-                        # pers = str(re.findall(r'\/?(.+[a-z]{2,3}?)', uri)[0])
                     # Au cas où un site aurait été mis dans le corps du texte (sans http)
                     except requests.exceptions.MissingSchema:
                         pass
-                        # uri = "http://" + uri
-                        # req = requests.head(uri, timeout=5)
-                        # statut = str(req.status_code)
-                        # date_test = str(datetime.datetime.now())
-                        # pers = str(re.findall(r'\/?(.+[a-z]{2,3}?)', uri)[0])
-                    except requests.exceptions.ReadTimeout:
+                    except requests.exceptions.ReadTimeout: # Erreur si la réponse est trop lente
                         pass
-                    except requests.exceptions.InvalidURL:
+                    except requests.exceptions.InvalidURL: # Erreur qui peut être causée par un problème d'encodage
                         pass
-                    except requests.exceptions.InvalidSchema:
+                    except requests.exceptions.InvalidSchema: # Erreur qui peut être causée par un problème d'encodage
                         pass
                 else:
                     pass
             else:
                 pass
-            # liste_uri est une liste vide s'il n'y avait dans le mail que des URL à éviter
-            #if uri_testee:
-                #try:
-                    #liste_uri.append(uri_testee)
-                    #liste_statut.append(statut)
-                    #liste_date_test.append(date_test)
-                    #liste_pers.append(pers)
-                # Erreurs si une des erreurs ci-dessus a été rencontrée. 
-                #except NameError:
-                    #pass
-                #except ValueError:
-                    #pass
-                #except UnboundLocalError:
-                    #pass
-            #else:
-                #pass
+        # Si aucune URL n'est trouvée, la fonction retourne rien    
         return liste_uri, liste_statut, liste_date_test, liste_pers   
 
 def liste_en_str(liste):
+    """Fonction à transformer une liste en str, chaque élément de la liste étant séparé par une virgule
+    
+    :param liste: liste à stringify
+    :type liste: list
+    :return string: liste stringifiée
+    :rtype string: str
+    """
     if len(liste) == 1:
         string = str(liste[0])
     else:
@@ -124,9 +123,16 @@ def liste_en_str(liste):
 
 # Difficile de ne pas attraper autre chose que les noms en regex.
 def trouver_noms_propres(texte):
-    #noms_group = re.findall(r"([M\.]?[Mme]?[Mr\.?]?[onsieur]?[adame]?[A-ZÀ-ŸÉÊÈ][a-zà-ÿ\-éêè]+\s[A-ZÀ-ŸÉÊÈ][a-zà-ÿ\-éêè]+)\s|\.[^A-ZÀ-ŸÉÊÈ]", texte)
-    #if noms_group:
-        #for index, nom in enumerate(noms_group):
+    """Fonction utilisant une librairie de Natural Language Processing pour détecter les noms propres. Le but est d'éviter que
+    des noms propres ne se retrouvent dans les métadonnées pour des raisons de protection des données personnelles. 
+    
+    :param texte: corps d'un mail
+    :type texte: str
+    :return index: nombre servant à réaliser un comptage global
+    :rtype index: int
+    :return liste_noms: liste des noms propres trouvés (uniques)
+    :rtype string: list
+    """
     sp = spacy_fr(texte)
     pers_list = []
     mauvais_char = False
@@ -153,9 +159,20 @@ def trouver_noms_propres(texte):
         return index, None
 
 def url_wayback(url):
-    """ xxx
-        Selon sa documentation, l'API de la Wayback Machine ne retourne que la capture la plus proche dans le temps au moment
-        de la requête. 
+    """Fonction faisant une requête à la Wayback Availability JSON API. Si l'URL a été archivées, l'API retourne 
+    l'enregistrement le plus récent. Sinon elle retourne un dict vide. Si la Wayback Machine n'a rien d'archivé pour l'URL testée
+    la fonction retourne 4 None. 
+    
+    :param url: URL à tester
+    :type url: str
+    :return status: code HTTP
+    :rtype status: str
+    :return available: élément "available" du dict JSON retourné par l'API (DEF A TROUVER)
+    :rtype available: str (bool)
+    :return url_2: URL de l'archive
+    :rtype available: str
+    :return time: timestamp de l'archive
+    :rtype available: str
     """
     url_api = "http://archive.org/wayback/available?url=" + url
     try:
@@ -230,6 +247,13 @@ def traitement_nlt(texte):
 
 
 def extraire_contenu_mail(mail):
+    """Fonction utilisant la librairie Python EMLParser transformant un mail (str) en un dict parsable
+    
+    :param mail: mail à parser (format eml)
+    :type mail: str
+    :return parsed_eml: mail parsé
+    :rtype status: dict
+    """
     with open(mail, 'rb') as mail_ouvert:
         raw_email = mail_ouvert.read()
         ep = eml_parser.EmlParser(include_raw_body=True, include_attachment_data=False)
@@ -237,9 +261,7 @@ def extraire_contenu_mail(mail):
         return parsed_eml
 
 def unzip(path):
-    """ Pour tout zip X, le décompresse en mettant le contenu dans un dossier X_unzip, supprime le zip original et retourne 1
-    (pour compteur)
-
+    """ A SUPPRIMER
     """
     dirname = os.path.dirname(path)
     file = os.path.basename(path)
@@ -251,23 +273,41 @@ def unzip(path):
     os.remove(path)
     return 1
 
+def doc_unzip(path):
+    """ A SUPPRIMER
+
+    """
+    id = os.path.basename(path)
+    id = re.sub("\..+", "", id)
+    
 def test_seda(path):
-    """ Test si le document est conforme au schéma SEDA 2.1 (schéma téléchargé le 06/05/21)
-"""
+    """ Fonction qui teste si le document est valide au schéma SEDA 2.1 (schéma téléchargé le 06/05/21)
+    """
     print("Document testé en tant que manifeste SEDA 2.1 : " + str(path))
     xml_file = lxml.etree.parse(path)
     schema_loc = os.path.join(chemin_actuel, "seda", "seda-2.1-main.xsd")
     xml_validator = lxml.etree.XMLSchema(file=schema_loc)
     xml_validator.assert_(xml_file)
-    # Le code crashera avec message d'erreur si le manifeste n'est pas conforme au SEDA
+    # Le code crashera avec message d'erreur précis si le manifeste n'est pas conforme au SEDA
     print("Votre manifeste est valide par rapport au SEDA 2.1!")
-    #is_valid = xml_validator.validate(xml_file)
-    #if is_valid == True:
-        #print("Votre manifeste est valide par rapport au SEDA 2.1!")
-    #else:
-        #raise Exception("Votre manifeste n'est pas valide par rapport au SEDA 2.1!")
+    
+def test_profil_minimum(path):
+    """ Fonction qui teste si le document est conforme au profil minimum ADAMANT (version du SEDA 2.1 spécifique à ADAMANT). 
+    Schéma RNG transmis le 18/05/21.
+    """
+    print("Document testé par rapport au profil minimum ADAMANT : " + str(path))
+    schema = os.path.join(chemin_actuel, "seda", "profil_minimum_avant_enrichissement.rng")
+    with open(path) as doc:
+        relaxng_doc = etree.parse(schema)
+        relaxng = etree.RelaxNG(relaxng_doc)
+        doc = etree.parse(doc)
+        if relaxng.validate(doc) == True:
+            print("Votre manifeste est conforme au profil minimum ADAMANT!")
+        else:
+            raise Exception("Votre manifeste n'est pas valide par rapport au profil minimum ADAMANT!")
 
 def donnees_perso(parsed_mail, path):
+    # A SUPPRIMER
     cibles = ["perso", "personnel", "vacance", "enfant"]
     objet = (parsed_mail["header"]["subject"]).lower()
     corps = (parsed_mail["body"][0]["content"]).lower()
@@ -278,6 +318,16 @@ def donnees_perso(parsed_mail, path):
                 f.writerow(path)
 
 def enrichir_manifeste(csv, manifest):
+    """Fonction qui, à partir du CSV récapitulatif des métadonnées, enrichi le manifeste SEDA en y insérant les mots clefs
+    pour chaque mail
+    
+    :param csv: chemin csv file
+    :type csv: str
+    :param csv: chemin xml file
+    :type manifest: str
+    :return nouv_man: chemin vers nouveau fichier XML créé
+    :rtype status: str
+    """
     print("Génération du manifeste enrichi...")
     count = 0
     nouv_man = manifest.replace(".xml", "") + "_new.xml"
@@ -286,52 +336,35 @@ def enrichir_manifeste(csv, manifest):
     soup = BeautifulSoup(source_xml, 'xml')
     df = pd.read_csv(csv, sep=";", error_bad_lines=True)
     for index, line in enumerate(df["nom_fichier"]):
+        # On récupère l'ID du binary data object correspondant à l'email en cours de traitement
         id_binary_data_object = re.findall(r"(ID[0-9]+)\.eml$", line)[0]
-        # print('id_binary_data_object =================================================')
-        # print(id_binary_data_object)
-        # original_tag = soup.ArchiveTransfer.DataObjectPackage.DescriptiveMetadata.ArchiveUnit['id' == id_mail]
+        # On trouve le binary data object correspondant au fichier en cours de traitement
         bdo_tag = soup.find("BinaryDataObject", {"id":id_binary_data_object})
-        # print('bdo_tag =================================================')
-        # print(bdo_tag)
+        # On récupère l'id du data object group correspondant
         id_data_object_group = bdo_tag.find_parent("DataObjectGroup")["id"]
-        # print('id_data_object_group =================================================')
-        # print(id_data_object_group)
+        # On accède à l'archive unit via la balise DataObjectGroupReferenceId
         reference_id = soup.find("DataObjectGroupReferenceId", string = id_data_object_group)
-        # print('reference_id =================================================')
-        # print(reference_id)
+        # Une fois qu'on a le DataObjectGroupReferenceId, on remonte à l'archive unit correspondante
         archive_unit = reference_id.find_parent("ArchiveUnit")
-        # print('archive_unit =================================================')
-        # print(archive_unit)
+        # On trouve le content de l'archve unit (là où on insèrera les informations)
         archive_unit_content = archive_unit.findChild("Content")
         soup_extend = ""
         try:
+            # On ajoute à la soupe une str XML bien formée
             for mot in df["top_trois_mots"][index].split(","):
-                # soup_append = BeautifulSoup('<tag>{x}</tag>'.format(x=mot), 'xml')
                 soup_extend += '<Tag>{x}</Tag>'.format(x=mot)
                 count += 1
-                #new_tag.append(soup_append)
         except AttributeError: #En cas de cellule vide dans la colonne top 3 mots
             pass
-        #content = soup.new_tag('Content')
-        #content.string = soup_extend
-        #archive_unit_content.string = archive_unit_content.string.replace("</Content>", "") + soup_extend + "</Content>"
         archive_unit_content.append(soup_extend)
-        #print(original_tag)
-        #original_tag.replace_with(new_tag)
-        #print(original_tag)
     print("Nombre de balises <tag> ajoutées : " + str(count))
     with open(nouv_man, "w+") as text_file:
-        # Le beautifier de Beautiful Soup crée des espaces inutiles
+        # Correction de ce que le beautifier de Beautiful Soup ne fait pas
         string = str(soup)
-        #string.replace("\n", "")
         string = re.sub("&lt;", "<", string)
         string = re.sub("&gt;", ">", string)
         string = re.sub("&", "&amp;", string)
-        #string = re.sub(r'>([^\s])', "\s", string)
-        #string.replace("\s<", "")
-        #string.replace(">\s", "")
         text_file.write(string)
-        #text_file.write(str(soup.prettify(formatter=None)).replace("&", "&amp;"))
     manifest.close()
     return nouv_man
             
@@ -341,16 +374,27 @@ def remplacer_man():
     os.rename('manifest_new.xml','manifest.xml')
 
 def traiter_mails(source, output):
+    """Fonction qui parse les mails et exécute les fonctions définies ci-dessus. Elle écrit les résultats dans un fichier CSV
+    récapitulaitf. 
+    
+    :param source: chemin vers le SIP
+    :type source: str
+    :param output: chemin vers le CSV qui sera créé (avec le nom voulu)
+    :type outpu: str
+    """
     with open(output, 'w') as f:
         writer = csv.writer(f, delimiter = ";")
+        # Colonnes qui seront dans le CSV
         liste_col = ['nom_fichier', 'top_trois_mots', 'url(s)', 'resultat_test_URL', 'date_test_URL', 'responsable_URL', "internet_archive_status"
                     , "internet_archive_dispo", "internet_archive_url", "internet_archive_timestamp"]
-        writer.writerow(liste_col)   
+        writer.writerow(liste_col)
+        # Compteurs globaux    
         mail = 0
         nb_url = 0
         nb_noms = 0 
         nb_wb = 0 
         nb_zip = 0
+        # On parse les noms de tous les fichiers du SIP
         for root, dirs, files in os.walk(source, topdown=True):
             for index, name in enumerate(files):
                 filename = os.path.join(root, name)
@@ -358,19 +402,20 @@ def traiter_mails(source, output):
                     # On part du principe qu'il n'y a pas d'eml dans les zip
                     count = unzip(filename)
                     nb_zip += count
+                # Si le fichier est un mail    
                 if filename.endswith(".eml"):
                     mail += 1
                     liste_val = []
                     data = extraire_contenu_mail(filename)
-                    donnees_perso(data, filename)
                     texte = data["body"][0]["content"]
                     compte_nom, liste_noms = trouver_noms_propres(texte)
                     if liste_noms:
-                        #print(liste_noms)
+                        # On supprime les noms propres trouvés
                         for nom in liste_noms:
                             texte = texte.replace(nom, "")
                     nb_noms += compte_nom
-                    liste_val.append(filename)
+                    parent_dir = filename.split(os.path.sep)[-2]
+                    liste_val.append(parent_dir + "/" + name)
                     top = traitement_nlt(texte)
                     string = ','.join(str(valeur) for valeur in top)
                     liste_val.append(string)
@@ -378,7 +423,6 @@ def traiter_mails(source, output):
                         liste_test = []
                         # On ne lance pas la fonction sur texte_sans_nom au cas où des noms auraient été supprimés d'URL
                         liste_uri, liste_statut, liste_date_test, liste_pers = trouver_url(texte)
-                        #if liste_uri is not None and liste_statut is not None and liste_date_test is not None and liste_pers is not None:
                         # liste_uri sera une liste vide si il n'y avait dans le mail que des URL marquées comme à éviter
                         if len(liste_uri) != 0:
                             nb_url += len(liste_uri)
@@ -403,10 +447,13 @@ def traiter_mails(source, output):
                                     liste_avai_wb.append(available)
                                     liste_lien_wb.append(lien)
                                     liste_time_wb.append(time)
+                                    nb_wb += 1
                                 else:
-                                    pass
+                                    liste_stat_wb.append(str(status))
+                                    liste_avai_wb.append(str(available))
+                                    liste_lien_wb.append(str(lien))
+                                    liste_time_wb.append(str(time))
                             try:
-                                nb_wb += len(liste_stat_wb)
                                 stat_wb_str = liste_en_str(liste_stat_wb)
                                 avai_wb_str = liste_en_str(liste_avai_wb)
                                 lien_wb_str = liste_en_str(liste_lien_wb)
@@ -444,3 +491,4 @@ manifest = os.path.join(source, "manifest.xml")
 nouv_man = enrichir_manifeste(output, manifest)
 #remplacer_man()
 test_seda(nouv_man)
+test_profil_minimum(nouv_man)

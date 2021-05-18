@@ -137,7 +137,7 @@ Activez l'environnement virtuel
 source [chemin vers le dossier de votre environnement]/bin/activate
 ```
 
-Dans le dossier où vous avez cloné le projet, installez ensuite les librairies nécessaires 
+Dans le dossier où vous avez cloné le projet, installez ensuite les librairies nécessaires (avec votre environnement virtuel activé)
 
 ```bash
 pip install -r requirements.txt

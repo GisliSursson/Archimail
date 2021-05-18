@@ -9,5 +9,6 @@ word/
 *.pdf
 *.odt
 *.eml
+*.xml
 donnees_personnelles.csv
 stat_tag_brouillon,.py
