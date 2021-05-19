@@ -54,6 +54,35 @@ Ces nouvelles métadonnées sont automatiquement insérées dans le manifeste SE
 ```
 NB : Ces fonctionnalités ne peuvent être utilisées à leur potentiel maximum qu'avec des données rédigées en langue française. 
 
+A l'échelle de l'ensemble du SIP, ces enrichissements sont documentés de la façon suivante:
+
+```xml
+<DescriptiveMetadata>
+      <ArchiveUnit id="ID10">
+        <Management>
+         [...]
+        </Management>
+        <Content>
+          <DescriptionLevel>[...]</DescriptionLevel>
+          <Title>[...]</Title>
+          <Description>[...]</Description>
+          <CustodialHistory>
+            <CustodialHistoryItem>[...]</CustodialHistoryItem>
+          </CustodialHistory>
+          <Tag>[...]</Tag>
+          <Tag>[...]</Tag>
+          <StartDate>[...]</StartDate>
+          <EndDate>[...]</EndDate>
+          <Event>
+            <EventType>Enrichissement des métadonnées au niveau de chaque message via un script Python</EventType>
+            <EventDateTime>2021-05-14T14:00:00</EventDateTime>
+            <EventDetail>Réalisation par le Bureau des Archives du Conseil d'Etat</EventDetail>
+          </Event>
+    [...]
+</DescriptiveMetadata>
+
+```
+
 ### Le CSV de pérennisation des URLs
 
 Le script génère un fichier CSV (séparateur point-virgule) qui, pour chaque mail, comporte les colonnes suivantes:

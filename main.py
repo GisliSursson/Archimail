@@ -367,6 +367,14 @@ def enrichir_manifeste(csv, manifest):
             pass
         archive_unit_content.append(soup_extend)
     print("Nombre de balises <tag> ajoutées : " + str(count))
+    print("Documentation de l'enrichissement du manifest...")
+    descriptive = soup.find("DescriptiveMetadata")
+    content = descriptive.findChild("Content")
+    date = dt.isoformat()
+    heure = utc_time.now()
+    current_time = heure.strftime("%H:%M:%S")
+    soup_extend = "<Event><EventType>Enrichissement des métadonnées au niveau de chaque message via un script Python</EventType><EventDateTime>{x}</EventDateTime><EventDetail>Réalisation par le Bureau des Archives du Conseil d'Etat</EventDetail></Event>".format(x=str(date))
+    content.append(soup_extend)
     with open(nouv_man, "w+") as text_file:
         # Correction de ce que le beautifier de Beautiful Soup ne fait pas
         string = str(soup)
@@ -500,9 +508,9 @@ def traiter_mails(source, output):
         except:
             pass
 
-output = os.path.join(chemin_actuel,"perso","test_1905.csv")
+output = os.path.join(chemin_actuel,"perso","test_1905_complet.csv")
 source = os.path.join(chemin_actuel,"perso","sip")
-traiter_mails(source, output)
+#traiter_mails(source, output)
 manifest = os.path.join(source, "manifest.xml")
 nouv_man = enrichir_manifeste(output, manifest)
 test_seda(nouv_man)
