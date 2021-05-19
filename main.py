@@ -70,7 +70,7 @@ def trouver_url(texte):
             url = str(url)
             uri = url
             # On évite de considérer "www.example.com" et "www.example.com/" comme deux URL différentes
-            if uri[-1] == "/" or uri[-1] == "\t":
+            if uri[-1] == "/" or uri[-1] == "\t" or uri[-1] == "→":
                 uri = url[:-1]
             # On évite les URL à éviter
             if uri not in url_a_eviter:
@@ -104,7 +104,7 @@ def trouver_url(texte):
                     pass
             else:
                 pass
-        # Si aucune URL n'est trouvée, la fonction retourne rien    
+        # Si aucune URL n'est trouvée, la fonction retourne rien. Les cellules correspondantes dans le CSV seront donc vides    
         return liste_uri, liste_statut, liste_date_test, liste_pers   
 
 def liste_en_str(liste):
@@ -175,6 +175,7 @@ def url_wayback(url):
     :rtype available: str
     """
     url_api = "http://archive.org/wayback/available?url=" + url
+    # print(url_api)
     try:
         req = requests.get(url_api, timeout=5)
         resp = json.loads(str(req.text))
@@ -189,9 +190,17 @@ def url_wayback(url):
             time = resp["archived_snapshots"]["closest"]["timestamp"]
             return str(status), str(available), str(url_2), str(time)
         else: # Si l'API retourne une liste vide
-            return None, None, None, None
+            status = None
+            available = None
+            url_2 = None
+            time = None
+            return status, available, url_2, time
     except UnboundLocalError: # Si l'API a mis trop de temps à répondre
-        return None, None, None, None
+        status = None
+        available = None
+        url_2 = None
+        time = None
+        return status, available, url_2, time
 
 def traitement_nlt(texte): 
     """ xxx
@@ -406,25 +415,32 @@ def traiter_mails(source, output):
                 if filename.endswith(".eml"):
                     mail += 1
                     liste_val = []
+                    # On transforme le mail en données structurées
                     data = extraire_contenu_mail(filename)
                     texte = data["body"][0]["content"]
+                    # On recherche les éventuels noms propres
                     compte_nom, liste_noms = trouver_noms_propres(texte)
                     if liste_noms:
-                        # On supprime les noms propres trouvés
+                        # On supprime les noms propres trouvés (s'il y en a)
                         for nom in liste_noms:
                             texte = texte.replace(nom, "")
                     nb_noms += compte_nom
+                    # Le "nom" de chaque fichier sera le chemin relatif à l'intérieur du SIP
                     parent_dir = filename.split(os.path.sep)[-2]
                     liste_val.append(parent_dir + "/" + name)
+                    # On lance le calcul des mots-clefs
                     top = traitement_nlt(texte)
                     string = ','.join(str(valeur) for valeur in top)
                     liste_val.append(string)
                     try:
                         liste_test = []
                         # On ne lance pas la fonction sur texte_sans_nom au cas où des noms auraient été supprimés d'URL
+                        # S'il y a des noms dans les URL dans le CSV de métadonnées, il y a peu de risques de diffusion 
+                        # à une personne non autorisée contrairement aux métadonnées qui se trouvent dans le manifeste
                         liste_uri, liste_statut, liste_date_test, liste_pers = trouver_url(texte)
                         # liste_uri sera une liste vide si il n'y avait dans le mail que des URL marquées comme à éviter
                         if len(liste_uri) != 0:
+                            # On insère les données pour les URL (si URL il y a)
                             nb_url += len(liste_uri)
                             uri = liste_en_str(liste_uri)
                             statut = liste_en_str(liste_statut)
@@ -440,6 +456,7 @@ def traiter_mails(source, output):
                             liste_avai_wb = []
                             liste_lien_wb = []
                             liste_time_wb = []
+                            # On insère les données relatives à la Wayback Machine (le cas échéant)
                             for uris in liste_uri:
                                 status, available, lien, time = url_wayback(uris)
                                 if status is not None:
@@ -471,24 +488,23 @@ def traiter_mails(source, output):
                     # Si aucune URL a été trouvée dans le mail, trouver_url retourne None
                     except TypeError:
                         pass
-                    #if len(liste_val) > 2:
-                        #print(liste_val[3])
+                    # On écrit dans le CSV
                     writer.writerow(liste_val)
         print("Nombre de mails traités : " + str(mail))
         print("Nombre d'URL traitées : " + str(nb_url))
-        print("Nombre de ZIP décompressés : " + str(nb_zip))
+        # print("Nombre de ZIP décompressés : " + str(nb_zip))
         print("Nombre d'éléments détectés comme des noms propres : " + str(nb_noms))
-        print("Nombre de requêtes faites à Internet Archive : " + str(nb_wb))
+        print("Nombre de requêtes réussies faites à Internet Archive : " + str(nb_wb))
         try:
-            print("Temps de calcul (en secondes) : " + str(utc_time.now() - start_time))
+            print("Temps de calcul : " + str(utc_time.now() - start_time))
         except:
             pass
 
-output = os.path.join(chemin_actuel,"perso","test_0705.csv")
+output = os.path.join(chemin_actuel,"perso","test_1905.csv")
 source = os.path.join(chemin_actuel,"perso","sip")
-#traiter_mails(source, output)
+traiter_mails(source, output)
 manifest = os.path.join(source, "manifest.xml")
 nouv_man = enrichir_manifeste(output, manifest)
-#remplacer_man()
 test_seda(nouv_man)
 test_profil_minimum(nouv_man)
+#remplacer_man()
