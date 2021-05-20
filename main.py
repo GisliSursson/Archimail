@@ -1,4 +1,4 @@
-import datetime, json, eml_parser, os, csv, spacy, re, requests, zipfile, lxml
+import datetime, json, eml_parser, os, csv, spacy, re, requests, zipfile, lxml, hashlib
 from bs4 import BeautifulSoup
 from io import StringIO
 from lxml import etree
@@ -179,7 +179,9 @@ def url_wayback(url):
     try:
         req = requests.get(url_api, timeout=5)
         resp = json.loads(str(req.text))
-    except requests.exceptions.ReadTimeout or requests.exceptions.ConnectTimeout: # Si l'API a mis trop de temps à répondre
+    # On peut avoir des erreur si l'API met trop de temps à répondre, si elle est down ou renvoie un JSON malformé
+    except: 
+        # Ou s'il y a une erreur dans le JSON
         pass
     # Si elle ne trouve rien, l'API retourne un dict vide. 
     try:
@@ -195,7 +197,9 @@ def url_wayback(url):
             url_2 = None
             time = None
             return status, available, url_2, time
-    except UnboundLocalError: # Si l'API a mis trop de temps à répondre
+    except UnboundLocalError: 
+        # Si l'API a mis trop de temps à répondre ou s'il y a un problème
+        # dans le JSON renvoyé
         status = None
         available = None
         url_2 = None
@@ -291,6 +295,7 @@ def doc_unzip(path):
     
 def test_seda(path):
     """ Fonction qui teste si le document est valide au schéma SEDA 2.1 (schéma téléchargé le 06/05/21)
+    Au 20/05/21 il est normal que la balise OriginatingSystemIdReplyTo ne soit pas dans le SEDA
     """
     print("Document testé en tant que manifeste SEDA 2.1 : " + str(path))
     xml_file = lxml.etree.parse(path)
@@ -310,10 +315,8 @@ def test_profil_minimum(path):
         relaxng_doc = etree.parse(schema)
         relaxng = etree.RelaxNG(relaxng_doc)
         doc = etree.parse(doc)
-        if relaxng.validate(doc) == True:
-            print("Votre manifeste est conforme au profil minimum ADAMANT!")
-        else:
-            raise Exception("Votre manifeste n'est pas valide par rapport au profil minimum ADAMANT!")
+        relaxng.assertValid(doc)
+        print("Votre manifeste est conforme au profil minimum ADAMANT!")
 
 def donnees_perso(parsed_mail, path):
     # A SUPPRIMER
@@ -357,6 +360,7 @@ def enrichir_manifeste(csv, manifest):
         archive_unit = reference_id.find_parent("ArchiveUnit")
         # On trouve le content de l'archve unit (là où on insèrera les informations)
         archive_unit_content = archive_unit.findChild("Content")
+        writer = archive_unit_content.findChild("Writer")
         soup_extend = ""
         try:
             # On ajoute à la soupe une str XML bien formée
@@ -365,7 +369,8 @@ def enrichir_manifeste(csv, manifest):
                 count += 1
         except AttributeError: #En cas de cellule vide dans la colonne top 3 mots
             pass
-        archive_unit_content.append(soup_extend)
+        # print(soup_extend)
+        writer.insert_before(soup_extend)
     print("Nombre de balises <tag> ajoutées : " + str(count))
     print("Documentation de l'enrichissement du manifest...")
     descriptive = soup.find("DescriptiveMetadata")
@@ -377,18 +382,113 @@ def enrichir_manifeste(csv, manifest):
     content.append(soup_extend)
     with open(nouv_man, "w+") as text_file:
         # Correction de ce que le beautifier de Beautiful Soup ne fait pas
+        # On corrige l'encodage pour les balises tag et event
         string = str(soup)
-        string = re.sub("&lt;", "<", string)
-        string = re.sub("&gt;", ">", string)
-        string = re.sub("&", "&amp;", string)
+        string = re.sub("&lt;Tag&gt;", "<Tag>", string)
+        string = re.sub("&lt;/Tag&gt;", "</Tag>", string)
+        string = re.sub("&lt;Event&gt;", "<Event>", string)
+        string = re.sub("&lt;/Event&gt;", "</Event>", string)
+        string = re.sub("&lt;EventType&gt;", "<EventType>", string)
+        string = re.sub("&lt;/EventType&gt;", "</EventType>", string)
+        string = re.sub("&lt;EventDateTime&gt;", "<EventDateTime>", string)
+        string = re.sub("&lt;/EventDateTime&gt;", "</EventDateTime>", string)
+        string = re.sub("&lt;EventDetail&gt;", "<EventDetail>", string)
+        string = re.sub("&lt;/EventDetail&gt;", "</EventDetail>", string)
+        #string = re.sub("&", "&amp;", string)
         text_file.write(string)
     manifest.close()
     return nouv_man
             
-def remplacer_man():
-    print("Suppression de l'ancien manifeste et remplacement par le nouveau...")
-    os.remove("manifest.xml")
-    os.rename('manifest_new.xml','manifest.xml')
+def remplacer_man(manifest):
+    print("Suppression de l'ancien manifeste et remplacement par le nouveau enrichi...")
+    # os.remove(manifest)
+    os.remove(manifest)
+    os.rename(os.path.join(chemin_actuel, "perso", "sip", "manifest_new.xml"), os.path.join(chemin_actuel, "perso", "sip", "manifest.xml"))
+
+def zippage(path, ziph):
+    print("Recompression du SIP...")
+    for root, dirs, files in os.walk(path):
+        for file in files:
+            ziph.write(os.path.join(root, file), 
+                       os.path.relpath(os.path.join(root, file), 
+                                       os.path.join(path, '..')))
+    print("Compression du SIP terminée")
+    
+def doc_url(manifest):
+    """Documentation dans le manifeste de la génération du CSV sur les URL
+    """
+    print("Documentation dans le manifeste de la génération du CSV sur les URL...")
+    manifest_ouvert = open(manifest, "r")
+    source_xml = manifest_ouvert.read()
+    soup = BeautifulSoup(source_xml, 'xml')
+    cible = os.path.join(chemin_actuel,"perso","sip", "content", "urls.csv")
+    with open(cible) as file:
+        content = file.read()
+        hash = hashlib.sha512(content.encode()).hexdigest()
+    # Détermination du dernier ID (numériquement) généré par RESIP
+    liste_files = [name for name in sorted(os.listdir(os.path.join(chemin_actuel,"perso","sip", "content")))]
+    liste_files = liste_files[:-1]
+    liste_id_files = []
+    for element in liste_files:
+        for letter in element:
+            if letter.isnumeric() == False:
+                element = element.replace(letter, "")
+        liste_id_files.append(element)
+    for element in liste_id_files:
+        element = int(element)
+    liste_id_files.sort(key=int)
+    # L'ID du binary data object créé sera égal à l'id du dernier fichier (avant urls.csv) dans le dossier content +2 
+    last_id = liste_id_files[-1]
+    id = int(last_id) + 2
+    id_string = 'ID' + str(id) + ".csv"
+    os.rename(cible, os.path.join(chemin_actuel,"perso","sip", "content", id_string))
+    date = dt.isoformat()
+    archive_unit_glob = soup.find("ArchiveUnit", {"id":"ID10"})
+    #dern_arch_unit = archive_unit_glob.find_all("div")[-1]
+    soup_extend =""" 
+    <ArchiveUnit id="{a}">
+          <Content>
+            <DescriptionLevel>Item</DescriptionLevel>
+            <Title>urls.csv</Title>
+            <Event>
+              <EventType>Création</EventType>
+              <EventDateTime>{b}</EventDateTime>
+              <EventDetail>Généré via un script Python par le Bureau des Archives</EventDetail>
+            </Event>
+          </Content>
+          <DataObjectReference>
+            <DataObjectGroupReferenceId>{c}</DataObjectGroupReferenceId>
+          </DataObjectReference>
+        </ArchiveUnit>
+    """.format(a="ID"+str(id+1), c="ID"+str(id - 1), b=str(date))
+    archive_unit_glob.append(soup_extend)
+    descri_meta = soup.find("DescriptiveMetadata")
+    soup_extend = """<DataObjectGroup id="{a}">
+      <BinaryDataObject id="{b}">
+        <DataObjectVersion>BinaryMaster_1</DataObjectVersion>
+        <Uri>content/{c}.csv</Uri>
+        <MessageDigest algorithm="SHA-512">{d}</MessageDigest>
+        <Size>24040</Size>
+        <FormatIdentification>
+          <FormatLitteral>Comma Separated Values</FormatLitteral>
+          <MimeType>text/csv</MimeType>
+          <FormatId>x-fmt/18</FormatId>
+        </FormatIdentification>
+        <FileInfo>
+          <Filename>urls.csv</Filename>
+          <LastModified>{e}</LastModified>
+        </FileInfo>
+      </BinaryDataObject>
+    </DataObjectGroup>""".format(a="ID"+str(id - 1), b="ID"+str(id), c="ID"+str(id), d=hash, e=str(date))
+    descri_meta.insert_before(soup_extend)
+    with open(manifest, "w") as text_file:
+        string = str(soup.prettify(formatter=None))
+        string = string.replace("&", "&amp;")
+        string = re.sub(r"<OriginatingSystemId>(.*?)</OriginatingSystemId>", "<OriginatingSystemId>&lt;\\1&gt;</OriginatingSystemId>", string, flags=re.DOTALL)
+        string = re.sub(r"<OriginatingSystemIdReplyTo>(.*?)</OriginatingSystemIdReplyTo>", "<OriginatingSystemIdReplyTo>&lt;\\1&gt;</OriginatingSystemIdReplyTo>", string, flags=re.DOTALL)
+        string = re.sub(r"&lt;\s*?<", "&lt;", string, flags=re.DOTALL)
+        string = re.sub(r">\s*?&gt;", "&gt;", string, flags=re.DOTALL)
+        text_file.write(string)
 
 def traiter_mails(source, output):
     """Fonction qui parse les mails et exécute les fonctions définies ci-dessus. Elle écrit les résultats dans un fichier CSV
@@ -508,11 +608,16 @@ def traiter_mails(source, output):
         except:
             pass
 
-output = os.path.join(chemin_actuel,"perso","test_1905_complet.csv")
 source = os.path.join(chemin_actuel,"perso","sip")
-#traiter_mails(source, output)
+output = os.path.join(chemin_actuel, "perso", "sip", "content", "urls.csv")
+# traiter_mails(source, output)
 manifest = os.path.join(source, "manifest.xml")
-nouv_man = enrichir_manifeste(output, manifest)
-test_seda(nouv_man)
-test_profil_minimum(nouv_man)
-#remplacer_man()
+# nouv_man = enrichir_manifeste(output, manifest)
+# doc_url(nouv_man)
+# test_seda(nouv_man)
+# test_profil_minimum(nouv_man)
+# remplacer_man(manifest)
+output_zip = os.path.join(chemin_actuel,"perso","SIP_2005.zip")
+zipf = zipfile.ZipFile(output_zip, 'w', zipfile.ZIP_DEFLATED)
+zippage(source, zipf)
+zipf.close()

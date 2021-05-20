@@ -38,17 +38,28 @@ Le script utilise également les fonctions de classification des librairies cit�
 Ces nouvelles métadonnées sont automatiquement insérées dans le manifeste SEDA selon l'exemple suivant :
 
 ```xml
-<ArchiveUnit id="ID13">
-    <Content>
-        <DescriptionLevel>Item</DescriptionLevel>
-        <Title>0000000257-Création du compte Instagram.eml</Title>
-        <Tag>élément</Tag>
-        <Tag>étranger</Tag>
-        <Tag>événement</Tag>
-    </Content>
-    <DataObjectReference>
-        <DataObjectGroupReferenceId>ID11</DataObjectGroupReferenceId>
-    </DataObjectReference>
+<ArchiveUnit id="ID25">
+<Content>
+<Tag>élément</Tag>
+<Tag>étranger</Tag>
+<Tag>événement</Tag>
+<DescriptionLevel>Item</DescriptionLevel>
+<Title>Création du compte Instagram</Title>
+<OriginatingSystemId>&lt;7b88c65f-2573-ce0f-cef5-0c79b1f5d600@chartes.psl.eu&gt;</OriginatingSystemId>
+<Writer>
+<FullName>john doe</FullName>
+<Identifier>john.doe@example.com</Identifier>
+</Writer>
+<Addressee>
+<FullName>jane doe</FullName>
+<Identifier>jane.doe@site.fr</Identifier>
+</Addressee>
+<SentDate>2019-09-26T12:51:02Z</SentDate>
+<ReceivedDate>2019-09-26T12:51:02Z</ReceivedDate>
+</Content>
+<DataObjectReference>
+<DataObjectGroupReferenceId>ID26</DataObjectGroupReferenceId>
+</DataObjectReference>
 </ArchiveUnit>
 
 ```
