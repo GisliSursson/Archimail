@@ -369,6 +369,9 @@ def enrichir_manifeste(csv, manifest):
         # On trouve le content de l'archve unit (là où on insèrera les informations)
         archive_unit_content = archive_unit.findChild("Content")
         writer = archive_unit_content.findChild("Writer")
+        # Parfois l'expéditeur d'un mail n'est pas renseigné
+        if writer is None:
+            writer = archive_unit_content.findChild("Title")
         soup_extend = ""
         try:
             # On ajoute à la soupe une str XML bien formée
@@ -457,7 +460,7 @@ def doc_url(manifest):
     descriptive = soup.find("DescriptiveMetadata")
     content = descriptive.findChild("Content")
     date = dt.isoformat()
-    soup_extend = "<Event><EventType>Enrichissement des métadonnées au niveau de chaque message via un script Python</EventType><EventDateTime>{x}</EventDateTime><EventDetail>{y}</EventDetail></Event>".format(x=str(date), y=documentation)
+    soup_extend = "<Event><EventType>Génération d'un fichier CSV de pérennisation des URL</EventType><EventDateTime>{x}</EventDateTime><EventDetail>{y}</EventDetail></Event>".format(x=str(date), y=documentation)
     content.append(soup_extend)
     # Génération de la documentation au niveau du DataObjectGroup et de l'ArchiveUnit
     cible = os.path.join(chemin_actuel,"perso","sip", "content", "urls.csv")
@@ -666,4 +669,4 @@ sip = os.path.join(chemin_actuel,"perso","sip")
 strip_xml(cible_xml)
 test_profil_minimum(nouv_man)
 remplacer_man(manifest)
-zipDir(sip, "SIP.zip")
+zipDir(sip, "SIP_OK_2.zip")
