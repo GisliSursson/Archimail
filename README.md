@@ -176,12 +176,14 @@ deactivate
 
 Avant d'éxécuter le script, placez à la racine du dossier cloné votre SIP décompressé (dans un dossier nommé "SIP", en majuscules) à la racine du dépôt clôné. Se rapporter au schéma suivant :
 
-+-- _main.py
-+-- _SIP/
-|   +-- content/
-|   +-- manifest.xml
-
-Dans le dossier cloné (avec votre environnement virtuel activé), lancez 
+```
+dossier_clôné
+│   main.py
+│___SIP/
+    |   content/
+    |   manifest.xml
+   
+```
 
 ```bash
 python3 main.py 
