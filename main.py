@@ -14,6 +14,7 @@ nltk.download('punkt')
 from nltk.tokenize import word_tokenize
 from spacy.lang.fr.stop_words import STOP_WORDS as spacy_stop
 import time
+from zipfile import ZipFile
 
 # Calcul du timestamp de lancement du script (UTC)
 dt = datetime.datetime.now(timezone.utc)
@@ -414,6 +415,21 @@ def zippage(path, ziph):
                                        os.path.join(path, '..')))
     print("Compression du SIP terminée")
     
+def zippage_sip(path):
+    print("Recompression du SIP...")
+    # create a ZipFile object
+    # zipObj = ZipFile('SIP_test2105.zip', 'w')
+    # Add multiple files to the zip
+    # for element in files_list:
+        # zipObj.write(element)
+    # close the Zip File
+    # zipObj.close()
+    zf = zipfile.ZipFile("sample.zip", "w")
+    for root, dirs, files in os.walk(path):
+        for file in files:
+            zf.write(os.path.join(root, file))
+    print("Compression du SIP terminée")
+
 def doc_url(manifest):
     """Documentation dans le manifeste de la génération du CSV sur les URL
     """
@@ -617,7 +633,12 @@ manifest = os.path.join(source, "manifest.xml")
 # test_seda(nouv_man)
 # test_profil_minimum(nouv_man)
 # remplacer_man(manifest)
-output_zip = os.path.join(chemin_actuel,"perso","SIP_2005.zip")
+cible_content = os.path.join(chemin_actuel,"perso","sip", "content")
+cible_xml = os.path.join(chemin_actuel,"perso","sip", "manifest.xml")
+liste_zip = [cible_content, cible_xml]
+sip = os.path.join(chemin_actuel,"perso","sip")
+output_zip = os.path.join(chemin_actuel,"perso","SIP_2105a.zip")
 zipf = zipfile.ZipFile(output_zip, 'w', zipfile.ZIP_DEFLATED)
-zippage(source, zipf)
+# zippage(cible_content, cible_xml, zipf)
+zippage_sip(sip)
 zipf.close()
