@@ -189,6 +189,35 @@ Ensuite, avec votre environnement virtuel activé, lancez dans votre terminal:
 python3 main.py 
 ```
 
+### Exemple d'affichage terminal
+
+```bash
+[nltk_data] Downloading package stopwords to /home/victor/nltk_data...
+[nltk_data]   Package stopwords is already up-to-date!
+[nltk_data] Downloading package punkt to /home/victor/nltk_data...
+[nltk_data]   Package punkt is already up-to-date!
+Début de l'analyse des fichiers dans le dossier 'content'...
+Nombre de mails traités : 56
+Nombre d'URL traitées : 55
+Nombre d'éléments détectés comme des noms propres : 169
+Nombre de requêtes réussies faites à Internet Archive : 15
+Temps de calcul : 0:01:39.847860
+Génération du manifeste enrichi...
+Nombre de balises <tag> ajoutées : 163
+Documentation de l'enrichissement du manifest...
+Génération terminée
+Documentation dans le manifeste de la génération du CSV de pérennisation des URL...
+Documentation terminée
+Suppression des espaces blancs inutiles dans le nouveau manifeste...
+Suppression terminée
+Document testé par rapport au profil minimum ADAMANT : [...]/manifest_new.xml
+Votre manifeste est conforme au profil minimum ADAMANT!
+Suppression de l'ancien manifeste et remplacement par le nouveau enrichi...
+Remplacement effectué
+Recompression du SIP...
+Compression du SIP terminée
+```
+
 ### Tests
 
 Le script est testé via le service d'intégration continue [Travis CI](https://travis-ci.com/). Les tests sont lancés à chaque modification du dépôt principal. Il est possible de visualiser l'exécution de ces tests ici : [lien](https://travis-ci.com/github/GisliSursson/Archimail).

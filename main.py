@@ -347,7 +347,7 @@ def enrichir_manifeste(csv, manifest):
     programmation Python. Pour le corps chaque courriel (fichier .eml), le script réalise une tokenisation (non prise en compte des mots
     non signifiants etc.), une lemmatisation (le fait de ramener chaque mot à sa forme du dictionaire) et un évitement des noms propres.
     Le script calcul ensuite la fréquence de chaque mot dans le courriel et associe au courriel en question les trois mots les plus fréquents
-    via la balise <tag>.
+    via la balise 'tag'.
     """    
     count = 0
     nouv_man = manifest.replace(".xml", "") + "_new.xml"
@@ -384,8 +384,8 @@ def enrichir_manifeste(csv, manifest):
     descriptive = soup.find("DescriptiveMetadata")
     content = descriptive.findChild("Content")
     date = dt.isoformat()
-    heure = utc_time.now()
-    current_time = heure.strftime("%H:%M:%S")
+    # heure = utc_time.now()
+    # current_time = heure.strftime("%H:%M:%S")
     soup_extend = "<Event><EventType>Enrichissement des métadonnées au niveau de chaque message via un script Python</EventType><EventDateTime>{x}</EventDateTime><EventDetail>{y}</EventDetail></Event>".format(x=str(date), y=documentation)
     content.append(soup_extend)
     with open(nouv_man, "w+") as text_file:
@@ -456,6 +456,7 @@ def doc_url(manifest):
     # Création de l'Event de documentation au niveau le plus haut de la description
     descriptive = soup.find("DescriptiveMetadata")
     content = descriptive.findChild("Content")
+    date = dt.isoformat()
     soup_extend = "<Event><EventType>Enrichissement des métadonnées au niveau de chaque message via un script Python</EventType><EventDateTime>{x}</EventDateTime><EventDetail>{y}</EventDetail></Event>".format(x=str(date), y=documentation)
     content.append(soup_extend)
     # Génération de la documentation au niveau du DataObjectGroup et de l'ArchiveUnit
@@ -658,11 +659,11 @@ manifest = os.path.join(source, "manifest.xml")
 nouv_man = enrichir_manifeste(output, manifest)
 doc_url(nouv_man)
 # test_seda(nouv_man)
-test_profil_minimum(nouv_man)
 cible_content = os.path.join(chemin_actuel,"perso","sip", "content")
 cible_xml = os.path.join(chemin_actuel,"perso","sip", "manifest_new.xml")
 liste_zip = [cible_content, cible_xml]
 sip = os.path.join(chemin_actuel,"perso","sip")
 strip_xml(cible_xml)
+test_profil_minimum(nouv_man)
 remplacer_man(manifest)
 zipDir(sip, "SIP.zip")
