@@ -40,12 +40,12 @@ Ces nouvelles métadonnées sont automatiquement insérées dans le manifeste SE
 ```xml
 <ArchiveUnit id="ID25">
 <Content>
-<Tag>élément</Tag>
-<Tag>étranger</Tag>
-<Tag>événement</Tag>
 <DescriptionLevel>Item</DescriptionLevel>
 <Title>Création du compte Instagram</Title>
-<OriginatingSystemId>&lt;7b88c65f-2573-ce0f-cef5-0c79b1f5d600@chartes.psl.eu&gt;</OriginatingSystemId>
+<OriginatingSystemId>&lt;7b88c65f-2573-ce0f-cef5-0c79b1f5d600@example.com&gt;</OriginatingSystemId>
+<Tag>élément</Tag>
+<Tag>photo</Tag>
+<Tag>événement</Tag>
 <Writer>
 <FullName>john doe</FullName>
 <Identifier>john.doe@example.com</Identifier>
