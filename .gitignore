@@ -10,5 +10,6 @@ word/
 *.odt
 *.eml
 *.xml
+*.zip
 donnees_personnelles.csv
 stat_tag_brouillon,.py

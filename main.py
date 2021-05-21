@@ -451,10 +451,13 @@ def doc_url(manifest):
     for element in liste_id_files:
         element = int(element)
     liste_id_files.sort(key=int)
-    # L'ID du binary data object créé sera égal à l'id du dernier fichier (avant urls.csv) dans le dossier content +2 
+    # L'ID du binary data object créé (et donc aussi le nom du fichier correspondant) sera égal à l'id du dernier fichier 
+    # (avant urls.csv) dans le dossier content +2 
     last_id = liste_id_files[-1]
-    id = int(last_id) + 2
-    id_string = 'ID' + str(id) + ".csv"
+    binary_data_obj_id = int(last_id) + 3
+    data_obj_group_id = binary_data_obj_id - 1
+    archive_unit_id = binary_data_obj_id + 1
+    id_string = 'ID' + str(binary_data_obj_id) + ".csv"
     os.rename(cible, os.path.join(chemin_actuel,"perso","sip", "content", id_string))
     date = dt.isoformat()
     archive_unit_glob = soup.find("ArchiveUnit", {"id":"ID10"})
@@ -474,7 +477,7 @@ def doc_url(manifest):
             <DataObjectGroupReferenceId>{c}</DataObjectGroupReferenceId>
           </DataObjectReference>
         </ArchiveUnit>
-    """.format(a="ID"+str(id+1), c="ID"+str(id - 1), b=str(date))
+    """.format(a="ID"+str(archive_unit_id), c="ID"+str(data_obj_group_id), b=str(date))
     archive_unit_glob.append(soup_extend)
     descri_meta = soup.find("DescriptiveMetadata")
     soup_extend = """<DataObjectGroup id="{a}">
@@ -493,7 +496,7 @@ def doc_url(manifest):
           <LastModified>{e}</LastModified>
         </FileInfo>
       </BinaryDataObject>
-    </DataObjectGroup>""".format(a="ID"+str(id - 1), b="ID"+str(id), c="ID"+str(id), d=hash, e=str(date))
+    </DataObjectGroup>""".format(a="ID"+str(data_obj_group_id), b="ID"+str(binary_data_obj_id), c="ID"+str(binary_data_obj_id), d=hash, e=str(date))
     descri_meta.insert_before(soup_extend)
     with open(manifest, "w") as text_file:
         string = str(soup.prettify(formatter=None))
