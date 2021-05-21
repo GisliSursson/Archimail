@@ -406,29 +406,27 @@ def remplacer_man(manifest):
     os.remove(manifest)
     os.rename(os.path.join(chemin_actuel, "perso", "sip", "manifest_new.xml"), os.path.join(chemin_actuel, "perso", "sip", "manifest.xml"))
 
-def zippage(path, ziph):
+def zipDir(dirPath, zipPath):
     print("Recompression du SIP...")
-    for root, dirs, files in os.walk(path):
+    zipf = zipfile.ZipFile(zipPath , mode='w')
+    lenDirPath = len(dirPath)
+    for root, _ , files in os.walk(dirPath):
         for file in files:
-            ziph.write(os.path.join(root, file), 
-                       os.path.relpath(os.path.join(root, file), 
-                                       os.path.join(path, '..')))
+            filePath = os.path.join(root, file)
+            zipf.write(filePath , filePath[lenDirPath :] )
+    zipf.close()
     print("Compression du SIP terminée")
-    
-def zippage_sip(path):
-    print("Recompression du SIP...")
-    # create a ZipFile object
-    # zipObj = ZipFile('SIP_test2105.zip', 'w')
-    # Add multiple files to the zip
-    # for element in files_list:
-        # zipObj.write(element)
-    # close the Zip File
-    # zipObj.close()
-    zf = zipfile.ZipFile("sample.zip", "w")
-    for root, dirs, files in os.walk(path):
-        for file in files:
-            zf.write(os.path.join(root, file))
-    print("Compression du SIP terminée")
+
+def strip_xml(xml):
+    print("Suppression des espaces blancs inutiles dans le nouveau SIP...")
+    tree = etree.parse(xml)
+    root = tree.getroot()
+    for elem in root.iter('*'):
+        if elem.text is not None:
+            elem.text = elem.text.strip()
+    with open(xml, 'wb') as f:
+        tree.write(f, encoding='utf-8')
+    print("Suppression terminée")
 
 def doc_url(manifest):
     """Documentation dans le manifeste de la génération du CSV sur les URL
@@ -626,19 +624,19 @@ def traiter_mails(source, output):
 
 source = os.path.join(chemin_actuel,"perso","sip")
 output = os.path.join(chemin_actuel, "perso", "sip", "content", "urls.csv")
-# traiter_mails(source, output)
+traiter_mails(source, output)
 manifest = os.path.join(source, "manifest.xml")
-# nouv_man = enrichir_manifeste(output, manifest)
-# doc_url(nouv_man)
+nouv_man = enrichir_manifeste(output, manifest)
+doc_url(nouv_man)
 # test_seda(nouv_man)
-# test_profil_minimum(nouv_man)
-# remplacer_man(manifest)
+test_profil_minimum(nouv_man)
 cible_content = os.path.join(chemin_actuel,"perso","sip", "content")
-cible_xml = os.path.join(chemin_actuel,"perso","sip", "manifest.xml")
+cible_xml = os.path.join(chemin_actuel,"perso","sip", "manifest_new.xml")
 liste_zip = [cible_content, cible_xml]
 sip = os.path.join(chemin_actuel,"perso","sip")
-output_zip = os.path.join(chemin_actuel,"perso","SIP_2105a.zip")
+output_zip = os.path.join(chemin_actuel,"perso","SIP_2105c.zip")
 zipf = zipfile.ZipFile(output_zip, 'w', zipfile.ZIP_DEFLATED)
-# zippage(cible_content, cible_xml, zipf)
-zippage_sip(sip)
+strip_xml(cible_xml)
+remplacer_man(manifest)
+zipDir(sip, "SIP.zip")
 zipf.close()
