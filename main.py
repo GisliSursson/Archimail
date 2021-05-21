@@ -294,17 +294,18 @@ def doc_unzip(path):
     id = os.path.basename(path)
     id = re.sub("\..+", "", id)
     
+"""
 def test_seda(path):
-    """ Fonction qui teste si le document est valide au schéma SEDA 2.1 (schéma téléchargé le 06/05/21)
+     Fonction qui teste si le document est valide au schéma SEDA 2.1 (schéma téléchargé le 06/05/21)
     Au 20/05/21 il est normal que la balise OriginatingSystemIdReplyTo ne soit pas dans le SEDA
-    """
+    
     print("Document testé en tant que manifeste SEDA 2.1 : " + str(path))
     xml_file = lxml.etree.parse(path)
     schema_loc = os.path.join(chemin_actuel, "seda", "seda-2.1-main.xsd")
     xml_validator = lxml.etree.XMLSchema(file=schema_loc)
     xml_validator.assert_(xml_file)
     # Le code crashera avec message d'erreur précis si le manifeste n'est pas conforme au SEDA
-    print("Votre manifeste est valide par rapport au SEDA 2.1!")
+    print("Votre manifeste est valide par rapport au SEDA 2.1!") """
     
 def test_profil_minimum(path):
     """ Fonction qui teste si le document est conforme au profil minimum ADAMANT (version du SEDA 2.1 spécifique à ADAMANT). 
@@ -342,6 +343,12 @@ def enrichir_manifeste(csv, manifest):
     :rtype status: str
     """
     print("Génération du manifeste enrichi...")
+    documentation = """Enrichissement du manifeste SEDA par le Bureau des Archives du Conseil d'Etat via un script rédigé dans le langage de 
+    programmation Python. Pour le corps chaque courriel (fichier .eml), le script réalise une tokenisation (non prise en compte des mots
+    non signifiants etc.), une lemmatisation (le fait de ramener chaque mot à sa forme du dictionaire) et un évitement des noms propres.
+    Le script calcul ensuite la fréquence de chaque mot dans le courriel et associe au courriel en question les trois mots les plus fréquents
+    via la balise <tag>.
+    """    
     count = 0
     nouv_man = manifest.replace(".xml", "") + "_new.xml"
     manifest = open(manifest, "r")
@@ -379,7 +386,7 @@ def enrichir_manifeste(csv, manifest):
     date = dt.isoformat()
     heure = utc_time.now()
     current_time = heure.strftime("%H:%M:%S")
-    soup_extend = "<Event><EventType>Enrichissement des métadonnées au niveau de chaque message via un script Python</EventType><EventDateTime>{x}</EventDateTime><EventDetail>Réalisation par le Bureau des Archives du Conseil d'Etat</EventDetail></Event>".format(x=str(date))
+    soup_extend = "<Event><EventType>Enrichissement des métadonnées au niveau de chaque message via un script Python</EventType><EventDateTime>{x}</EventDateTime><EventDetail>{y}</EventDetail></Event>".format(x=str(date), y=documentation)
     content.append(soup_extend)
     with open(nouv_man, "w+") as text_file:
         # Correction de ce que le beautifier de Beautiful Soup ne fait pas
@@ -398,6 +405,7 @@ def enrichir_manifeste(csv, manifest):
         #string = re.sub("&", "&amp;", string)
         text_file.write(string)
     manifest.close()
+    print("Génération terminée")
     return nouv_man
             
 def remplacer_man(manifest):
@@ -405,6 +413,7 @@ def remplacer_man(manifest):
     # os.remove(manifest)
     os.remove(manifest)
     os.rename(os.path.join(chemin_actuel, "perso", "sip", "manifest_new.xml"), os.path.join(chemin_actuel, "perso", "sip", "manifest.xml"))
+    print("Remplacement effectué")
 
 def zipDir(dirPath, zipPath):
     print("Recompression du SIP...")
@@ -418,7 +427,7 @@ def zipDir(dirPath, zipPath):
     print("Compression du SIP terminée")
 
 def strip_xml(xml):
-    print("Suppression des espaces blancs inutiles dans le nouveau SIP...")
+    print("Suppression des espaces blancs inutiles dans le nouveau manifeste...")
     tree = etree.parse(xml)
     root = tree.getroot()
     for elem in root.iter('*'):
@@ -431,10 +440,25 @@ def strip_xml(xml):
 def doc_url(manifest):
     """Documentation dans le manifeste de la génération du CSV sur les URL
     """
-    print("Documentation dans le manifeste de la génération du CSV sur les URL...")
+    print("Documentation dans le manifeste de la génération du CSV de pérennisation des URL...")
+    documentation = """Fichier généré automatiquement via un script écrit dans le langage Python par le Bureau des Archives du
+    Conseil d'Etat. Le fichier CSV, pour chaque courriel, indique les 3 mots-clefs qui ont été déterminés et insérés dans le manifeste. 
+    Le script réalise également une opération de pérennisation des URL selon les recommandations du groupe de recherche
+    INTERPARES. Dans le corps des mails, les URL sont détectées via une expression régulière. Le script inscrit dans le CSV le
+    code HTTP renvoyé (permettant de vérifier si l'URL est encore active lors du traitement par les Archives), la date
+    du test et le nom du site (sous la forme subdomain + domain + top-level domain). De plus, le script teste aussi la disponibilité
+    de l'URL en question sur l'API de la Wayback Machine (Internet Archive). Si l'archive existe, il écrit dans le CSV la disponibilité 
+    de l'API, l'URL de la page archivée, la date de la page archivée et le code HTTP.
+    """
     manifest_ouvert = open(manifest, "r")
     source_xml = manifest_ouvert.read()
     soup = BeautifulSoup(source_xml, 'xml')
+    # Création de l'Event de documentation au niveau le plus haut de la description
+    descriptive = soup.find("DescriptiveMetadata")
+    content = descriptive.findChild("Content")
+    soup_extend = "<Event><EventType>Enrichissement des métadonnées au niveau de chaque message via un script Python</EventType><EventDateTime>{x}</EventDateTime><EventDetail>{y}</EventDetail></Event>".format(x=str(date), y=documentation)
+    content.append(soup_extend)
+    # Génération de la documentation au niveau du DataObjectGroup et de l'ArchiveUnit
     cible = os.path.join(chemin_actuel,"perso","sip", "content", "urls.csv")
     with open(cible) as file:
         content = file.read()
@@ -506,7 +530,8 @@ def doc_url(manifest):
         string = re.sub(r"&lt;\s*?<", "&lt;", string, flags=re.DOTALL)
         string = re.sub(r">\s*?&gt;", "&gt;", string, flags=re.DOTALL)
         text_file.write(string)
-
+    print("Documentation terminée")
+    
 def traiter_mails(source, output):
     """Fonction qui parse les mails et exécute les fonctions définies ci-dessus. Elle écrit les résultats dans un fichier CSV
     récapitulaitf. 
@@ -528,6 +553,7 @@ def traiter_mails(source, output):
         nb_noms = 0 
         nb_wb = 0 
         nb_zip = 0
+        print("Début de l'analyse des fichiers dans le dossier 'content'...")
         # On parse les noms de tous les fichiers du SIP
         for root, dirs, files in os.walk(source, topdown=True):
             for index, name in enumerate(files):
@@ -637,9 +663,6 @@ cible_content = os.path.join(chemin_actuel,"perso","sip", "content")
 cible_xml = os.path.join(chemin_actuel,"perso","sip", "manifest_new.xml")
 liste_zip = [cible_content, cible_xml]
 sip = os.path.join(chemin_actuel,"perso","sip")
-output_zip = os.path.join(chemin_actuel,"perso","SIP_2105c.zip")
-zipf = zipfile.ZipFile(output_zip, 'w', zipfile.ZIP_DEFLATED)
 strip_xml(cible_xml)
 remplacer_man(manifest)
 zipDir(sip, "SIP.zip")
-zipf.close()

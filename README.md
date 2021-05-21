@@ -8,13 +8,13 @@ L'objectif est de fournir un script complémentaire aux outils développés dans
 
 ## Grands principes
 
-Le script prend en entrée un SIP conforme au SEDA décompressé. Il retourne ce même SIP enrichi de nouvelles métadonnées, toujours conforme au SEDA, qu'il conviendra de zipper à nouveau. 
+Le script prend en entrée un SIP généré via [RESIP](https://www.programmevitam.fr/pages/ressources/resip/) conforme au SEDA décompressé. Il retourne ce même SIP avec un manifeste enrichi de nouvelles métadonnées et un nouveau fichier CSV de pérennisation des URL documenté dans le manifeste. Ce nouveau SIP, retourné zippé, est toujours conforme au profil minimum ADAMANT et peut être joué dans l'outil RESIP. 
 
 Il repose sur 3 grands principes:
 
-- Enrichir le manifeste [SEDA](https://www.francearchives.fr/seda/index.html) avec des métadonnées type "mots-clefs" au niveau de chaque mail. Ces métadonnées complètent les métadonnées ajoutées habituellement par la pratique et qui se limitent aux plus hauts niveaux de description. 
+- Enrichir le manifeste [SEDA](https://www.francearchives.fr/seda/index.html) avec des métadonnées type "mots-clefs" au niveau de chaque mail. Ces métadonnées complètent les métadonnées ajoutées habituellement qui se limitent aux plus hauts niveaux de description. 
 - Tester la validité des éventuelles URL trouvées dans les mails au moment du traitement et insérer la documentation de ces tests au format CSV dans le SIP.
-- Décompresser les éventuelles pièces jointes ZIP. 
+- Documenter toutes les modifications faites dans le manifeste.
 
 ## Fonctionnalités
 
@@ -22,10 +22,8 @@ Le script propose les fonctionnalités suivantes :
 
 - Détermination de 3 mots-clefs par mail (tokenisation, lemmatisation, évitement des noms propres) qui serviront de métadonnées de recherche basiques.
 - Enrichissement du manifeste SEDA avec ces métadonnées.
-- Décompression des éventuelles pièces jointes ZIP et suppression de fichiers ZIP originaux. 
-- Test des URLs ainsi que leur éventuel enregistrement par [Internet Archive](https://archive.org/web/).
-- Génération d'un fichier CSV rassemblant pour chaque mail les mots-clefs et les URLs testées. Ce fichier pourra être joint à un SIP. 
-- Génération d'un fichier CSV contenant la liste des mails qui auront été estimés comme contenant des données personnelles. Un révision humaine sera alors nécessaire pour en juger définitivement. 
+- Test des URLs ainsi que leur éventuel enregistrement par la Wayback Machine ([Internet Archive](https://archive.org/web/)).
+- Génération d'un fichier CSV rassemblant pour chaque mail les mots-clefs et les URLs testées. Ce fichier est joint au SIP. 
 
 Plus de détail sur les fonctionnalités:
 
@@ -102,7 +100,7 @@ Le script génère un fichier CSV (séparateur point-virgule) qui, pour chaque m
 - Les URLs trouvées
 - Le statut du test (code HTTP)
 - Le timestamp du test
-- Le nom du responsable de l'URL (recommandation [INTERPARES](http://interpares.org/))
+- Le nom du responsable de l'URL sous la forme subdomain + domain + top-level domain (recommandation [INTERPARES](http://interpares.org/)) 
 - La disponibilité de l'enregistrement le plus récent dans la Wayback Machine (s'il existe)
 - Le lien vers cet enregistrement
 - Le timestamp de l'enregistrement
@@ -116,7 +114,7 @@ Ce fichier est inséré dans le SIP comme document de description complémentair
     <Event>
         <EventType>Création</EventType>
         <EventDateTime>2021-05-14T14:00:00</EventDateTime>
-        <EventDetail>Fichier généré pour documentation par les Archives</EventDetail>
+        <EventDetail>Fichier généré pour documentation par les Archives [...]</EventDetail>
     </Event>
 </Content>
 ````
@@ -128,25 +126,6 @@ Exemple d'organisation des données dans le CSV:
 | content/ID1197.eml | foo, bar, test | https://www.conseil-etat.fr/ | 200               | 2021-05-07 13:33:04.710089 | www.conseil-etat.fr | True                   | http://web.archive.org/web/20210418112501/http://www.conseil-etat.fr | 20210418112501             |
 
 S'il y a plusieurs éléments à afficher dans une cellule, ils sont séparés par une virgule.
-
-### Décompression des pièces jointes compressées
-
-Les formats compressés (.zip, .7z...) ne sont pas recommandés pour la pérennisation numérique. A l'heure de la réalisation de ce projet l'outil RESIP (v.2.3.0) ne permet pas de décompresser automatiquement les pièces jointes des mails. Le script réalise cette décompression automatiquement et, une fois celle-ci effectuée, supprime les fichiers compressés. Cette action est automatiquement documentée dans le manifeste SEDA selon l'exemple suivant:
-
-```xml
-<Content>
-    <DescriptionLevel>Item</DescriptionLevel>
-    <Title>foo_bar.7z</Title>
-    <Description>Veuillez trouver le document "foo_bar.7z" ci-joint</Description>
-    <CreatedDate>2017-03-03T14:46:00</CreatedDate>
-    <Event>
-        <EventType>Décompression</EventType>
-        <EventDateTime>2021-05-14T14:00:00</EventDateTime>
-        <EventDetail>Décompression d'un fichier du même nom au format .7z</EventDetail>
-    </Event>
-</Content>
-
-````
 
 ### Validation par rapport à un schéma XML
 
@@ -195,7 +174,12 @@ deactivate
 
 ### Lancement
 
-Avant d'éxécuter le script, placez à la racine du dossier cloné votre SIP décompressé (dans un dossier nommé "SIP", en majuscules).  
+Avant d'éxécuter le script, placez à la racine du dossier cloné votre SIP décompressé (dans un dossier nommé "SIP", en majuscules) à la racine du dépôt clôné. Se rapporter au schéma suivant :
+
++-- _main.py
++-- _SIP/
+|   +-- content/
+|   +-- manifest.xml
 
 Dans le dossier cloné (avec votre environnement virtuel activé), lancez 
 
