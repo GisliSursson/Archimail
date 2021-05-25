@@ -344,10 +344,10 @@ def enrichir_manifeste(csv, manifest):
     """
     print("Génération du manifeste enrichi...")
     documentation = """Enrichissement du manifeste SEDA par le Bureau des Archives du Conseil d'Etat via un script rédigé dans le langage de 
-    programmation Python. Pour le corps chaque courriel (fichier .eml), le script réalise une tokenisation (non prise en compte des mots
-    non signifiants etc.), une lemmatisation (le fait de ramener chaque mot à sa forme du dictionaire) et un évitement des noms propres.
-    Le script calcul ensuite la fréquence de chaque mot dans le courriel et associe au courriel en question les trois mots les plus fréquents
-    via la balise 'tag'.
+    programmation Python. Pour le corps chaque courriel (fichier .eml), le script réalise une tokenisation (on évite de prendre en compte les mots
+    grammaticaux etc.), une lemmatisation (le fait de ramener chaque mot à sa forme du dictionaire) et un évitement des noms propres.
+    Le script calcule ensuite la fréquence de chaque mot dans le courriel et associe audit courriel les trois mots les plus fréquents
+    via la balise 'tag' dans le manifeste SEDA.
     """    
     count = 0
     nouv_man = manifest.replace(".xml", "") + "_new.xml"
@@ -445,8 +445,8 @@ def doc_url(manifest):
     """
     print("Documentation dans le manifeste de la génération du CSV de pérennisation des URL...")
     documentation = """Fichier généré automatiquement via un script écrit dans le langage Python par le Bureau des Archives du
-    Conseil d'Etat. Le fichier CSV, pour chaque courriel, indique les 3 mots-clefs qui ont été déterminés et insérés dans le manifeste. 
-    Le script réalise également une opération de pérennisation des URL selon les recommandations du groupe de recherche
+    Conseil d'Etat. Le fichier CSV (comma separated values), pour chaque courriel, indique les 3 mots-clefs qui ont été déterminés et insérés dans le manifeste. 
+    Le script réalise également une opération de pérennisation des URL (Uniform Resource Locator) selon les recommandations du groupe de recherche
     INTERPARES. Dans le corps des mails, les URL sont détectées via une expression régulière. Le script inscrit dans le CSV le
     code HTTP renvoyé (permettant de vérifier si l'URL est encore active lors du traitement par les Archives), la date
     du test et le nom du site (sous la forme subdomain + domain + top-level domain). De plus, le script teste aussi la disponibilité
