@@ -8,12 +8,12 @@ L'objectif est de fournir un script complémentaire aux outils développés dans
 
 ## Grands principes
 
-Le script prend en entrée un SIP généré via [RESIP](https://www.programmevitam.fr/pages/ressources/resip/) conforme au SEDA décompressé. Il retourne ce même SIP avec un manifeste enrichi de nouvelles métadonnées et un nouveau fichier CSV de pérennisation des URL documenté dans le manifeste. Ce nouveau SIP, retourné zippé, est toujours conforme au profil minimum ADAMANT et peut être joué dans l'outil RESIP. 
+Le script prend en entrée un SIP généré via [RESIP](https://www.programmevitam.fr/pages/ressources/resip/) conforme au SEDA et décompressé. Il retourne ce même SIP avec un manifeste enrichi de nouvelles métadonnées et un nouveau fichier CSV de pérennisation des URL documenté dans le manifeste. Ce nouveau SIP, retourné zippé, est toujours conforme au profil minimum ADAMANT et peut être joué dans l'outil RESIP. 
 
 Il repose sur 3 grands principes:
 
-- Enrichir le manifeste [SEDA](https://www.francearchives.fr/seda/index.html) avec des métadonnées type "mots-clefs" au niveau de chaque mail. Ces métadonnées complètent les métadonnées ajoutées habituellement qui se limitent aux plus hauts niveaux de description. 
-- Tester la validité des éventuelles URL trouvées dans les mails au moment du traitement et insérer la documentation de ces tests au format CSV dans le SIP.
+- Enrichir le manifeste [SEDA](https://www.francearchives.fr/seda/index.html) avec des métadonnées type "mots-clefs" au niveau de chaque mail. Ces métadonnées complètent les métadonnées ajoutées habituellement aux plus hauts niveaux de description uniquement. 
+- Tester la validité des éventuelles URL trouvées dans les mails au moment du traitement ainsi que leur éventuel archivage par [Internet Archive](https://archive.org/web/) et insérer la documentation de ces tests au format CSV dans le SIP.
 - Documenter toutes les modifications faites dans le manifeste.
 
 ## Fonctionnalités
@@ -22,14 +22,15 @@ Le script propose les fonctionnalités suivantes :
 
 - Détermination de 3 mots-clefs par mail (tokenisation, lemmatisation, évitement des noms propres) qui serviront de métadonnées de recherche basiques.
 - Enrichissement du manifeste SEDA avec ces métadonnées.
-- Test des URLs ainsi que leur éventuel enregistrement par la Wayback Machine ([Internet Archive](https://archive.org/web/)).
-- Génération d'un fichier CSV rassemblant pour chaque mail les mots-clefs et les URLs testées. Ce fichier est joint au SIP. 
+- Test des URLs ainsi que leur éventuel enregistrement par la Wayback Machine (Internet Archive).
+- Génération d'un fichier CSV rassemblant pour chaque mail les mots-clefs et les URLs testées. Ce fichier est joint au SIP.
+- Documentation de ces modifications dans le manifeste via des *events*. 
 
 Plus de détail sur les fonctionnalités:
 
 ### Enrichissement des métadonnées
 
-Le corps de chaque mail est parsé. En utilisant deux librairies de traitement automatique du langage naturel ([NLTK](https://www.nltk.org/) et [Spacy](https://spacy.io/)), les mots sont tokenisés (suppression des mots outils etc...), lemmatisés (chaque mot est ramené à sa forme du dictionnaire) et classés par nombre d'occurences. Les trois mots qui ont le plus d'occurences sont retenus pour servir de mots-clefs et enrichir les métadonnées de description SEDA du mail. 
+Le corps de chaque mail est parsé par le script. En utilisant deux librairies de traitement automatique du langage naturel ([NLTK](https://www.nltk.org/) et [Spacy](https://spacy.io/)), les mots sont tokenisés (suppression des mots outils etc...), lemmatisés (chaque mot est ramené à sa forme du dictionnaire) et classés par nombre d'occurences. Les trois mots qui ont le plus d'occurences sont retenus pour servir de mots-clefs et enrichir les métadonnées de description SEDA du mail dans le manifeste via la balise *tag*. 
 
 Le script utilise également les fonctions de classification des librairies citées afin d'éviter d'insérer dans les métadonnées des noms propres (*Named Entity Recognition*).
 
@@ -41,6 +42,7 @@ Ces nouvelles métadonnées sont automatiquement insérées dans le manifeste SE
 <DescriptionLevel>Item</DescriptionLevel>
 <Title>Création du compte Instagram</Title>
 <OriginatingSystemId>&lt;7b88c65f-2573-ce0f-cef5-0c79b1f5d600@example.com&gt;</OriginatingSystemId>
+<!-- Ci-dessous les mots-clefs rajoutés -->
 <Tag>élément</Tag>
 <Tag>photo</Tag>
 <Tag>événement</Tag>
@@ -63,29 +65,33 @@ Ces nouvelles métadonnées sont automatiquement insérées dans le manifeste SE
 ```
 NB : Ces fonctionnalités ne peuvent être utilisées à leur potentiel maximum qu'avec des données rédigées en langue française. 
 
-A l'échelle de l'ensemble du SIP, ces enrichissements sont documentés de la façon suivante:
+Ces enrichissements sont documentés à haut niveau dans le manifeste de la façon suivante:
 
 ```xml
 <DescriptiveMetadata>
       <ArchiveUnit id="ID10">
         <Management>
-         [...]
+         Lorem ipsum
         </Management>
         <Content>
-          <DescriptionLevel>[...]</DescriptionLevel>
-          <Title>[...]</Title>
-          <Description>[...]</Description>
+          <DescriptionLevel>Lorem</DescriptionLevel>
+          <Title>Lorem ipsum dolor sit amet</Title>
+          <Description>Ut id rutrum massa. Suspendisse porta malesuada leo, a accumsan mauris sollicitudin id. Suspendisse vitae pulvinar nunc.</Description>
           <CustodialHistory>
-            <CustodialHistoryItem>[...]</CustodialHistoryItem>
+            <CustodialHistoryItem>Vivamus ac hendrerit dolor, quis porttitor augue. In sed ex hendrerit odio tempus aliquam.</CustodialHistoryItem>
           </CustodialHistory>
-          <Tag>[...]</Tag>
-          <Tag>[...]</Tag>
-          <StartDate>[...]</StartDate>
-          <EndDate>[...]</EndDate>
+          <Tag>Lorem</Tag>
+          <Tag>ipsum</Tag>
+          <StartDate>2019-09-26T12:51:00</StartDate>
+          <EndDate>2019-10-11T08:51:00</EndDate>
           <Event>
             <EventType>Enrichissement des métadonnées au niveau de chaque message via un script Python</EventType>
             <EventDateTime>2021-05-14T14:00:00</EventDateTime>
-            <EventDetail>Réalisation par le Bureau des Archives du Conseil d'Etat</EventDetail>
+            <EventDetail>Enrichissement du manifeste SEDA par le Bureau des Archives du Conseil d'Etat via un script rédigé dans le langage de 
+    programmation Python. Pour le corps chaque courriel (fichier .eml), le script réalise une tokenisation (non prise en compte des mots
+    non signifiants etc.), une lemmatisation (le fait de ramener chaque mot à sa forme du dictionaire) et un évitement des noms propres.
+    Le script calcul ensuite la fréquence de chaque mot dans le courriel et associe au courriel en question les trois mots les plus fréquents
+    via la balise 'tag'.</EventDetail>
           </Event>
     [...]
 </DescriptiveMetadata>
@@ -94,16 +100,16 @@ A l'échelle de l'ensemble du SIP, ces enrichissements sont documentés de la fa
 
 ### Le CSV de pérennisation des URLs
 
-Le script génère un fichier CSV (séparateur point-virgule) qui, pour chaque mail, comporte les colonnes suivantes:
-- Le nom du mail (chemin)
+Le script génère un fichier CSV (séparateur : point-virgule) qui, pour chaque mail, comporte les colonnes suivantes:
+- Le nom du mail (chemin relatif)
 - Les 3 mots-clefs
 - Les URLs trouvées
 - Le statut du test (code HTTP)
-- Le timestamp du test
+- Le *timestamp* du test
 - Le nom du responsable de l'URL sous la forme subdomain + domain + top-level domain (recommandation [INTERPARES](http://interpares.org/)) 
-- La disponibilité de l'enregistrement le plus récent dans la Wayback Machine (s'il existe)
+- Le statut (HTTP) et la disponibilité renvoyée par l'API de la Wayback Machine. 
 - Le lien vers cet enregistrement
-- Le timestamp de l'enregistrement
+- Le *timestamp* de l'enregistrement
 
 Ce fichier est inséré dans le SIP comme document de description complémentaire généré par les Archives. Il est automatiquement documenté dans le manifeste de la manière suivante:
 
@@ -210,7 +216,7 @@ Documentation dans le manifeste de la génération du CSV de pérennisation des 
 Documentation terminée
 Suppression des espaces blancs inutiles dans le nouveau manifeste...
 Suppression terminée
-Document testé par rapport au profil minimum ADAMANT : [...]/manifest_new.xml
+Document testé par rapport au profil minimum ADAMANT : mon_dossier/manifest_new.xml
 Votre manifeste est conforme au profil minimum ADAMANT!
 Suppression de l'ancien manifeste et remplacement par le nouveau enrichi...
 Remplacement effectué
