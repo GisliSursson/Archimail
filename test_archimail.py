@@ -205,20 +205,28 @@ df = pd.read_csv(output_test, sep=";", error_bad_lines=True)
 @pytest.fixture
 def regex_url():
     return """(https?:\/\/(?:www\.|(?!www))[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s<>"']{2,}|www\.[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s<>"']{2,}|https?:\/\/(?:www\.|(?!www))[a-zA-Z0-9]+\.[^\s<>"']{2,}|www\.[a-zA-Z0-9]+\.[^\s<>"']{2,})"""
+@pytest.fixture
 def noms(): 
     return df["nom_fichier"]
+@pytest.fixture
 def top():
     return df["top_trois_mots"]
+@pytest.fixture
 def http():
     return df["resultat_test_URL"]
+@pytest.fixture
 def date():
     return df["date_test_URL"]
+@pytest.fixture
 def wb():
     return df["internet_archive_status"]
+@pytest.fixture
 def wb_dispo():
     return df["internet_archive_dispo"]
+@pytest.fixture
 def wb_url():
     return df["internet_archive_url"]
+@pytest.fixture
 def wb_time():
     return df["internet_archive_timestamp"]
     
