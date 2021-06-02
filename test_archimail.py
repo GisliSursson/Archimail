@@ -197,20 +197,31 @@ generation_csv(source_test, output_test)
 
 # Transformation du CSV en dataframe
 
-@pytest.fixture
-def example_data():
-    df = pd.read_csv(output_test, sep=";", error_bad_lines=True)
-    regex_url = """(https?:\/\/(?:www\.|(?!www))[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s<>"']{2,}|www\.[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s<>"']{2,}|https?:\/\/(?:www\.|(?!www))[a-zA-Z0-9]+\.[^\s<>"']{2,}|www\.[a-zA-Z0-9]+\.[^\s<>"']{2,})"""
-    noms = df["nom_fichier"]
-    top = df["top_trois_mots"]
-    http = df["resultat_test_URL"]
-    date = df["date_test_URL"]
-    wb = df["internet_archive_status"]
-    wb_dispo = df["internet_archive_dispo"]
-    wb_url = df["internet_archive_url"]
-    wb_time = df["internet_archive_timestamp"]
-    return regex_url, noms, top, http, date, wb, wb_dispo, wb_url, wb_time
+df = pd.read_csv(output_test, sep=";", error_bad_lines=True)
 
+
+# Paramétrage des tests
+
+@pytest.fixture
+def regex_url():
+    return """(https?:\/\/(?:www\.|(?!www))[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s<>"']{2,}|www\.[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s<>"']{2,}|https?:\/\/(?:www\.|(?!www))[a-zA-Z0-9]+\.[^\s<>"']{2,}|www\.[a-zA-Z0-9]+\.[^\s<>"']{2,})"""
+def noms(): 
+    return df["nom_fichier"]
+def top():
+    return df["top_trois_mots"]
+def http():
+    return df["resultat_test_URL"]
+def date():
+    return df["date_test_URL"]
+def wb():
+    return df["internet_archive_status"]
+def wb_dispo():
+    return df["internet_archive_dispo"]
+def wb_url():
+    return df["internet_archive_url"]
+def wb_time():
+    return df["internet_archive_timestamp"]
+    
 # Lancement des tests
 def test_noms(noms):
     """ Test de la bonne syntaxe des noms de fichier """
