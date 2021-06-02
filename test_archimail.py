@@ -241,7 +241,7 @@ def test_top(top):
     """ Test de la bonne syntaxe des 3 mots-clefs """
     rand = random.randint(1, len(top)-1)
     cible = str(top[rand])
-    assert re.search('\W,\W,\W', cible) is not None
+    assert re.search('[a-zA-ZÀ-ÿ]+,[a-zA-ZÀ-ÿ]+,[a-zA-ZÀ-ÿ]+', cible) is not None
 
 def test_htttp(http):
     """ Test de la validité des codes HTTP renvoyés """
