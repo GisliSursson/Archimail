@@ -4,7 +4,7 @@ from os.path import dirname, abspath
 import subprocess
 from odf.opendocument import OpenDocumentText
 from odf.text import P
-from stat_eml import traiter_mails
+from main import traiter_mails
 
 chemin_actuel = dirname(abspath(__file__))
 rand = random.randint(1, 10)
@@ -25,7 +25,8 @@ adress = ["timlinux@hotmail.com",
 "dieman@aol.com",
 "gator@me.com"]
 
-lorem = """Les érudits ont amèrement reproché à Guillaume, moine de l’abbaye
+# Textes d'auteurs français du XIXe siècle issus du projet Gutenberg
+lorem = {1:"""Les érudits ont amèrement reproché à Guillaume, moine de l’abbaye
 de Jumiège, d’avoir reproduit dans les premiers livres de son
 Histoire des Normands, la plupart des fables dont son prédécesseur
 Dudon, doyen de Saint-Quentin, avait déjà rempli la sienne. Si
@@ -34,24 +35,42 @@ n’existerait pas, car il n’aurait rien eu à y mettre; il a
 recueilli les traditions de son temps sur l’origine, les exploits,
 les aventures des anciens Normands et de leurs chefs; aucun peuple
 n’en sait davantage, et n’a des historiens plus exacts sur le
-premier âge de sa vie. A voir la colère de dom Rivet et de ses
-doctes confrères, il semblerait que Dudon et Guillaume aient eu le
-choix de nous raconter des miracles ou des faits, une série de
-victoires romanesques ou une suite d’événemens réguliers, et que
-leur préférence pour la fable soit une insulte à notre raison,
-comme si elle était obligée d’y [p. vj] croire. Il y a à quereller
-de la sorte les vieux chroniqueurs une ridicule pédanterie; ils
-ont fait ce qu’ils pouvaient faire; ils nous ont transmis ce qu’on
-disait, ce qu’on croyait autour d’eux: vaudrait-il mieux qu’ils
-n’eussent point écrit, qu’aucun souvenir des temps fabuleux ou
-héroïques de la vie des nations ne fût parvenu jusqu’à nous, et
-que l’histoire n’eût commencé qu’au moment où la société aurait
-possédé des érudits capables de la soumettre à leur critique pour
-en assurer l’exactitude? A mon avis, il y a souvent plus de
-vérités historiques à recueillir dans ces récits où se déploie
-l’imagination populaire que dans beaucoup de savantes
-dissertations.
-"""
+premier âge de sa vie. 
+""",
+2:"""Il y a aujourd'hui trois cent quarante-huit ans six mois et dix-neuf
+jours que les Parisiens s'éveillèrent au bruit de toutes les cloches
+sonnant à grande volée dans la triple enceinte de la Cité, de
+l'Université et de la Ville.""",
+3:"""D'un saut formidable, la bête atteignit la gorge du mannequin,
+et, les pattes sur les épaules, se mit à la déchirer.
+Elle retombait, un morceau de sa proie à la gueule, puis
+s'élançait de nouveau, enfonçait ses crocs dans les cordes,
+arrachait quelques parcelles de nourriture, retombait encore,
+et rebondissait, acharnée. Elle enlevait le visage
+par grands coups de dents, mettait en lambeaux le col
+entier.""",
+4:"""A son tour, de son bras tendu, il désignait dans la nuit le village
+dont le jeune homme avait deviné les toitures.  Mais les six berlines
+étaient vides, il les suivit sans un claquement de fouet, les jambes
+raidies par des rhumatismes; tandis que le gros cheval jaune repartait
+tout seul, tirait pesamment entre les rails, sous une nouvelle
+bourrasque, qui lui hérissait le poil.""",
+5:"""C'est une loi de l'histoire: un monde qui finit, se ferme et s'expie
+par un saint. Le plus pur de la race en porte les fautes, l'innocent
+est puni. Son crime, à l'innocent, c'est de continuer un ordre
+condamné à périr, c'est de couvrir de sa vertu une vieille injustice
+qui pèse au monde. À travers la vertu d'un homme, l'injustice sociale
+est frappée. Les moyens sont odieux; contre Louis le Débonnaire, ce
+fut le parricide. Ses enfants couvrirent de leurs noms les nations
+diverses qui voulaient s'arracher de l'Empire.""",
+6:"""
+Tout enfant, j'allais rêvant Ko-Hinnor,
+Somptuosité persane et papale,
+Héliogabale et Sardanapale!
+Mon désir créait sous des toits en or,
+Parmi les parfums, au son des musiques,
+Des harems sans fin, paradis physiques!"""
+}
 
 
 
@@ -85,7 +104,7 @@ def folder():
     else:
         os.mkdir(path_2)
         os.makedirs(path_3)
-    print("Fait dossiers")
+    print("Faits dossiers")
 
 folder()
 
@@ -97,9 +116,11 @@ def create_dummy_pdf(nombre):
     print("Fait PDF")
     
 def create_dummy_odt(lorem, iter, rand):
+    lorem_rand = random.randint(1, 6)
+    lorem_rand_2 = random.randint(1, 6)
     for x in range(1, iter):
         textdoc = OpenDocumentText()
-        texte = lorem * rand
+        texte = lorem[lorem_rand] + lorem[lorem_rand_2]
         p = P(text=texte)
         textdoc.text.addElement(p)
         textdoc.save("./dummy/test_{a}".format(a=str(x)), True)
@@ -119,7 +140,8 @@ def create_dummy_mails(lorem, iter, rand):
             else:
                 pass
     for x in range(1, iter):
-        lorem = orig
+        lorem_rand = random.randint(1, 6)
+        lorem = orig[lorem_rand]
         lorem_inser = list(filter(None, re.split("\s", lorem)))
         nb = random.randint(0, 1)
         nb_lien = random.randint(0, 1)
@@ -159,13 +181,13 @@ def create_dummy_mails(lorem, iter, rand):
         s = message.as_string()
         with open("./dummy/dummy_mails/test_{a}.eml".format(a=str(x)), "w") as mail:
             mail.write(s)
-    print("Fait mails")
+    print("Faits dummy mails")
 
 create_dummy_pdf(rand)
 create_dummy_odt(lorem, rand, rand_2)
 create_dummy_mails(lorem, nb_mails, rand_2)
     
-output = os.path.join(chemin_actuel,"resultat","resultat_test.csv")
-source = os.path.join(chemin_actuel,"dummy","dummy_mails")
+output_test = os.path.join(chemin_actuel,"resultat","resultat_test.csv")
+source_test = os.path.join(chemin_actuel,"dummy","dummy_mails")
 
-traiter_mails(source, output)
+traiter_mails(source_test, output_test)
