@@ -6,7 +6,7 @@ python:
 # on lance le script de test
 script:
   - python3 -m spacy download fr_core_news_md
-  - python3 test.py
+  - pytest --count=500 -v -s test.py
 # notifications par email
 notifications:
   email:

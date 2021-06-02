@@ -7,3 +7,5 @@ odfpy
 dummypdf
 spacy
 lxml
+pytest
+pytest-repeat
