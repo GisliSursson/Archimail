@@ -88,8 +88,6 @@ noms = ["Pierre de Ronsard",
 "Paul Eluard",
 "Georges Sand"]
 
-@pytest.fixture
-# Configuration des tests
 def folder():
     directory = "resultat"
     dir_par_dummy = "dummy"
@@ -278,7 +276,7 @@ def test_wb_url(wb_url):
     rand = random.randint(1, len(wb_url-1))
     cible = str(wb_url[rand])
     try :
-        assert re.match(regex, cible)
+        assert re.match(regex_url, cible)
     except AttributeError: # Si il n'y a eu aucune URL repérée dans le mail
         pass
 
