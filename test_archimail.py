@@ -291,7 +291,7 @@ def test_wb_url(wb_url):
     """ Test de la validité des URL renvoyées par la Wayback Machine"""
     rand = random.randint(1, len(wb_url)-1)
     cible = str(wb_url[rand])
-    regex = regex_url
+    regex = """(https?:\/\/(?:www\.|(?!www))[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s<>"']{2,}|www\.[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s<>"']{2,}|https?:\/\/(?:www\.|(?!www))[a-zA-Z0-9]+\.[^\s<>"']{2,}|www\.[a-zA-Z0-9]+\.[^\s<>"']{2,})"""
     try :
         assert re.search(regex, cible) is not None
     except AttributeError: # Si il n'y a eu aucune URL repérée dans le mail
