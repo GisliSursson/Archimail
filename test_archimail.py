@@ -196,16 +196,20 @@ source_test = os.path.join(chemin_actuel,"dummy","dummy_mails")
 generation_csv(source_test, output_test)
 
 # Transformation du CSV en dataframe
-df = pd.read_csv(output_test, sep=";", error_bad_lines=True)
-regex_url = """(https?:\/\/(?:www\.|(?!www))[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s<>"']{2,}|www\.[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s<>"']{2,}|https?:\/\/(?:www\.|(?!www))[a-zA-Z0-9]+\.[^\s<>"']{2,}|www\.[a-zA-Z0-9]+\.[^\s<>"']{2,})"""
-noms = df["nom_fichier"]
-top = df["top_trois_mots"]
-http = df["resultat_test_URL"]
-date = df["date_test_URL"]
-wb = df["internet_archive_status"]
-wb_dispo = df["internet_archive_dispo"]
-wb_url = df["internet_archive_url"]
-wb_time = df["internet_archive_timestamp"]
+
+@pytest.fixture
+def example_data():
+    df = pd.read_csv(output_test, sep=";", error_bad_lines=True)
+    regex_url = """(https?:\/\/(?:www\.|(?!www))[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s<>"']{2,}|www\.[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s<>"']{2,}|https?:\/\/(?:www\.|(?!www))[a-zA-Z0-9]+\.[^\s<>"']{2,}|www\.[a-zA-Z0-9]+\.[^\s<>"']{2,})"""
+    noms = df["nom_fichier"]
+    top = df["top_trois_mots"]
+    http = df["resultat_test_URL"]
+    date = df["date_test_URL"]
+    wb = df["internet_archive_status"]
+    wb_dispo = df["internet_archive_dispo"]
+    wb_url = df["internet_archive_url"]
+    wb_time = df["internet_archive_timestamp"]
+    return regex_url, noms, top, http, date, wb, wb_dispo, wb_url, wb_time
 
 # Lancement des tests
 def test_noms(noms):
