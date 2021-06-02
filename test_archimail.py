@@ -208,21 +208,18 @@ wb_url = df["internet_archive_url"]
 wb_time = df["internet_archive_timestamp"]
 
 # Lancement des tests
-@pytest.mark.repeat(10)
 def test_noms(noms):
     """ Test de la bonne syntaxe des noms de fichier """
     rand = random.randint(1, len(noms-1))
     cible = str(noms[rand])
     assert re.match('ID[0-9]+\.eml', cible)
     
-@pytest.mark.repeat(10)
 def test_top(top):
     """ Test de la bonne syntaxe des 3 mots-clefs """
     rand = random.randint(1, len(top-1))
     cible = str(top[rand])
     assert re.match('\W,\W,\W', cible)
 
-@pytest.mark.repeat(10)
 def test_htttp(http):
     """ Test de la validité des codes HTTP renvoyés """
     rand = random.randint(1, len(http-1))
@@ -234,7 +231,6 @@ def test_htttp(http):
     except AttributeError: # Si il n'y a eu aucune URL repérée dans le mail
         pass
     
-@pytest.mark.repeat(10)
 def test_date(date):
     """ Test de la validité des dates des tests des URL """
     rand = random.randint(1, len(date-1))
@@ -246,7 +242,6 @@ def test_date(date):
     except AttributeError: # Si il n'y a eu aucune URL repérée dans le mail
         pass 
     
-@pytest.mark.repeat(10)
 def test_wb(wb):
     """ Test de la validité des codes renvoyés par la Wayback Machine"""
     rand = random.randint(1, len(wb-1))
@@ -258,7 +253,6 @@ def test_wb(wb):
     except AttributeError: # Si il n'y a eu aucune URL repérée dans le mail
         pass
 
-@pytest.mark.repeat(10)
 def test_wb_dispo(wb_dispo):
     """ Test de la validité des codes renvoyés par la Wayback Machine"""
     rand = random.randint(1, len(wb_dispo-1))
@@ -270,7 +264,6 @@ def test_wb_dispo(wb_dispo):
     except AttributeError: # Si il n'y a eu aucune URL repérée dans le mail
         pass
 
-@pytest.mark.repeat(10)
 def test_wb_url(wb_url):
     """ Test de la validité des URL renvoyées par la Wayback Machine"""
     rand = random.randint(1, len(wb_url-1))
@@ -280,7 +273,6 @@ def test_wb_url(wb_url):
     except AttributeError: # Si il n'y a eu aucune URL repérée dans le mail
         pass
 
-@pytest.mark.repeat(10)
 def test_wb_time(wb_time):
     """ Test de la validité des dates des tests des URL """
     rand = random.randint(1, len(wb_time-1))
