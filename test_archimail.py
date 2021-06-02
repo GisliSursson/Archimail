@@ -290,10 +290,12 @@ def test_wb_dispo(wb_dispo):
 def test_wb_url(wb_url):
     """ Test de la validité des URL renvoyées par la Wayback Machine"""
     rand = random.randint(1, len(wb_url)-1)
-    cible = str(wb_url[rand])
+    cible = wb_url[rand]
     regex = """(https?:\/\/(?:www\.|(?!www))[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s<>"']{2,}|www\.[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s<>"']{2,}|https?:\/\/(?:www\.|(?!www))[a-zA-Z0-9]+\.[^\s<>"']{2,}|www\.[a-zA-Z0-9]+\.[^\s<>"']{2,})"""
     try :
-        assert re.search(regex, cible) is not None
+        liste = cible.split(",")
+        for element in liste:
+            assert re.search(regex, str(element)) is not None or element is None
     except AttributeError: # Si il n'y a eu aucune URL repérée dans le mail
         pass
 
@@ -304,6 +306,6 @@ def test_wb_time(wb_time):
     try :
         liste_dates = cible.split(",")
         for date in liste_dates:
-            assert date.isinstance(datetime)
+            assert date.isinstance(datetime) or date is None
     except AttributeError: # Si il n'y a eu aucune URL repérée dans le mail
         pass 
