@@ -274,7 +274,7 @@ def test_wb(wb):
     try :
         liste_codes = cible.split(",")
         for code in liste_codes:
-            if code is not None:
+            if code != "None":
                 assert code.isinstance(int) 
     except AttributeError: # Si il n'y a eu aucune URL repérée dans le mail
         pass
@@ -286,7 +286,7 @@ def test_wb_dispo(wb_dispo):
     try :
         liste_codes = cible.split(",")
         for code in liste_codes:
-            if code is not None:
+            if code != "None":
                 assert code.isinstance(bool)
     except AttributeError: # Si il n'y a eu aucune URL repérée dans le mail
         pass
@@ -299,7 +299,7 @@ def test_wb_url(wb_url):
     try :
         liste = cible.split(",")
         for element in liste:
-            if element is not None:
+            if str(element) != "None":
                 assert re.search(regex, str(element)) is not None
     except AttributeError: # Si il n'y a eu aucune URL repérée dans le mail
         pass
@@ -311,7 +311,7 @@ def test_wb_time(wb_time):
     try :
         liste_dates = cible.split(",")
         for date in liste_dates:
-            if date is not None:
+            if date != "None":
                 assert date.isinstance(datetime) 
     except AttributeError: # Si il n'y a eu aucune URL repérée dans le mail
         pass 
