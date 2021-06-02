@@ -235,13 +235,13 @@ def test_noms(noms):
     """ Test de la bonne syntaxe des noms de fichier """
     rand = random.randint(1, len(noms)-1)
     cible = str(noms[rand])
-    assert re.match('ID[0-9]+\.eml', cible)
+    assert re.search('ID[0-9]+\.eml', cible) is not None
     
 def test_top(top):
     """ Test de la bonne syntaxe des 3 mots-clefs """
     rand = random.randint(1, len(top)-1)
     cible = str(top[rand])
-    assert re.match('\W,\W,\W', cible)
+    assert re.search('\W,\W,\W', cible) is not None
 
 def test_htttp(http):
     """ Test de la validité des codes HTTP renvoyés """
@@ -292,7 +292,7 @@ def test_wb_url(wb_url):
     rand = random.randint(1, len(wb_url)-1)
     cible = str(wb_url[rand])
     try :
-        assert re.match(regex_url, cible)
+        assert re.search(regex_url, cible) is not None
     except AttributeError: # Si il n'y a eu aucune URL repérée dans le mail
         pass
 
