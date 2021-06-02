@@ -4,7 +4,7 @@ from os.path import dirname, abspath
 import subprocess
 from odf.opendocument import OpenDocumentText
 from odf.text import P
-from main import traiter_mails
+from main import traiter_mails as generation_csv
 
 chemin_actuel = dirname(abspath(__file__))
 rand = random.randint(1, 10)
@@ -44,7 +44,7 @@ l'Université et de la Ville.""",
 3:"""D'un saut formidable, la bête atteignit la gorge du mannequin,
 et, les pattes sur les épaules, se mit à la déchirer.
 Elle retombait, un morceau de sa proie à la gueule, puis
-s'élançait de nouveau, enfonçait ses crocs dans les cordes,
+s'élançait de nouveauif __name__ == "__main__":, enfonçait ses crocs dans les cordes,
 arrachait quelques parcelles de nourriture, retombait encore,
 et rebondissait, acharnée. Elle enlevait le visage
 par grands coups de dents, mettait en lambeaux le col
@@ -190,4 +190,4 @@ create_dummy_mails(lorem, nb_mails, rand_2)
 output_test = os.path.join(chemin_actuel,"resultat","resultat_test.csv")
 source_test = os.path.join(chemin_actuel,"dummy","dummy_mails")
 
-traiter_mails(source_test, output_test)
+generation_csv(source_test, output_test)

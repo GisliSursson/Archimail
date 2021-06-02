@@ -557,7 +557,7 @@ def traiter_mails(source, output):
         nb_noms = 0 
         nb_wb = 0 
         nb_zip = 0
-        print("Début de l'analyse des fichiers dans le dossier 'content'...")
+        print("Début de l'analyse des fichiers des courriels...")
         # On parse les noms de tous les fichiers du SIP
         for root, dirs, files in os.walk(source, topdown=True):
             for index, name in enumerate(files):
@@ -657,16 +657,17 @@ def traiter_mails(source, output):
 
 source = os.path.join(chemin_actuel,"perso","sip")
 output = os.path.join(chemin_actuel, "perso", "sip", "content", "urls.csv")
-traiter_mails(source, output)
-manifest = os.path.join(source, "manifest.xml")
-nouv_man = enrichir_manifeste(output, manifest)
-doc_url(nouv_man)
-# test_seda(nouv_man)
-cible_content = os.path.join(chemin_actuel,"perso","sip", "content")
-cible_xml = os.path.join(chemin_actuel,"perso","sip", "manifest_new.xml")
-liste_zip = [cible_content, cible_xml]
-sip = os.path.join(chemin_actuel,"perso","sip")
-strip_xml(cible_xml)
-test_profil_minimum(nouv_man)
-remplacer_man(manifest)
-zipDir(sip, "SIP_OK_2.zip")
+if __name__ == '__main__':
+    traiter_mails(source, output)
+    manifest = os.path.join(source, "manifest.xml")
+    nouv_man = enrichir_manifeste(output, manifest)
+    doc_url(nouv_man)
+    # test_seda(nouv_man)
+    cible_content = os.path.join(chemin_actuel,"perso","sip", "content")
+    cible_xml = os.path.join(chemin_actuel,"perso","sip", "manifest_new.xml")
+    liste_zip = [cible_content, cible_xml]
+    sip = os.path.join(chemin_actuel,"perso","sip")
+    strip_xml(cible_xml)
+    test_profil_minimum(nouv_man)
+    remplacer_man(manifest)
+    zipDir(sip, "SIP_OK_2.zip")
