@@ -88,6 +88,8 @@ noms = ["Pierre de Ronsard",
 "Paul Eluard",
 "Georges Sand"]
 
+@pytest.fixture
+# Configuration des tests
 def folder():
     directory = "resultat"
     dir_par_dummy = "dummy"
@@ -207,6 +209,7 @@ wb_dispo = df["internet_archive_dispo"]
 wb_url = df["internet_archive_url"]
 wb_time = df["internet_archive_timestamp"]
 
+# Lancement des tests
 @pytest.mark.repeat(10)
 def test_noms(noms):
     """ Test de la bonne syntaxe des noms de fichier """
