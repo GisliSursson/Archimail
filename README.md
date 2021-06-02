@@ -10,6 +10,8 @@ L'objectif est de fournir un script complémentaire aux outils développés dans
 
 Le script prend en entrée un SIP généré via [RESIP](https://www.programmevitam.fr/pages/ressources/resip/) conforme au SEDA et décompressé. Il retourne ce même SIP avec un manifeste enrichi de nouvelles métadonnées et un nouveau fichier CSV de pérennisation des URL documenté dans le manifeste. Ce nouveau SIP, retourné zippé, est toujours conforme au profil minimum ADAMANT et peut être joué dans l'outil RESIP. 
 
+Le développement a été réalisé avec RESIP 2.5 Snapshot.
+
 Il repose sur 3 grands principes:
 
 - Enrichir le manifeste [SEDA](https://www.francearchives.fr/seda/index.html) avec des métadonnées type "mots-clefs" au niveau de chaque mail. Ces métadonnées complètent les métadonnées ajoutées habituellement aux plus hauts niveaux de description uniquement. 
@@ -232,14 +234,12 @@ Compression du SIP terminée
 
 ### Tests
 
-Le script est testé via le service d'intégration continue [Travis CI](https://travis-ci.com/). Les tests sont lancés à chaque modification du dépôt principal. Il est possible de visualiser l'exécution de ces tests ici : [lien](https://travis-ci.com/github/GisliSursson/Archimail).
+Le script est testé via le service d'intégration continue [Travis CI](https://travis-ci.com/). Les tests sont lancés à chaque modification du dépôt principal afin de vérifier que le script retourne toujours des données cohérentes. Il est possible de visualiser l'exécution de ces tests ici : [lien](https://travis-ci.com/github/GisliSursson/Archimail).
 
-Le développement a été réalisé avec RESIP 2.5 Snapshot.
-
-Les tests reposent sur le principe de génération de données *dummy* aléatoires (au format EML pour les mails et aux formats PDF et ODT pour les pièces jointes). 
+Les tests reposent sur le principe de génération de données *dummy* aléatoires (au format EML pour les mails et aux formats PDF et ODT pour les pièces jointes). Le script est lancé sur ces données *dummy* et génère le CSV des métadonnées (mots-clefs, URL...). Les tests vérifient ensuite la cohérence des métadonnées du CSV. 
 
 Pour lancer manuellement les tests en local, on utilisera la commande suivante (en étant dans l'environnement virtuel du projet):
 
 ```bash
-python3 test.py 
+pytest test_archimail.py 
 ```

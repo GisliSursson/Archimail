@@ -167,7 +167,7 @@ def create_dummy_mails(lorem, iter, rand):
             lorem = string
         except TypeError: #Si ni nom, ni lien
             pass
-        if type(x//2) is not float:
+        if type(x//2) is not float: # Moyen de sélectionner un mail sur 2
             message = emails.html(html="<p>{a}</p>".format(a=(lorem*rand)),
                                 subject=lorem[:20] + "_" + str(iter),
                                 mail_from=('Some Name', adress[random.randint(0, len(adress)-1)]))
