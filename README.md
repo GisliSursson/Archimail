@@ -145,6 +145,10 @@ S'il y a plusieurs éléments à afficher dans une cellule, ils sont séparés p
 
 A l'heure de la rédaction de ces lignes (mai 2021), les manifestes produits par l'outil RESIP dans le cadre du traitement des courriels **ne sont pas conformes au SEDA 2.1** (ils incorporent des balises qui ne seront canonisées que dans le SEDA 2.2). Après enrichissement du manifeste, le script vérifie donc la conformité du nouveau manifeste uniquement avec le **profil minimum ADAMANT**.
 
+### Nota
+
+Le présent travail a été réalisé par rapport au SEDA 2.1. Toutes les institutions recevant des archives définitives n'utilisent pas le SEDA dans son entièreté.  
+
 ## Installation
 
 ### Prérequis
