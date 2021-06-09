@@ -10,7 +10,7 @@ L'objectif est de fournir un script complémentaire aux outils développés dans
 
 Le script prend en entrée un SIP généré via [RESIP](https://www.programmevitam.fr/pages/ressources/resip/) conforme au SEDA et décompressé. Il retourne ce même SIP avec un manifeste enrichi de nouvelles métadonnées et un nouveau fichier CSV de pérennisation des URL documenté dans le manifeste. Ce nouveau SIP, retourné zippé, est toujours conforme au profil minimum ADAMANT et peut être joué dans l'outil RESIP. 
 
-Le développement a été réalisé avec RESIP 2.5 Snapshot.
+Le développement a été réalisé avec RESIP 2.5 Snapshot. La version en production au Conseil d'Etat est la 2.3.0.
 
 Il repose sur 3 grands principes:
 
