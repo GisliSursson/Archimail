@@ -9,12 +9,18 @@ from main import traiter_mails as generation_csv
 import pandas as pd
 import pytest
 
+# Script servant à tester Archimail à partir de données factices. Le script de test lance le script principal qui génère le CSV 
+# rassemblant les métadonnées générées. Le script de test vérifie ensuite la validité de ces métadonnées dans le CSV.
+
 chemin_actuel = dirname(abspath(__file__))
 rand = random.randint(1, 10)
 nb_mails = random.randint(100, 200)
 rand_2 = random.randint(1, 10)
+# URL valide qui sera insérée dans les mails dummy
 url_OK = "https://guthib.com/"
+# URL invalide qui sera insérée dans les mails dummy
 url_NOK = "https://guthib.com/nok"
+# Adresses dummy pour populate les mails
 adress = ["timlinux@hotmail.com",
 "timtroyr@me.com",
 "smcnabb@live.com",
@@ -28,7 +34,7 @@ adress = ["timlinux@hotmail.com",
 "dieman@aol.com",
 "gator@me.com"]
 
-# Textes d'auteurs français du XIXe siècle issus du projet Gutenberg
+# Textes d'auteurs français du XIXe siècle issus du projet Gutenberg. Ils servent à populate les dummy mails.
 lorem = {1:"""Les érudits ont amèrement reproché à Guillaume, moine de l’abbaye
 de Jumiège, d’avoir reproduit dans les premiers livres de son
 Histoire des Normands, la plupart des fables dont son prédécesseur
@@ -76,7 +82,7 @@ Des harems sans fin, paradis physiques!"""
 }
 
 
-
+# Noms propres dummy
 noms = ["Pierre de Ronsard",
 "Joachim Du Bellay",
 "Victor Hugo",
@@ -89,6 +95,7 @@ noms = ["Pierre de Ronsard",
 "Georges Sand"]
 
 def folder():
+    """ Création de dossiers qui contiendront les données de test """
     directory = "resultat"
     dir_par_dummy = "dummy"
     dir_dummy_mails = "dummy_mails"
@@ -112,6 +119,7 @@ def folder():
 folder()
 
 def create_dummy_pdf(nombre):
+    """ Création de pièces jointes dummy PDF """
     for x in range(1,nombre):
         bashCommand = "dummypdf -f ./dummy/test_{a}.pdf -n {b}".format(a=str(x), b=str(random.randint(1, 20)))
         process = subprocess.Popen(bashCommand.split(), stdout=subprocess.PIPE)
@@ -119,6 +127,7 @@ def create_dummy_pdf(nombre):
     print("Fait PDF")
     
 def create_dummy_odt(lorem, iter, rand):
+    """ Création de pièces jointes ODT dummy """
     lorem_rand = random.randint(1, 6)
     lorem_rand_2 = random.randint(1, 6)
     for x in range(1, iter):
@@ -130,6 +139,7 @@ def create_dummy_odt(lorem, iter, rand):
     print("Fait ODT")
 
 def create_dummy_mails(lorem, iter, rand):
+    """ Création des mails dummy """
     orig = lorem
     liste_odt = []
     liste_pdf = []
@@ -232,7 +242,8 @@ def wb_url():
 def wb_time():
     return df["internet_archive_timestamp"]
     
-# Lancement des tests
+# Lancement des tests. Chaque fonction teste une cellule prise au hasard dans une colonne du CSV. Chaque test est répété plusieurs
+# fois.
 def test_noms(noms):
     """ Test de la bonne syntaxe des noms de fichier """
     rand = random.randint(1, len(noms)-1)
