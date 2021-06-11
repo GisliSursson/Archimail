@@ -172,11 +172,13 @@ def create_dummy_mails(lorem, iter, rand):
                                 subject=lorem[:20] + "_" + str(iter),
                                 mail_from=('Some Name', adress[random.randint(0, len(adress)-1)]))
             if nb == 0:
-                random_odt = random.choice(liste_odt)
-                message.attach(data=open(random_odt, 'rb'), filename=random_odt)
+                if len(liste_odt) != 0:
+                    random_odt = random.choice(liste_odt)
+                    message.attach(data=open(random_odt, 'rb'), filename=random_odt)
             else:
-                random_pdf = random.choice(liste_pdf)
-                message.attach(data=open(random_pdf, 'rb'), filename=random_pdf)
+                if len(liste_pdf) != 0:
+                    random_pdf = random.choice(liste_pdf)
+                    message.attach(data=open(random_pdf, 'rb'), filename=random_pdf)
         else:
             message = emails.html(html="<p>{a}</p>".format(a=(lorem*rand)),
                                 subject=lorem[:20] + "_" + str(iter),
