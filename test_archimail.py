@@ -7,7 +7,7 @@ from odf.opendocument import OpenDocumentText
 from odf.text import P
 from main import traiter_mails as generation_csv
 import pandas as pd
-# import pytest
+import pytest
 
 # Script servant à tester Archimail à partir de données factices. Le script de test lance le script principal qui génère le CSV 
 # rassemblant les métadonnées générées. Le script de test vérifie ensuite la validité de ces métadonnées dans le CSV.
