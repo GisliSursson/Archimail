@@ -568,13 +568,10 @@ def traiter_mails(source, output):
         for root, dirs, files in os.walk(source, topdown=True):
             for index, name in enumerate(files):
                 filename = os.path.join(root, name)
-                if filename.endswith(".zip"):
-                    # On part du principe qu'il n'y a pas d'eml dans les zip
-                    count = unzip(filename)
-                    nb_zip += count
                 # Si le fichier est un mail    
                 if filename.endswith(".eml"):
                     mail += 1
+                    print("Mails traités : " + str(mail))
                     liste_val = []
                     # On transforme le mail en données structurées
                     data = extraire_contenu_mail(filename)

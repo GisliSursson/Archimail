@@ -156,7 +156,7 @@ def create_dummy_mails(lorem, iter, rand):
         nb = random.randint(0, 1)
         nb_lien = random.randint(0, 1)
         nb_noms = random.randint(0, 1)
-        id_wikidata = random.randint(1, 100000000)
+        id_wikidata = random.randint(1, 999)
         url_OK = wikidata + str(id_wikidata)
         url_NOK = wikidata + "nok" + str(id_wikidata)
             # Permet de splitter sur les mots en évitants les éventuels problèmes d'encodage de la str
