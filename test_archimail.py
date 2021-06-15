@@ -7,7 +7,7 @@ from odf.opendocument import OpenDocumentText
 from odf.text import P
 from main import traiter_mails as generation_csv
 import pandas as pd
-import pytest
+# import pytest
 
 # Script servant à tester Archimail à partir de données factices. Le script de test lance le script principal qui génère le CSV 
 # rassemblant les métadonnées générées. Le script de test vérifie ensuite la validité de ces métadonnées dans le CSV.
@@ -15,6 +15,7 @@ import pytest
 chemin_actuel = dirname(abspath(__file__))
 rand = random.randint(1, 10)
 nb_mails = random.randint(100, 200)
+print("Nombre de mails factices à générer : " + str(nb_mails))
 rand_2 = random.randint(1, 10)
 # URL qui sert de base à ce qui sera inséré dans les mails (ID généré aléatoirement) qui pourra être valide ou invalide
 wikidata = "https://www.wikidata.org/wiki/Q"
