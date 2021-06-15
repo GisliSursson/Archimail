@@ -82,8 +82,9 @@ Ces enrichissements sont documentés à haut niveau dans le manifeste de la faç
           <CustodialHistory>
             <CustodialHistoryItem>Vivamus ac hendrerit dolor, quis porttitor augue. In sed ex hendrerit odio tempus aliquam.</CustodialHistoryItem>
           </CustodialHistory>
-          <Tag>Lorem</Tag>
+          <Tag>lorem</Tag>
           <Tag>ipsum</Tag>
+          <Tag>dolor</Tag>
           <StartDate>2019-09-26T12:51:00</StartDate>
           <EndDate>2019-10-11T08:51:00</EndDate>
           <Event>
@@ -247,3 +248,5 @@ Pour lancer manuellement les tests en local, on utilisera la commande suivante (
 ```bash
 pytest test_archimail.py 
 ```
+
+Le script a également été testé manuellement avec des données e-mail réalistes anonymisées et rendues publiques par la justice américaine après le scandale [Enron](https://fr.wikipedia.org/wiki/Enron) et hébergées par la [Faculté d'informatique de l'Université Carnegie Mellon](https://www.cs.cmu.edu/~enron/). L'utilisateur pourra également réaliser ces tests lui-même via un échantillon de ces données mis à disposition dans le dossier **`enron/`**. Ces tests manuels visent à tester l'insertion des métadonnées nouvelles dans le manifeste, les aspects linguistiques du script n'étant pertinents que pour la langue française. 

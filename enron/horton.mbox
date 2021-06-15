@@ -1,0 +1,3209 @@
+From MAILER-DAEMON Tue Jun 15 13:19:04 2021
+Message-ID: <23074447.1075862332106.JavaMail.evans@thyme>
+Date: Mon, 26 Nov 2001 22:43:51 -0800 (PST)
+From: enerfaxdaily@enerfax.com
+To: stanley.horton@enron.com
+Subject: [enerfaxdaily] Employees File Suit Against Enron
+Mime-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+X-From: <enerfaxdaily@enerfax.com>@ENRON
+X-To: Horton, Stanley </O=ENRON/OU=NA/CN=RECIPIENTS/CN=SHORTON>
+X-cc: 
+X-bcc: 
+X-Folder: \SHORTON (Non-Privileged)\Horton, Stanley\Inbox
+X-Origin: Horton-S
+X-FileName: SHORTON (Non-Privileged).pst
+
+Slow browser may need to wait 15 seconds for your email to appear, then scroll to view. mailto:leave-enerfaxdaily-801048M@relay.netatlantic.com to unsubscribe enerfaxdaily as: stanley.horton@enron.com forward to web@enerfax.com 
+If your email does not support this web version, please subscribe to the free text version by writing subscribe@enerfax.com Please visit our website to view today's gas and power prices and news by clicking http://www.enerfax.com
+ 
+
+From MAILER-DAEMON Tue Jun 15 13:19:04 2021
+Message-ID: <14217292.1075844986248.JavaMail.evans@thyme>
+Date: Mon, 4 Jun 2001 06:51:08 -0700 (PDT)
+From: forney@enron.com
+To: sheila.jarnot@enron.com
+Subject: 
+Mime-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+X-From: Forney, Judy
+X-To: Jarnot, Sheila </o=ENRON/ou=NA/cn=Recipients/cn=Sjarnot>
+X-cc: 
+X-bcc: 
+X-Folder: \Stanley_Horton_June2001\Inbox
+X-Origin: HORTON-S
+X-FileName: shorton.pst
+
+This is a TEST.
+
+
+Judy Forney
+ENRON - Safety
+e-mail: judy.forney@enron.com
+(713) 646-7397
+
+From MAILER-DAEMON Tue Jun 15 13:19:04 2021
+Message-ID: <6975140.1075844987106.JavaMail.evans@thyme>
+Date: Fri, 8 Jun 2001 14:57:25 -0700 (PDT)
+From: no.address@enron.com
+Subject: SUPPLEMENTAL Weekend Outage Report for 6-8-01 through 6-11-01
+Mime-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+X-From: Enron Change Management Announcement@ENRON
+X-To: ouston Outage Report@ENRON <H>
+X-cc: 
+X-bcc: 
+X-Folder: \Stanley_Horton_June2001\Inbox
+X-Origin: HORTON-S
+X-FileName: shorton.pst
+
+------------------------------------------------------------------------------------------------------
+W E E K E N D   S Y S T E M S   A V A I L A B I L I T Y
+
+F O R
+
+June 8, 2001 5:00pm through June 11, 2001 12:00am
+------------------------------------------------------------------------------------------------------
+
+
+ECS to ECN Network Interconnection, June 9th 2001         POSTPONED
+This is a notification that the Enron Corp. I/T Networks team will be connecting the new building network infrastructure located in Enron Center South (ECS) to the existing Enron Center North (ECN) backbone network.  While this activity is not expected to produce a disruption to network services, this notice is designed to alert the organization to our activities.  No network hardware or systems are anticipated to be shutdown.  The actual physical interconnection of the networks will be performed in the EB 34th floor Data Center.
+
+Interconnection activities are scheduled to occur the evening of June 9th 2001 starting from 7:00 p.m.(CT) and completing around 11:00 p.m. (CT). Application testing activities will begin at 11:00 p.m. (CT) once all network testing has completed.
+
+If you have any further questions, please contact Pete Castrejana at 713-410-0642 for more information.
+		    
+
+SCHEDULED SYSTEM OUTAGES: 
+
+ARDMORE DATA CENTER - FACILITY OPERATIONS: No Scheduled Outages.
+
+AZURIX: No Scheduled Outages.
+
+EB34 DATA CENTER - FACILITY OPERATIONS: No Scheduled Outages.
+
+EDI SERVER: No Scheduled Outages.
+
+ENRON CENTER SOUTH DATA CENTER - FACILITY OPERATIONS: No Scheduled Outages
+
+ENRON NORTH AMERICAN LANS: 
+Impact:  ENS 
+Time:  Fri 6/8/2001 at  10:30:00 PM CT thru Fri 6/8/2001 at  11:30:00 PM CT
+	Fri 6/8/2001 at    8:30:00 PM PT thru Fri 6/8/2001 at    9:30:00 PM PT
+	Sat 6/9/2001 at  4:30:00 AM London thru Sat 6/9/2001 at  5:30:00 AM London
+Outage:  Upgrade code on Ardmore routers
+Environments Impacted:  Ardmore
+Purpose: There is a bug with the version of code that we are using that causes the switches to crash.
+Backout: 
+Contact(s): 	Scott Shishido    713-853-9780
+
+Impact:  CORP
+Time:  Fri 6/8/2001 at  5:30:00 PM CT thru Fri 6/8/2001 at  8:30:00 PM CT
+	Fri 6/8/2001 at  3:30:00 PM PT thru Fri 6/8/2001 at  6:30:00 PM PT
+	Fri 6/8/2001 at  11:30:00 PM London thru Sat 6/9/2001 at  2:30:00 AM London
+Outage:  Split VLAN 468 into a /27 network
+Environments Impacted:  Corp
+Purpose: Separate the load and traffic between AEXT, AEIN, & AX environments
+Backout: 
+Contact(s): 	Morgan Gothard  713-345-7387  
+		
+Impact:  CORP
+Time:  Fri 6/8/2001 at  5:30:00 PM CT thru Fri 6/8/2001 at  6:30:00 PM CT
+	Fri 6/8/2001 at  3:30:00 PM PT thru Fri 6/8/2001 at  4:30:00 PM PT
+	Fri 6/8/2001 at  11:30:00 PM London thru Sat 6/9/2001 at  12:30:00 AM London
+Outage:  AEINFW swap
+Environments Impacted:  Corp
+Purpose: Eminent growth and related stability issues.
+Backout: Reinstall original units
+Contact(s): 	Morgan Gothard  713-345-7387   
+FIELD SERVICES:  No Scheduled Outages.
+
+INTERNET: No Scheduled Outages.
+
+MESSAGING: 
+Impact:  Exchange
+Time:  Sat 6/9/2001 at  12:00:00 PM CT thru Sat 6/9/2001 at    2:00:00 PM CT
+	Sat 6/9/2001 at  10:00:00 AM PT thru Sat 6/9/2001 at  12:00:00 PM PT
+	Sat 6/9/2001 at  6:00:00 PM London thru Sat 6/9/2001 at  8:00:00 PM London
+Outage:  Apply latest hotfixes to Nahou-msmbx03v & Nahou-msmbx05v
+Environments Impacted:  Exchange Users on Nahou-msmbx03v & 05v
+Purpose: Ensure backups and data integrity
+Backout: Uninstall Hotfixes
+Contact(s): 	Scott Albright  713-345-9381  
+		Tim Hudson  713-853-9289
+   
+MARKET DATA: 
+Impact:  CORP
+Time:  Fri 6/8/2001 at  5:00:00 PM CT thru Fri 6/8/2001 at  7:00:00 PM CT
+	Fri 6/8/2001 at  3:00:00 PM PT  thru Fri 6/8/2001 at  5:00:00 PM PT
+	Fri 6/8/2001 at  11:00:00 PM London thru Sat 6/9/2001 at  1:00:00 AM London
+Outage:  Market Data TV systems upgrades
+Environments Impacted:  Trading Floors
+Purpose: Increase system reliability and systems management, also allow presentation of new infrastructure content to the trading floor plasma screens
+Backout: re-install original systems
+Contact(s): 	John Sieckman    713-345-7862  
+
+NT: No Scheduled Outages.
+
+OS/2:  No Scheduled Outages.
+
+OTHER SYSTEMS:    ALSO SEE ORIGINAL REPORT 
+Impact:  CORP
+Time:  Fri 6/8/2001 at  7:30:00 PM CT thru Fri 6/8/2001 at  9:30:00 PM CT
+	Fri 6/8/2001 at  5:30:00 PM PT thru Fri 6/8/2001 at  7:30:00 PM PT
+	Sat 6/9/2001 at  1:30:00 AM London thru Sat 6/9/2001 at  3:30:00 AM London
+Outage:  NAMEX-LN1 and NAMTY-LN1- Needs Rebooting
+Environments Impacted:  Local Office
+Purpose: Need to reload NETIQ Agents for NAMTY-LN1 and NAMEX-LN1
+Backout: 
+Contact(s): 	Wilma Bleshman    713-853-1562 
+ 
+Impact:  
+Time:  Sat 6/9/2001 at  10:00:00 PM CT thru Sun 6/10/2001 at  1:30:00 AM CT
+	Sat 6/9/2001 at    8:00:00 PM PT thru Sat 6/9/2001 at  11:30:00 PM PT
+	Sun 6/10/2001 at  4:00:00 AM London thru Sun 6/10/2001 at 7:30:00 AM London
+Outage:  Upgrade for E10K SSP tremor requires downtime on server moe.
+Environments Impacted:  Global
+Purpose: An SSP is the controlling server for an E10K platform.  Moe is a domain on the E10K platform named aftershock.  In order to complete the upgrade of moe, we must first upgrade the SSP.  The first phase will entail upgrading the SSP to Solaris 8 and the SSP software.  
+Backout: The SSP is really a new server that needs to be configured.  The old SSP will be there if we need to back out.
+Contact(s): 	Malcolm Wells    713-345-3716
+
+SITARA:  No Scheduled Outages.
+
+SUN/OSS SYSTEM: No Scheduled Outages.
+
+TELEPHONY:      SEE ORIGINAL REPORT 
+  
+TERMINAL SERVER:  No Scheduled Outages.
+
+UNIFY:       SEE ORIGINAL REPORT  
+ 
+-------------------------------------------------------------------------------------------------------------------------------------
+								FOR ASSISTANCE
+
+(713) 853-1411   Enron Resolution Center
+
+
+Specific Help:
+Information Risk Management			(713) 853-5536
+SAP/ISC                                                                               (713) 345-4727
+Unify On-Call 					(713) 284-3757  [Pager]
+Sitara On-Call					(713) 288-0101  [Pager]
+RUS/GOPS/GeoTools/APRS			(713) 639-9726  [Pager]
+OSS/UA4/TARP				(713) 285-3165  [Pager]
+CPR						(713) 284-4175  [Pager]
+EDI Support 					(713) 327-3893  [Pager]
+EES Help Desk					(713)853-9797 OR (888)853-9797
+TDS -Trader Decision Support On-Call                    (713) 327-6032 [Pager]
+
+From MAILER-DAEMON Tue Jun 15 13:19:04 2021
+Message-ID: <2773262.1075855412847.JavaMail.evans@thyme>
+Date: Wed, 26 Dec 2001 21:29:01 -0800 (PST)
+From: enron_update@concureworkplace.com
+To: stanley.horton@enron.com
+Subject: Expense Reports Awaiting Your Approval
+Mime-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+X-From: enron_update@concureworkplace.com@ENRON
+X-To: Horton, Stanley </O=ENRON/OU=NA/CN=RECIPIENTS/CN=SHORTON>
+X-cc: 
+X-bcc: 
+X-Folder: \Stanley_Horton_Jan2002\Horton, Stanley\Inbox
+X-Origin: Horton-S
+X-FileName: shorton (Non-Privileged).pst
+
+The following reports have been waiting for your approval for more than 4 days.  Please review.
+
+Owner: John L Garrison
+Report Name: DECEMBER 2001
+Days In Mgr. Queue: 5
+
+From MAILER-DAEMON Tue Jun 15 13:19:04 2021
+Message-ID: <7502654.1075855413452.JavaMail.evans@thyme>
+Date: Sun, 30 Dec 2001 09:22:57 -0800 (PST)
+From: mark.metts@enron.com
+To: adam.umanoff@enron.com, stanley.horton@enron.com
+Subject: Re: Indian Mesa/Aura
+Mime-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+X-From: Metts, Mark </O=ENRON/OU=NA/CN=RECIPIENTS/CN=MMETTS>
+X-To: Umanoff, Adam </O=ENRON/OU=NA/CN=RECIPIENTS/CN=Notesaddr/cn=603bcba9-4ad06602-86256689-747f98>, Horton, Stanley </O=ENRON/OU=NA/CN=RECIPIENTS/CN=Shorton>
+X-cc: 
+X-bcc: 
+X-Folder: \Stanley_Horton_Jan2002\Horton, Stanley\Inbox
+X-Origin: Horton-S
+X-FileName: shorton (Non-Privileged).pst
+
+Congrats!  Great job. And my team certainly appreciates all the great help on the teaser. We have several CAs signed up with a few outstanding issues on a few more so being able to distribute on Monday will be helpful.  Mark
+--------------------------
+Mark Metts
+
+
+-----Original Message-----
+From: Umanoff, Adam <Adam.Umanoff@ENRON.com>
+To: Horton, Stanley <Stanley.Horton@ENRON.com>
+CC: Metts, Mark <mark.metts@enron.com>
+Sent: Sun Dec 30 11:05:13 2001
+Subject: Indian Mesa/Aura
+
+The Indian Mesa sale closed last night in NY.  Our team did a great job.  All we have to do now is convince Enron's creditor's committee to let us use the net proceeds through a sale of the wind company!  
+
+Regarding the sale, we are wrapping up today the revised '01 numbers and the '02 and '03 projections and expect we will have the teaser done for a Monday distribution as planned.  Happy New Year.  Adam
+
+From MAILER-DAEMON Tue Jun 15 13:19:04 2021
+Message-ID: <19710582.1075844987200.JavaMail.evans@thyme>
+Date: Wed, 6 Jun 2001 12:42:57 -0700 (PDT)
+From: status_updates@concureworkplace.com
+To: stanley.horton@enron.com
+Subject: The following expense report is ready for approval: 052301-JLG
+Mime-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+X-From: status_updates@concureworkplace.com@ENRON
+X-To: Horton, Stanley </o=ENRON/ou=NA/cn=Recipients/cn=SHORTON>
+X-cc: 
+X-bcc: 
+X-Folder: \Stanley_Horton_June2001\Inbox
+X-Origin: HORTON-S
+X-FileName: shorton.pst
+
+Please do not respond directly to this message. All Necessary actions can be taken with the link below.
+
+
+Message:
+
+	The following expense report is ready for approval:
+
+
+	Employee Name: John L. Garrison
+
+	Status last changed by:  Back Office
+
+	Expense Report Name: 052301-JLG
+
+	Report Total: $15,454.98
+
+	Amount Due Employee: $156.98
+
+
+
+Action:
+
+	To approve this expense report, click the following link to Concur eWorkplace.com.
+
+	http://my.concureworkplace.com
+
+From MAILER-DAEMON Tue Jun 15 13:19:04 2021
+Message-ID: <16850411.1075855413273.JavaMail.evans@thyme>
+Date: Fri, 28 Dec 2001 09:09:42 -0800 (PST)
+From: lynn.blair@enron.com
+To: danny.mccarty@enron.com, stanley.horton@enron.com
+Subject: Weekly Report for Gas Logistics
+Cc: rick.dietz@enron.com, steve.january@enron.com, lynn.blair@enron.com, 
+	dannis.bellard@enron.com, julie.armstrong@enron.com, 
+	lynn.blair@enron.com, cindy.stark@enron.com
+Mime-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+Bcc: rick.dietz@enron.com, steve.january@enron.com, lynn.blair@enron.com, 
+	dannis.bellard@enron.com, julie.armstrong@enron.com, 
+	lynn.blair@enron.com, cindy.stark@enron.com
+X-From: Blair, Lynn </O=ENRON/OU=NA/CN=RECIPIENTS/CN=LBLAIR>
+X-To: McCarty, Danny </O=ENRON/OU=NA/CN=RECIPIENTS/CN=Dmccarty>, Horton, Stanley </O=ENRON/OU=NA/CN=RECIPIENTS/CN=Shorton>
+X-cc: Dietz, Rick </O=ENRON/OU=NA/CN=RECIPIENTS/CN=Rdietz>, January, Steve </O=ENRON/OU=NA/CN=RECIPIENTS/CN=Sjanuary>, Blair, Lynn </O=ENRON/OU=NA/CN=RECIPIENTS/CN=Lblair>, Bellard, Dannis </O=ENRON/OU=NA/CN=RECIPIENTS/CN=Dbellar>, Armstrong, Julie </O=ENRON/OU=NA/CN=RECIPIENTS/CN=Jarmstr>, Blair, Lynn </O=ENRON/OU=NA/CN=RECIPIENTS/CN=Lblair>, Stark, Cindy </O=ENRON/OU=NA/CN=RECIPIENTS/CN=Cstark>
+X-bcc: 
+X-Folder: \Stanley_Horton_Jan2002\Horton, Stanley\Inbox
+X-Origin: Horton-S
+X-FileName: shorton (Non-Privileged).pst
+
+
+	Stan and Danny, here is a recap of activities in Gas Logistics this last week including Gas Control
+	activity.  I will send you an update again on Wednesday (Jan. 2).  Have a great weekend.
+
+
+				 
+
+	Please give me call if you have any questions.  (Ext. 7637) Thanks. Lynn
+
+From MAILER-DAEMON Tue Jun 15 13:19:04 2021
+Message-ID: <29648145.1075844986495.JavaMail.evans@thyme>
+Date: Thu, 7 Jun 2001 16:26:49 -0700 (PDT)
+From: eserver@enron.com
+To: stanley.horton@enron.com
+Subject: <<Concur Expense Document>> - May Business Expenses
+Mime-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+X-From: eserver@enron.com@ENRON
+X-To: Horton, Stanley </o=ENRON/ou=NA/cn=Recipients/cn=SHORTON>
+X-cc: 
+X-bcc: 
+X-Folder: \Stanley_Horton_June2001\Inbox
+X-Origin: HORTON-S
+X-FileName: shorton.pst
+
+The following expense report is ready for approval:
+
+Employee Name: Danny J. McCarty
+Status last changed by:  Automated Administrator
+Expense Report Name: May Business Expenses
+Report Total: $1,104.49
+Amount Due Employee: $1,104.49
+
+
+To approve this expense report, click on the following link for Concur Expense.
+http://xms.enron.com
+
+From MAILER-DAEMON Tue Jun 15 13:19:04 2021
+Message-ID: <5396834.1075844987057.JavaMail.evans@thyme>
+Date: Fri, 8 Jun 2001 08:42:46 -0700 (PDT)
+From: neubauer@enron.com
+To: stanley.horton@enron.com, danny.mccarty@enron.com, rod.hayslett@enron.com, 
+	shelley.corman@enron.com, john.dushinske@enron.com, 
+	g..stage@enron.com, chuck.wilkinson@enron.com, w..mcgowan@enron.com, 
+	bill.fowler@enron.com, frank.semin@enron.com, bob.stevens@enron.com, 
+	kay.miller@enron.com, steve.kirk@enron.com, kent.miller@enron.com, 
+	drew.fossum@enron.com, jo.williams@enron.com, sue.neville@enron.com, 
+	lee.ferrell@enron.com
+Subject: Schedule for June 21st business review in Omaha.
+Mime-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+X-From: Neubauer, Dave
+X-To: Horton, Stanley </o=ENRON/ou=NA/cn=Recipients/cn=SHORTON>, McCarty, Danny </o=ENRON/ou=NA/cn=Recipients/cn=NOTESADDR/CN=151ACEF5-F1C7FE8D-86256934-4B3517>, Hayslett, Rod </o=ENRON/ou=NA/cn=Recipients/cn=RHAYSLE>, Corman, Shelley </o=ENRON/ou=NA/cn=Recipients/cn=SCORMAN>, Dushinske, John </o=ENRON/ou=NA/cn=Recipients/cn=JDUSHIN>, Stage, Michael G. </o=ENRON/ou=NA/cn=Recipients/cn=MSTAGE>, Wilkinson, Chuck </o=ENRON/ou=NA/cn=Recipients/cn=CWILKIN>, McGowan, Mike W. </o=ENRON/ou=NA/cn=Recipients/cn=MMCGOWA>, Fowler, Bill </o=ENRON/ou=NA/cn=Recipients/cn=BFOWLER>, Semin, Frank </o=ENRON/ou=NA/cn=Recipients/cn=FSEMIN>, Stevens, Bob </o=ENRON/ou=NA/cn=Recipients/cn=BSTEVEN2>, Miller, Mary Kay </o=ENRON/ou=NA/cn=Recipients/cn=NOTESADDR/CN=59406CF-4A8787C-862566DE-280AA>, Kirk, Steve </o=ENRON/ou=NA/cn=Recipients/cn=SKIRK>, Miller, Kent </o=ENRON/ou=NA/cn=Recipients/cn=NOTESADDR/CN=D9241C71-BFFFAED8-862566DE-26F84>, Fossum, Drew </o=ENRON/ou=NA/cn=Recipients/cn=DFOSSUM>, Williams, Jo </o=ENRON/ou=NA/cn=Recipients/cn=NOTESADDR/CN=B42B8E2C-D0244C42-862566C0-6872D7>, Neville, Sue </o=ENRON/ou=NA/cn=Recipients/cn=SNEVILL1>, Ferrell, Lee </o=ENRON/ou=NA/cn=Recipients/cn=LFERRELL>
+X-cc: 
+X-bcc: 
+X-Folder: \Stanley_Horton_June2001\Inbox
+X-Origin: HORTON-S
+X-FileName: shorton.pst
+
+We are planning on the following schedule for the upcoming business review in Omaha.  The goal of the meeting is to encourage discussion about the focus and direction of each of Northern's Marketing teams rather than simply presenting material.  With this in mind we are planning to have smaller meetings and divide the discussion in to four sessions.   In additon to Stan, Dan, Rod (if available) and myself, we will have only those people listed below at each session. 
+
+
+10:00 - 11:15   - Topic:  Power, Business Development and Acquisitions (plus long term South End Strategy)
+                                - Participants:   John Dushinske, Mike Stage, Chuck Wilkinson, Mike McGowan, Shelly Corman
+
+11:15 - 12:00   - Topic:  LDC Accounts and relationships
+                                - Participants:  Bill Fowler, Frank Semin, Bob Stevens
+
+12:00 -   1:00 	- Topic:  Overall Commercial / Regulatory Strategy (SLA, 637, Rate Case)
+                                - Participants - Mary Kay Miller, Steve Kirk, Kent MIller, Drew Fossum, Shelly Corman
+
+1:00 - 2:00        - Topic:  Storage, Pricing & Structuring, Risk Management
+                                - Participants:  Kent Miller, Jo Williams, Sue Neville,  Lee Ferrell
+
+We will follow up with a more detailed outline prior to the meeting.  Please let me know if you are unable to attend.
+
+Thanks,
+
+Dave
+	
+                            
+
+From MAILER-DAEMON Tue Jun 15 13:19:04 2021
+Message-ID: <32130367.1075844986413.JavaMail.evans@thyme>
+Date: Wed, 6 Jun 2001 11:58:36 -0700 (PDT)
+From: eserver@enron.com
+To: stanley.horton@enron.com
+Subject: <<Concur Expense Document>> - expjsp05
+Mime-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+X-From: eserver@enron.com@ENRON
+X-To: Horton, Stanley </o=ENRON/ou=NA/cn=Recipients/cn=SHORTON>
+X-cc: 
+X-bcc: 
+X-Folder: \Stanley_Horton_June2001\Inbox
+X-Origin: HORTON-S
+X-FileName: shorton.pst
+
+The following expense report is ready for approval:
+
+Employee Name: James S. Prentice
+Status last changed by:  Automated Administrator
+Expense Report Name: expjsp05
+Report Total: $645.43
+Amount Due Employee: $645.43
+
+
+To approve this expense report, click on the following link for Concur Expense.
+http://xms.enron.com
+
+From MAILER-DAEMON Tue Jun 15 13:19:04 2021
+Message-ID: <23536188.1075862331915.JavaMail.evans@thyme>
+Date: Thu, 15 Nov 2001 21:26:22 -0800 (PST)
+From: enron_update@concureworkplace.com
+To: stanley.horton@enron.com
+Subject: Expense Reports Awaiting Your Approval
+Mime-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+X-From: enron_update@concureworkplace.com@ENRON
+X-To: Horton, Stanley </O=ENRON/OU=NA/CN=RECIPIENTS/CN=SHORTON>
+X-cc: 
+X-bcc: 
+X-Folder: \SHORTON (Non-Privileged)\Horton, Stanley\Inbox
+X-Origin: Horton-S
+X-FileName: SHORTON (Non-Privileged).pst
+
+The following reports have been waiting for your approval for more than 4 days.  Please review.
+
+Owner: John L Garrison
+Report Name: Previous Statement Credits/New Trip
+Days In Mgr. Queue: 6
+
+From MAILER-DAEMON Tue Jun 15 13:19:04 2021
+Message-ID: <33069847.1075862331956.JavaMail.evans@thyme>
+Date: Mon, 19 Nov 2001 11:17:37 -0800 (PST)
+From: enron_update@concureworkplace.com
+To: stanley.horton@enron.com
+Subject: <<Concur Expense Document>> - Joe11/13/01
+Mime-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+X-From: enron_update@concureworkplace.com@ENRON
+X-To: Horton, Stanley </O=ENRON/OU=NA/CN=RECIPIENTS/CN=SHORTON>
+X-cc: 
+X-bcc: 
+X-Folder: \SHORTON (Non-Privileged)\Horton, Stanley\Inbox
+X-Origin: Horton-S
+X-FileName: SHORTON (Non-Privileged).pst
+
+The following expense report is ready for approval:
+
+Employee Name: Joseph R. Hartsoe
+Status last changed by:  Automated Administrator
+Expense Report Name: Joe11/13/01
+Report Total: $3,257.69
+Amount Due Employee: $3,257.69
+
+
+To approve this expense report, click on the following link for Concur Expense.
+http://expensexms.enron.com
+
+From MAILER-DAEMON Tue Jun 15 13:19:04 2021
+Message-ID: <30290101.1075844986937.JavaMail.evans@thyme>
+Date: Thu, 7 Jun 2001 10:01:17 -0700 (PDT)
+From: lowry@enron.com
+To: stanley.horton@enron.com, danny.mccarty@enron.com, steven.harris@enron.com
+Subject: Project Red Rock Update and Alternatives
+Cc: kay.miller@enron.com, d..martin@enron.com, r..keller@enron.com, 
+	james.centilli@enron.com, morgan.gottsponer@enron.com, 
+	eric.faucheaux@enron.com, ben.asante@enron.com, 
+	l..eisenstein@enron.com, randy.rice@enron.com, john.shafer@enron.com, 
+	rod.hayslett@enron.com
+Mime-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+Bcc: kay.miller@enron.com, d..martin@enron.com, r..keller@enron.com, 
+	james.centilli@enron.com, morgan.gottsponer@enron.com, 
+	eric.faucheaux@enron.com, ben.asante@enron.com, 
+	l..eisenstein@enron.com, randy.rice@enron.com, john.shafer@enron.com, 
+	rod.hayslett@enron.com
+X-From: Lowry, Phil
+X-To: Horton, Stanley </o=ENRON/ou=NA/cn=Recipients/cn=Shorton>, McCarty, Danny </o=ENRON/ou=NA/cn=Recipients/cn=Notesaddr/cn=151acef5-f1c7fe8d-86256934-4b3517>, Harris, Steven </o=ENRON/ou=NA/cn=Recipients/cn=Notesaddr/cn=65b627bc-84e5435e-862566de-1137ee>
+X-cc: Miller, Mary Kay </o=ENRON/ou=NA/cn=Recipients/cn=Notesaddr/cn=59406cf-4a8787c-862566de-280aa>, Martin, Jerry D. </o=ENRON/ou=NA/cn=Recipients/cn=Jmartin>, Keller, John R. </o=ENRON/ou=NA/cn=Recipients/cn=Jkeller3>, Centilli, James </o=ENRON/ou=NA/cn=Recipients/cn=Notesaddr/cn=38d4c597-37303352-862566b7-511cd0>, Gottsponer, Morgan </o=ENRON/ou=NA/cn=Recipients/cn=Mgottsp>, Faucheaux, Eric </o=ENRON/ou=NA/cn=Recipients/cn=Notesaddr/cn=3f938e41-7b726b5-86256895-769151>, Asante, Ben </o=ENRON/ou=NA/cn=Recipients/cn=Notesaddr/cn=a82648a9-66b21a-862566de-573362>, Eisenstein, Arnold L. </o=ENRON/ou=NA/cn=Recipients/cn=Aeisens>, Rice, Randy </o=ENRON/ou=NA/cn=Recipients/cn=Rrice2>, Shafer, John </o=ENRON/ou=NA/cn=Recipients/cn=Jshafer>, Hayslett, Rod </o=ENRON/ou=NA/cn=Recipients/cn=Rhaysle>
+X-bcc: 
+X-Folder: \Stanley_Horton_June2001\Inbox
+X-Origin: HORTON-S
+X-FileName: shorton.pst
+
+Per discussions with Steve Harris we have re-estimated volumes and costs for a smaller version of Project Red Rock. We have studied two scenarios and the results are as follows.
+ 
+70 mmcf/d Case
+                           Requires PGT-25 compressor installation at TW Stations No.1 and No.2.
+                           Estimated cost = $48,000,000
+ 
+120 mmcf/d Case
+                           Requires PGT-25 Compressor installation at TW Stations No. 1, No. 2 and No. 3.
+                           Estimated cost = $72,000,000.
+
+
+
+GE has informed us that absent a substantial commitment from Enron by June 13, they will be forced to stop all work on the 4 PGT-25 compressor packages for Project Red Rock.  If we elect to restart this work at a later date, the original delivery dates (Nov-Dec 2001) will not be feasible.
+ 
+We have proposed to GE that Enron make an irrevocable commitment for 2 or 3 PGT-25 Compressors by June 13, and GE continue to preserve the original delivery dates for the uncommitted balance.  They have indicated that this will be an acceptable arrangement through the end of June.  With no further commitment from Enron for the balance of the original order by June 30, GE would stop all work on the uncommitted portion of the order.
+ 
+This would preserve our required In-Service date for 150 mmcf/d through the end of June, and of course, would preserve the required In-Service date for a reduced Project Red Rock.
+ 
+If, by the end of June we have not committed to the balance of the compressor order, I believe that we may be able to scale back the purchase of the uncommitted PGT-25 Compressors packages.
+ 
+The PGT-25 Compressor package consists of a Gas Generator (LM 2500) and a skid mounted Gas Compressor/Power Turbine.   The reason for long manufacturing lead-time is the Gas Compressor/Power Turbine.  We may be able to purchase the PGT-25 Compressor package without an LM-2500 Gas Generator.  LM-2500 Gas Generators are much easier to come by on short notice.  The cost of the Gas Compressor/Power Turbine, without an LM 2500 Gas Generator, is about $4,000,000.  The cost of the LM 2500 Gas Generator is about $5,500,000.  We have not discussed this with GE at this time but I believe it is feasible to preserve project delivery options.
+ 
+We are preparing a communication to send to GE affirming our election to make an irrevocable commitment on some portion of the original order.  We will release that communication to GE next week if you wish to proceed on either of these alternatives.   I will not be in the office this coming Monday but Jerry will be available to followup.
+
+From MAILER-DAEMON Tue Jun 15 13:19:04 2021
+Message-ID: <10165173.1075855413057.JavaMail.evans@thyme>
+Date: Thu, 27 Dec 2001 17:18:56 -0800 (PST)
+From: enerfaxdaily@enerfax.com
+To: stanley.horton@enron.com
+Subject: [enerfaxdaily] Natural Gas Futures Tumble as January Expires
+Mime-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+X-From: <enerfaxdaily@enerfax.com>@ENRON
+X-To: Horton, Stanley </O=ENRON/OU=NA/CN=RECIPIENTS/CN=SHORTON>
+X-cc: 
+X-bcc: 
+X-Folder: \Stanley_Horton_Jan2002\Horton, Stanley\Inbox
+X-Origin: Horton-S
+X-FileName: shorton (Non-Privileged).pst
+
+If your do not see our email in 15 seconds, please go to http://www.enerfax.com to today's gas & power prices & news. 
+If your email does not support this web version, please subscribe to the free text version by writing subscribe@enerfax.com Please visit our website to view today's gas and power prices and news by clicking http://www.enerfax.com
+ 
+
+From MAILER-DAEMON Tue Jun 15 13:19:04 2021
+Message-ID: <10385472.1075855412776.JavaMail.evans@thyme>
+Date: Fri, 21 Dec 2001 19:27:10 -0800 (PST)
+From: enron_update@concureworkplace.com
+To: stanley.horton@enron.com
+Subject: <<Concur Expense Document>> - DECEMBER 2001
+Mime-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+X-From: enron_update@concureworkplace.com@ENRON
+X-To: Horton, Stanley </O=ENRON/OU=NA/CN=RECIPIENTS/CN=SHORTON>
+X-cc: 
+X-bcc: 
+X-Folder: \Stanley_Horton_Jan2002\Horton, Stanley\Inbox
+X-Origin: Horton-S
+X-FileName: shorton (Non-Privileged).pst
+
+The following expense report is ready for approval:
+
+Employee Name: John L. Garrison
+Status last changed by:  Automated Administrator
+Expense Report Name: DECEMBER 2001
+Report Total: $13,691.06
+Amount Due Employee: $13,691.06
+
+
+To approve this expense report, click on the following link for Concur Expense.
+http://expensexms.enron.com
+
+From MAILER-DAEMON Tue Jun 15 13:19:04 2021
+Message-ID: <10907333.1075855413580.JavaMail.evans@thyme>
+Date: Mon, 31 Dec 2001 14:37:53 -0800 (PST)
+From: cindy.stark@enron.com
+To: stanley.horton@enron.com
+Subject: FW: Enron Management Committee Meeting on Wednesday, January 2,
+ 2002 @ 11:00 a.m.
+Mime-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+X-From: Stark, Cindy </O=ENRON/OU=NA/CN=RECIPIENTS/CN=CSTARK>
+X-To: Horton, Stanley </O=ENRON/OU=NA/CN=RECIPIENTS/CN=Shorton>
+X-cc: 
+X-bcc: 
+X-Folder: \Stanley_Horton_Jan2002\Horton, Stanley\Inbox
+X-Origin: Horton-S
+X-FileName: shorton (Non-Privileged).pst
+
+Stan:   I see that there is a MC meeting at 11:00....I think you're to be out at EOTT until 11:00 or 11:30 on Wednesday attending Regional P&L budget meetings.   What will you want to do?
+ 
+Happy New Year,
+Cindy
+
+-----Original Message----- 
+From: Fleming, Rosalee 
+Sent: Mon 12/31/2001 2:25 PM 
+To: Bowen Jr., Raymond; Buy, Rick; Causey, Richard; Delainey, David W.; Derrick Jr., James; Dietrich, Janet; Fallon, Jim; Haedicke, Mark E.; Horton, Stanley; Hughes, James A.; Koenig, Mark; Lay, Kenneth; McMahon, Jeffrey; Sherriff, John; Whalley, Greg 
+Cc: Rieker, Paula; Evans, Carolyn; Blackwood, Connie; Chapman, Kay; Elbertson, Janette; Ford, Sue; Harris, Stephanie J ; Heathman, Karen K.; Marshall, Lucy; Mendez, Yorleni; Schiller, Marsha; Stark, Cindy; Taylor, Liz; Valencia, Laura; Wells, Tori L.; Westbrook, Sharron 
+Subject: Enron Management Committee Meeting on Wednesday, January 2, 2002 @ 11:00 a.m.
+
+
+
+
+There will be a Management Committee meeting on Wednesday, January 2, 2002 @ 11:00 a.m.   Please let me know if you will attend in person or via conference call.  
+
+
+Thanks. 
+
+Rosie 
+
+From MAILER-DAEMON Tue Jun 15 13:19:04 2021
+Message-ID: <31904614.1075844986647.JavaMail.evans@thyme>
+Date: Thu, 7 Jun 2001 07:09:45 -0700 (PDT)
+From: butler@enron.com
+To: daniel.allegretti@enron.com, ray.alvarez@enron.com, nancy.bagot@enron.com, 
+	martha.benner@enron.com, eric.benson@enron.com, donna.bily@enron.com, 
+	lynn.blair@enron.com, jack.boatman@enron.com, rob.bradley@enron.com, 
+	theresa.branney@enron.com, lorna.brennan@enron.com, 
+	tom.briggs@enron.com, janet.butler@enron.com, alan.comnes@enron.com, 
+	bill.cordes@enron.com, shelley.corman@enron.com, 
+	christi.culwell@enron.com, shonnie.daniel@enron.com, 
+	mary.darveaux@enron.com, rick.dietz@enron.com, dari.dornan@enron.com, 
+	john.dushinske@enron.com, sharon.farrell@enron.com, 
+	drew.fossum@enron.com, donna.fulton@enron.com, 
+	john.goodpasture@enron.com, pearce.hammond@enron.com, 
+	steven.harris@enron.com, joe.hartsoe@enron.com, glen.hass@enron.com, 
+	robert.hayes@enron.com, rod.hayslett@enron.com, 
+	bambi.heckerman@enron.com, theresa.hess@enron.com, 
+	robert.hill@enron.com, bradley.holmes@enron.com, 
+	staci.holtzman@enron.com, tamara.hopkins@enron.com, 
+	stanley.horton@enron.com, lee.huber@enron.com, 
+	martha.janousek@enron.com, steven.january@enron.com, 
+	steven.kean@enron.com, robert.kilmer@enron.com, 
+	frazier.king@enron.com, steve.kirk@enron.com, tim.kissner@enron.com, 
+	laura.lantefield@enron.com, linda.lawrence@enron.com, 
+	blair.lichtenwalter@enron.com, elizabeth.linnell@enron.com, 
+	teb.lokey@enron.com, phil.lowry@enron.com, susan.mara@enron.com, 
+	donna.martens@enron.com, dorothy.mccoppin@enron.com, 
+	w..mcgowan@enron.com, kay.miller@enron.com, sheila.nacey@enron.com, 
+	kimberly.nelson@enron.com, ray.neppl@enron.com, 
+	dave.neubauer@enron.com, robert.neustaedter@enron.com, 
+	christi.nicolay@enron.com, sarah.novosel@enron.com, 
+	ranelle.paladino@enron.com, maureen.palmer@enron.com, 
+	zelda.paschal@enron.com, geneva.patterson@enron.com, 
+	maria.pavlou@enron.com, keith.petersen@enron.com, 
+	janet.place@enron.com, dan.pribble@enron.com, tony.pryor@enron.com, 
+	colleen.raker@enron.com, randy.rice@enron.com, 
+	kathy.ringblom@enron.com, linda.robertson@enron.com, 
+	james.saunders@enron.com, lisa.sawyer@enron.com, 
+	donna.scott@enron.com, john.shafer@enron.com, 
+	richard.shapiro@enron.com, mike.smith@enron.com, 
+	louis.soldano@enron.com, lon.stanton@enron.com, 
+	james.steffes@enron.com, kathleen.sullivan@enron.com, 
+	jim.talcott@enron.com, gina.taylor@enron.com, denis.tu@enron.com, 
+	michael.van@enron.com, stephen.veatch@enron.com, 
+	donald.vignaroli@enron.com, jody.warner@enron.com, 
+	kimberly.watson@enron.com, kim.wilkie@enron.com, 
+	jane.wilson@enron.com, rob.wilson@enron.com, 
+	michele.winckowski@enron.com, james.wininger@enron.com, 
+	lisa.yoho@enron.com
+Subject: Recall: Commission Agenda
+Mime-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+X-From: Butler, Janet
+X-To: Allegretti, Daniel </o=ENRON/ou=NA/cn=Recipients/cn=Notesaddr/cn=ae6f379c-69808e84-8625697c-4d1bdd>, Alvarez, Ray </o=ENRON/ou=NA/cn=Recipients/cn=Notesaddr/cn=ebe4476b-2d94882a-86256a14-75ff3b>, Bagot, Nancy </o=ENRON/ou=NA/cn=Recipients/cn=Notesaddr/cn=716cad03-a5cb7d52-86256952-61a958>, Benner, Martha </o=ENRON/ou=NA/cn=Recipients/cn=Mbenner>, Benson, Eric </o=ENRON/ou=NA/cn=Recipients/cn=Notesaddr/cn=490e7bf-88158608-862566b8-764eff>, Bily, Donna </o=ENRON/ou=NA/cn=Recipients/cn=Notesaddr/cn=67986558-b5d7b44-862566cc-7ff596>, Blair, Lynn </o=ENRON/ou=NA/cn=Recipients/cn=Notesaddr/cn=6231d102-c0fa47be-862566d0-4b49dc>, Boatman, Jack </o=ENRON/ou=NA/cn=Recipients/cn=Jboatma>, Bradley, Rob </o=ENRON/ou=NA/cn=Recipients/cn=Notesaddr/cn=a82a20b7-12e21295-862566d3-70a090>, Branney, Theresa </o=ENRON/ou=NA/cn=Recipients/cn=Tbranne>, Brennan, Lorna </o=ENRON/ou=NA/cn=Recipients/cn=Lbrenna>, Briggs, Tom </o=ENRON/ou=NA/cn=Recipients/cn=Notesaddr/cn=179e5c8c-206e9f55-8625691e-7d943>, Butler, Janet </o=ENRON/ou=NA/cn=Recipients/cn=Jbutler>, Comnes, Alan </o=ENRON/ou=NA/cn=Recipients/cn=Acomnes>, Cordes, Bill </o=ENRON/ou=NA/cn=Recipients/cn=Bcordes>, Corman, Shelley </o=ENRON/ou=NA/cn=Recipients/cn=Scorman>, Culwell, Christi </o=ENRON/ou=NA/cn=Recipients/cn=Cculwel>, Daniel, Shonnie </o=ENRON/ou=NA/cn=Recipients/cn=Sdaniel>, Darveaux, Mary </o=ENRON/ou=NA/cn=Recipients/cn=Notesaddr/cn=e6ccf31-98d49671-862566dd-637d30>, Dietz, Rick </o=ENRON/ou=NA/cn=Recipients/cn=Notesaddr/cn=a1d4c782-3027da36-862566de-571232>, Dornan, Dari </o=ENRON/ou=NA/cn=Recipients/cn=Notesaddr/cn=5f53d7ae-b4bb71b3-862566de-de719>, Dushinske, John </o=ENRON/ou=NA/cn=Recipients/cn=Jdushin>, Farrell, Sharon </o=ENRON/ou=NA/cn=Recipients/cn=Sfarrel>, Fossum, Drew </o=ENRON/ou=NA/cn=Recipients/cn=Dfossum>, Fulton, Donna </o=ENRON/ou=NA/cn=Recipients/cn=Notesaddr/cn=cde8dae-a0b9ab37-862566b7-7a1609>, Goodpasture, John </o=ENRON/ou=NA/cn=Recipients/cn=Jgoodpa>, Hammond, Pearce </o=ENRON/ou=NA/cn=Recipients/cn=Notesaddr/cn=a6829b79-35a9156-86256a3a-71411a>, Harris, Steven </o=ENRON/ou=NA/cn=Recipients/cn=Notesaddr/cn=65b627bc-84e5435e-862566de-1137ee>, Hartsoe, Joe </o=ENRON/ou=NA/cn=Recipients/cn=Notesaddr/cn=aa8cc789-55f05846-862566b9-583a12>, Hass, Glen </o=ENRON/ou=NA/cn=Recipients/cn=Ghass>, Hayes, Robert </o=ENRON/ou=NA/cn=Recipients/cn=Rhayes>, Hayslett, Rod </o=ENRON/ou=NA/cn=Recipients/cn=Rhaysle>, Heckerman, Bambi </o=ENRON/ou=NA/cn=Recipients/cn=Bhecker>, Hess, Theresa </o=ENRON/ou=NA/cn=Recipients/cn=Thess>, Hill, Robert </o=ENRON/ou=NA/cn=Recipients/cn=Rhill>, Holmes, Bradley </o=ENRON/ou=NA/cn=Recipients/cn=Bholmes>, Holtzman, Staci </o=ENRON/ou=NA/cn=Recipients/cn=Sholtzm>, Hopkins, Tamara </o=ENRON/ou=NA/cn=Recipients/cn=Thopkin>, Horton, Stanley </o=ENRON/ou=NA/cn=Recipients/cn=Shorton>, Huber, Lee </o=ENRON/ou=NA/cn=Recipients/cn=Notesaddr/cn=696a0290-ad811b00-862566de-112778>, Janousek, Martha </o=ENRON/ou=NA/cn=Recipients/cn=Mjanous>, January, Steven </o=ENRON/ou=NA/cn=Recipients/cn=Notesaddr/cn=9401fcaa-5bd0290a-862566c6-55ae59>, Kean, Steven </o=ENRON/ou=NA/cn=Recipients/cn=Notesaddr/cn=b86dc838-ecafdc13-8625693c-57fa6d>, Kilmer III, Robert </o=ENRON/ou=NA/cn=Recipients/cn=Rkilmer>, King Jr., Frazier </o=ENRON/ou=NA/cn=Recipients/cn=Fking>, Kirk, Steve </o=ENRON/ou=NA/cn=Recipients/cn=Skirk>, Kissner, Tim </o=ENRON/ou=NA/cn=Recipients/cn=Notesaddr/cn=90ccaed0-f47c5846-862566d0-5befc3>, Lantefield, Laura </o=ENRON/ou=NA/cn=Recipients/cn=Llantef>, Lawrence, Linda </o=ENRON/ou=NA/cn=Recipients/cn=Notesaddr/cn=3cc620e-12138d07-8625697c-4d0080>, Lichtenwalter, Blair </o=ENRON/ou=NA/cn=Recipients/cn=Blichte>, Linnell, Elizabeth </o=ENRON/ou=NA/cn=Recipients/cn=Notesaddr/cn=ba65ba2e-70fc65aa-8625693b-631295>, Lokey, Teb </o=ENRON/ou=NA/cn=Recipients/cn=Tlokey>, Lowry, Phil </o=ENRON/ou=NA/cn=Recipients/cn=Plowry2>, Mara, Susan </o=ENRON/ou=NA/cn=Recipients/cn=Notesaddr/cn=8a20ece9-992cf340-8625697d-7146e9>, Martens, Donna </o=ENRON/ou=NA/cn=Recipients/cn=Dmarten>, McCoppin, Dorothy </o=ENRON/ou=NA/cn=Recipients/cn=Dmccopp>, McGowan, Mike W. </o=ENRON/ou=NA/cn=Recipients/cn=Mmcgowa>, Miller, Mary Kay </o=ENRON/ou=NA/cn=Recipients/cn=Notesaddr/cn=59406cf-4a8787c-862566de-280aa>, Nacey, Sheila </o=ENRON/ou=NA/cn=Recipients/cn=Notesaddr/cn=7abc777-adb7398d-862566d0-4b3607>, Nelson, Kimberly </o=ENRON/ou=NA/cn=Recipients/cn=Knelson3>, Neppl, Ray </o=ENRON/ou=NA/cn=Recipients/cn=Rneppl>, Neubauer, Dave </o=ENRON/ou=NA/cn=Recipients/cn=Notesaddr/cn=bbdedaa6-75c673e4-86256808-5fdc01>, Neustaedter, Robert </o=ENRON/ou=NA/cn=Recipients/cn=Notesaddr/cn=86256608-65acba-8625671d-5a05c4>, Nicolay, Christi </o=ENRON/ou=NA/cn=Recipients/cn=Notesaddr/cn=5836b2ad-ed2e830f-86256502-7152cc>, Novosel, Sarah </o=ENRON/ou=NA/cn=Recipients/cn=Notesaddr/cn=e8015336-2d09a27c-862566b9-5830a9>, Paladino, Ranelle </o=ENRON/ou=NA/cn=Recipients/cn=Notesaddr/cn=849260fb-78bca981-862568f1-79199c>, Palmer, Maureen </o=ENRON/ou=NA/cn=Recipients/cn=Notesaddr/cn=a17c755d-4991ad5b-862565a9-567bbe>, Paschal, Zelda </o=ENRON/ou=NA/cn=Recipients/cn=Zpascha>, Patterson, Geneva </o=ENRON/ou=NA/cn=Recipients/cn=Gpatter2>, Pavlou, Maria </o=ENRON/ou=NA/cn=Recipients/cn=Mpavlou>, Petersen, Keith </o=ENRON/ou=NA/cn=Recipients/cn=Kpeterse>, Place, Janet </o=ENRON/ou=NA/cn=Recipients/cn=Jplace>, Pribble, Dan </o=ENRON/ou=NA/cn=Recipients/cn=Dpribbl>, Pryor, Tony </o=ENRON/ou=NA/cn=Recipients/cn=Notesaddr/cn=dcc09885-5b46b4f8-8625681f-75b301>, Raker, Colleen </o=ENRON/ou=NA/cn=Recipients/cn=Craker>, Rice, Randy </o=ENRON/ou=NA/cn=Recipients/cn=Rrice2>, Ringblom, Kathy </o=ENRON/ou=NA/cn=Recipients/cn=KRINGBL>, Robertson, Linda </o=ENRON/ou=NA/cn=Recipients/cn=Notesaddr/cn=e6f34021-58c07703-86256984-56518c>, Saunders, James </o=ENRON/ou=NA/cn=Recipients/cn=Jsaunde>, Sawyer, Lisa </o=ENRON/ou=NA/cn=Recipients/cn=Lsawyer>, Scott, Donna </o=ENRON/ou=NA/cn=Recipients/cn=Notesaddr/cn=bb83917d-7b346005-862567df-4fc549>, Shafer, John </o=ENRON/ou=NA/cn=Recipients/cn=Jshafer>, Shapiro, Richard </o=ENRON/ou=NA/cn=Recipients/cn=Notesaddr/cn=6cedf0c-82c4a03c-8625696c-7693a4>, Smith, Mike </o=ENRON/ou=NA/cn=Recipients/cn=Notesaddr/cn=f12745a4-d0ea155-862568e0-2fa266>, Soldano, Louis </o=ENRON/ou=NA/cn=Recipients/cn=Lsoldan>, Stanton, Lon </o=ENRON/ou=NA/cn=Recipients/cn=Notesaddr/cn=660caaec-2d4cd0f2-86256771-505851>, Steffes, James </o=ENRON/ou=NA/cn=Recipients/cn=Notesaddr/cn=afb3d0fa-ccb03d20-86256962-56fda5>, Sullivan, Kathleen </o=ENRON/ou=NA/cn=Recipients/cn=Notesaddr/cn=1004552e-5944284b-86256973-64f176>, Talcott, Jim </o=ENRON/ou=NA/cn=Recipients/cn=Jtalcot>, Taylor, Gina </o=ENRON/ou=NA/cn=Recipients/cn=Gtaylor10>, Tu, Denis </o=ENRON/ou=NA/cn=Recipients/cn=Dtu>, Van Norden, Michael </o=ENRON/ou=NA/cn=Recipients/cn=Notesaddr/cn=c60c50b-40de3121-8625671d-54fea4>, Veatch, Stephen </o=ENRON/ou=NA/cn=Recipients/cn=Sveatch>, Vignaroli, Donald </o=ENRON/ou=NA/cn=Recipients/cn=Dvignar>, Warner, Jody </o=ENRON/ou=NA/cn=Recipients/cn=Jwarner>, Watson, Kimberly </o=ENRON/ou=NA/cn=Recipients/cn=Kwatson>, Wilkie, Kim </o=ENRON/ou=NA/cn=Recipients/cn=Kwilkie>, Wilson, Jane </o=ENRON/ou=NA/cn=Recipients/cn=Notesaddr/cn=86256608-65acba-862565c4-60a127>, Wilson, Rob </o=ENRON/ou=NA/cn=Recipients/cn=Rwilson>, Winckowski, Michele </o=ENRON/ou=NA/cn=Recipients/cn=Mwincko>, Wininger, James </o=ENRON/ou=NA/cn=Recipients/cn=Notesaddr/cn=657a07-8d029d4-86256a11-76324a>, Yoho, Lisa </o=ENRON/ou=NA/cn=Recipients/cn=Notesaddr/cn=42a32fee-6c57678-86256999-750a30>
+X-cc: 
+X-bcc: 
+X-Folder: \Stanley_Horton_June2001\Inbox
+X-Origin: HORTON-S
+X-FileName: shorton.pst
+
+Butler, Janet would like to recall the message, "Commission Agenda".
+
+From MAILER-DAEMON Tue Jun 15 13:19:04 2021
+Message-ID: <12219624.1075862332221.JavaMail.evans@thyme>
+Date: Tue, 27 Nov 2001 17:15:21 -0800 (PST)
+From: mark.metts@enron.com
+To: adam.umanoff@enron.com, amit.walia@enron.com
+Subject: RE: EWC - Expressions of Interest
+Cc: stanley.horton@enron.com
+Mime-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+Bcc: stanley.horton@enron.com
+X-From: Metts, Mark </O=ENRON/OU=NA/CN=RECIPIENTS/CN=MMETTS>
+X-To: Umanoff, Adam </O=ENRON/OU=NA/CN=RECIPIENTS/CN=Notesaddr/cn=603bcba9-4ad06602-86256689-747f98>, Walia, Amit </O=ENRON/OU=NA/CN=RECIPIENTS/CN=Awalia>
+X-cc: Horton, Stanley </O=ENRON/OU=NA/CN=RECIPIENTS/CN=Shorton>
+X-bcc: 
+X-Folder: \SHORTON (Non-Privileged)\Horton, Stanley\Inbox
+X-Origin: Horton-S
+X-FileName: SHORTON (Non-Privileged).pst
+
+I have not heard from them yet, but I will return their calls promptly.  Adam, do you know anything about any of these folks?  Mark
+
+ -----Original Message-----
+From: 	Umanoff, Adam  
+Sent:	Tuesday, November 27, 2001 6:47 PM
+To:	Metts, Mark; Walia, Amit
+Cc:	Horton, Stanley
+Subject:	EWC - Expressions of Interest
+
+Mark - Here is a list of folks who have called yesterday and today.  I have given everyone your name and phone number and asked that they call you (their phone numbers are included fyi):
+
+	1.  Bill Wangering - Bank One 313-225-1749 (referred by Brett  Maxwell at First Analysis)
+	2.  Larry Miller - The Wind Turbine Company 425-637-1470
+	3,  Ari Schuler (sp) - Yucaipa Corp 310-228-2895.
+
+Adam
+
+From MAILER-DAEMON Tue Jun 15 13:19:04 2021
+Message-ID: <23162972.1075862332064.JavaMail.evans@thyme>
+Date: Mon, 26 Nov 2001 13:37:45 -0800 (PST)
+From: peggy_fowler@pgn.com
+To: stanley.horton@enron.com
+Subject: Fwd: Slides for Stan
+Mime-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+X-From: "PEGGY FOWLER" <Peggy_Fowler@pgn.com>@ENRON
+X-To: Horton, Stanley </O=ENRON/OU=NA/CN=RECIPIENTS/CN=SHORTON>
+X-cc: 
+X-bcc: 
+X-Folder: \SHORTON (Non-Privileged)\Horton, Stanley\Inbox
+X-Origin: Horton-S
+X-FileName: SHORTON (Non-Privileged).pst
+
+Here are the slides you requested....a few talking points as  mentioned by Jim are on the 4th page....let me know, if you'd like more  information or a different format 
+Date: Mon, 26 Nov 2001 12:27:50 -0800
+From: "Jim Piro" <Jim_Piro@pgn.com>
+To: "PEGGY FOWLER" <PEGGY_FOWLER@pgn.com>
+Subject: Slides for Stan
+Mime-Version: 1.0
+Content-Type: multipart/mixed; boundary="=_CB96F82B.7213201F"
+
+
+the fourth slide in the presentation are the notes stan can  use to talk from.
+ - PGE 2001 Results.ppt 
+
+From MAILER-DAEMON Tue Jun 15 13:19:04 2021
+Message-ID: <26727445.1075844986545.JavaMail.evans@thyme>
+Date: Fri, 8 Jun 2001 15:02:18 -0700 (PDT)
+From: no.address@enron.com
+To: stanley.horton@enron.com
+Subject: Azurix weekly update
+Mime-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+X-From: John L Garrison/HOU/AZURIX@ENRON
+X-To: Horton, Stanley </o=ENRON/ou=NA/cn=Recipients/cn=SHORTON>
+X-cc: 
+X-bcc: 
+X-Folder: \Stanley_Horton_June2001\Inbox
+X-Origin: HORTON-S
+X-FileName: shorton.pst
+
+ 
+
+
+John L. Garrison
+President and Chief Executive Officer
+Azurix Corp.
+713-646-6421 Office
+713-646-9577 Fax
+jgarris2@azurix.com
+
+From MAILER-DAEMON Tue Jun 15 13:19:04 2021
+Message-ID: <2677654.1075862332174.JavaMail.evans@thyme>
+Date: Tue, 27 Nov 2001 15:20:45 -0800 (PST)
+From: karen.denne@enron.com
+To: kenneth.lay@enron.com, greg.whalley@enron.com, mark.frevert@enron.com, 
+	jeffrey.mcmahon@enron.com, raymond.bowen@enron.com, 
+	mark.koenig@enron.com, james.derrick@enron.com, rex.rogers@enron.com, 
+	pr <.palmer@enron.com>, richard.causey@enron.com, 
+	tim.despain@enron.com, stanley.horton@enron.com, s..muller@enron.com
+Subject: FW: draft release
+Cc: j..kean@enron.com, vance.meyer@enron.com
+Mime-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+Bcc: j..kean@enron.com, vance.meyer@enron.com
+X-From: Denne, Karen </O=ENRON/OU=NA/CN=RECIPIENTS/CN=KDENNE>
+X-To: Lay, Kenneth </O=ENRON/OU=NA/CN=RECIPIENTS/CN=Klay>, Whalley, Greg </O=ENRON/OU=NA/CN=RECIPIENTS/CN=Gwhalle>, Frevert, Mark </O=ENRON/OU=NA/CN=RECIPIENTS/CN=Mfrevert>, McMahon, Jeffrey </O=ENRON/OU=NA/CN=RECIPIENTS/CN=Jmcmaho>, Bowen Jr., Raymond </O=ENRON/OU=NA/CN=RECIPIENTS/CN=Rbowen>, Koenig, Mark </O=ENRON/OU=NA/CN=RECIPIENTS/CN=Mkoenig>, Derrick Jr., James </O=ENRON/OU=NA/CN=RECIPIENTS/CN=Jderric>, Rogers, Rex </O=ENRON/OU=NA/CN=RECIPIENTS/CN=Rroger2>, Palmer, Mark A. (PR) </O=ENRON/OU=NA/CN=RECIPIENTS/CN=Mpalmer>, Causey, Richard </O=ENRON/OU=NA/CN=RECIPIENTS/CN=Rcausey>, DeSpain, Tim </O=ENRON/OU=NA/CN=RECIPIENTS/CN=Tdespai>, Horton, Stanley </O=ENRON/OU=NA/CN=RECIPIENTS/CN=Shorton>, Muller, Mark S. </O=ENRON/OU=NA/CN=RECIPIENTS/CN=Mmuller>
+X-cc: Kean, Steven J. </O=ENRON/OU=NA/CN=RECIPIENTS/CN=Skean>, Meyer, Vance </O=ENRON/OU=NA/CN=RECIPIENTS/CN=Vmeyer>
+X-bcc: 
+X-Folder: \SHORTON (Non-Privileged)\Horton, Stanley\Inbox
+X-Origin: Horton-S
+X-FileName: SHORTON (Non-Privileged).pst
+
+Attached is the most recent press release, as of last night.  We held off circulating because we anticipated an updated draft but have not yet received one so wanted you to have an opportunity to review what we have.  Please let me or Mark Palmer know if you have any comments.
+
+Thank you.
+Karen
+x39757
+
+From MAILER-DAEMON Tue Jun 15 13:19:04 2021
+Message-ID: <5466697.1075855413296.JavaMail.evans@thyme>
+Date: Fri, 28 Dec 2001 11:55:33 -0800 (PST)
+From: administration.enron@enron.com
+To: maintenance.dl-exchange@enron.com
+Subject: NOTIFICATION:  Outlook Outage - Friday, December 28, 2001
+Mime-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+X-From: Enron Messaging Administration </O=ENRON/OU=NA/CN=RECIPIENTS/CN=NOTESADDR/CN=ENRON MESSAGING ADMINISTRATION>
+X-To: DL-Exchange Server Maintenance </O=ENRON/OU=NA/CN=RECIPIENTS/CN=DL-ExchangeServerMaintenance>
+X-cc: 
+X-bcc: 
+X-Folder: \Stanley_Horton_Jan2002\Horton, Stanley\Inbox
+X-Origin: Horton-S
+X-FileName: shorton (Non-Privileged).pst
+
+
+This is a notice to inform you that the server where your Outlook mailbox resides is scheduled for an outage tonight.  Your mailbox will be temporarily unavailable starting anytime after 8pm and may continue to be unavailable until 12 a.m., when all server maintenance work have been completed.  Outlook Web Access (OWA) will also be unavailable during this time.  
+
+Blackberry users:  Message delivery may be delayed for a few minutes.
+ 
+If you have any questions, please call the Resolution Center at x31411.
+
+From MAILER-DAEMON Tue Jun 15 13:19:04 2021
+Message-ID: <9318432.1075862331977.JavaMail.evans@thyme>
+Date: Tue, 20 Nov 2001 09:06:12 -0800 (PST)
+From: enron_update@concureworkplace.com
+To: stanley.horton@enron.com
+Subject: <<Concur Expense Document>> - Steve Hotte Exp. 11/01/01
+Mime-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+X-From: enron_update@concureworkplace.com@ENRON
+X-To: Horton, Stanley </O=ENRON/OU=NA/CN=RECIPIENTS/CN=SHORTON>
+X-cc: 
+X-bcc: 
+X-Folder: \SHORTON (Non-Privileged)\Horton, Stanley\Inbox
+X-Origin: Horton-S
+X-FileName: SHORTON (Non-Privileged).pst
+
+The following expense report is ready for approval:
+
+Employee Name: Steve  . Hotte
+Status last changed by:  Automated Administrator
+Expense Report Name: Steve Hotte Exp. 11/01/01
+Report Total: $84.47
+Amount Due Employee: $84.47
+
+
+To approve this expense report, click on the following link for Concur Expense.
+http://expensexms.enron.com
+
+From MAILER-DAEMON Tue Jun 15 13:19:04 2021
+Message-ID: <11684325.1075855413603.JavaMail.evans@thyme>
+Date: Mon, 31 Dec 2001 18:29:18 -0800 (PST)
+From: rod.hayslett@enron.com
+To: raymond.bowen@enron.com, mike.westbeld@enron.com, dave.gunther@enron.com
+Subject: RE: wind-65-75mm
+Cc: stanley.horton@enron.com, adam.umanoff@enron.com
+Mime-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+Bcc: stanley.horton@enron.com, adam.umanoff@enron.com
+X-From: Hayslett, Rod </O=ENRON/OU=NA/CN=RECIPIENTS/CN=RHAYSLE>
+X-To: Bowen Jr., Raymond </O=ENRON/OU=NA/CN=RECIPIENTS/CN=RBOWEN>, Westbeld, Mike </O=ENRON/OU=NA/CN=RECIPIENTS/CN=Notesaddr/cn=b8ad4b4-8d974595-86256673-64b416>, Gunther, Dave </O=ENRON/OU=NA/CN=RECIPIENTS/CN=Dgunthe2>
+X-cc: Horton, Stanley </O=ENRON/OU=NA/CN=RECIPIENTS/CN=Shorton>, Umanoff, Adam </O=ENRON/OU=NA/CN=RECIPIENTS/CN=Notesaddr/cn=603bcba9-4ad06602-86256689-747f98>
+X-bcc: 
+X-Folder: \Stanley_Horton_Jan2002\Horton, Stanley\Inbox
+X-Origin: Horton-S
+X-FileName: shorton (Non-Privileged).pst
+
+Ray:   Will do.
+   
+Mike and Dave:   I know these are trying times but we still do have to follow the rules.   If you have questions about financial/cash/treasury issues please contact myself or Kevin Howard or the Corporate Treasury folks and we will get you an answer or get your request moved along the proper channels as necessary.  
+
+-----Original Message----- 
+From: Bowen Jr., Raymond 
+Sent: Mon 12/31/2001 7:39 PM 
+To: Hayslett, Rod 
+Cc: Horton, Stanley; McMahon, Jeffrey; Perkins, Mary; Gunther, Dave; DeSpain, Tim 
+Subject: FW: wind-65-75mm
+
+
+Rod,
+ 
+Please remind the Enron Wind folks that all accounts should be set up in coordination with the Treasury group.  Clearly, much of the proceeds here will not be comingled with Enron funds, but we still need to adhere to Enron's board policy.  Thanks.
+
+Ray
+
+-----Original Message----- 
+From: Perkins, Mary 
+Sent: Mon 12/31/2001 1:11 PM 
+To: Bowen Jr., Raymond 
+Cc: 
+Subject: wind-65-75mm
+
+
+
+Ray, 
+I understand that Enron Wind opened an account on their own to hold the proceeds of the sale of Indian Mesa and Clear Sky.  Enron was not involved in this opening.  I'd like to open an account and move funds into compliance.  Do you agree?
+
+Mary 
+
+From MAILER-DAEMON Tue Jun 15 13:19:04 2021
+Message-ID: <33110064.1075855413482.JavaMail.evans@thyme>
+Date: Sun, 30 Dec 2001 20:25:19 -0800 (PST)
+From: bcooper@aopl.org
+To: l..johnson@enron.com, john.shafer@enron.com, stanley.horton@enron.com
+Subject: FW: PIPELINE NOTES, NO. 51
+Cc: bcooper@aopl.org
+Mime-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+Bcc: bcooper@aopl.org
+X-From: "Ben Cooper" <bcooper@aopl.org>@ENRON
+X-To: Andrew Hill \(E-mail\) <ahill@teppco.com>, Art Diefenbach \(E-mail\) <adiefenbach@pacpipe.com>, Barbara Katapodis \(E-mail\) <bjkatapo@unocal.com>, Becky Hilborne \(E-mail\) <becky.hilborne@williams.com>, Ben in Marshall Cooper \(E-mail\) <bcfarm@starpower.net>, Bernd Selig \(E-mail\) <bernd_selig@hsb.com>, Bill Byrd \(E-mail\) <wrbyrd@your-rcp.com>, Bob Batch \(E-mail\) <batchrc@bp.com>, Bob Healy \(E-mail\) <healy@wexlergroup.com>, Bob Hogfoss \(E-mail\) <rhogfoss@hunton.com>, Bob Reed \(E-mail\) <bob.reed@alonusa.com>, Bud Metcalf \(E-mail\) <budmetcalf@tac-denver.com>, Buddy Currens \(E-mail\) <Buddy@PipelineExperts.com>, Catherine Little \(E-mail\) <clittle@hunton.com>, Clarence Hill \(E-mail\) <cahill@ppco.com>, Curt Anastasio \(E-mail\) <curt_anastasio@udscorp.com>, Dan Cummings \(E-mail\) <cummindm@bp.com>, Dan Hisey \(E-mail\) <hiseydt@alyeska-pipeline.com>, Dave Yadav \(E-mail\) <daveyadav@aec.ca>, Dave Ysebaert \(E-mail\) <dysebae@ppco.com>, Johnson, David L. </O=ENRON/OU=NA/CN=RECIPIENTS/CN=DJOHNSO>, David Mitchell \(E-mail\) <dmitchel@duke-energy.com>, David Wight \(E-mail\) <david.wight@alyeska-pipeline.com>, Debra Haifleigh \(E-mail\) <haifleid@kochind.com>, Dennis Levine \(E-mail\) <dlevine@ppliec.com>, Eileen Moorhead \(E-mail\) <eileen.moorhead@troutmansanders.com>, Elden Johnson \(E-mail\) <johnsoner@alyeska-pipeline.com>, Ernest Hagan \(E-mail\) <ehagan@teppco.com>, Gail at office Sumter \(E-mail\) <gsumter@aopl.org>, Gary Williams \(E-mail\) <wwga@chevron.com>, George Ott \(E-mail\) <ottgl@bp.com>, Glenn Hoffmeyer \(E-mail\) <ghoffmeyer@teppco.com>, Harold Underwood \(E-mail\) <hunderwo@ch2m.com>, Harvey H. Haines \(E-mail\) <harveyhaines@mindspring.com>, Jeff Wiese \(E-mail\) <jeff.wiese@rspa.dot.gov>, Jere Dial \(E-mail\) <dialjh@ucarb.com>, Jim Ford \(E-mail\) <fordj@api.org>, Jim Shew \(E-mail\) <jshew@unocal.com>, Joan Weessies \(E-mail\) <jweessies@equilon.com>, John Prokop \(E-mail\) <jprokop@ilta.org>, Shafer, John </O=ENRON/OU=NA/CN=RECIPIENTS/CN=JSHAFER>, John Teriet \(E-mail\) <jlteriet@equilon.com>, Julie Gentz \(E-mail\) <julie.gentz@williams.com>, Kari Blankenship \(E-mail\) <blankenk@kochind.com>, Kelly Swan \(E-mail\) <kelly.swan@williams.com>, Ken McKnight \(E-mail\) <mcknigka@ucarb.com>, Larry Drader \(E-mail\) <larrydrader@aec.ca>, Larry Krug \(E-mail\) <lkrug@unocal.com>, Larry Miller \(E-mail\) <lmille02@sidley.com>, Mark Drumm \(E-mail\) <tdrumm@ppco.com>, Mark Evans \(E-mail\) <mark_evans@kindermorgan.com>, Mark Stockard \(E-mail\) <mstockard@teppco.com>, Michael Silverman \(E-mail\) <silverm3@bp.com>, Michael Webb \(E-mail\) <michael.webb@regllc.com>, Michelle Kareis \(E-mail\) <michelle.kareis@dnv.com>, Mike Miller \(E-mail\) <mrmiller@equilon.com>, Paul Gould \(E-mail\) <paul.b.gould@usa.conoco.com>, Raymond Paul \(E-mail\) <rpaul@aopl.org>, Rich Turley \(E-mail\) <RDTurley@MAPLLC.com>, Richard Bird \(E-mail\) <richard.bird@corp.enbridge.com>, Sam Spina \(E-mail\) <sspina@millermcbee.com>, Scott Van Dyke \(E-mail\) <rsvcv@aol.com>, Shelley Fidler \(E-mail\) <snf@vnf.com>, Stacey Gerard \(E-mail\) <stacey.gerard@rspa.dot.gov>, Horton, Stanley </O=ENRON/OU=NA/CN=RECIPIENTS/CN=SHORTON>, Terry Larson \(E-mail\) <TerryLarson@aec.ca>, Tim Hendrix \(E-mail\) <tim.hendrix@pmpl.com>, Tim Woolston \(E-mail\) <woolstont@alyeska-pipeline.com>, Tom Parvis \(E-mail\) <tom.parvis@equistarchem.com>, Veronica Slajer \(E-mail\) <slajerVA@alyeska-pipeline.com>, Woody Gearheart \(E-mail\) <jwgearheart@MAPLLC.com>
+X-cc: Ben Cooper <bcooper@aopl.org>
+X-bcc: 
+X-Folder: \Stanley_Horton_Jan2002\Horton, Stanley\Inbox
+X-Origin: Horton-S
+X-FileName: shorton (Non-Privileged).pst
+
+
+
+-----Original Message-----
+From: Ben Cooper [mailto:bcfarm@starpower.net]
+Sent: Sunday, December 30, 2001 10:22 PM
+To: Ben Cooper
+Subject: PIPELINE NOTES, NO. 51
+
+
+PIPELINE NOTES FROM WASHINGTON
+Vol. 4, No. 51
+December 28, 2001
+
+Association of Oil Pipe Lines
+(202) 408-7970
+(202) 408-7983 (fax)
+bcooper@aopl.org
+
+The opinions if any expressed in these notes are the author's only and do
+not represent the views of the Association of Oil Pipe Lines (but they
+should).
+
+
+1.	OPS Inspection Protocols for Integrity Management Revised and Published
+
+The Inspection Protocols to be used for the Office of Pipeline Safety's
+Segment Identification and Completeness Check Inspections have been revised
+to reflect experience gained in the pilot tests.  These are available for
+viewing and downloading from the following location:
+http://primis.rspa.dot.gov/iim/protocol.htm.   These inspections will be
+conducted in the first quarter of 2002 for operators who own or operate 500
+or more miles of hazardous liquid pipeline.  The primary objective of these
+inspections is to determine operator compliance with the requirement to
+identify all pipeline segments that can affect High Consequence Areas by
+December 31, 2001.  OPS will also conduct a completeness check to ascertain
+the status of the operator's progress in developing the Integrity Management
+Program Elements required by the new rule (49 CFR 195.452).  The protocols
+provide the basic questions to be used in performing these inspections and
+the framework under which more detailed lines of inquiry may be conducted.
+
+2.	House Pipeline Safety Legislation
+
+H.R. 3609, the House pipeline safety bill introduced December 20, is not up
+on the Library of Congress website: http://thomas.loc.gov, but highlights
+from the table of contents to give you a sense of the bill's provisions:
+Sec. 2 strengthens the federal one call notification law passed two
+Congresses ago and gives a big boost to the Common Ground Alliance;
+Sec. 3 strengthens federal enforcement of one-call requirements;
+Sec. 4 requires each pipeline operator to have a public safety program;
+Sec. 5 authorizes the Secretary to require operators to take corrective
+action to address potentially unsafe conditions or vulnerabilities to
+terrorist attacks;
+Sec. 6 increases civil penalties under the Pipeline Safety Act,;
+Sec. 7 strikes the word "demonstration" where it is used in connection with
+risk management;
+Sec. 8 provides for a federal study of land use practices and zoning
+ordinances with regard to pipeline rights-of-way;
+Sec. 9 establishes a program of pipeline integrity research, development and
+demonstration;
+Sec. 10 requires each pipeline operator to have a program to qualify
+pipeline controllers that is certified by the Secretary of Transportation;
+Sec. 11 directs the Secretary to require each pipeline operator to have a
+terrorism security program;
+Sec. 12 makes participation in the National Pipeline Mapping System a
+statutory requirement;
+Sec. 13 provides for the expediting of permit review by federal agencies for
+pipeline repair and rehabilitation projects;
+Sec. 14 protects sensitive information about pipeline vulnerabilities from
+disclosure;
+Sec. 15 makes technical changes; and
+Sec. 16 authorizes funding for the Office of Pipeline Safety for four years.
+
+	Under the AOPL/API Environmental and Safety Initiative, the Integrity and
+Reauthorization Team, captained by ChevronTexaco's Jeet Bindra, will develop
+the oil pipeline industry's response to this bill.  If you are interested in
+working with this team, let us know.
+
+3.	Fiscal Year 2002 Fees
+
+The fees to be assessed for natural gas transmission, hazardous liquid and
+liquefied natural gas (LNG) are: natural gas transmission pipelines: $109.15
+per mile (based on 298,132 miles of pipeline); and hazardous liquid
+pipelines: $121.99 per mile (based on 160,546 miles of pipeline).  LNG is
+based on the number of plants and total storage capacity of each plant.  The
+official announcement: http://ops.dot.gov/userfee/FY2002feeAssess.htm.
+
+
+4.	Confrontation Continues in Austin
+
+http://dailynews.yahoo.com/htx/keye/20011227/lo/court_battle_may_be_next_for
+_city_of_austin_and_longhorn_pipeline_1.html -- Court Battle May Be Next For
+City Of Austin And Longhorn Pipeline
+
+5.	Fines Levied in Ammonia Spill in Iowa
+
+http://web.wichitaeagle.com/content/wichitaeagle/2001/12/22/business/1222spi
+ll_txt.htm -- Koch pipeline spill kills 700,000 fish in Iowa; company
+accepts blame; http://www.ljworld.com/section/stateregional/story/78374 --
+Koch fined for record fish kill spill.
+
+6.	FERC Approves Natural Gas Pipeline Under Lake Erie
+
+The Federal Energy Regulatory Commission voted 4-0 last week to tentatively
+approve the $700 million Millennium natural gas pipeline, which would be the
+first to cross beneath the Great Lakes.
+http://www.ohio.com/bj/news/docs/003337.htm -- U.S. backs Lake Erie pipeline
+
+ - PIPELINE NOTES12.28.01.rtf 
+
+From MAILER-DAEMON Tue Jun 15 13:19:04 2021
+Message-ID: <30262191.1075844986390.JavaMail.evans@thyme>
+Date: Wed, 6 Jun 2001 14:55:17 -0700 (PDT)
+From: eserver@enron.com
+To: stanley.horton@enron.com
+Subject: <<Concur Expense Document>> - DF5/15/2001
+Mime-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+X-From: eserver@enron.com@ENRON
+X-To: Horton, Stanley </o=ENRON/ou=NA/cn=Recipients/cn=SHORTON>
+X-cc: 
+X-bcc: 
+X-Folder: \Stanley_Horton_June2001\Inbox
+X-Origin: HORTON-S
+X-FileName: shorton.pst
+
+The following expense report is ready for approval:
+
+Employee Name: Drew J. Fossum
+Status last changed by:  Automated Administrator
+Expense Report Name: DF5/15/2001
+Report Total: $4,987.12
+Amount Due Employee: $4,987.12
+
+
+To approve this expense report, click on the following link for Concur Expense.
+http://xms.enron.com
+
+From MAILER-DAEMON Tue Jun 15 13:19:04 2021
+Message-ID: <9020433.1075855413429.JavaMail.evans@thyme>
+Date: Sun, 30 Dec 2001 09:05:13 -0800 (PST)
+From: adam.umanoff@enron.com
+To: stanley.horton@enron.com
+Subject: Indian Mesa/Aura
+Cc: mark.metts@enron.com
+Mime-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+Bcc: mark.metts@enron.com
+X-From: Umanoff, Adam </O=ENRON/OU=NA/CN=RECIPIENTS/CN=NOTESADDR/CN=603BCBA9-4AD06602-86256689-747F98>
+X-To: Horton, Stanley </O=ENRON/OU=NA/CN=RECIPIENTS/CN=SHORTON>
+X-cc: Metts, Mark </O=ENRON/OU=NA/CN=RECIPIENTS/CN=MMETTS>
+X-bcc: 
+X-Folder: \Stanley_Horton_Jan2002\Horton, Stanley\Inbox
+X-Origin: Horton-S
+X-FileName: shorton (Non-Privileged).pst
+
+The Indian Mesa sale closed last night in NY.  Our team did a great job.  All we have to do now is convince Enron's creditor's committee to let us use the net proceeds through a sale of the wind company!  
+
+Regarding the sale, we are wrapping up today the revised '01 numbers and the '02 and '03 projections and expect we will have the teaser done for a Monday distribution as planned.  Happy New Year.  Adam
+
+From MAILER-DAEMON Tue Jun 15 13:19:04 2021
+Message-ID: <24909983.1075855413364.JavaMail.evans@thyme>
+Date: Fri, 28 Dec 2001 13:44:18 -0800 (PST)
+From: dave.neubauer@enron.com
+To: stanley.horton@enron.com, danny.mccarty@enron.com
+Subject: Weekly Financials
+Mime-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+X-From: Neubauer, Dave </O=ENRON/OU=NA/CN=RECIPIENTS/CN=DNEUBAU>
+X-To: Horton, Stanley </O=ENRON/OU=NA/CN=RECIPIENTS/CN=Shorton>, McCarty, Danny </O=ENRON/OU=NA/CN=RECIPIENTS/CN=Dmccarty>
+X-cc: 
+X-bcc: 
+X-Folder: \Stanley_Horton_Jan2002\Horton, Stanley\Inbox
+X-Origin: Horton-S
+X-FileName: shorton (Non-Privileged).pst
+
+
+
+  [Neubauer, Dave]  Attached are the weekly financials if you did not receive them separately.
+
+Dave 
+
+
+ 
+
+From MAILER-DAEMON Tue Jun 15 13:19:04 2021
+Message-ID: <13070389.1075844986520.JavaMail.evans@thyme>
+Date: Thu, 7 Jun 2001 12:22:31 -0700 (PDT)
+From: eserver@enron.com
+To: stanley.horton@enron.com
+Subject: <<Concur Expense Document>> - WC060701
+Mime-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+X-From: eserver@enron.com@ENRON
+X-To: Horton, Stanley </o=ENRON/ou=NA/cn=Recipients/cn=SHORTON>
+X-cc: 
+X-bcc: 
+X-Folder: \Stanley_Horton_June2001\Inbox
+X-Origin: HORTON-S
+X-FileName: shorton.pst
+
+The following expense report is ready for approval:
+
+Employee Name: William Cordes
+Status last changed by:  Automated Administrator
+Expense Report Name: WC060701
+Report Total: $2,887.63
+Amount Due Employee: $2,887.63
+
+
+To approve this expense report, click on the following link for Concur Expense.
+http://xms.enron.com
+
+From MAILER-DAEMON Tue Jun 15 13:19:04 2021
+Message-ID: <18938538.1075862332150.JavaMail.evans@thyme>
+Date: Tue, 27 Nov 2001 13:57:22 -0800 (PST)
+From: enron_update@concureworkplace.com
+To: stanley.horton@enron.com
+Subject: <<Concur Expense Document>> - tlexp101101
+Mime-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+X-From: enron_update@concureworkplace.com@ENRON
+X-To: Horton, Stanley </O=ENRON/OU=NA/CN=RECIPIENTS/CN=SHORTON>
+X-cc: 
+X-bcc: 
+X-Folder: \SHORTON (Non-Privileged)\Horton, Stanley\Inbox
+X-Origin: Horton-S
+X-FileName: SHORTON (Non-Privileged).pst
+
+The following expense report is ready for approval:
+
+Employee Name: Tod A. Lindholm
+Status last changed by:  Automated Administrator
+Expense Report Name: tlexp101101
+Report Total: $827.08
+Amount Due Employee: $827.08
+
+
+To approve this expense report, click on the following link for Concur Expense.
+http://expensexms.enron.com
+
+From MAILER-DAEMON Tue Jun 15 13:19:04 2021
+Message-ID: <23608446.1075844986436.JavaMail.evans@thyme>
+Date: Fri, 8 Jun 2001 12:04:29 -0700 (PDT)
+From: eserver@enron.com
+To: stanley.horton@enron.com
+Subject: <<Concur Expense Document>> - gsmith2
+Mime-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+X-From: eserver@enron.com@ENRON
+X-To: Horton, Stanley </o=ENRON/ou=NA/cn=Recipients/cn=SHORTON>
+X-cc: 
+X-bcc: 
+X-Folder: \Stanley_Horton_June2001\Inbox
+X-Origin: HORTON-S
+X-FileName: shorton.pst
+
+The following expense report is ready for approval:
+
+Employee Name: Gary P. Smith
+Status last changed by:  Automated Administrator
+Expense Report Name: gsmith2
+Report Total: $649.93
+Amount Due Employee: $649.93
+
+
+To approve this expense report, click on the following link for Concur Expense.
+http://xms.enron.com
+
+From MAILER-DAEMON Tue Jun 15 13:19:04 2021
+Message-ID: <32447881.1075855413342.JavaMail.evans@thyme>
+Date: Fri, 28 Dec 2001 13:37:30 -0800 (PST)
+From: vincent.strohmeyer@enron.com
+To: rod.hayslett@enron.com, jerry.peters@enron.com, danny.mccarty@enron.com, 
+	stanley.horton@enron.com
+Subject: Daily Summary of Risk Data 12/26
+Cc: a..howard@enron.com, james.saunders@enron.com, john.cobb@enron.com, 
+	dave.neubauer@enron.com, steven.harris@enron.com, 
+	cheryl.perchal@enron.com, kent.miller@enron.com, 
+	larry.pavlou@enron.com
+Mime-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+Bcc: a..howard@enron.com, james.saunders@enron.com, john.cobb@enron.com, 
+	dave.neubauer@enron.com, steven.harris@enron.com, 
+	cheryl.perchal@enron.com, kent.miller@enron.com, 
+	larry.pavlou@enron.com
+X-From: Strohmeyer, Vincent </O=ENRON/OU=NA/CN=RECIPIENTS/CN=VSTROHME>
+X-To: Hayslett, Rod </O=ENRON/OU=NA/CN=RECIPIENTS/CN=RHAYSLE>, Peters, Jerry </O=ENRON/OU=NA/CN=RECIPIENTS/CN=JPETERS1>, McCarty, Danny </O=ENRON/OU=NA/CN=RECIPIENTS/CN=DMCCARTY>, Horton, Stanley </O=ENRON/OU=NA/CN=RECIPIENTS/CN=NOTESADDR/CN=5D54FC1F-7C796798-86256A8C-4DDAD1>
+X-cc: Howard, Kevin A. </O=ENRON/OU=NA/CN=RECIPIENTS/CN=KHOWARD>, Saunders, James </O=ENRON/OU=NA/CN=RECIPIENTS/CN=JSAUNDE>, Cobb Jr., John </O=ENRON/OU=NA/CN=RECIPIENTS/CN=JCOBB>, Neubauer, Dave </O=ENRON/OU=NA/CN=RECIPIENTS/CN=DNEUBAU>, Harris, Steven </O=ENRON/OU=NA/CN=RECIPIENTS/CN=SHARRIS1>, Perchal, Cheryl </O=ENRON/OU=NA/CN=RECIPIENTS/CN=CPERCHA>, Miller, Kent </O=ENRON/OU=NA/CN=RECIPIENTS/CN=KMILLER2>, Pavlou, Larry </O=ENRON/OU=NA/CN=RECIPIENTS/CN=LPAVLOU>
+X-bcc: 
+X-Folder: \Stanley_Horton_Jan2002\Horton, Stanley\Inbox
+X-Origin: Horton-S
+X-FileName: shorton (Non-Privileged).pst
+
+
+
+
+Summary Risk Data as of 	26Dec2001	Previous	
+			
+Active Financial Deals	        71	        71	
+Active Physical Positions	        40	       40	
+P&L  Daily ($thousands)	        88.3 	       47.0 	
+VaR ($thousands)	    1,626.3* 	    1,611.4* 	
+			
+ETS Margin Account Deals	         0	         0	
+			
+
+
+*The VaR continues to be over the ETS VaR limit of $1,000,000.
+
+
+Company	 MTM by Counter Party 	 Asset 	 Liability 	 Net 21Dec01 	 Previous 	 Change 	
+NNG	EL Paso Energy Marketing	          17,727.8 	 (20,164.3)	         (2,436.5)	   (2,296.6)	           (139.9)	
+NNG	Reliant Energy Services	                 81.5 	            -   	              81.5 	         76.5 	               5.0 	
+NNG	TransCanada Energy 	          21,039.6 	 (20,429.4)	             610.2 	       620.5 	             (10.3)	
+NNG	Grand Total	          38,848.9 	 (40,593.7)	         (1,744.8)	   (1,599.6)	           (145.2)	
+							
+
+
+The terminated contracts with RMTC are now fixed receivables as of the early termination date of December 14, 2001 except for interest. NNG is owed $4.8mm and TW is owed $33.9mm.  Amounts are past due.
+
+
+Definitions:
+Physical deals modeled in the Caminus Zainet system are deals which have some form of price risk, (i.e. Index to index deals, and anticipated fuel sales) This does not include standard transport and storage agreements or unhedged natural positions.
+
+P&L  Daily:   Daily change in the  mark-to-market (MTM) valuation of all deals being tracked in the Caminus Zainet system.  This includes the origination and changes in value for both the physical and financial sides of hedges, along with any speculative trades and floating unhedged physical positions.
+
+VaR is "Value at Risk":  Enron Corp policy defines this as the maximum expected one day loss on the portfolio given a 95% statistical confidence interval.  This number is currently calculated on the Caminus system using a variance covariance methodology, rather than a Monte Carlo simulation per the Enron Corp policy.
+
+From MAILER-DAEMON Tue Jun 15 13:19:04 2021
+Message-ID: <25560451.1075844987130.JavaMail.evans@thyme>
+Date: Fri, 1 Jun 2001 07:58:05 -0700 (PDT)
+From: lowry@enron.com
+To: stanley.horton@enron.com
+Subject: Talking points w/ Kevin Hannon
+Mime-Version: 1.0
+Content-Type: text/plain; charset=ANSI_X3.4-1968
+Content-Transfer-Encoding: 7bit
+X-From: Lowry, Phil
+X-To: Horton, Stanley </o=ENRON/ou=NA/cn=Recipients/cn=Shorton>
+X-cc: 
+X-bcc: 
+X-Folder: \Stanley_Horton_June2001\Inbox
+X-Origin: HORTON-S
+X-FileName: shorton.pst
+
+Here are the bullets for your discussion w/ Kevin regarding EBS interest in service from EAMR.
+
+
+
+
+	EAMR/EBS OPPORTUNITIES
+
+?	Asset Management Services provided by EAMR will generate costs savings for EBS.
+
+?	EBS assets under consideration -    Cable Duct and ROW
+Signal Amplification Re-gen facilities (located    approximately 50 mile intervals)
+Customer Terminal locations ( Buildings, HVAC  Maintenance)
+					      POP's  "Point of Presence" ( Electronic Switching)
+
+?	Services to be provided    Operations/Maintenance
+          Fleet Management
+				          Material Management
+				          Safety
+		                     Technical Services
+			         Environmental
+			         ROW
+		                     Communications
+			        Computerized Maintenance Management System
+			        Crisis Management/Emergency Response
+			        Damage Prevention
+
+?	Preliminary estimate of cost savings at approximately $2 million annually.  EAMR would propose to share those savings with EBS.
+
+?	EAMR would absorb some of the existing EBS operations employees that are necessary to achieve required skill levels for EBS facilities. Approximately 40% of EBS ROW is in proximity to pipeline assets.
+
+From MAILER-DAEMON Tue Jun 15 13:19:04 2021
+Message-ID: <1562601.1075862332085.JavaMail.evans@thyme>
+Date: Mon, 26 Nov 2001 21:23:19 -0800 (PST)
+From: enron_update@concureworkplace.com
+To: stanley.horton@enron.com
+Subject: Expense Reports Awaiting Your Approval
+Mime-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+X-From: enron_update@concureworkplace.com@ENRON
+X-To: Horton, Stanley </O=ENRON/OU=NA/CN=RECIPIENTS/CN=SHORTON>
+X-cc: 
+X-bcc: 
+X-Folder: \SHORTON (Non-Privileged)\Horton, Stanley\Inbox
+X-Origin: Horton-S
+X-FileName: SHORTON (Non-Privileged).pst
+
+The following reports have been waiting for your approval for more than 4 days.  Please review.
+
+Owner: Joseph R Hartsoe
+Report Name: Joe11/13/01
+Days In Mgr. Queue: 7
+
+Owner: George B Stanley
+Report Name: GBS 102301 AMEX
+Days In Mgr. Queue: 5
+
+From MAILER-DAEMON Tue Jun 15 13:19:04 2021
+Message-ID: <6844577.1075862332197.JavaMail.evans@thyme>
+Date: Tue, 27 Nov 2001 16:47:04 -0800 (PST)
+From: adam.umanoff@enron.com
+To: mark.metts@enron.com, amit.walia@enron.com
+Subject: EWC - Expressions of Interest
+Cc: stanley.horton@enron.com
+Mime-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+Bcc: stanley.horton@enron.com
+X-From: Umanoff, Adam </O=ENRON/OU=NA/CN=RECIPIENTS/CN=NOTESADDR/CN=603BCBA9-4AD06602-86256689-747F98>
+X-To: Metts, Mark </O=ENRON/OU=NA/CN=RECIPIENTS/CN=MMETTS>, Walia, Amit </O=ENRON/OU=NA/CN=RECIPIENTS/CN=AWALIA>
+X-cc: Horton, Stanley </O=ENRON/OU=NA/CN=RECIPIENTS/CN=SHORTON>
+X-bcc: 
+X-Folder: \SHORTON (Non-Privileged)\Horton, Stanley\Inbox
+X-Origin: Horton-S
+X-FileName: SHORTON (Non-Privileged).pst
+
+Mark - Here is a list of folks who have called yesterday and today.  I have given everyone your name and phone number and asked that they call you (their phone numbers are included fyi):
+
+	1.  Bill Wangering - Bank One 313-225-1749 (referred by Brett  Maxwell at First Analysis)
+	2.  Larry Miller - The Wind Turbine Company 425-637-1470
+	3,  Ari Schuler (sp) - Yucaipa Corp 310-228-2895.
+
+Adam
+
+From MAILER-DAEMON Tue Jun 15 13:19:04 2021
+Message-ID: <32035294.1075855412826.JavaMail.evans@thyme>
+Date: Tue, 25 Dec 2001 21:28:00 -0800 (PST)
+From: enron_update@concureworkplace.com
+To: stanley.horton@enron.com
+Subject: Expense Reports Awaiting Your Approval
+Mime-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+X-From: enron_update@concureworkplace.com@ENRON
+X-To: Horton, Stanley </O=ENRON/OU=NA/CN=RECIPIENTS/CN=SHORTON>
+X-cc: 
+X-bcc: 
+X-Folder: \Stanley_Horton_Jan2002\Horton, Stanley\Inbox
+X-Origin: Horton-S
+X-FileName: shorton (Non-Privileged).pst
+
+The following reports have been waiting for your approval for more than 4 days.  Please review.
+
+Owner: John L Garrison
+Report Name: DECEMBER 2001
+Days In Mgr. Queue: 4
+
+From MAILER-DAEMON Tue Jun 15 13:19:04 2021
+Message-ID: <14953736.1075862332269.JavaMail.evans@thyme>
+Date: Tue, 27 Nov 2001 18:39:56 -0800 (PST)
+From: announcements.enron@enron.com
+To: dl-ga-all_enron_worldwide5@enron.com
+Subject: Enron/Dynegy Merger; Antitrust Issues
+Mime-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+X-From: Enron General Announcements </O=ENRON/OU=NA/CN=RECIPIENTS/CN=MBX_ANNCENRON>
+X-To: DL-GA-ALL_enron_worldwide5 </O=ENRON/OU=NA/CN=RECIPIENTS/CN=DL-GA-ALL-5>
+X-cc: 
+X-bcc: 
+X-Folder: \SHORTON (Non-Privileged)\Horton, Stanley\Inbox
+X-Origin: Horton-S
+X-FileName: SHORTON (Non-Privileged).pst
+
+
+As you know, Enron has signed a merger agreement by which Dynegy will acquire Enron.  We expect the transaction to close following shareholder and regulatory approvals and various conditions to closing.
+
+Even though Enron has entered into this agreement, U.S. and foreign antitrust laws require that Enron and Dynegy continue to operate independently of each other.  In particular, to the extent that Enron and Dynegy are competitors in various businesses or markets, their respective activities must be undertaken at arm's length until the transaction has closed.  Therefore, for antitrust purposes you should treat Dynegy as you would any other unaffiliated company notwithstanding the merger agreement.
+
+In addition, all information, documents and communications related to the merger between Enron and Dynegy should be coordinated through and approved by Mark Muller, Lance Schuler, Robert Eickenroht, Mark Haedicke, Rob Walls or Greg Whalley of Enron.  It is absolutely critical that this procedure be maintained.  To the extent that information is required to be disclosed to Dynegy under the merger agreement, then such disclosure should be approved by one of the foregoing individuals.
+
+If you have any questions concerning this notice, please contact Lance Schuler (713/853-5419), Robert Eickenroht (713/853-3155), Mark Haedicke (713/853-6544) or Rob Walls (713/646-6017).  Thank you for your help in this matter.
+
+From MAILER-DAEMON Tue Jun 15 13:19:04 2021
+Message-ID: <14160587.1075855413507.JavaMail.evans@thyme>
+Date: Mon, 31 Dec 2001 07:43:09 -0800 (PST)
+From: scott_gardner@pgn.com
+To: bill.casey@enron.com, sims.brett@enron.com, garet.shaw@enron.com, 
+	jennifer.owen@enron.com, jim.lobdell@enron.com, jim.piro@enron.com, 
+	kevin.nordt@enron.com, kristin.stathis@enron.com, 
+	miller.kurt@enron.com, mary.turina@enron.com, 
+	michael.schilmoeller@enron.com, peggy.fowler@enron.com, 
+	peter.lyman@enron.com, burris.ruth@enron.com, 
+	terri.peschka@enron.com, val.yildirok@enron.com
+Subject: PGE Position Reports - As of December 28, 2001
+Cc: frank.hayden@enron.com, rod.hayslett@enron.com, stanley.horton@enron.com, 
+	darrington.outama@enron.com, dave.hunt@enron.com, 
+	gardner.george@enron.com, eberhardt.joe@enron.com, 
+	karen.lewis@enron.com, kristen.merritt@enron.com, 
+	espinoza.marco@enron.com, scott.gardner@enron.com, 
+	tyesha.woods@enron.com
+Mime-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+Bcc: frank.hayden@enron.com, rod.hayslett@enron.com, stanley.horton@enron.com, 
+	darrington.outama@enron.com, dave.hunt@enron.com, 
+	gardner.george@enron.com, eberhardt.joe@enron.com, 
+	karen.lewis@enron.com, kristen.merritt@enron.com, 
+	espinoza.marco@enron.com, scott.gardner@enron.com, 
+	tyesha.woods@enron.com
+X-From: "Scott Gardner" <Scott_Gardner@pgn.com>@ENRON
+X-To: Casey, Bill </O=ENRON/OU=NA/CN=RECIPIENTS/CN=GWADDR/CN=HQ3.EM5.BILL CASEY>, Brett Sims <BRETT_SIMS@pgn.com>, Shaw, Garet </O=ENRON/OU=NA/CN=RECIPIENTS/CN=GWADDR/CN=HQ3.EM5.GARET SHAW>, Owen, Jennifer </O=ENRON/OU=NA/CN=RECIPIENTS/CN=GWADDR/CN=HQ3.EM5.JENNIFER OWEN>, Lobdell, Jim </O=ENRON/OU=NA/CN=RECIPIENTS/CN=GWADDR/CN=HQ3.EM4.JIM LOBDELL>, Piro, Jim </O=ENRON/OU=NA/CN=RECIPIENTS/CN=GWADDR/CN=HQ3.EM5.JIM PIRO>, Nordt, Kevin </O=ENRON/OU=NA/CN=RECIPIENTS/CN=GWADDR/CN=HQ1.EM1.KEVIN NORDT>, Stathis, Kristin </O=ENRON/OU=NA/CN=RECIPIENTS/CN=GWADDR/CN=HQ3.EM5.KRISTIN STATHIS>, Kurt W Miller <Kurt_W_Miller@pgn.com>, TURINA, MARY </O=ENRON/OU=NA/CN=RECIPIENTS/CN=GWADDR/CN=HQ3.EM4.MARY TURINA>, SCHILMOELLER, Michael </O=ENRON/OU=NA/CN=RECIPIENTS/CN=GWADDR/CN=HQ3.EM5.MICHAEL SCHILMOELLER>, FOWLER, PEGGY </O=ENRON/OU=NA/CN=RECIPIENTS/CN=GWADDR/CN=HQ3.EM5.PEGGY FOWLER>, LYMAN, PETER </O=ENRON/OU=NA/CN=RECIPIENTS/CN=GWADDR/CN=HQ1.EM1.PETER LYMAN>, Ruth Burris <RUTH_BURRIS@pgn.com>, Peschka, Terri </O=ENRON/OU=NA/CN=RECIPIENTS/CN=GWADDR/CN=HQ3.EM5.TERRI PESCHKA>, YILDIROK, VAL </O=ENRON/OU=NA/CN=RECIPIENTS/CN=GWADDR/CN=HQ3.EM5.VAL YILDIROK>
+X-cc: Hayden, Frank </O=ENRON/OU=NA/CN=RECIPIENTS/CN=FHAYDEN>, Hayslett, Rod </O=ENRON/OU=NA/CN=RECIPIENTS/CN=RHAYSLE>, Horton, Stanley </O=ENRON/OU=NA/CN=RECIPIENTS/CN=SHORTON>, OUTAMA, DARRINGTON </O=ENRON/OU=NA/CN=RECIPIENTS/CN=GWADDR/CN=HQ3.EM4.DARRINGTON OUTAMA>, HUNT, DAVE </O=ENRON/OU=NA/CN=RECIPIENTS/CN=GWADDR/CN=HQ1.EM1.DAVE HUNT>, George T Gardner <GEORGE_GARDNER@pgn.com>, Joe Eberhardt <JOE_EBERHARDT@pgn.com>, Lewis, Karen </O=ENRON/OU=NA/CN=RECIPIENTS/CN=GWADDR/CN=HQ3.EM5.KAREN LEWIS>, Merritt, Kristen </O=ENRON/OU=NA/CN=RECIPIENTS/CN=GWADDR/CN=HQ1.EM2.KRISTEN MERRITT>, Marco Espinoza <MARCO_ESPINOZA@pgn.com>, Gardner, Scott </O=ENRON/OU=NA/CN=RECIPIENTS/CN=GWADDR/CN=HQ3.EM4.SCOTT GARDNER>, Woods, Tyesha </O=ENRON/OU=NA/CN=RECIPIENTS/CN=GWADDR/CN=HQ3.EM5.TYESHA WOODS>
+X-bcc: 
+X-Folder: \Stanley_Horton_Jan2002\Horton, Stanley\Inbox
+X-Origin: Horton-S
+X-FileName: shorton (Non-Privileged).pst
+
+
+See attached
+ 
+Loss/Limit Notifications:
+ 
+None
+ 
+ 
+ - DPR 28.xls 
+ - Power Report 28.xls 
+ - Gas Report 28.xls 
+
+From MAILER-DAEMON Tue Jun 15 13:19:04 2021
+Message-ID: <742098.1075855412930.JavaMail.evans@thyme>
+Date: Thu, 27 Dec 2001 16:22:07 -0800 (PST)
+From: scott_gardner@pgn.com
+To: bill.casey@enron.com, sims.brett@enron.com, garet.shaw@enron.com, 
+	jennifer.owen@enron.com, jim.lobdell@enron.com, jim.piro@enron.com, 
+	kevin.nordt@enron.com, kristin.stathis@enron.com, 
+	miller.kurt@enron.com, mary.turina@enron.com, 
+	michael.schilmoeller@enron.com, peggy.fowler@enron.com, 
+	peter.lyman@enron.com, burris.ruth@enron.com, 
+	terri.peschka@enron.com, val.yildirok@enron.com
+Subject: PGE Position Reports - As of December 27, 2001
+Cc: frank.hayden@enron.com, rod.hayslett@enron.com, stanley.horton@enron.com, 
+	darrington.outama@enron.com, dave.hunt@enron.com, 
+	gardner.george@enron.com, eberhardt.joe@enron.com, 
+	karen.lewis@enron.com, kristen.merritt@enron.com, 
+	espinoza.marco@enron.com, scott.gardner@enron.com, 
+	tyesha.woods@enron.com
+Mime-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+Bcc: frank.hayden@enron.com, rod.hayslett@enron.com, stanley.horton@enron.com, 
+	darrington.outama@enron.com, dave.hunt@enron.com, 
+	gardner.george@enron.com, eberhardt.joe@enron.com, 
+	karen.lewis@enron.com, kristen.merritt@enron.com, 
+	espinoza.marco@enron.com, scott.gardner@enron.com, 
+	tyesha.woods@enron.com
+X-From: "Scott Gardner" <Scott_Gardner@pgn.com>@ENRON
+X-To: Casey, Bill </O=ENRON/OU=NA/CN=RECIPIENTS/CN=GWADDR/CN=HQ3.EM5.BILL CASEY>, Brett Sims <BRETT_SIMS@pgn.com>, Shaw, Garet </O=ENRON/OU=NA/CN=RECIPIENTS/CN=GWADDR/CN=HQ3.EM5.GARET SHAW>, Owen, Jennifer </O=ENRON/OU=NA/CN=RECIPIENTS/CN=GWADDR/CN=HQ3.EM5.JENNIFER OWEN>, Lobdell, Jim </O=ENRON/OU=NA/CN=RECIPIENTS/CN=GWADDR/CN=HQ3.EM4.JIM LOBDELL>, Piro, Jim </O=ENRON/OU=NA/CN=RECIPIENTS/CN=GWADDR/CN=HQ3.EM5.JIM PIRO>, Nordt, Kevin </O=ENRON/OU=NA/CN=RECIPIENTS/CN=GWADDR/CN=HQ1.EM1.KEVIN NORDT>, Stathis, Kristin </O=ENRON/OU=NA/CN=RECIPIENTS/CN=GWADDR/CN=HQ3.EM5.KRISTIN STATHIS>, Kurt W Miller <Kurt_W_Miller@pgn.com>, TURINA, MARY </O=ENRON/OU=NA/CN=RECIPIENTS/CN=GWADDR/CN=HQ3.EM4.MARY TURINA>, SCHILMOELLER, Michael </O=ENRON/OU=NA/CN=RECIPIENTS/CN=GWADDR/CN=HQ3.EM5.MICHAEL SCHILMOELLER>, FOWLER, PEGGY </O=ENRON/OU=NA/CN=RECIPIENTS/CN=GWADDR/CN=HQ3.EM5.PEGGY FOWLER>, LYMAN, PETER </O=ENRON/OU=NA/CN=RECIPIENTS/CN=GWADDR/CN=HQ1.EM1.PETER LYMAN>, Ruth Burris <RUTH_BURRIS@pgn.com>, Peschka, Terri </O=ENRON/OU=NA/CN=RECIPIENTS/CN=GWADDR/CN=HQ3.EM5.TERRI PESCHKA>, YILDIROK, VAL </O=ENRON/OU=NA/CN=RECIPIENTS/CN=GWADDR/CN=HQ3.EM5.VAL YILDIROK>
+X-cc: Hayden, Frank </O=ENRON/OU=NA/CN=RECIPIENTS/CN=FHAYDEN>, Hayslett, Rod </O=ENRON/OU=NA/CN=RECIPIENTS/CN=RHAYSLE>, Horton, Stanley </O=ENRON/OU=NA/CN=RECIPIENTS/CN=SHORTON>, OUTAMA, DARRINGTON </O=ENRON/OU=NA/CN=RECIPIENTS/CN=GWADDR/CN=HQ3.EM4.DARRINGTON OUTAMA>, HUNT, DAVE </O=ENRON/OU=NA/CN=RECIPIENTS/CN=GWADDR/CN=HQ1.EM1.DAVE HUNT>, George T Gardner <GEORGE_GARDNER@pgn.com>, Joe Eberhardt <JOE_EBERHARDT@pgn.com>, Lewis, Karen </O=ENRON/OU=NA/CN=RECIPIENTS/CN=GWADDR/CN=HQ3.EM5.KAREN LEWIS>, Merritt, Kristen </O=ENRON/OU=NA/CN=RECIPIENTS/CN=GWADDR/CN=HQ1.EM2.KRISTEN MERRITT>, Marco Espinoza <MARCO_ESPINOZA@pgn.com>, Gardner, Scott </O=ENRON/OU=NA/CN=RECIPIENTS/CN=GWADDR/CN=HQ3.EM4.SCOTT GARDNER>, Woods, Tyesha </O=ENRON/OU=NA/CN=RECIPIENTS/CN=GWADDR/CN=HQ3.EM5.TYESHA WOODS>
+X-bcc: 
+X-Folder: \Stanley_Horton_Jan2002\Horton, Stanley\Inbox
+X-Origin: Horton-S
+X-FileName: shorton (Non-Privileged).pst
+
+
+See attached
+ 
+Loss/Limit Notifications:
+ 
+None
+ 
+ - DPR 27.xls 
+ - Power Report 27.xls 
+ - Gas Report 27.xls 
+
+From MAILER-DAEMON Tue Jun 15 13:19:04 2021
+Message-ID: <26939808.1075844986781.JavaMail.evans@thyme>
+Date: Thu, 7 Jun 2001 10:26:47 -0700 (PDT)
+From: hartsoe@enron.com
+To: james.steffes@enron.com, leslie.lawner@enron.com, rebecca.cantrell@enron.com, 
+	sarah.novosel@enron.com, christi.nicolay@enron.com, 
+	donna.fulton@enron.com
+Subject: FERC Staff Concerns on the Gas Side
+Cc: stanley.horton@enron.com, steven.kean@enron.com, shelley.corman@enron.com, 
+	drew.fossum@enron.com, kay.miller@enron.com, ray.neppl@enron.com, 
+	robert.kilmer@enron.com
+Mime-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+Bcc: stanley.horton@enron.com, steven.kean@enron.com, shelley.corman@enron.com, 
+	drew.fossum@enron.com, kay.miller@enron.com, ray.neppl@enron.com, 
+	robert.kilmer@enron.com
+X-From: Hartsoe, Joe
+X-To: Steffes, James </o=ENRON/ou=NA/cn=Recipients/cn=NOTESADDR/CN=AFB3D0FA-CCB03D20-86256962-56FDA5>, Lawner, Leslie </o=ENRON/ou=NA/cn=Recipients/cn=NOTESADDR/CN=3ECB1182-3575DA1F-8625696E-5B17A4>, Cantrell, Rebecca </o=ENRON/ou=NA/cn=Recipients/cn=NOTESADDR/CN=BB968A55-CF04B913-862564CF-573FAB>, Novosel, Sarah </o=ENRON/ou=NA/cn=Recipients/cn=NOTESADDR/CN=E8015336-2D09A27C-862566B9-5830A9>, Nicolay, Christi </o=ENRON/ou=NA/cn=Recipients/cn=NOTESADDR/CN=5836B2AD-ED2E830F-86256502-7152CC>, Fulton, Donna </o=ENRON/ou=NA/cn=Recipients/cn=NOTESADDR/CN=CDE8DAE-A0B9AB37-862566B7-7A1609>
+X-cc: Horton, Stanley </o=ENRON/ou=NA/cn=Recipients/cn=SHORTON>, Kean, Steven </o=ENRON/ou=NA/cn=Recipients/cn=NOTESADDR/CN=B86DC838-ECAFDC13-8625693C-57FA6D>, Corman, Shelley </o=ENRON/ou=NA/cn=Recipients/cn=SCORMAN>, Fossum, Drew </o=ENRON/ou=NA/cn=Recipients/cn=DFOSSUM>, Miller, Mary Kay </o=ENRON/ou=NA/cn=Recipients/cn=NOTESADDR/CN=59406CF-4A8787C-862566DE-280AA>, Neppl, Ray </o=ENRON/ou=NA/cn=Recipients/cn=RNEPPL>, Kilmer III, Robert </o=ENRON/ou=NA/cn=Recipients/cn=RKILMER>
+X-bcc: 
+X-Folder: \Stanley_Horton_June2001\Inbox
+X-Origin: HORTON-S
+X-FileName: shorton.pst
+
+Folks -- 
+
+Had a good discussion with a Senior Staff member at FERC in preparation for the Pipelines Outreach meeting next week.  He told me that the two issues on the gas side that are of primary concern to the Commission are 1) Marketing Affiliates and potential abuse on the pipelines (Think El Paso); and 2) the failure of CFTC and/or SEC to more closely oversee derivative trading. 
+
+Apparently, staff is considering whether to ban all transactions by marketers on an affiliated pipeline, and some form of filing/reporting requirement to better understand the derivative market.  Due to a lack of information, some at FERC are assuming the worst.    
+
+I believe these proposals are in the formative stage and have not been presented to Senior Staff or Commissioners as a recommendation.  I think Staff would appreciate some information (ammo) to refute the need to further regulate marketing affiliates or delve into derivative trading.
+
+INGAA filed comments and a study concerning Marketers' use of affiliated pipelines in response to the Marketing Affiliate Conference at FERC.  These are attached.   Staff questions whether the underlying information remains accurate.  We are considering whether to update the underlying information used in the INGAA Study and how best to address these issues (probably during Q&As) during the Staff Outreach.
+
+I believe it would be helpful to put back together the coalition that Leslie Lawner used at the last Market Affiliate conference to request a meeting as part of the current Staff Outreach to discuss Staff's concerns.  In addition, I think it would be helpful to request a separate ENRON meeting with Staff to discuss how the derivative market works and why FERC does not need to establish ongoing reporting requirements or otherwise become involved in these markets.  Unfortunately, in this meeting we would probably be asked about our involvement in the El Paso Merchant Transportation deal into California, in light of Peggy Hegg's comment on the Frontline Show that El Paso hedged some of the risk with Enron.  
+
+We can discuss further on Friday's call.  Later Joe
+
+ 
+ 
+
+From MAILER-DAEMON Tue Jun 15 13:19:04 2021
+Message-ID: <17692396.1075844986909.JavaMail.evans@thyme>
+Date: Fri, 8 Jun 2001 16:28:33 -0700 (PDT)
+From: bcooper@aopl.org
+To: l..johnson@enron.com, john.shafer@enron.com
+Subject: PIPELINE NOTES, NO. 22
+Cc: cooper@aopl.org
+Mime-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+Bcc: cooper@aopl.org
+X-From: "Ben Cooper" <bcooper@aopl.org>@ENRON
+X-To: hill@teppco.com <a>, diefenbach@pacpipe.com, jkatapo@unocal.com <b>, ecky.hilborne@williams.com, cfarm@starpower.net <b>, ernd_selig@hsb.com, rbyrd@your-rcp.com <w>, atchrc@bp.com, ealy@wexlergroup.com <h>, hogfoss@hunton.com <r>, ob.reed@alonusa.com, udmetcalf@tac-denver.com <b>, uddy@PipelineExperts.com <B>, biersack@BGRDC.com, chassin@winnr.com, little@hunton.com, ahill@ppco.com, urt_anastasio@udscorp.com, ummindm@bp.com, iseydt@alyeska-pipeline.com <h>, aveyadav@aec.ca, ysebae@ppco.com <d>, Johnson, David L. </o=ENRON/ou=NA/cn=Recipients/cn=DJOHNSO>, mitchel@duke-energy.com, avid.wight@alyeska-pipeline.com, aifleid@kochind.com, levine@ppliec.com <d>, ileen.moorhead@troutmansanders.com, ohnsoner@alyeska-pipeline.com <j>, hagan@teppco.com, sumter@aopl.org, wga@chevron.com, ttgl@bp.com, hoffmeyer@teppco.com <g>, underwo@ch2m.com, arvey.haines@gastechnology.org, eff.wiese@rspa.dot.gov <j>, ialjh@ucarb.com <d>, ordj@api.org <f>, shew@unocal.com <j>, weessies@equilon.com <j>, prokop@ilta.org <j>, Shafer, John </o=ENRON/ou=NA/cn=Recipients/cn=JSHAFER>, lteriet@equilon.com <j>, ulie.gentz@williams.com <j>, lankenk@kochind.com <b>, elly.swan@williams.com <k>, cknigka@ucarb.com, arrydrader@aec.ca <l>, krug@unocal.com, mille02@sidley.com, ark.curwin@uspl.enbridge.com, drumm@ppco.com <t>, ark_evans@kindermorgan.com, stockard@teppco.com, ilverm3@bp.com <s>, stroud@bracepatt.com, ichael.webb@regllc.com, ichelle.kareis@dnv.com, rmiller@equilon.com, cicio@dow.com <p>, aul.b.gould@usa.conoco.com <p>, jreece@mapllc.com, paul@aopl.org, DTurley@mapllc.com <R>, ichard.bird@corp.enbridge.com, spina@millermcbee.com, svcjv@aol.com <r>, nf@vnf.com <s>, tacey.gerard@rspa.dot.gov, Horton, Stanley </o=ENRON/ou=NA/cn=Recipients/cn=SHORTON>, erryLarson@aec.ca <T>, im.hendrix@pmpl.com <t>, oolstont@alyeska-pipeline.com <w>, nudset@gatx.com <k>, om.parvis@equistarchem.com, lajerVA@alyeska-pipeline.com, wgearheart@mapllc.com <j>
+X-cc: cooper@aopl.org <b>
+X-bcc: 
+X-Folder: \Stanley_Horton_June2001\Inbox
+X-Origin: HORTON-S
+X-FileName: shorton.pst
+
+PIPELINE NOTES FROM WASHINGTON
+Vol. 4, No. 22
+June 8, 2001
+
+Association of Oil Pipe Lines
+(202) 408-7970
+(202) 408-7983 (fax)
+bcooper@aopl.org
+
+The opinions if any expressed in these notes are the author's only and do
+not represent the views of the Association of Oil Pipe Lines (but they
+should).
+
+
+1.	Commission Schedules Colonial Market-Based Rate Renewal Request
+
+	At its June 13 meeting the Federal Energy Regulatory Commission intends to
+take up Colonial's request to renew its market-based rates into the
+Northeast markets.  In the mid-90's, Colonial was granted market-based rate
+status on movements from the Gulf Coast and from Philadelphia and New York
+City area origins into Philadelphia and New York City area destinations, on
+a temporary basis subject to renewal.  In March 2000, Colonial applied for
+renewal.  No one objected, but the Commission has not acted on the matter.
+Next week they promise to take it up.  You can view Colonial's application
+at http://rimsweb1.ferc.fed.us/rims under docket number OR00-3-000.
+
+2.	Commission Reaffirms Colonial Abandonment and New Service Ruling
+
+	At its last meeting, the Commission approved an Order on Rehearing of the
+Commission's October 27, 1999 order granting Colonial's petition for a
+declaratory order on abandonment of existing service to Tennessee and the
+rate structure of new service to Tennessee. (see 89 FERC  61,095 (1999)).
+Exxon Mobil and Motiva had asked the Commission to reconsider that ruling.
+	Colonial is building a new line from Birmingham, Alabama to Nashville via
+Huntsville, Tennessee.  When that line is completed, it intends to abandon
+service to Nashville via a line running from Atlanta.  Colonial sought a
+ruling from the Commission that its abandonment of the Atlanta to Nashville
+line will not be subject to challenge, that its indexed rates from Houston
+origins to Birmingham will not be subject to challenge because of the new
+connection, and that a cost-of-service may be used to establish the initial
+rate for the service to Nashville and Huntsville via the new pipeline.  The
+Commission approved all of the requests subject to verification at the time
+that the change takes place.
+	Exxon Mobil and Motiva argued that the rules for setting rates as a new
+service should not apply to this situation because Colonial is really merely
+providing a new route for an existing service.  The Commission disagreed,
+finding that rates apply to the specific route and that this was a new
+route.  Exxon Mobil and Motiva also argued that Colonial should not be able
+to rely on indexed/grandfathered rates to Birmingham and to charge
+cost-of-service rates for the new pipeline from Birmingham to the Tennessee
+destinations.  They argued this was permitting the pipeline to mix and match
+rate methodologies.  The Commission disagreed, stating that Colonial was
+merely seeking to add a new service, which under the Commission's rules must
+be justified either with a negotiated rate or on a cost-of-service basis.
+Finally, Exxon Mobil argued that the Commission should look more closely at
+the abandonment to determine whether the cancellation is in the public
+interest under section 15(3) of the Interstate Commerce Act.  The Commission
+found that complete abandonment of a service is outside its jurisdiction,
+but allowed Exxon Mobil to argue at the time of the abandonment that a
+complete abandonment would not take place.  A copy of the Commission's order
+may be found at http://cips.ferc.fed.us/cips/default.htm under docket number
+OR99-16-000.
+
+3.	NTSB Issues Report on Marathon Ashland Spill
+
+	The National Transportation Safety Board last week issued its accident
+report on the Marathon Ashland spill in Kentucky last January.  According to
+the report, that 11,644 barrel spill resulted from metal fatigue at a dent
+site.  The line had been pigged in 1997 and an anomaly had been detected
+there but the pig contractor had determined that the dent was not
+significant.  It did not meet repair criteria used at the time.  The NTSB
+found "failure of the controller and supervisors to timely recognize the
+rupture, shut down the pipeline, and isolate the ruptured section of the
+pipeline" contributed to the severity of the accident.  To review the report
+yourself, go to http://www.ntsb.gov/Publictn/2001/PAB0102.htm.  To read what
+the local paper had to say, go to
+http://enquirer.com/editions/2001/06/02/loc_pipe_workers_are.html, Pipe,
+workers are faulted in pipeline spill.
+
+4.	Nomination for the U.S. Army Corps of Engineers
+
+President Bush intends to nominate Michael Parker to be Assistant Secretary
+of the Army for Civil Works.  Parker is a former Congressman from the 4th
+District of  Mississippi serving from 1989 to 1999.  He was a member of  the
+Budget,  Appropriations, Transportation, Education and Workforce and
+Veteran's Affairs Committees.  His nomination must be approved by the
+Senate.  The Senate Environment and Public Works Committee, chaired by Sen.
+Jeffords (I-VT), will consider the nomination.   Parker was elected as a
+Democrat to the House of Representatives in 1989, and soon after the House
+majority became Republican in 1994, Parker also became a Republican.  Parker
+is currently the President and Owner of Parker-Malvaney Consulting, Inc., a
+government affairs consulting firm in Brookhaven, Mississippi.
+
+5.	Patty Murray (D-WA) on Bellingham Accident Anniversary
+
+	Check the Congressional RECORD for June 7 at page S5959.
+http://thomas.loc.gov/r107/r107.html  TWO-YEAR ANNIVERSARY OF THE BELLINGHAM
+WASHINGTON PIPELINE EXPLOSION.  Sen. Murray's press release is at
+http://www.senate.gov/~murray/releases/01/06/2001607D05.html.
+
+6.	New Lawsuits from the Bellingham Accident
+
+http://news.bellinghamherald.com/stories/20010606/LocalState/55677.shtml --
+4 sue Olympic for emotional suffering; Other defendants named include those
+from prior pipeline suits.
+
+7.	FERC Announces New Web Site
+
+	The FERC has developed a new website including a new URL (www.ferc.gov)
+designed to be more user friendly and organized "in a more intuitive manner"
+than the old site.  Take a look at it and let us know what you think.
+
+8.	Commissioner Wood Sworn In
+
+	After confirmation by the Senate, it takes a few days for the nominees to
+wrap up work at their former jobs. FERC Commissioner Pat Wood this week
+finished his work at the Texas Public Utility Commission, where he was
+chair, was sworn in on Tuesday and is in his office at the FERC.  One of his
+first tasks will be to travel to California to meet with Governor Gray Davis
+about the crisis in that state.  Commissioner Nora Mead Brownell may not
+come on board until July.  Rumor has it that she will qualify for an
+improved pension if she stays on in Pennsylvania for another month.
+
+9.	Lois Epstein Changes Jobs and Job Locations
+
+Lois Epstein, Environmental Defense's pipeline safety advocate, has left
+Washington DC and Environmental Defense for Anchorage, Alaska.   There she
+will work for a watershed-protection organization called Cook Inlet Keeper
+"advocating for best possible performance for pipelines, refineries, and
+other oil and gas infrastructure and working to prevent new oil and gas
+drilling in sensitive portions of the watershed."  This leaves the pipeline
+safety issue in DC to Jeremiah Baumann of US Public Interest Research Group,
+Patricio Silva of the Natural Resources Defense Council and Paul Orum of the
+Working Group on Community Right-to-Know.  There is still a possibility that
+Environmental Defense will assign some new DC person to work on pipeline
+safety issues.  Ms. Epstein hopes to continue as a public member of the
+Office of Pipeline Safety's Technical Hazardous Liquid Pipeline Safety
+Advisory Committee.  For more on her new job, see www.inletkeeper.org.
+
+10.	Exxon Prevails in Louisiana Expropriation Case
+
+	We thought we had already reported to you on this one but can't find it in
+back issues, and want to be sure you know.  Exxon recently prevailed in the
+Supreme Court of Louisiana in a case involving valuation of pipeline
+right-of-way in expropriation cases.  The landowners argued that the
+appropriate measure of value for the expropriated land should be for the
+highest and best use of the property as a pipeline corridor, and to
+determine the value by looking at what other pipeline companies paid for
+similar rights-of-way on a per rod basis.  Exxon argued that the appropriate
+valuation method was using property comparables on a per acre basis.  The
+difference in the two methods in this case was $ 251,505 versus $ 17,172.
+The lower courts sided with the landowner but the Supreme Court agreed with
+Exxon.  The opinion, Exxon Pipeline Company v. Hill, et al. can be accessed
+on the court's web site at www.lasc.org.  Once you reach the site, go to the
+May 15th press release to find the opinion.
+
+11.	OPS Authorizes Reopening of Chalk Point Pipeline
+
+	This is the pipeline that runs to the power plant just north of Washington,
+DC that experienced a spill into a local wetlands last year, now rumored to
+be the most expensive pipeline spill ever. The line was owned by Potomac
+Electric Power Company.   The Office of Pipeline Safety has proposed a civil
+fine of $ 674,000, and PEPCO claims the clean up has cost it more than $ 60
+million.  The line and the power plant have now been sold to Mirant
+Mid-Atlantic LLC.  OPS this week authorized Mirant to start the line back
+up.  The OPS release can be found at
+http://www.dot.gov/affairs/rspa1601.htm.   For the local view see
+http://washingtonpost.com:80/wp-dyn/articles/A26573-2001Jun5.html, Closed
+Oil Pipeline Slated for Reopening.
+
+12.	Senate Commerce Subcommittee Chairmanships under the Democrats
+
+The Democrats organized the Senate this week.  In the Coimmerce, Science and
+Transportation Committee, Sen. Fritz Hollings (D-SC) became Committee
+Chairman, and the subcommittees got new chairmen.   Sen. John Breaux (D-LA)
+has the important one for us.  The lineup is as follows:
+Aviation: Sen. Jay Rockefeller (D-WV); Communications: Sen. Daniel Inouye
+(D-HI);  Consumer Affairs, Foreign Commerce and Tourism: Sen. Byron Dorgan
+(D-ND); Oceans & Fisheries: Sen. John Kerry (D-MA); Science, Space &
+Technology: Sen. Ron Wyden (D-OR); and Surface Transportation and Merchant
+Marine: Sen. John Breaux (D-LA).
+
+13.	Pipeline Safety R&D at the Department of Energy
+
+Following is a link to the Department of Energy's Office of Fossil Energy
+and a recent announcement of several join government/industry projects to
+develop high-tech ways to improve the safety and performance of the nation's
+natural gas delivery system.
+http://www.fe.doe.gov/techline/tl_gasinfra_sel1.shtml.
+
+14.	Transportation Facility Siting
+
+Pipeline permitting problems are just a subset of the permitting problems of
+transportation modes generally.
+http://www.trafficworld.com/news/feature/index.html -- Decongesting
+Politics: Brawl brewing on Capitol Hill over environmental review of
+transport projects.
+
+15.	Eminent Domain
+
+We wrote USA Today to tell them they have to process for liquid pipeline
+siting wrong in this article:
+http://www.usatoday.com/usatonline/20010606/3376984s.htm -- Energy plan
+intrudes on land Bush policy would allow the government to take private
+property for power line sites, and some say it's not for the public good.
+
+16.	Montana Power Costs Becoming a Big Concern
+
+	We wonder to whether this experience is found in other states.  Let us
+know.
+http://www.trib.com/HOMENEWS/WYO/PipelinePower.html -- Express Pipeline
+turns to diesel generators to cut power costs
+
+17.	Pipeline to the Salt Lake City Market
+
+Service changes like this one are becoming more frequent as the industry
+seeks to serve growth markets.
+ http://www.durangoherald.com/1news4534.htm -- Pipeline plan worries some
+residents
+
+
+ - PIPELINE NOTES6.8.01.rtf 
+
+From MAILER-DAEMON Tue Jun 15 13:19:04 2021
+Message-ID: <16352815.1075862332000.JavaMail.evans@thyme>
+Date: Wed, 21 Nov 2001 05:58:40 -0800 (PST)
+From: enron_update@concureworkplace.com
+To: stanley.horton@enron.com
+Subject: <<Concur Expense Document>> - GBS 102301 AMEX
+Mime-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+X-From: enron_update@concureworkplace.com@ENRON
+X-To: Horton, Stanley </O=ENRON/OU=NA/CN=RECIPIENTS/CN=SHORTON>
+X-cc: 
+X-bcc: 
+X-Folder: \SHORTON (Non-Privileged)\Horton, Stanley\Inbox
+X-Origin: Horton-S
+X-FileName: SHORTON (Non-Privileged).pst
+
+The following expense report is ready for approval:
+
+Employee Name: George B. Stanley
+Status last changed by:  Automated Administrator
+Expense Report Name: GBS 102301 AMEX
+Report Total: $7,437.90
+Amount Due Employee: $7,437.90
+
+
+To approve this expense report, click on the following link for Concur Expense.
+http://expensexms.enron.com
+
+From MAILER-DAEMON Tue Jun 15 13:19:04 2021
+Message-ID: <31441447.1075844986983.JavaMail.evans@thyme>
+Date: Thu, 7 Jun 2001 09:47:28 -0700 (PDT)
+From: umanoff@enron.com
+To: stanley.horton@enron.com
+Subject: Re: Update.
+Cc: a..lindholm@enron.com
+Mime-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+Bcc: a..lindholm@enron.com
+X-From: Umanoff, Adam
+X-To: Horton, Stanley </o=ENRON/ou=NA/cn=Recipients/cn=SHORTON>
+X-cc: Lindholm, Tod A. </o=ENRON/ou=NA/cn=Recipients/cn=TLINDHO>
+X-bcc: 
+X-Folder: \Stanley_Horton_June2001\Inbox
+X-Origin: HORTON-S
+X-FileName: shorton.pst
+
+Thanks for your note.  Agreed that execution on IMI and II (construction, debt and equity closings) are the key for the Americas.  It looks like we will have slippage for Q2; I am expecting to see European numbers later this morning and will give you a call to discuss on Friday.  We can also discuss the gearbox issues for the US as to which I am a bit more optimistic than my earlier reports.  Adam
+
+
+From:	Stanley Horton/ENRON@enronXgate on 06/05/2001 03:00 PM CDT
+To:	Adam Umanoff/EWC/Enron@ENRON
+cc:	Tod A Lindholm/ENRON@enronXgate 
+
+Subject:	Update.
+
+
+It sounds like the due diligence with UBS is going fairly well with no real surprise.  The news is good on Indian Mesa I and II both on the deal with AEP and the financing.  The real target is completion of the project on time.
+
+I am concerned about slippage again on Q2 due to the Greek project slippage and German installations being behind schedule.  I am looking forward to seeing the Q2 numbers very soon.
+
+What is the issue on the L&S gearbox and what is the potential impact on 01 earnings given your statement that if we do not pass the test, it will present significant problems for 01 US sales.
+
+Let's talk by phone this week if possible.
+
+
+From MAILER-DAEMON Tue Jun 15 13:19:04 2021
+Message-ID: <6751947.1075855413318.JavaMail.evans@thyme>
+Date: Fri, 28 Dec 2001 13:05:59 -0800 (PST)
+From: administration.enron@enron.com
+To: maintenance.dl-exchange@enron.com
+Subject: CORRECTION:  Outlook Outage - Friday, December 28, 2001
+Mime-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+X-From: Enron Messaging Administration </O=ENRON/OU=NA/CN=RECIPIENTS/CN=NOTESADDR/CN=ENRON MESSAGING ADMINISTRATION>
+X-To: DL-Exchange Server Maintenance </O=ENRON/OU=NA/CN=RECIPIENTS/CN=DL-ExchangeServerMaintenance>
+X-cc: 
+X-bcc: 
+X-Folder: \Stanley_Horton_Jan2002\Horton, Stanley\Inbox
+X-Origin: Horton-S
+X-FileName: shorton (Non-Privileged).pst
+
+
+
+This is a notice to inform you that the server where your Outlook mailbox resides is scheduled for an outage tonight.  Your mailbox will be temporarily unavailable starting anytime after 11pm and may continue to be unavailable until 1 a.m., when all server maintenance work have been completed.  Outlook Web Access (OWA) will also be unavailable during this time.  
+
+Blackberry users:  Message delivery may be delayed for a few minutes.
+ 
+If you have any questions, please call the Resolution Center at x31411.
+
+From MAILER-DAEMON Tue Jun 15 13:19:04 2021
+Message-ID: <32650686.1075855413557.JavaMail.evans@thyme>
+Date: Mon, 31 Dec 2001 12:25:44 -0800 (PST)
+From: rosalee.fleming@enron.com
+To: raymond.bowen@enron.com, rick.buy@enron.com, richard.causey@enron.com, 
+	w..delainey@enron.com, james.derrick@enron.com, 
+	janet.dietrich@enron.com, jim.fallon@enron.com, 
+	e..haedicke@enron.com, stanley.horton@enron.com, a..hughes@enron.com, 
+	mark.koenig@enron.com, kenneth.lay@enron.com, 
+	jeffrey.mcmahon@enron.com, john.sherriff@enron.com, 
+	greg.whalley@enron.com
+Subject: Enron Management Committee Meeting on Wednesday, January 2, 2002 @
+ 11:00 a.m.
+Cc: paula.rieker@enron.com, carolyn.evans@enron.com, connie.blackwood@enron.com, 
+	kay.chapman@enron.com, janette.elbertson@enron.com, 
+	sue.ford@enron.com, j.harris@enron.com, k..heathman@enron.com, 
+	lucy.marshall@enron.com, yorleni.mendez@enron.com, 
+	marsha.schiller@enron.com, cindy.stark@enron.com, 
+	liz.taylor@enron.com, laura.valencia@enron.com, l..wells@enron.com, 
+	sharron.westbrook@enron.com
+Mime-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+Bcc: paula.rieker@enron.com, carolyn.evans@enron.com, connie.blackwood@enron.com, 
+	kay.chapman@enron.com, janette.elbertson@enron.com, 
+	sue.ford@enron.com, j.harris@enron.com, k..heathman@enron.com, 
+	lucy.marshall@enron.com, yorleni.mendez@enron.com, 
+	marsha.schiller@enron.com, cindy.stark@enron.com, 
+	liz.taylor@enron.com, laura.valencia@enron.com, l..wells@enron.com, 
+	sharron.westbrook@enron.com
+X-From: Fleming, Rosalee </O=ENRON/OU=NA/CN=RECIPIENTS/CN=RFLEMIN>
+X-To: Bowen Jr., Raymond </O=ENRON/OU=NA/CN=RECIPIENTS/CN=Rbowen>, Buy, Rick </O=ENRON/OU=NA/CN=RECIPIENTS/CN=Rbuy>, Causey, Richard </O=ENRON/OU=NA/CN=RECIPIENTS/CN=Rcausey>, Delainey, David W. </O=ENRON/OU=NA/CN=RECIPIENTS/CN=Ddelain2>, Derrick Jr., James </O=ENRON/OU=NA/CN=RECIPIENTS/CN=Jderric>, Dietrich, Janet </O=ENRON/OU=NA/CN=RECIPIENTS/CN=Jdietri>, Fallon, Jim </O=ENRON/OU=NA/CN=RECIPIENTS/CN=Jfallon>, Haedicke, Mark E. </O=ENRON/OU=NA/CN=RECIPIENTS/CN=Mhaedic>, Horton, Stanley </O=ENRON/OU=NA/CN=RECIPIENTS/CN=Shorton>, Hughes, James A. </O=ENRON/OU=NA/CN=RECIPIENTS/CN=JHUGHES>, Koenig, Mark </O=ENRON/OU=NA/CN=RECIPIENTS/CN=Mkoenig>, Lay, Kenneth </O=ENRON/OU=NA/CN=RECIPIENTS/CN=Klay>, McMahon, Jeffrey </O=ENRON/OU=NA/CN=RECIPIENTS/CN=Jmcmaho>, Sherriff, John <jsherriff@btinternet.com>, Whalley, Greg </O=ENRON/OU=NA/CN=RECIPIENTS/CN=Gwhalle>
+X-cc: Rieker, Paula </O=ENRON/OU=NA/CN=RECIPIENTS/CN=Prieker>, Evans, Carolyn </O=ENRON/OU=NA/CN=RECIPIENTS/CN=Cevans6>, Blackwood, Connie </O=ENRON/OU=NA/CN=RECIPIENTS/CN=Cblackw>, Chapman, Kay </O=ENRON/OU=NA/CN=RECIPIENTS/CN=Kchapma>, Elbertson, Janette </O=ENRON/OU=NA/CN=RECIPIENTS/CN=Jelbert>, Ford, Sue </O=ENRON/OU=NA/CN=RECIPIENTS/CN=SFORD>, Harris, Stephanie J  </O=ENRON/OU=NA/CN=RECIPIENTS/CN=Sharris2>, Heathman, Karen K. </O=ENRON/OU=NA/CN=RECIPIENTS/CN=Kheathm>, Marshall, Lucy <lucy.marshall@enron.net>, Mendez, Yorleni </O=ENRON/OU=NA/CN=RECIPIENTS/CN=Ymendez>, Schiller, Marsha </O=ENRON/OU=NA/CN=RECIPIENTS/CN=MSCHIL1>, Stark, Cindy </O=ENRON/OU=NA/CN=RECIPIENTS/CN=Cstark>, Taylor, Liz </O=ENRON/OU=NA/CN=RECIPIENTS/CN=Ltaylor>, Valencia, Laura </O=ENRON/OU=NA/CN=RECIPIENTS/CN=Lvalenc>, Wells, Tori L. </O=ENRON/OU=NA/CN=RECIPIENTS/CN=Twells>, Westbrook, Sharron </O=ENRON/OU=NA/CN=RECIPIENTS/CN=SWESTBR>
+X-bcc: 
+X-Folder: \Stanley_Horton_Jan2002\Horton, Stanley\Inbox
+X-Origin: Horton-S
+X-FileName: shorton (Non-Privileged).pst
+
+
+There will be a Management Committee meeting on Wednesday, January 2, 2002 @ 11:00 a.m.   Please let me know if you will attend in person or via conference call.  
+
+Thanks.
+
+Rosie
+
+From MAILER-DAEMON Tue Jun 15 13:19:04 2021
+Message-ID: <18005040.1075855413242.JavaMail.evans@thyme>
+Date: Fri, 28 Dec 2001 09:04:54 -0800 (PST)
+From: announcements.enron@enron.com
+To: dl-ga-all_enron_houston_employees@enron.com
+Subject: Metro Bus Passes and Woodlands Express Passes Available Effective
+  Friday, December 28, 2001
+Mime-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+X-From: Enron General Announcements </O=ENRON/OU=NA/CN=RECIPIENTS/CN=MBX_ANNCENRON>
+X-To: DL-GA-all_enron_houston_employees </O=ENRON/OU=NA/CN=RECIPIENTS/CN=DL-GA-all_enron_houston_employees>
+X-cc: 
+X-bcc: 
+X-Folder: \Stanley_Horton_Jan2002\Horton, Stanley\Inbox
+X-Origin: Horton-S
+X-FileName: shorton (Non-Privileged).pst
+
+
+Enron employees not participating in contract parking are eligible to receive Metro Bus Passes or Woodlands Express Passes.  You may pick up a bus pass from the Parking & Transportation Desk, on Level 3 of the Enron Building, from 8:30 AM to 4:30 PM. 
+
+
+All Metro passes offered through the Enron Parking & Transportation desk will be the Metro 30 Day Zone Pass.  When you use a 30-day zone pass, bus service is divided into four zones w/ unlimited rides.  The zone pass is time activated, which means that it will not become active until the first time it is used and will not expire until 30 days after it was used for the first time.  New passes will be available to Enron employees upon expiration of the 30 day time period. Each zone does have a different fare values based on the distance the bus travels. This is important to any buser who wants to transfer to or travel in a higher-cost zone than the zone pass they have, in this case the difference must be paid in cash.  If they are traveling in a lower cost zone, then there is no extra cost.  
+
+Parking & Transportation Desk
+3-7060
+
+From MAILER-DAEMON Tue Jun 15 13:19:04 2021
+Message-ID: <30766849.1075844986321.JavaMail.evans@thyme>
+Date: Thu, 24 May 2001 19:59:00 -0700 (PDT)
+From: outlook.team@enron.com
+To: jan.bass@enron.com, steve.sauer@enron.com, amy.clemons@enron.com, 
+	audrey.cook@enron.com, elsie.lew@enron.com, joy.werner@enron.com, 
+	kim.durham@enron.com, leslie.reeves@enron.com, lisa.brown@enron.com, 
+	mark.confer@enron.com, melissa.ratnala@enron.com, 
+	mike.self@enron.com, rhonda.robinson@enron.com, thu.nguyen@enron.com, 
+	vivien.pham@enron.com, cindy.stark@enron.com, 
+	stanley.horton@enron.com
+Subject: 3 - URGENT - TO PREVENT LOSS OF INFORMATION
+Mime-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+X-From: Outlook Migration Team
+X-To: Jan Bass <Jan Bass/NA/Enron@Enron>, Steve Sauer <Steve Sauer/ENRON_DEVELOPMENT@ENRON_DEVELOPMENT>, Amy Clemons <Amy Clemons/Corp/Enron@ENRON>, Audrey Cook <Audrey Cook/HOU/ECT@ECT>, Elsie Lew <Elsie Lew/HOU/ECT@ECT>, Joy Werner <Joy Werner/Corp/Enron@ENRON>, Kim Durham <Kim Durham/HOU/ECT@ECT>, Leslie Reeves <Leslie Reeves/HOU/ECT@ECT>, Lisa Brown <Lisa Brown/NA/Enron@Enron>, Mark Confer <Mark Confer/HOU/ECT@ECT>, Melissa K Ratnala <Melissa K Ratnala/HOU/ECT@ECT>, Mike Self <Mike Self/Corp/Enron@ENRON>, Rhonda Robinson <Rhonda Robinson/HOU/ECT@ECT>, Thu T Nguyen <Thu T Nguyen/HOU/ECT@ECT>, Vivien Pham <Vivien Pham/HOU/ECT@ECT>, Cindy Stark <Cindy Stark/Corp/Enron@ENRON>, Stanley Horton <Stanley Horton/Corp/Enron@Enron>
+X-cc: 
+X-bcc: 
+X-Folder: \Stanley_Horton_June2001\Inbox
+X-Origin: HORTON-S
+X-FileName: shorton.pst
+
+Critical Migration Information:
+
+1. Your scheduled Outlook Migration Date is THE EVENING OF :
+2. You need to press the "Save My Data" button (only once) to send us your pre-migration information.
+3. You must be connected to the network before you press the button.
+4. If a POP-UP BOX appears, prompting you to "ABORT, CANCEL OR TRUST SIGNER" please  select TRUST SIGNER.
+5. Any information you Add to your Personal Address Book, Journal or calendar after you click on the button will need to be manually re-added into Outlook after you have been migrated.
+6. Clicking this button does not complete your migration to Outlook. Your migration will be completed  the evening of your migration date.
+
+
+
+    Failure to click on the button means you WILL NOT get your Calendar, Contacts, Journal and ToDo information imported into Outlook the day of your migration and could result in up to a 2 week delay to restore this information.
+
+If you encounter any errors please contact the resolution center @ 713-853-1411 
+
+From MAILER-DAEMON Tue Jun 15 13:19:04 2021
+Message-ID: <30851146.1075855413648.JavaMail.evans@thyme>
+Date: Tue, 1 Jan 2002 21:05:37 -0800 (PST)
+From: gary.smith@enron.com
+To: danny.mccarty@enron.com
+Subject: RE: Savings Plan Notices
+Cc: stanley.horton@enron.com, cindy.olson@enron.com, david.oxley@enron.com
+Mime-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+Bcc: stanley.horton@enron.com, cindy.olson@enron.com, david.oxley@enron.com
+X-From: Smith, Gary </O=ENRON/OU=NA/CN=RECIPIENTS/CN=GSMITH7>
+X-To: McCarty, Danny </O=ENRON/OU=NA/CN=RECIPIENTS/CN=DMCCARTY>
+X-cc: Horton, Stanley </O=ENRON/OU=NA/CN=RECIPIENTS/CN=NOTESADDR/CN=5D54FC1F-7C796798-86256A8C-4DDAD1>, Olson, Cindy </O=ENRON/OU=NA/CN=RECIPIENTS/CN=COLSON>, Oxley, David </O=ENRON/OU=NA/CN=RECIPIENTS/CN=DOXLEY>
+X-bcc: Batista, Daniel </O=ENRON/OU=NA/CN=RECIPIENTS/CN=DBATIST>, Schaffer, Brian </O=ENRON/OU=NA/CN=RECIPIENTS/CN=BSCHAFFE>, Barrow, Cynthia </O=ENRON/OU=NA/CN=RECIPIENTS/CN=CBARROW>, Rahaim, Christian </O=ENRON/OU=NA/CN=RECIPIENTS/CN=CRAHAIM>
+X-Folder: \Stanley_Horton_Jan2002\Horton, Stanley\Inbox
+X-Origin: Horton-S
+X-FileName: shorton (Non-Privileged).pst
+
+Dan,
+Like you, I also received termination letters from Hewitt (as did Stan Horton, Jim Hughes, Bill Cordes and others).  Last week, I asked Dan Batista from my staff to contact Corporate Benefits to investigate what happened and to what extent.  Dan has reported the following:
+ 
+"Termination letters" were erroneously sent by Hewitt to several active employees.  There was a problem with employee status information that was transmitted via an SAP interface from ENE to Hewitt for the 11/30/01 pay period.  A number of employee records loaded into the Hewitt system with a termination date equal to their employment date.  As the Hewitt system picked up these incorrectly terminated records, letters were triggered to employees informing them of their rights as terminated employees.  The error was identified and has been fixed in the Hewitt system.  All records were reported to be fixed by 12/26/01.  Employees who received termination letters can log into the Savings Plan System under "personal data" to verify that their status has been corrected to "active".  
+ 
+We have asked Corporate Benefits for a listing of employees who received the letters so the HR Reps can follow up with an explanation to those effected. 
+
+-----Original Message----- 
+From: McCarty, Danny 
+Sent: Mon 12/31/2001 8:21 AM 
+To: Smith, Gary; Olson, Cindy; Oxley, David 
+Cc: Horton, Stanley 
+Subject: Savings Plan Notices
+
+
+
+David, Cindy and Gary, 
+     Over the holidays I received not one, but three, notifications letting me know that I had been terminated and explaining my rights under my 401K.  I also received a half a dozen calls at home from other current employees who had received these (including Julie Armstrong), all of whom were not amused.  I understand that this matter has been brought to your attention, but you have chosen not to notify any current employees that the 401K notices were sent out in error.  I suggest that you rethink this asap.
+
+Dan 
+
+From MAILER-DAEMON Tue Jun 15 13:19:04 2021
+Message-ID: <26942214.1075855412893.JavaMail.evans@thyme>
+Date: Thu, 27 Dec 2001 15:37:35 -0800 (PST)
+From: no.address@enron.com
+Subject: Please Read: Resolution Center to Disconnect Toll Free number
+Mime-Version: 1.0
+Content-Type: text/plain; charset=ANSI_X3.4-1968
+Content-Transfer-Encoding: 7bit
+X-From: Enron General Announcements@ENRON
+X-To: Announcement Group@ENRON <??SAnnouncement Group@ENRON>
+X-cc: 
+X-bcc: 
+X-Folder: \Stanley_Horton_Jan2002\Horton, Stanley\Inbox
+X-Origin: Horton-S
+X-FileName: shorton (Non-Privileged).pst
+
+The Resolution Center will be decommissioning one of its 888 numbers (888-877-7757) as of January 7, 2002.
+You can continue to contact the Resolution Center, Toll Free, by using the following steps: 
+To contact the ENW IT Resolution Center:
+? Call 1-800-973-6766 (1-800-97-ENRON)
+? Select 1 to transfer to an extension within the Enron Building
+? Select 31411 and you will be transferred to the helpdesk.
+The following options are also available through the toll-free number:
+0: Connect to voice directory
+1: Transfer to an extension in the Enron building
+2: Access voicemail in the Enron building
+3: Transfer to 3 Allen Center
+4: Transfer to Omaha
+5: Transfer modem or fax with 646 prefix
+6: Speak to an Enron operator
+7: Transfer to a fax machine in the message center
+8: Transfer to Aviation
+9: Leave a confidential message for Enron Chairman
+Please contact the Resolution Center at 3-1411 for assistance
+    
+ETS customers should continue to contact the ETS Solution Center-Houston at 713-345-4745 or 888-465-4745, and the ETS Solution Center-Omaha at 402-398-7454.
+ 
+
+From MAILER-DAEMON Tue Jun 15 13:19:04 2021
+Message-ID: <30972681.1075862332021.JavaMail.evans@thyme>
+Date: Sun, 25 Nov 2001 21:18:42 -0800 (PST)
+From: enron_update@concureworkplace.com
+To: stanley.horton@enron.com
+Subject: Expense Reports Awaiting Your Approval
+Mime-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+X-From: enron_update@concureworkplace.com@ENRON
+X-To: Horton, Stanley </O=ENRON/OU=NA/CN=RECIPIENTS/CN=SHORTON>
+X-cc: 
+X-bcc: 
+X-Folder: \SHORTON (Non-Privileged)\Horton, Stanley\Inbox
+X-Origin: Horton-S
+X-FileName: SHORTON (Non-Privileged).pst
+
+The following reports have been waiting for your approval for more than 4 days.  Please review.
+
+Owner: Joseph R Hartsoe
+Report Name: Joe11/13/01
+Days In Mgr. Queue: 6
+
+Owner: George B Stanley
+Report Name: GBS 102301 AMEX
+Days In Mgr. Queue: 4
+
+From MAILER-DAEMON Tue Jun 15 13:19:04 2021
+Message-ID: <4749853.1075862332290.JavaMail.evans@thyme>
+Date: Tue, 27 Nov 2001 21:53:36 -0800 (PST)
+From: gisb1@aol.com
+To: stanley.horton@enron.com
+Subject: Re: GISB Board of Directors Officers for 2002
+Mime-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+X-From: GISB1@aol.com@ENRON
+X-To: Horton, Stanley </O=ENRON/OU=NA/CN=RECIPIENTS/CN=SHORTON>
+X-cc: 
+X-bcc: 
+X-Folder: \SHORTON (Non-Privileged)\Horton, Stanley\Inbox
+X-Origin: Horton-S
+X-FileName: SHORTON (Non-Privileged).pst
+
+Thanks Stan -- with Bill's strong involvement this last year, it will
+certainly ease the transition next year and all the producers and Julie are
+okay with it.  I haven't heard anyone note a concern, and several Board
+members have been talking about this since September.  For a while Bill
+Benham considered doing it, but then he picked up extra international
+responsibilities including Hanoi, so not only could he not do it, but he is
+not returning to the Board in 2002 either.  Lots of changes -- Rae
+
+From MAILER-DAEMON Tue Jun 15 13:19:04 2021
+Message-ID: <20452529.1075855413089.JavaMail.evans@thyme>
+Date: Thu, 27 Dec 2001 16:46:34 -0800 (PST)
+From: newsletter@rigzone.com
+To: stanley.horton@enron.com
+Subject: RIGZONE Newsletter
+Mime-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: quoted-printable
+X-From: "newsletter@rigzone.com" <newsletter@rigzone.com>@ENRON
+X-To: Horton, Stanley </O=ENRON/OU=NA/CN=RECIPIENTS/CN=SHORTON>
+X-cc: 
+X-bcc: 
+X-Folder: \Stanley_Horton_Jan2002\Horton, Stanley\Inbox
+X-Origin: Horton-S
+X-FileName: shorton (Non-Privileged).pst
+
+
+=09=09=09[IMAGE]=09=09
+=09Friday December 28, 2001=09Petrocom   =09=09=09
+=09=09=09[IMAGE]=09=09
+=09=09=09[IMAGE]=09=09
+[IMAGE]=09=09 RIGZONE [IMAGE] [IMAGE] [IMAGE] =09[IMAGE]=09=09
+[IMAGE]=09=09home    | news    | search    | maps    | data    | jobs    | =
+market    | store  =09[IMAGE]=09=09
+=09=09=09[IMAGE]=09=09
+[IMAGE]=09=09      [IMAGE] [IMAGE]      In This Issue [IMAGE]      [IMAGE] =
+    [IMAGE]    Current Oil and Gas Industry News T! op Stories for the Past=
+ 7 Days Featured Events and Conferences What's in Store - Books & More     =
+Featured Employment Opportunities Surplus Oilfield Equipment For Sale World=
+wide Offshore Rig Utilization Oil & Gas Prices    [IMAGE]   [IMAGE]       I=
+ndustry Headlines [IMAGE]      [IMAGE]       Pemex  Encounters Natural Gas =
+Development Oppositon   Pemex runs into opposition on plans to raise the fo=
+riegn investment capital needed to for natural gas development plans    [IM=
+AGE]   [IMAGE]     Exploration [IMAGE]        [IMAGE]     [IMAGE]  Repsol O=
+ffshore Exploratory Licenses Too close to Morrocco  Morocco has denounced S=
+pain's violation of the country's maritime territory after Madrid distribut=
+ed offshore oil prospection licenses for the Canary Islands in Moroccan con=
+trolled seas.   BP Awards Caspian Geophysical a Marine Seismic Contract  BP=
+ has awarded Caspian Geophysical a major marine seismic contract offshore A=
+zerbaijan    [IMAGE]   [IMAGE]       Production [IMAGE]      [IMAGE]     [I=
+MAGE]  Gullfaks Turns 15  December 22nd marks the 15th anniversary of the G=
+ullfaks development in the North Sea.  Phillips Gets Go-Ahead for Bayu-Unda=
+n Development Project  Phillips Petroleum receives approval from the East T=
+imor Council of Ministers to proceed on the development of the Bayu-Undan g=
+as project.    [IMAGE]   [IMAGE]       Company & Financial News [IMAGE]    =
+  [IMAGE]     [IMAGE]  Delta Petroleum to Buy Piper Petroleum  Delta Petrol=
+eum Corporation, an independent energy exploration and devel! opment compan=
+y, has entered into an agreement to purchase Piper Petroleum Company, a pri=
+vately owned oil and gas company headquartered in Fort Worth, Texas.  Vecto=
+r Energy Announces Second Quarter Results   Vector Energy Corporation annou=
+nced today the results of the second quarter ended Oct. 31, 2001  Kinder Mo=
+rgan Buys Tejas  Kinder Morgan Energy Partners LP of Houston entered into a=
+n agreement to purchase Tejas Gas LLC for approximately $750 million in cas=
+h.   Nexen Sets Next Years Budget   Nexen's new capital budget is 1.24 bill=
+ion dollars. About $240 million is scheduled for worldwide exploaration pro=
+jects.    [IMAGE]   [IMAGE]  advertisement  A National-Oilwell designed, 19=
+92 built modular offshore drilling rig is available for sale direct from th=
+e manufacturer.  This rig drilled only 5 wells from the Draugen platform in=
+ the Norwegian sector of the North Sea.  Click on the link below for full d=
+etails, photos and seller contact information:   http://www.rigzone.com/mar=
+ket/surplus_listing.asp?eq_id=3D397            Last 7 Days Top Stories [IMA=
+GE]      [IMAGE]     [IMAGE]  Petrobras Acquires 75% Stake in Block OPL324 =
+Offshore Nigeria  Petrobras has inked a deal for a 30-year contract on bloc=
+k OPL324 offshore Nigeria.  The company would have a 75% interest in the bl=
+ock and serve as operator.  Shell Awards Landmark E?Data Contract  Landmark=
+ has been awarded a three-year E?data management contract by Shell.  Landma=
+rk will manage over two terabytes of seismic data using the PetroBank syste=
+m.  Oman to Cut Production by 40,000 bpd  Oman pledges to cut an additional=
+ 15,000 bpd bringing its total production cut to 40,000 bpd.  Conoco Acquir=
+es Additional Interests Offshore Vietnam  Conoco Inc. announced its agreeme=
+nt with Statoil ASA to purchase a portion of its interests in the $1.3 bill=
+ion Na! m Con Son natural gas project, offshore Vietnam.  Stena Don Heads t=
+o Work  Statoil has taken delivery of the Stena Don.  The newbuild semisubm=
+ersible will drill its first well on the Staer prospect offshore Norway.  R=
+epsol, British Gas and TotalFinaElf to Explore Offshore Argentina  Repsol a=
+nd British Gas have been joined by TotalFinaElf to explore offshore Souther=
+n Argentina.  Patterson/UTI Energy, Inc  Buys Clere Drilling Company Assets=
+  PATTERSON-UTI ENERGY, INC. the second-largest operator of land-based oil =
+and natural gas drilling rigs in North America, today announced the acquisi=
+tion of 17 land-based drilling rigs from Cleere Drilling Company   Gazprom =
+To Borrow $100 Billion Rubles to Finance Exploration  Gazprom is seeking to=
+ borrow $100 billion rubles to finance exploration and increase natural gas=
+ output in 2002.  ENI and NNPC Form Exploration Joint Venture  ENI and Nige=
+rian National Petroleum Corp. and formed an alliance to explore for Block 2=
+44 offshore Nigeria.  Statoil Orders Two More Carriers for Snohvit  Statoil=
+ and its partners have entered into an agreement with K-line and Mitsui for=
+ the construction of two new LNG carriers to be used on the Snohvit field i=
+n the Barents Sea.  Landmark and SGI Jointly Market GeoProbe Software  Land=
+mark and SGI team up to market the GeoProbe visualization software that was=
+ developed by Magic Earth.  Wellstream Achieves ISO 14001 at UK Facility  H=
+alliburton's Wellstream business unit achieves ISO 14001 and OHSAS 18001 ce=
+rtifications at its UK facility.    [IMAGE]   [IMAGE]  advertisement  "From=
+ The Rigzone Career Center" I am a 1983 Louisiana Tech Petroleum Engineerin=
+g graduate with 18 years of Amoco, Conoco and Ocean Energy deepwater drilli=
+ng engineering  experience.  I have been and would like to continue to be a=
+n effective member of a drilling team involved with planning, rig selection=
+, and operational performance measurement.  Click here for detailed informa=
+tion regarding my experience and qualifications.            Upcoming Oil & =
+Gas Industry Events [IMAGE]      [IMAGE]     [IMAGE]  Jan. 22    Alliances =
+and Partnering in Oil & Gas   Singapore Feb. 7     Marine Construction 2002=
+  Houston Feb. 10    2002 SPE International Petroleum Conference & Exhibiti=
+on in Mexico  Villahermosa Feb. 26    2002 IADC/SPE Drilling Conference and=
+ Exhibition DallasMar. 10    AAPG Annual Meeting  Houston Apr. 9     2002 S=
+PE/ICoTA Coiled Tubing Conference and Exhibition  Houston May. 6     Offsho=
+re Technology Conference 2002  Houston Aug. 27    ONS 2002 Conference and E=
+xhibition  Stavanger Oct. 6     Society of Exploration Geophysicists Annual=
+ Meeting  Salt Lake City Oct. 15    Permian Basin International Oil Show  O=
+dessa  list your conference  view upcoming events   [IMAGE]   [IMAGE]    [I=
+MAGE]    [IMAGE] [IMAGE]  Halliburton  INTEC Quest Offshore  Horizon Offsho=
+re  Global Completion Service   [IMAGE]   [IMAGE]   promote your company   =
+   [IMAGE] [IMAGE]  [IMAGE]  Petroleum Production in Nontechnical Language,=
+ 2nd Edition  [IMAGE] [IMAGE]  Survey Vessels of the World, 4th Ed.  [IMAGE=
+] [IMAGE]  Modern Petroleum Technology, 6E, 2 Vol. Set  [IMAGE]  [IMAGE]   =
+[IMAGE]   more products   [IMAGE]      [IMAGE] [IMAGE]  f! eatured equipmen=
+t: Dreco 1000 UE  Land Rigs  [IMAGE]   Gardner Denver PZ-8s  [IMAGE]   [IMA=
+GE]   [IMAGE]   more equipment      [IMAGE] [IMAGE]   featured jobs:  - Lan=
+d (Drilling) Safety Technician  - Land (Drilling) Safety Technician  - Sr. =
+Cost Engineer   more hot jobs >>   featured candidates:  - work history  - =
+Driller  - Offshore Production Supervisor   search for candidates >>   [IMA=
+GE]   [IMAGE]     [IMAGE] [IMAGE]   Drillships:  To 5000':   50.0% (7/14) +=
+5000':   100.0% (25/25)  Semisubs:  2nd Gen:   68.5% (50/73) 3rd Gen:   82.=
+0% (41/50) 4th Gen:   100.0% (38/38) 5th Gen:   100.0% (7/7)  Jackups:  To =
+200':   53.7%  (36/67) 200' MC:   58.3% (14/24) 200' MS:   14.3% (3/21) 300=
+' IC:   87.5% (84/96) +300' IC:   88.9% (48/54) Severe Env.:   81.0% (17/21=
+)  [IMAGE]   [IMAGE]   view ! complete utilization report      [IMAGE] [IMA=
+GE]  Light Crude Oil:  $20.90/BBL  (-1.28%) Brent Crude Oil:  $20.34/BBL  (=
+5.23%) Natural Gas:  $2.65/MMBtu  (-7.34%) Unleaded Gasoline:  $0.59/gal  (=
+-1.67%) prices from:  12/27/2001 change since:  12/26/2001  [IMAGE]   [IMAG=
+E]    [IMAGE] =09[IMAGE]=09=09
+=09=09=09[IMAGE]=09=09
+=09=09=09  Promotional Opportunities Become a Sponsor, feature your job ope=
+ning or, advertise your  upcoming industry conference.  Click here  for mor=
+e information, send your press release to  info@rigzone.com  or call us at =
+281-345-4040.   Member Services If you no longer wish to receive this newsl=
+etter, you may unsubscribe by clicking here  or by logging in to Rigzone an=
+d updating your profile.   You can also change the format you receive (HTML=
+ or Text) and your email address by logging in and updating your account.  =
+ Click here to log in .  =09=09
+=09=09=09[IMAGE]=09=09
+
+From MAILER-DAEMON Tue Jun 15 13:19:04 2021
+Message-ID: <27406492.1075844986828.JavaMail.evans@thyme>
+Date: Fri, 8 Jun 2001 14:38:30 -0700 (PDT)
+From: hartsoe@enron.com
+To: stanley.horton@enron.com, drew.fossum@enron.com, kay.miller@enron.com
+Subject: Fwd: Rebuttal Cases, CPUC v. El Paso
+Mime-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+X-From: Hartsoe, Joe
+X-To: Horton, Stanley </o=ENRON/ou=NA/cn=Recipients/cn=SHORTON>, Fossum, Drew </o=ENRON/ou=NA/cn=Recipients/cn=DFOSSUM>, Miller, Mary Kay </o=ENRON/ou=NA/cn=Recipients/cn=NOTESADDR/CN=59406CF-4A8787C-862566DE-280AA>
+X-cc: 
+X-bcc: 
+X-Folder: \Stanley_Horton_June2001\Inbox
+X-Origin: HORTON-S
+X-FileName: shorton.pst
+
+FYI
+----- Forwarded by Joe Hartsoe/Corp/Enron on 06/08/2001 04:37 PM -----
+
+
+	"Randall Rich" <rrich@bracepatt.com> 06/08/2001 04:39 PM 	   To: <jhartso@enron.com>  cc:   Subject: Fwd: Rebuttal Cases, CPUC v. El Paso	
+
+
+
+fyi
+Date: Fri, 08 Jun 2001 00:48:18 -0500
+From: "Kimberly Curry" <kcurry@bracepatt.com>
+Cc: "Randall Rich" <rrich@bracepatt.com>
+Subject: Rebuttal Cases, CPUC v. El Paso
+Mime-Version: 1.0
+Content-Type: multipart/mixed; boundary="=_1C460B28.2A4B281F"
+
+All,
+
+Atached is our report on the past few days of the hearing.
+
+Kimberly A. Curry
+Bracewell & Patterson, L.L.P
+2000 K Street, N.W.
+Suite 500
+(202) 828-7623 (phone)
+(202) 857-2107 (fax)
+kcurry@bracepatt.com
+
+ - #143647 v1 - DAYS 15 -17.doc 
+
+From MAILER-DAEMON Tue Jun 15 13:19:04 2021
+Message-ID: <14995281.1075844986588.JavaMail.evans@thyme>
+Date: Wed, 6 Jun 2001 12:01:00 -0700 (PDT)
+From: ablancha@neighborhood-centers.org
+To: 4254.337@compuserve.com, mha@amharchitects.com, ylco@pdq.net, omain7@aol.com, 
+	ougs@liberty-revival.org, turkleson@cheniere.com, day@mdck.com, 
+	jbricky@aol.com, krasnick@aol.com, pbaker@neosoft.com, 
+	athleen.eisbrenner@elpaso.com, lawson@cmsenergy.com, 
+	arian.davenport@dynegy.com, odelle_brudner@co.harris.tx.us, 
+	kw@wooldridgeassociates.com, oel214@aol.com, 
+	arastarsu@laporte.isd.esc4.net, mohindr@mdanderson.org, 
+	jworth@ix.netcom.com, on.lewis@bakerbotts.com, 
+	haron-michael@reliantenergy.com, horton@enron.com, 
+	om.sanders@atosorigin.com, dhotsr@aol.com, ec@chilesoffshore.com
+Subject: Board Reception
+Mime-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+X-From: Angela Blanchard <ABLANCHA@neighborhood-centers.org>
+X-To: 4254.337@compuserve.com, mha@amharchitects.com, ylco@pdq.net <a>, omain7@aol.com <d>, ougs@liberty-revival.org <d>, turkleson@cheniere.com <d>, day@mdck.com <j>, jbricky@aol.com, krasnick@aol.com <j>, pbaker@neosoft.com <j>, athleen.eisbrenner@elpaso.com <k>, lawson@cmsenergy.com <k>, arian.davenport@dynegy.com, odelle_brudner@co.harris.tx.us <m>, kw@wooldridgeassociates.com <n>, oel214@aol.com <n>, arastarsu@laporte.isd.esc4.net, mohindr@mdanderson.org <p>, jworth@ix.netcom.com, on.lewis@bakerbotts.com, haron-michael@reliantenergy.com <s>, horton@enron.com <s>, om.sanders@atosorigin.com, dhotsr@aol.com <w>, ec@chilesoffshore.com <w>
+X-cc: 
+X-bcc: 
+X-Folder: \Stanley_Horton_June2001\Inbox
+X-Origin: HORTON-S
+X-FileName: shorton.pst
+
+Dear Volunteers,
+I am hosting a reception for our board and committee members at my home on
+Thursday, June 21, 2001. FOR FUN ONLY! It will begin at 6:00pm. More
+information will be coming to you by mail. I look forward to seeing you
+there. I promise not to be serious, or make you work, or even ask you to
+THINK!
+
+Angela
+
+
+angela.blanchard@neighborhood-centers.org
+
+From MAILER-DAEMON Tue Jun 15 13:19:04 2021
+Message-ID: <3436937.1075855413386.JavaMail.evans@thyme>
+Date: Fri, 28 Dec 2001 22:51:36 -0800 (PST)
+From: news@real-net.net
+To: shorton@enron.com
+Subject: Optimize the performance of your PC!
+Mime-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+X-From: "Real.com Accessories" <news@real-net.net>@ENRON
+X-To: shorton@enron.com
+X-cc: 
+X-bcc: 
+X-Folder: \Stanley_Horton_Jan2002\Horton, Stanley\Inbox
+X-Origin: Horton-S
+X-FileName: shorton (Non-Privileged).pst
+
+
+(For e-mailing list removal information see bottom of e-mail.)	
+[IMAGE]	
+[IMAGE]	
+
+
+[IMAGE]		 [IMAGE]  [IMAGE]  Download Power Tweaks    [IMAGE] Power Tweaks is a powerful, easy-to-use, tool that customizes Windows. [IMAGE]  [IMAGE] Fine-tune your PC system for optimal performance [IMAGE] More than 250 updates to your Windows application from security to dial-up connection [IMAGE] Can significantly increase security while speeding up your system [IMAGE] Improves your computer's audio and video capabilities [IMAGE] And much more  [IMAGE] Increase the security, speed and overall performance of your PC, with Power Tweaks. [IMAGE] [IMAGE]  [IMAGE] 	[IMAGE]	
+
+
+[IMAGE]	
+
+
+[IMAGE]	
+You are receiving this e-mail because you downloaded RealPlayer
+ or RealJukebox
+ from Real.com? and indicated a preference to receive product news, updates, and special offers from RealNetworks
+. If you do not wish to receive e-mails from us in the future, click on the Remove Me link below.	
+[IMAGE]	
+Remove Me  | Privacy Policy 	
+[IMAGE]	
+RealNetworks, RealPlayer, RealJukebox and Real.com are trademarks or registered trademarks of RealNetworks, Inc. All other companies or products listed herein are trademarks or registered trademarks of their respective owners.	
+
+From MAILER-DAEMON Tue Jun 15 13:19:04 2021
+Message-ID: <30672722.1075844987175.JavaMail.evans@thyme>
+Date: Thu, 31 May 2001 13:46:10 -0700 (PDT)
+From: status_updates@concureworkplace.com
+To: stanley.horton@enron.com
+Subject: The following expense report is ready for approval: 042301
+Mime-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+X-From: status_updates@concureworkplace.com@ENRON
+X-To: Horton, Stanley </o=ENRON/ou=NA/cn=Recipients/cn=SHORTON>
+X-cc: 
+X-bcc: 
+X-Folder: \Stanley_Horton_June2001\Inbox
+X-Origin: HORTON-S
+X-FileName: shorton.pst
+
+Please do not respond directly to this message. All Necessary actions can be taken with the link below.
+
+
+Message:
+
+	The following expense report is ready for approval:
+
+
+	Employee Name: John L. Garrison
+
+	Status last changed by:  Back Office
+
+	Expense Report Name: 042301
+
+	Report Total: $12,161.07
+
+	Amount Due Employee: $65.75
+
+
+
+Action:
+
+	To approve this expense report, click the following link to Concur eWorkplace.com.
+
+	http://my.concureworkplace.com
+
+From MAILER-DAEMON Tue Jun 15 13:19:04 2021
+Message-ID: <21037518.1075844986703.JavaMail.evans@thyme>
+Date: Thu, 7 Jun 2001 07:09:02 -0700 (PDT)
+From: butler@enron.com
+To: daniel.allegretti@enron.com, ray.alvarez@enron.com, nancy.bagot@enron.com, 
+	martha.benner@enron.com, eric.benson@enron.com, donna.bily@enron.com, 
+	lynn.blair@enron.com, jack.boatman@enron.com, rob.bradley@enron.com, 
+	theresa.branney@enron.com, lorna.brennan@enron.com, 
+	tom.briggs@enron.com, janet.butler@enron.com, alan.comnes@enron.com, 
+	bill.cordes@enron.com, shelley.corman@enron.com, 
+	christi.culwell@enron.com, shonnie.daniel@enron.com, 
+	mary.darveaux@enron.com, rick.dietz@enron.com, dari.dornan@enron.com, 
+	john.dushinske@enron.com, sharon.farrell@enron.com, 
+	drew.fossum@enron.com, donna.fulton@enron.com, 
+	john.goodpasture@enron.com, pearce.hammond@enron.com, 
+	steven.harris@enron.com, joe.hartsoe@enron.com, glen.hass@enron.com, 
+	robert.hayes@enron.com, rod.hayslett@enron.com, 
+	bambi.heckerman@enron.com, theresa.hess@enron.com, 
+	robert.hill@enron.com, bradley.holmes@enron.com, 
+	staci.holtzman@enron.com, tamara.hopkins@enron.com, 
+	stanley.horton@enron.com, lee.huber@enron.com, 
+	martha.janousek@enron.com, steven.january@enron.com, 
+	steven.kean@enron.com, robert.kilmer@enron.com, 
+	frazier.king@enron.com, steve.kirk@enron.com, tim.kissner@enron.com, 
+	laura.lantefield@enron.com, linda.lawrence@enron.com, 
+	blair.lichtenwalter@enron.com, elizabeth.linnell@enron.com, 
+	teb.lokey@enron.com, phil.lowry@enron.com, susan.mara@enron.com, 
+	donna.martens@enron.com, dorothy.mccoppin@enron.com, 
+	w..mcgowan@enron.com, kay.miller@enron.com, sheila.nacey@enron.com, 
+	kimberly.nelson@enron.com, ray.neppl@enron.com, 
+	dave.neubauer@enron.com, robert.neustaedter@enron.com, 
+	christi.nicolay@enron.com, sarah.novosel@enron.com, 
+	ranelle.paladino@enron.com, maureen.palmer@enron.com, 
+	zelda.paschal@enron.com, geneva.patterson@enron.com, 
+	maria.pavlou@enron.com, keith.petersen@enron.com, 
+	janet.place@enron.com, dan.pribble@enron.com, tony.pryor@enron.com, 
+	colleen.raker@enron.com, randy.rice@enron.com, 
+	kathy.ringblom@enron.com, linda.robertson@enron.com, 
+	james.saunders@enron.com, lisa.sawyer@enron.com, 
+	donna.scott@enron.com, john.shafer@enron.com, 
+	richard.shapiro@enron.com, mike.smith@enron.com, 
+	louis.soldano@enron.com, lon.stanton@enron.com, 
+	james.steffes@enron.com, kathleen.sullivan@enron.com, 
+	jim.talcott@enron.com, gina.taylor@enron.com, denis.tu@enron.com, 
+	michael.van@enron.com, stephen.veatch@enron.com, 
+	donald.vignaroli@enron.com, jody.warner@enron.com, 
+	kimberly.watson@enron.com, kim.wilkie@enron.com, 
+	jane.wilson@enron.com, rob.wilson@enron.com, 
+	michele.winckowski@enron.com, james.wininger@enron.com, 
+	lisa.yoho@enron.com
+Subject: Commission Agenda
+Mime-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+X-From: Butler, Janet
+X-To: Allegretti, Daniel </o=ENRON/ou=NA/cn=Recipients/cn=Notesaddr/cn=ae6f379c-69808e84-8625697c-4d1bdd>, Alvarez, Ray </o=ENRON/ou=NA/cn=Recipients/cn=Notesaddr/cn=ebe4476b-2d94882a-86256a14-75ff3b>, Bagot, Nancy </o=ENRON/ou=NA/cn=Recipients/cn=Notesaddr/cn=716cad03-a5cb7d52-86256952-61a958>, Benner, Martha </o=ENRON/ou=NA/cn=Recipients/cn=Mbenner>, Benson, Eric </o=ENRON/ou=NA/cn=Recipients/cn=Notesaddr/cn=490e7bf-88158608-862566b8-764eff>, Bily, Donna </o=ENRON/ou=NA/cn=Recipients/cn=Notesaddr/cn=67986558-b5d7b44-862566cc-7ff596>, Blair, Lynn </o=ENRON/ou=NA/cn=Recipients/cn=Notesaddr/cn=6231d102-c0fa47be-862566d0-4b49dc>, Boatman, Jack </o=ENRON/ou=NA/cn=Recipients/cn=Jboatma>, Bradley, Rob </o=ENRON/ou=NA/cn=Recipients/cn=Notesaddr/cn=a82a20b7-12e21295-862566d3-70a090>, Branney, Theresa </o=ENRON/ou=NA/cn=Recipients/cn=Tbranne>, Brennan, Lorna </o=ENRON/ou=NA/cn=Recipients/cn=Lbrenna>, Briggs, Tom </o=ENRON/ou=NA/cn=Recipients/cn=Notesaddr/cn=179e5c8c-206e9f55-8625691e-7d943>, Butler, Janet </o=ENRON/ou=NA/cn=Recipients/cn=JBUTLER>, Comnes, Alan </o=ENRON/ou=NA/cn=Recipients/cn=Acomnes>, Cordes, Bill </o=ENRON/ou=NA/cn=Recipients/cn=Bcordes>, Corman, Shelley </o=ENRON/ou=NA/cn=Recipients/cn=Scorman>, Culwell, Christi </o=ENRON/ou=NA/cn=Recipients/cn=Cculwel>, Daniel, Shonnie </o=ENRON/ou=NA/cn=Recipients/cn=Sdaniel>, Darveaux, Mary </o=ENRON/ou=NA/cn=Recipients/cn=Notesaddr/cn=e6ccf31-98d49671-862566dd-637d30>, Dietz, Rick </o=ENRON/ou=NA/cn=Recipients/cn=Notesaddr/cn=a1d4c782-3027da36-862566de-571232>, Dornan, Dari </o=ENRON/ou=NA/cn=Recipients/cn=Notesaddr/cn=5f53d7ae-b4bb71b3-862566de-de719>, Dushinske, John </o=ENRON/ou=NA/cn=Recipients/cn=Jdushin>, Farrell, Sharon </o=ENRON/ou=NA/cn=Recipients/cn=Sfarrel>, Fossum, Drew </o=ENRON/ou=NA/cn=Recipients/cn=Dfossum>, Fulton, Donna </o=ENRON/ou=NA/cn=Recipients/cn=Notesaddr/cn=cde8dae-a0b9ab37-862566b7-7a1609>, Goodpasture, John </o=ENRON/ou=NA/cn=Recipients/cn=Jgoodpa>, Hammond, Pearce </o=ENRON/ou=NA/cn=Recipients/cn=Notesaddr/cn=a6829b79-35a9156-86256a3a-71411a>, Harris, Steven </o=ENRON/ou=NA/cn=Recipients/cn=Notesaddr/cn=65b627bc-84e5435e-862566de-1137ee>, Hartsoe, Joe </o=ENRON/ou=NA/cn=Recipients/cn=Notesaddr/cn=aa8cc789-55f05846-862566b9-583a12>, Hass, Glen </o=ENRON/ou=NA/cn=Recipients/cn=Ghass>, Hayes, Robert </o=ENRON/ou=NA/cn=Recipients/cn=Rhayes>, Hayslett, Rod </o=ENRON/ou=NA/cn=Recipients/cn=Rhaysle>, Heckerman, Bambi </o=ENRON/ou=NA/cn=Recipients/cn=Bhecker>, Hess, Theresa </o=ENRON/ou=NA/cn=Recipients/cn=Thess>, Hill, Robert </o=ENRON/ou=NA/cn=Recipients/cn=Rhill>, Holmes, Bradley </o=ENRON/ou=NA/cn=Recipients/cn=Bholmes>, Holtzman, Staci </o=ENRON/ou=NA/cn=Recipients/cn=Sholtzm>, Hopkins, Tamara </o=ENRON/ou=NA/cn=Recipients/cn=Thopkin>, Horton, Stanley </o=ENRON/ou=NA/cn=Recipients/cn=Shorton>, Huber, Lee </o=ENRON/ou=NA/cn=Recipients/cn=Notesaddr/cn=696a0290-ad811b00-862566de-112778>, Janousek, Martha </o=ENRON/ou=NA/cn=Recipients/cn=Mjanous>, January, Steven </o=ENRON/ou=NA/cn=Recipients/cn=Notesaddr/cn=9401fcaa-5bd0290a-862566c6-55ae59>, Kean, Steven </o=ENRON/ou=NA/cn=Recipients/cn=Notesaddr/cn=b86dc838-ecafdc13-8625693c-57fa6d>, Kilmer III, Robert </o=ENRON/ou=NA/cn=Recipients/cn=Rkilmer>, King Jr., Frazier </o=ENRON/ou=NA/cn=Recipients/cn=Fking>, Kirk, Steve </o=ENRON/ou=NA/cn=Recipients/cn=Skirk>, Kissner, Tim </o=ENRON/ou=NA/cn=Recipients/cn=Notesaddr/cn=90ccaed0-f47c5846-862566d0-5befc3>, Lantefield, Laura </o=ENRON/ou=NA/cn=Recipients/cn=Llantef>, Lawrence, Linda </o=ENRON/ou=NA/cn=Recipients/cn=Notesaddr/cn=3cc620e-12138d07-8625697c-4d0080>, Lichtenwalter, Blair </o=ENRON/ou=NA/cn=Recipients/cn=Blichte>, Linnell, Elizabeth </o=ENRON/ou=NA/cn=Recipients/cn=Notesaddr/cn=ba65ba2e-70fc65aa-8625693b-631295>, Lokey, Teb </o=ENRON/ou=NA/cn=Recipients/cn=Tlokey>, Lowry, Phil </o=ENRON/ou=NA/cn=Recipients/cn=PLOWRY2>, Mara, Susan </o=ENRON/ou=NA/cn=Recipients/cn=Notesaddr/cn=8a20ece9-992cf340-8625697d-7146e9>, Martens, Donna </o=ENRON/ou=NA/cn=Recipients/cn=Dmarten>, McCoppin, Dorothy </o=ENRON/ou=NA/cn=Recipients/cn=Dmccopp>, McGowan, Mike W. </o=ENRON/ou=NA/cn=Recipients/cn=Mmcgowa>, Miller, Mary Kay </o=ENRON/ou=NA/cn=Recipients/cn=Notesaddr/cn=59406cf-4a8787c-862566de-280aa>, Nacey, Sheila </o=ENRON/ou=NA/cn=Recipients/cn=Notesaddr/cn=7abc777-adb7398d-862566d0-4b3607>, Nelson, Kimberly </o=ENRON/ou=NA/cn=Recipients/cn=Knelson3>, Neppl, Ray </o=ENRON/ou=NA/cn=Recipients/cn=Rneppl>, Neubauer, Dave </o=ENRON/ou=NA/cn=Recipients/cn=Notesaddr/cn=bbdedaa6-75c673e4-86256808-5fdc01>, Neustaedter, Robert </o=ENRON/ou=NA/cn=Recipients/cn=Notesaddr/cn=86256608-65acba-8625671d-5a05c4>, Nicolay, Christi </o=ENRON/ou=NA/cn=Recipients/cn=Notesaddr/cn=5836b2ad-ed2e830f-86256502-7152cc>, Novosel, Sarah </o=ENRON/ou=NA/cn=Recipients/cn=Notesaddr/cn=e8015336-2d09a27c-862566b9-5830a9>, Paladino, Ranelle </o=ENRON/ou=NA/cn=Recipients/cn=Notesaddr/cn=849260fb-78bca981-862568f1-79199c>, Palmer, Maureen </o=ENRON/ou=NA/cn=Recipients/cn=Notesaddr/cn=a17c755d-4991ad5b-862565a9-567bbe>, Paschal, Zelda </o=ENRON/ou=NA/cn=Recipients/cn=Zpascha>, Patterson, Geneva </o=ENRON/ou=NA/cn=Recipients/cn=Gpatter2>, Pavlou, Maria </o=ENRON/ou=NA/cn=Recipients/cn=Mpavlou>, Petersen, Keith </o=ENRON/ou=NA/cn=Recipients/cn=Kpeterse>, Place, Janet </o=ENRON/ou=NA/cn=Recipients/cn=Jplace>, Pribble, Dan </o=ENRON/ou=NA/cn=Recipients/cn=Dpribbl>, Pryor, Tony </o=ENRON/ou=NA/cn=Recipients/cn=Notesaddr/cn=dcc09885-5b46b4f8-8625681f-75b301>, Raker, Colleen </o=ENRON/ou=NA/cn=Recipients/cn=Craker>, Rice, Randy </o=ENRON/ou=NA/cn=Recipients/cn=Rrice2>, Ringblom, Kathy </o=ENRON/ou=NA/cn=Recipients/cn=KRINGBL>, Robertson, Linda </o=ENRON/ou=NA/cn=Recipients/cn=Notesaddr/cn=e6f34021-58c07703-86256984-56518c>, Saunders, James </o=ENRON/ou=NA/cn=Recipients/cn=Jsaunde>, Sawyer, Lisa </o=ENRON/ou=NA/cn=Recipients/cn=Lsawyer>, Scott, Donna </o=ENRON/ou=NA/cn=Recipients/cn=Notesaddr/cn=bb83917d-7b346005-862567df-4fc549>, Shafer, John </o=ENRON/ou=NA/cn=Recipients/cn=Jshafer>, Shapiro, Richard </o=ENRON/ou=NA/cn=Recipients/cn=Notesaddr/cn=6cedf0c-82c4a03c-8625696c-7693a4>, Smith, Mike </o=ENRON/ou=NA/cn=Recipients/cn=Notesaddr/cn=f12745a4-d0ea155-862568e0-2fa266>, Soldano, Louis </o=ENRON/ou=NA/cn=Recipients/cn=Lsoldan>, Stanton, Lon </o=ENRON/ou=NA/cn=Recipients/cn=Notesaddr/cn=660caaec-2d4cd0f2-86256771-505851>, Steffes, James </o=ENRON/ou=NA/cn=Recipients/cn=Notesaddr/cn=afb3d0fa-ccb03d20-86256962-56fda5>, Sullivan, Kathleen </o=ENRON/ou=NA/cn=Recipients/cn=Notesaddr/cn=1004552e-5944284b-86256973-64f176>, Talcott, Jim </o=ENRON/ou=NA/cn=Recipients/cn=Jtalcot>, Taylor, Gina </o=ENRON/ou=NA/cn=Recipients/cn=Gtaylor10>, Tu, Denis </o=ENRON/ou=NA/cn=Recipients/cn=Dtu>, Van Norden, Michael </o=ENRON/ou=NA/cn=Recipients/cn=Notesaddr/cn=c60c50b-40de3121-8625671d-54fea4>, Veatch, Stephen </o=ENRON/ou=NA/cn=Recipients/cn=Sveatch>, Vignaroli, Donald </o=ENRON/ou=NA/cn=Recipients/cn=Dvignar>, Warner, Jody </o=ENRON/ou=NA/cn=Recipients/cn=Jwarner>, Watson, Kimberly </o=ENRON/ou=NA/cn=Recipients/cn=Kwatson>, Wilkie, Kim </o=ENRON/ou=NA/cn=Recipients/cn=Kwilkie>, Wilson, Jane </o=ENRON/ou=NA/cn=Recipients/cn=Notesaddr/cn=86256608-65acba-862565c4-60a127>, Wilson, Rob </o=ENRON/ou=NA/cn=Recipients/cn=Rwilson>, Winckowski, Michele </o=ENRON/ou=NA/cn=Recipients/cn=Mwincko>, Wininger, James </o=ENRON/ou=NA/cn=Recipients/cn=Notesaddr/cn=657a07-8d029d4-86256a11-76324a>, Yoho, Lisa </o=ENRON/ou=NA/cn=Recipients/cn=Notesaddr/cn=42a32fee-6c57678-86256999-750a30>
+X-cc: 
+X-bcc: 
+X-Folder: \Stanley_Horton_June2001\Inbox
+X-Origin: HORTON-S
+X-FileName: shorton.pst
+
+
+
+
+
+CAG-10    Northern Natural, RP00-223Northern states that the reason for this filing is to comply with the Commission's Order dated April 16, 2001 in Docket No. RP00-223-003. Pursuant to the April 16 Order, Northern has revised Tariff Sheet No. 125A to reflect the offering of Limited Firm Throughput Service (LFT) in the Field Area year-round and in the Market Area during the summer (April through October). Tariff Sheet No. 125D has been revised to incorporate Northern's 
+
+
+CAG-1	   Northwest Pipeline, RP01-416. Expect order on revisions to provide for the equitable sharing of lateral facility costs between a shipper for whom a lateral facility was initially constructed and a third-party shipper that has requested service on a relatively inexpensive expansion of the original lateral facility. 
+CAG-4    Transcolorado, RP01-419. Expect order on web site services to a more standardized name, rather than the proprietary system entitled the Direct Access Request and Tracking System (DART). 
+CAG-8    EPGT Texas PipelinePG&E TPLP is an intrastate pipeline as defined in Section 2(16) of the NGPA, operating in the State of Texas. 
+
+
+
+
+
+http://www.ferc.gov/public/isd/sunshine.htm
+
+From MAILER-DAEMON Tue Jun 15 13:19:04 2021
+Message-ID: <8931977.1075844986294.JavaMail.evans@thyme>
+Date: Wed, 23 May 2001 14:53:00 -0700 (PDT)
+From: eserver@enron.com
+To: stanley.horton@enron.com
+Subject: <<Concur Expense Document>> - Key Ex
+Mime-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+X-From: eserver
+X-To:  stanley.horton@enron.com 
+X-cc: 
+X-bcc: 
+X-Folder: \Stanley_Horton_June2001\Inbox
+X-Origin: HORTON-S
+X-FileName: shorton.pst
+
+The following expense report is ready for approval:
+
+Employee Name: Shelley A. Corman
+Status last changed by:  Automated Administrator
+Expense Report Name: Key Ex
+Report Total: $3,203.82
+Amount Due Employee: $3,203.82
+
+
+To approve this expense report, click on the following link for Concur Expense.
+http://xms.enron.com
+
+From MAILER-DAEMON Tue Jun 15 13:19:04 2021
+Message-ID: <14068098.1075855413219.JavaMail.evans@thyme>
+Date: Fri, 28 Dec 2001 07:42:14 -0800 (PST)
+From: rod.hayslett@enron.com
+To: raymond.bowen@enron.com, jeffrey.mcmahon@enron.com, richard.causey@enron.com, 
+	bill.cordes@enron.com, shelley.corman@enron.com, 
+	rick.craig@enron.com, drew.fossum@enron.com, eric.gadd@enron.com, 
+	dana.gibbs@enron.com, steven.harris@enron.com, joe.hartsoe@enron.com, 
+	robert.hayes@enron.com, stanley.horton@enron.com, 
+	steve.hotte@enron.com, a..howard@enron.com, r..keller@enron.com, 
+	robert.kilmer@enron.com, danny.mccarty@enron.com, 
+	kay.miller@enron.com, mike.nelson@enron.com, dave.neubauer@enron.com, 
+	jerry.peters@enron.com, jim.prentice@enron.com, 
+	dan.pribble@enron.com, james.saunders@enron.com, 
+	gary.smith@enron.com, michael.anderson@enron.com, 
+	kenny.bickett@enron.com, lawrence.clayton@enron.com, 
+	tracy.geaccone@enron.com, dave.gunther@enron.com, 
+	robert.guthrie@enron.com, a..lindholm@enron.com, 
+	lori.maddox@enron.com, keith.marlow@enron.com, 
+	michael.norris@enron.com, jim.piro@enron.com, susan.ralph@enron.com, 
+	greek.rice@enron.com, e..sommers@enron.com, kirk.stevens@enron.com, 
+	mike.westbeld@enron.com
+Subject: Out of the Office
+Cc: earlene.ackley@enron.com, amelia.alder@enron.com, julie.armstrong@enron.com, 
+	janice.hogan@enron.com, rita.houser@enron.com, ruth.mann@enron.com, 
+	carolyn.perry@enron.com, emily.sellers@enron.com, 
+	cindy.stark@enron.com, ricki.winters@enron.com
+Mime-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+Bcc: earlene.ackley@enron.com, amelia.alder@enron.com, julie.armstrong@enron.com, 
+	janice.hogan@enron.com, rita.houser@enron.com, ruth.mann@enron.com, 
+	carolyn.perry@enron.com, emily.sellers@enron.com, 
+	cindy.stark@enron.com, ricki.winters@enron.com
+X-From: Hayslett, Rod </O=ENRON/OU=NA/CN=RECIPIENTS/CN=RHAYSLE>
+X-To: Bowen Jr., Raymond </O=ENRON/OU=NA/CN=RECIPIENTS/CN=Rbowen>, McMahon, Jeffrey </O=ENRON/OU=NA/CN=RECIPIENTS/CN=Jmcmaho>, Causey, Richard </O=ENRON/OU=NA/CN=RECIPIENTS/CN=Rcausey>, Cordes, Bill </O=ENRON/OU=NA/CN=RECIPIENTS/CN=Bcordes>, Corman, Shelley </O=ENRON/OU=NA/CN=RECIPIENTS/CN=Scorman>, Craig, Rick </O=ENRON/OU=NA/CN=RECIPIENTS/CN=Rcraig>, Fossum, Drew </O=ENRON/OU=NA/CN=RECIPIENTS/CN=Dfossum>, Gadd, Eric </O=ENRON/OU=NA/CN=RECIPIENTS/CN=Egadd>, Gibbs, Dana </O=ENRON/OU=NA/CN=RECIPIENTS/CN=Notesaddr/cn=fcb4caec-de7fea13-8625672f-5e716e>, Harris, Steven </O=ENRON/OU=NA/CN=RECIPIENTS/CN=Sharris1>, Hartsoe, Joe </O=ENRON/OU=NA/CN=RECIPIENTS/CN=Jhartso>, Hayes, Robert </O=ENRON/OU=NA/CN=RECIPIENTS/CN=Rhayes>, Horton, Stanley </O=ENRON/OU=NA/CN=RECIPIENTS/CN=Shorton>, Hotte, Steve </O=ENRON/OU=NA/CN=RECIPIENTS/CN=Shotte>, Howard, Kevin A. </O=ENRON/OU=NA/CN=RECIPIENTS/CN=Khoward>, Keller, John R. </O=ENRON/OU=NA/CN=RECIPIENTS/CN=Jkeller3>, Kilmer III, Robert </O=ENRON/OU=NA/CN=RECIPIENTS/CN=Rkilmer>, McCarty, Danny </O=ENRON/OU=NA/CN=RECIPIENTS/CN=Dmccarty>, Miller, Mary Kay </O=ENRON/OU=NA/CN=RECIPIENTS/CN=Mkmiller>, Nelson, Mike </O=ENRON/OU=NA/CN=RECIPIENTS/CN=Mnelson>, Neubauer, Dave </O=ENRON/OU=NA/CN=RECIPIENTS/CN=Dneubau>, Peters, Jerry </O=ENRON/OU=NA/CN=RECIPIENTS/CN=Jpeters1>, Prentice, Jim </O=ENRON/OU=NA/CN=RECIPIENTS/CN=Notesaddr/cn=86763302-bbac664b-86256a87-6fe8f2>, Pribble, Dan </O=ENRON/OU=NA/CN=RECIPIENTS/CN=Dpribbl>, Saunders, James </O=ENRON/OU=NA/CN=RECIPIENTS/CN=Jsaunde>, Smith, Gary </O=ENRON/OU=NA/CN=RECIPIENTS/CN=Gsmith7>, Anderson, Michael </O=ENRON/OU=NA/CN=RECIPIENTS/CN=Notesaddr/cn=8ed97797-486c42f8-862567d8-481bda>, Bickett, Kenny </O=ENRON/OU=NA/CN=RECIPIENTS/CN=Kbicket>, Clayton, Lawrence </O=ENRON/OU=NA/CN=RECIPIENTS/CN=Notesaddr/cn=6584d47d-9523779c-86256944-575386>, Geaccone, Tracy </O=ENRON/OU=NA/CN=RECIPIENTS/CN=Tgeacco>, Gunther, Dave </O=ENRON/OU=NA/CN=RECIPIENTS/CN=Dgunthe2>, Guthrie, Robert </O=ENRON/OU=NA/CN=RECIPIENTS/CN=Rguthri>, Lindholm, Tod A. </O=ENRON/OU=NA/CN=RECIPIENTS/CN=Tlindho>, Maddox, Lori </O=ENRON/OU=NA/CN=RECIPIENTS/CN=Notesaddr/cn=471b7866-2accd5df-86256595-5e36ef>, Marlow, Keith </O=ENRON/OU=NA/CN=RECIPIENTS/CN=Kmarlow>, Norris, Michael </O=ENRON/OU=NA/CN=RECIPIENTS/CN=Mnorris>, Piro, Jim </O=ENRON/OU=NA/CN=RECIPIENTS/CN=Gwaddr/cn=HQ3.EM5.Jim Piro>, Ralph, Susan </O=ENRON/OU=NA/CN=RECIPIENTS/CN=Notesaddr/cn=f1fe2106-df89610d-86256595-5dc6c4>, Rice, Greek </O=ENRON/OU=NA/CN=RECIPIENTS/CN=Grice>, Sommers, Jeffrey E. </O=ENRON/OU=NA/CN=RECIPIENTS/CN=Jsommer>, Stevens, Kirk </O=ENRON/OU=NA/CN=RECIPIENTS/CN=Gwaddr/cn=HQ3.EM4.Kirk Stevens>, Westbeld, Mike </O=ENRON/OU=NA/CN=RECIPIENTS/CN=Notesaddr/cn=b8ad4b4-8d974595-86256673-64b416>
+X-cc: Ackley, Earlene </O=ENRON/OU=NA/CN=RECIPIENTS/CN=Notesaddr/cn=faf147c3-d024d9a4-86256712-68ab41>, Alder, Amelia </O=ENRON/OU=NA/CN=RECIPIENTS/CN=Aalder>, Armstrong, Julie </O=ENRON/OU=NA/CN=RECIPIENTS/CN=Jarmstr>, Hogan, Janice <Janice.Hogan@ENRON.com>, Houser, Rita </O=ENRON/OU=NA/CN=RECIPIENTS/CN=Rhouser>, Mann, Ruth </O=ENRON/OU=NA/CN=RECIPIENTS/CN=Rmann>, Perry, Carolyn </O=ENRON/OU=NA/CN=RECIPIENTS/CN=CPERRY>, Sellers, Emily </O=ENRON/OU=NA/CN=RECIPIENTS/CN=Eseller>, Stark, Cindy </O=ENRON/OU=NA/CN=RECIPIENTS/CN=Cstark>, Winters, Ricki </O=ENRON/OU=NA/CN=RECIPIENTS/CN=Rwinter>
+X-bcc: 
+X-Folder: \Stanley_Horton_Jan2002\Horton, Stanley\Inbox
+X-Origin: Horton-S
+X-FileName: shorton (Non-Privileged).pst
+
+I will be out of the office starting late this afternoon and will not be back in the office until Monday January 7th.    I will be out of town on starting the 1st of January and will be returning to town on January 5th.   My contact information is below in blue.   I will be checking voice mail regularly and will be carrying the Blackberry.   I may not have email access other than the Blackberry.   A list of people to contact for certain matters is below:
+
+Tracy Geaccone (X37372)	EGS Cash, Planning, or Forecasting and Coordination of same with Corporate
+Morris Brassfield (X67006)	ETS Operations Support
+Jim Saunders (X33532) 		ETS Accounting
+Pam Daily (X36135)		EGS Space Planning, Move Coordination
+
+Have a very Happy, Safe and Prosperous New Year! 
+
+Rod Hayslett
+EB4054
+Office	713-853-6178 
+Cell	713-201-6135 
+Fax	713-646-3708 
+Skytel	877-525-1607
+Email Address: Rod.Hayslett@enron.com
+
+Home Phone 			281-292-2467 
+Alternative Home Phone	936-597-3905 
+Home Fax			281-362-8679 
+Alternative Email Address: 	haysletr@flash.net
+
+Out of Town Contact Information:
+Phone Number -	702-785-5555
+Fax Number -		702-785-5511 
+
+From MAILER-DAEMON Tue Jun 15 13:19:04 2021
+Message-ID: <23667113.1075862332129.JavaMail.evans@thyme>
+Date: Tue, 27 Nov 2001 07:26:16 -0800 (PST)
+From: ray.alvarez@enron.com
+To: stanley.horton@enron.com, stanley.horton@enron.com
+Subject: Have Gun, Will Travel
+Mime-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+X-From: Alvarez, Ray </O=ENRON/OU=NA/CN=RECIPIENTS/CN=RALVARE2>
+X-To: Horton, Stanley </O=ENRON/OU=NA/CN=RECIPIENTS/CN=Shorton>, Horton, Stanley </O=ENRON/OU=NA/CN=RECIPIENTS/CN=Notesaddr/cn=5d54fc1f-7c796798-86256a8c-4ddad1>
+X-cc: 
+X-bcc: 
+X-Folder: \SHORTON (Non-Privileged)\Horton, Stanley\Inbox
+X-Origin: Horton-S
+X-FileName: SHORTON (Non-Privileged).pst
+
+Dear Stan,
+
+Given the current state of affairs here in the D.C. office, I am forwarding my resume for your review.  The lion's share of my legal experience has been with Enron's regulated pipelines, both domestic and overseas.  I appreciate your keeping me in mind should needs or opportunities arise in the pipeline group, whether these be as an employee or on a contract basis.
+
+Thanks for your consideration!  
+
+Kindest regards,  Ray
+
+ 
+
+From MAILER-DAEMON Tue Jun 15 13:19:04 2021
+Message-ID: <23754435.1075855413007.JavaMail.evans@thyme>
+Date: Thu, 27 Dec 2001 16:33:29 -0800 (PST)
+From: adam.umanoff@enron.com
+To: stanley.horton@enron.com, mark.metts@enron.com, mike.westbeld@enron.com, 
+	david.gorte@enron.com
+Subject: Indian Mesa Sale - Bankruptcy Court Approval
+Cc: eric.newell@enron.com
+Mime-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: quoted-printable
+Bcc: eric.newell@enron.com
+X-From: Umanoff, Adam </O=ENRON/OU=NA/CN=RECIPIENTS/CN=NOTESADDR/CN=603BCBA9-4AD06602-86256689-747F98>
+X-To: Horton, Stanley </O=ENRON/OU=NA/CN=RECIPIENTS/CN=SHORTON>, Metts, Mark </O=ENRON/OU=NA/CN=RECIPIENTS/CN=MMETTS>, Herbert Peels/MATERIAL/TWT/DE@TWTDE <??SHerbert Peels/MATERIAL/TWT/DE@TWTDE>, Westbeld, Mike </O=ENRON/OU=NA/CN=RECIPIENTS/CN=NOTESADDR/CN=B8AD4B4-8D974595-86256673-64B416>, matthew.harris@csfb.com, Munoz, David <david.munoz@csfb.com>, Gorte, David </O=ENRON/OU=NA/CN=RECIPIENTS/CN=DGORTE>
+X-cc: Newell, Eric </O=ENRON/OU=NA/CN=RECIPIENTS/CN=NOTESADDR/CN=71383DB0-107BE70D-86256689-6770DC>
+X-bcc: 
+X-Folder: \Stanley_Horton_Jan2002\Horton, Stanley\Inbox
+X-Origin: Horton-S
+X-FileName: shorton (Non-Privileged).pst
+
+The Bankruptcy Court has approved our sale of the IM Project to AEP.  The C=
+ourt's formal order will be entered sometime Friday morning.  With this app=
+roval, we expect to close the sale either Friday or Saturday.  Approval was=
+ conditioned upon our agreement to the following procedures with respect to=
+ the net sale proceeds (approximately $108mm): =20
+
+=09-=09$25mm will be returned to Enron (repayment of the post-petition work=
+ing capital loans made to EW);=20
+=09-=09$10mm will be retained by EW for working capital to use over the nex=
+t 2 weeks;=20
+=09-=09$78mm (the remaining balance) will be set aside in a restricted acco=
+unt of EW, pending approval by the creditor's committee of the use of those=
+ funds for payment of existing obligations and for ongoing working capital =
+by EW. =20
+
+We have until 15 January to obtain creditors' committee approval for the us=
+e of the remaining balance, at which time if no approval is obtained, we ca=
+n ask the BK Court to rule on the matter.  Obtaining creditors' committee a=
+pproval will require that we (a) demonstrate that the continued operation o=
+f EW as a going concern is in the bankruptcy estate's best interest (becaus=
+e it will enhance or at least maintain the value of EW for sale) - this dem=
+onstration will need to be made by Enron (Mark) and CSFB (Matt), and will n=
+eed to include an overview of EW's value on sale, including arguments why t=
+here is significant value in the EW - Americas business unit notwithstandin=
+g the short-term issues facing the US business, and an update on the sale p=
+rocess; and (b) demonstrate the legitimacy of EW's current obligations and =
+future working capital needs - this will need to be done by Umanoff and Wes=
+tbeld (we initially projected that we would need approximately $54mm of the=
+ $78mm through the end of Q1, a likely closing date for sale of EW; Mike an=
+d his team will be scrubbing these numbers over the next week).  We are tar=
+geting early in the week of Jan 7 to make our case to the creditors' commit=
+tee, although no firm date has been set.
+
+One final note - a representative of GE attended the BK court hearing and i=
+s aware that our request to use the remaining balance to pay our past due o=
+bligations (including $9mm owing to GE) was denied pending implementation o=
+f the above procedure.  We can expect continued pressure from GE.
+
+Call me with any questions.    
+
+From MAILER-DAEMON Tue Jun 15 13:19:04 2021
+Message-ID: <22103651.1075862332245.JavaMail.evans@thyme>
+Date: Tue, 27 Nov 2001 17:32:28 -0800 (PST)
+From: mariella.mahan@enron.com
+To: stanley.horton@enron.com
+Subject: RE: Guam Information
+Cc: jeff.donahue@enron.com
+Mime-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+Bcc: jeff.donahue@enron.com
+X-From: Mahan, Mariella </O=ENRON/OU=NA/CN=RECIPIENTS/CN=MMAHAN>
+X-To: Horton, Stanley </O=ENRON/OU=NA/CN=RECIPIENTS/CN=Shorton>
+X-cc: Donahue, Jeff </O=ENRON/OU=NA/CN=RECIPIENTS/CN=Jdonahu>
+X-bcc: 
+X-Folder: \SHORTON (Non-Privileged)\Horton, Stanley\Inbox
+X-Origin: Horton-S
+X-FileName: SHORTON (Non-Privileged).pst
+
+Stan,
+I am very comfortable delivering the message and I also understand from an earlier chat with Jim that we need to deliver a "related party" perception caution message to him.  I just didn't want to do it until we had all reached consensus that this was the way to go.  If that is the agreement of the team, I'm happy to be the messanger; I will deliver it politely in full respect of the existing relationship.
+
+I will wait to hear from Jeff on your email to him.
+
+Many thanks! Mariella
+
+ -----Original Message-----
+From: 	Horton, Stanley  
+Sent:	Tuesday, November 27, 2001 5:07 PM
+To:	Mahan, Mariella
+Cc:	Donahue, Jeff
+Subject:	RE: Guam Information
+
+You have my permission to just refer them to Jeff Donahue.  Jeff is in the process of naming individuals to assist in the disposition of our international assets.  Corporate development, EGAS and investment bankers will collectively pursue the disposition.  I woould think Dr. Boyce should be so advised of the process we are going to use.  Jeff or his designee can deliver this message if you would like.
+
+Jeff, I assume this is the right approach given our converstion.
+
+ -----Original Message-----
+From: 	Mahan, Mariella  
+Sent:	Monday, November 26, 2001 7:57 PM
+To:	Hughes, James A.; Horton, Stanley
+Cc:	Jernigan, Steve
+Subject:	FW: Guam Information
+
+Jim/Stan;
+See below; this is simply further illustration of the problems we will continue to have with this gentleman.  He has simply received royal treatment in terms of the expediency with which information has been provided to him.  I have met with him twice already and have spoken to him on the phone at least three times.  Clearly, based on the email below he is trying to line up investors to do this deal.  You know what my recommendation on this is; I have simply wanted to take a very courteous and responsive approach on this out of respect for the relationship.
+
+Let me know how your mtg with Corp Development went.
+
+Thanks! Mariella
+ps: fyi - after fulfilling his round of requests (which came up on the Wednesday before Thanksgiving) I asked if he could please focus on: how to deal with the backstop guarantees that ENE has in the deal and a financing plan (I politely told him we were looking at an all-cash transaction).  
+
+ -----Original Message-----
+From: 	Jernigan, Steve  
+Sent:	Monday, November 26, 2001 7:05 PM
+To:	Mahan, Mariella
+Subject:	FW: Guam Information
+
+I sent this at 6:30 and I just resent - we have to get rid of them
+
+Steve
+ -----Original Message-----
+From: 	"Dr.Meherwan.P.Boyce P.E." <boyceturbopower@attglobal.net>@ENRON  
+Sent:	Monday, November 26, 2001 7:01 PM
+To:	Jernigan, Steve
+Cc:	Jeff Donahue
+Subject:	RE: Guam Information
+
+We have still not received the information.  I cannot understand why the
+same information released to the other parties cannot be released to us.  I
+have a number of investors scheduled for a meeting Tuesday morning at 9:00
+am, and am very disappointed that I do not have the information as of 7:00pm
+Monday
+
+With best regards,
+
+Dr. Meherwan P. Boyce P.E.
+The Boyce Consultancy
+2121 Kirby Drive
+Houston, TX. 77019
+
+Phone: 713-807-0888
+Fax: 713-807-0088
+Phone Mobile USA: 713-306-9776
+Phone Mobile Europe & Asia: 44-467-206-600
+E-Mail: boyceturbopower@attglobal.net
+Web Site: www.boyceconsultancy.com
+
+-----Original Message-----
+From: Steve.Jernigan@enron.com [mailto:Steve.Jernigan@enron.com]
+Sent: Monday, November 26, 2001 10:48 AM
+To: boyceturbopower@attglobal.net
+Subject: RE: Guam Information
+
+
+Dr Boyce -
+
+I need to follow up with our Guam office this afternoon before I release
+the information.  I will be in contact with them at approx 4 pm today and
+will send the information following that conversation.
+
+Steve
+
+   -----Original Message-----
+   From: "Dr.Meherwan.P.Boyce P.E." <boyceturbopower@attglobal.net>@ENRON
+   Sent: Mon 11/26/2001 10:13 AM
+   To: Jernigan, Steve
+   Cc:
+   Subject: RE: Guam Information
+
+
+
+
+
+
+
+**********************************************************************
+This e-mail is the property of Enron Corp. and/or its relevant affiliate and
+may contain confidential and privileged material for the sole use of the
+intended recipient (s). Any review, use, distribution or disclosure by
+others is strictly prohibited. If you are not the intended recipient (or
+authorized to receive for the recipient), please contact the sender or reply
+to Enron Corp. at enron.messaging.administration@enron.com and delete all
+copies of the message. This e-mail (and any attachments hereto) are not
+intended to be an offer (or an acceptance) and do not create or evidence a
+binding and enforceable contract between Enron Corp. (or any of its
+affiliates) and the intended recipient or any other party, and may not be
+relied on by anyone as the basis of a contract by estoppel or otherwise.
+Thank you.
+**********************************************************************
+
+From MAILER-DAEMON Tue Jun 15 13:19:04 2021
+Message-ID: <19232911.1075844986873.JavaMail.evans@thyme>
+Date: Fri, 8 Jun 2001 15:03:07 -0700 (PDT)
+From: eigcirculation@networkats.com
+To: horton@enron.com
+Subject: Natural Gas Week, June 11, 2001  (pdf)
+Mime-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+X-From: "Energy Intelligence Group, Inc." <eigcirculation@networkats.com>@ENRON
+X-To: horton@enron.com <s>
+X-cc: 
+X-bcc: 
+X-Folder: \Stanley_Horton_June2001\Inbox
+X-Origin: HORTON-S
+X-FileName: shorton.pst
+
+CUSTOMER SERVICE:
+For any delivery problems, or changes in address,
+simply e-mail CustomerService@energyintel.com
+Please be sure to include full subscriber/company name and
+address in your e-mail.
+
+For more information on EIG, visit www.energyintel.com
+
+VIEWING .PDF DOCUMENTS:
+Use the Adobe Acrobat Reader to view an attached
+.PDF document in its full graphic format, that
+is, exactly as it is printed. If you don''t have
+Adobe Acrobat Reader installed, you can download
+it from the internet: http://www.adobe.com
+Follow the links at Adobe''s web site to Acrobat Reader.
+Once Acrobat Reader is installed, save the .PDF
+document to your disk, open Adobe Acrobat Reader
+and then open the .PDF document.
+*******************************
+Copyright (c) 2001 EIG, Inc.
+Reproduction in any form (photostatically, electronically,
+or via facsimile), including via local- and wide-area
+networks, is strictly forbidden without direct
+licensed permission from EIG -- contact
+Sales@energyintel.com.
+Indirect authorization to photocopy individual
+articles or other items for internal and personal
+use is granted by EIG provided that the
+appropriate fee is paid directly to Copyright
+Clearance Center, 222 Rosewood Drive, Danvers,
+MA 01923.  Tel: 1-978-750-8400.
+
+ - ng010611.pdf 
+
+From MAILER-DAEMON Tue Jun 15 13:19:04 2021
+Message-ID: <27957748.1075862332043.JavaMail.evans@thyme>
+Date: Mon, 26 Nov 2001 08:35:46 -0800 (PST)
+From: enron_update@concureworkplace.com
+To: stanley.horton@enron.com
+Subject: <<Concur Expense Document>> - Rod Hayslett
+Mime-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+X-From: enron_update@concureworkplace.com@ENRON
+X-To: Horton, Stanley </O=ENRON/OU=NA/CN=RECIPIENTS/CN=SHORTON>
+X-cc: 
+X-bcc: 
+X-Folder: \SHORTON (Non-Privileged)\Horton, Stanley\Inbox
+X-Origin: Horton-S
+X-FileName: SHORTON (Non-Privileged).pst
+
+The following expense report is ready for approval:
+
+Employee Name: Roderick J. Hayslett
+Status last changed by:  Automated Administrator
+Expense Report Name: Rod Hayslett
+Report Total: $2,407.51
+Amount Due Employee: $2,407.51
+
+
+To approve this expense report, click on the following link for Concur Expense.
+http://expensexms.enron.com
+
+From MAILER-DAEMON Tue Jun 15 13:19:04 2021
+Message-ID: <24641354.1075844986345.JavaMail.evans@thyme>
+Date: Fri, 8 Jun 2001 08:18:08 -0700 (PDT)
+From: eserver@enron.com
+To: stanley.horton@enron.com
+Subject: <<Concur Expense Document>> - 043001
+Mime-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+X-From: eserver@enron.com@ENRON
+X-To: Horton, Stanley </o=ENRON/ou=NA/cn=Recipients/cn=SHORTON>
+X-cc: 
+X-bcc: 
+X-Folder: \Stanley_Horton_June2001\Inbox
+X-Origin: HORTON-S
+X-FileName: shorton.pst
+
+The following expense report is ready for approval:
+
+Employee Name: James L. Noles
+Status last changed by:  Automated Administrator
+Expense Report Name: 043001
+Report Total: ($1,110.81)
+Amount Due Employee: $0.00
+
+
+To approve this expense report, click on the following link for Concur Expense.
+http://xms.enron.com
+
+From MAILER-DAEMON Tue Jun 15 13:19:04 2021
+Message-ID: <28968519.1075855413531.JavaMail.evans@thyme>
+Date: Mon, 31 Dec 2001 09:03:59 -0800 (PST)
+From: david.oxley@enron.com
+To: danny.mccarty@enron.com, gary.smith@enron.com, cindy.olson@enron.com
+Subject: RE: Savings Plan Notices
+Cc: stanley.horton@enron.com, mary.joyce@enron.com, cynthia.barrow@enron.com, 
+	exec.jones@enron.com
+Mime-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+Bcc: stanley.horton@enron.com, mary.joyce@enron.com, cynthia.barrow@enron.com, 
+	exec.jones@enron.com
+X-From: Oxley, David </O=ENRON/OU=NA/CN=RECIPIENTS/CN=DOXLEY>
+X-To: McCarty, Danny </O=ENRON/OU=NA/CN=RECIPIENTS/CN=Dmccarty>, Smith, Gary </O=ENRON/OU=NA/CN=RECIPIENTS/CN=Gsmith7>, Olson, Cindy </O=ENRON/OU=NA/CN=RECIPIENTS/CN=Colson>
+X-cc: Horton, Stanley </O=ENRON/OU=NA/CN=RECIPIENTS/CN=Shorton>, Joyce, Mary </O=ENRON/OU=NA/CN=RECIPIENTS/CN=Mjoyce>, Barrow, Cynthia </O=ENRON/OU=NA/CN=RECIPIENTS/CN=Cbarrow>, Jones, Robert W.- HR Exec </O=ENRON/OU=NA/CN=RECIPIENTS/CN=Rjones2>
+X-bcc: 
+X-Folder: \Stanley_Horton_Jan2002\Horton, Stanley\Inbox
+X-Origin: Horton-S
+X-FileName: shorton (Non-Privileged).pst
+
+Dan,
+
+I do not know that we decided not to send anything to these employees who received letters in error as a consequence of a mistake by our outsource suppliers. I had understood that they were notifying people that these were errors and correct the information accordingly.
+
+Cynthia, can you confirm for me and the others on this email that we have this in hand?
+
+Thanks
+
+David
+ -----Original Message-----
+From: 	McCarty, Danny  
+Sent:	Monday, December 31, 2001 8:22 AM
+To:	Smith, Gary; Olson, Cindy; Oxley, David
+Cc:	Horton, Stanley
+Subject:	Savings Plan Notices
+
+David, Cindy and Gary,
+     Over the holidays I received not one, but three, notifications letting me know that I had been terminated and explaining my rights under my 401K.  I also received a half a dozen calls at home from other current employees who had received these (including Julie Armstrong), all of whom were not amused.  I understand that this matter has been brought to your attention, but you have chosen not to notify any current employees that the 401K notices were sent out in error.  I suggest that you rethink this asap.
+
+Dan
+
+From MAILER-DAEMON Tue Jun 15 13:19:04 2021
+Message-ID: <3122063.1075855412869.JavaMail.evans@thyme>
+Date: Thu, 27 Dec 2001 14:45:57 -0800 (PST)
+From: adam.umanoff@enron.com
+To: stanley.horton@enron.com
+Subject: Aura - Sales Process
+Cc: mark.metts@enron.com
+Mime-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+Bcc: mark.metts@enron.com
+X-From: Umanoff, Adam </O=ENRON/OU=NA/CN=RECIPIENTS/CN=NOTESADDR/CN=603BCBA9-4AD06602-86256689-747F98>
+X-To: Horton, Stanley </O=ENRON/OU=NA/CN=RECIPIENTS/CN=SHORTON>
+X-cc: Metts, Mark </O=ENRON/OU=NA/CN=RECIPIENTS/CN=MMETTS>
+X-bcc: 
+X-Folder: \Stanley_Horton_Jan2002\Horton, Stanley\Inbox
+X-Origin: Horton-S
+X-FileName: shorton (Non-Privileged).pst
+
+We plan to complete a teaser letter for bidders and a revised Information Memorandum over the next 2-3 days.  Our target is to send the teaser out on Monday with the IM to follow.  Both will contain revised year-end '01 numbers and '02 projections, which I know you wanted to review before they are released.  I will e-mail you the draft teaser as soon as it is available (probably Saturday) - hopefully, we can chat over the weekend, or at the latest, Monday morning.  Adam
+
+From MAILER-DAEMON Tue Jun 15 13:19:04 2021
+Message-ID: <17924018.1075855413625.JavaMail.evans@thyme>
+Date: Mon, 31 Dec 2001 19:34:33 -0800 (PST)
+From: brandon1444@yahoo.com
+To: brandon1444@yahoo.com
+Subject: Are You Living in Debt, Paycheck to Paycheck?29077
+Mime-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+X-From: brandon1444@yahoo.com@ENRON
+X-To: brandon1444@yahoo.com
+X-cc: 
+X-bcc: 
+X-Folder: \Stanley_Horton_Jan2002\Horton, Stanley\Inbox
+X-Origin: Horton-S
+X-FileName: shorton (Non-Privileged).pst
+
+FOLLOW ME TO FINANCIAL FREEDOM!!
+
+I Am looking for people with good work ethics and extrordinary desire to earn at least $10,000 per month working from home!
+
+NO SPECIAL SKILLS OR EXPERIENCE REQUIRED. We will give you all the training and personal support you will need to ensure your success!
+
+This LEGITIMATE HOME-BASED INCOME OPPORTUNITY can put you back in control of your time, your finances, and your life!
+
+If you've tried other opportunities in the past that have failed to live up their promises, THIS IS DIFFERENT THEN ANYTHING ELSE YOU'VE SEEN!
+
+THIS IS NOT A GET RICH QUICK SCHEME!
+
+YOUR FINANCIAL PAST DOES NOT HAVE TO BE YOUR FINANCIAL FUTURE!
+
+CALL ONLY IF YOU ARE SERIOUS!
+
+1-800-533-9351 (Free, 2 minute message)
+
+DO NOT RESPOND BY EMAIL AND DON'T GO TO SLEEP WITHOUT LISTENING TO THIS!
+
+" The moment you commit an quit holding back, all sorts of unforseen incidents, meetings and material assistance will
+rise up to help you. The simple act of commitment is a powerful magnet for help." - Napoleon Hill
+
+
+
+To be REMOVED from this list, simply click reply and submit.
+
+From MAILER-DAEMON Tue Jun 15 13:19:04 2021
+Message-ID: <21216656.1075844987009.JavaMail.evans@thyme>
+Date: Fri, 8 Jun 2001 12:39:36 -0700 (PDT)
+From: hartsoe@enron.com
+To: stanley.horton@enron.com
+Subject: RP01-180 Comments on re-imposing rate caps on capacity release
+Mime-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+X-From: Hartsoe, Joe
+X-To: Horton, Stanley </o=ENRON/ou=NA/cn=Recipients/cn=SHORTON>
+X-cc: 
+X-bcc: 
+X-Folder: \Stanley_Horton_June2001\Inbox
+X-Origin: HORTON-S
+X-FileName: shorton.pst
+
+Stan -- My apologies, I thought I had included you on the distribution list.  Joe
+----- Forwarded by Joe Hartsoe/Corp/Enron on 06/08/2001 02:37 PM -----
+
+
+	Joe Hartsoe 06/06/2001 01:48 PM 	   To: Mary Kay Miller/ET&S/Enron, Keith Petersen/ET&S/Enron, Steve Kirk/ET&S/Enron, Robert Kilmer/FGT/Enron, Stephen Veatch/FGT/Enron, Teb Lokey/FGT/Enron, Ray Neppl/NPNG/Enron, Bambi Heckerman/NPNG/Enron, Drew Fossum/ET&S/Enron, Janet Place/NPNG/Enron, Dorothy McCoppin/FGT/Enron, Frazier King/FGT/Enron, Maria Pavlou/ET&S/Enron, Dari Dornan/ET&S/Enron, Lee Huber/ET&S/Enron, Tony Pryor/ET&S/Enron, Nancy Bagot/OTS/Enron, Janet Butler/ET&S/Enron, Shelley Corman/ET&S/Enron, Joe Hartsoe/Corp/Enron, Leslie Lawner/NA/Enron, Rebecca W Cantrell/HOU/ECT, Christi L Nicolay/HOU/ECT, James D Steffes/NA/Enron, Sarah Novosel/Corp/Enron, Donna Fulton/Corp/Enron, John Shelk/NA/Enron, Nancy Bagot/OTS/Enron  cc:   Subject: RP01-180 Comments on re-imposing rate caps on capacity release	
+
+
+Folks -- Attached for your review are the draft comments by ETS on whether the Commission should re-impose the maximum rate ceiling on short-term capacity release transactions.  Thank you for providing comments on my original draft and I have included the arguments we discussed at the Regulatory Roundtable.  
+
+According to the Federal Register, comments are due June 11.  Please provide me your comments by noon on Monday, June 11.  If you have any questions, please do not hesitate to call  -- 202.466.9150.  Thank you.  Joe
+
+ 
+
+
+
+
+From MAILER-DAEMON Tue Jun 15 13:19:04 2021
+Message-ID: <18441065.1075844986367.JavaMail.evans@thyme>
+Date: Thu, 31 May 2001 14:16:49 -0700 (PDT)
+From: eserver@enron.com
+To: stanley.horton@enron.com
+Subject: <<Concur Expense Document>> - 043001
+Mime-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+X-From: eserver@enron.com@ENRON
+X-To: Horton, Stanley </o=ENRON/ou=NA/cn=Recipients/cn=SHORTON>
+X-cc: 
+X-bcc: 
+X-Folder: \Stanley_Horton_June2001\Inbox
+X-Origin: HORTON-S
+X-FileName: shorton.pst
+
+The following expense report is ready for approval:
+
+Employee Name: James L. Noles
+Status last changed by:  Automated Administrator
+Expense Report Name: 043001
+Report Total: ($1,057.04)
+Amount Due Employee: $0.00
+
+
+To approve this expense report, click on the following link for Concur Expense.
+http://xms.enron.com
+
+From MAILER-DAEMON Tue Jun 15 13:19:04 2021
+Message-ID: <26406214.1075844987225.JavaMail.evans@thyme>
+Date: Fri, 8 Jun 2001 17:31:29 -0700 (PDT)
+From: zimmerman@enron.com
+To: stanley.horton@enron.com, dana.gibbs@enron.com, lawrence.clayton@enron.com, 
+	lori.maddox@enron.com, susan.ralph@enron.com, ellen.coombe@enron.com
+Subject: Todoroff Prosecution--CONFIDENTIAL/SUBJECT TO ATTORNEY-CLIENT
+ PRIVILEGE
+Cc: molly.sample@enron.com
+Mime-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+Bcc: molly.sample@enron.com
+X-From: Zimmerman, Walt
+X-To: Horton, Stanley </o=ENRON/ou=NA/cn=Recipients/cn=SHORTON>, Gibbs, Dana </o=ENRON/ou=NA/cn=Recipients/cn=NOTESADDR/CN=FCB4CAEC-DE7FEA13-8625672F-5E716E>, Clayton, Lawrence </o=ENRON/ou=NA/cn=Recipients/cn=NOTESADDR/CN=6584D47D-9523779C-86256944-575386>, Maddox, Lori </o=ENRON/ou=NA/cn=Recipients/cn=NOTESADDR/CN=471B7866-2ACCD5DF-86256595-5E36EF>, Ralph, Susan </o=ENRON/ou=NA/cn=Recipients/cn=NOTESADDR/CN=F1FE2106-DF89610D-86256595-5DC6C4>, Coombe, Mary Ellen </o=ENRON/ou=NA/cn=Recipients/cn=NOTESADDR/CN=8621E49D-974FEC2-862565C7-9C1E2>
+X-cc: Sample, Molly </o=ENRON/ou=NA/cn=Recipients/cn=NOTESADDR/CN=AF703257-2A7AEF2A-862565B8-5629FD>
+X-bcc: 
+X-Folder: \Stanley_Horton_June2001\Inbox
+X-Origin: HORTON-S
+X-FileName: shorton.pst
+
+I received some news today about the referenced matter from FBI Special Agent Carl Wake.  Mr. Wake called to verify the name of the EOTT entity that was the victim of Todoroff's activities.  In response to my question as to when we could expect an indictment, Mr. Wake said it should be very soon because the FBI has started seizing some of Todoroff's assets.  According to Mr. Wake, Todoroff has 2 less vehicles than he did at the beginning of the week due to the FBI seizures.  Mr. Wake indicated that Todoroff's assets are being seized in advance of his indictment through an administrative process.  I will attempt to learn more about this process.
+
+As some of you know, Todoroff is attempting to sell his home that is located a few blocks from our former office.  Mr. Wake was well aware of Todoroff's efforts to sell his home.  According to Mr. Wake, the home was constructed in 1997, and Todoroff is seeking a sale price in excess of $1,000,000.
+
+Mr. Wake also indicated he wants to continue his investigation with respect to the payments Todoroff received from one of EOTT's trading counterparties in late 1997 and 1998.  He is developing that matter as a separate investigation, and he thinks it may be a much larger matter involving several individuals.  Lori, Mr. Wake indicated that he would like to compare the records he obtained from the trading counterparty to our records.  I know you were working on obtaining position reports for this time period.  As soon as those are obtained, I want to schedule a meeting with Mr. Wake in order that he may advance that investigation.
+
+
+Walter W. Zimmerman
+Senior Counsel
+EOTT Energy Corp.
+P. O. Box 4666
+Houston, Texas 77210-4666
+Phone:  713-993-5028
+Fax:       713-402-2808
+e-mail:    walt_zimmerman@eott.com
+
+From MAILER-DAEMON Tue Jun 15 13:19:04 2021
+Message-ID: <14517832.1075844986754.JavaMail.evans@thyme>
+Date: Fri, 8 Jun 2001 08:07:54 -0700 (PDT)
+From: denne@enron.com
+To: richard.causey@enron.com, david.delainey@enron.com, james.derrick@enron.com, 
+	andrew.fastow@enron.com, mark.frevert@enron.com, 
+	stanley.horton@enron.com, ken.rice@enron.com, greg.whalley@enron.com, 
+	john.sherriff@enron.com
+Subject: Cost Savings Memo
+Cc: steven.kean@enron.com, kevin.hannon@enron.com, kenneth.lay@enron.com, 
+	jeff.skilling@enron.com
+Mime-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+Bcc: steven.kean@enron.com, kevin.hannon@enron.com, kenneth.lay@enron.com, 
+	jeff.skilling@enron.com
+X-From: Denne, Karen
+X-To: Causey, Richard </o=ENRON/ou=NA/cn=Recipients/cn=RCAUSEY>, Delainey, David </o=ENRON/ou=NA/cn=Recipients/cn=NOTESADDR/CN=28FC501B-22D3A001-62569FB-57CAAA>, Derrick Jr., James </o=ENRON/ou=NA/cn=Recipients/cn=JDERRIC>, Fastow, Andrew </o=ENRON/ou=NA/cn=Recipients/cn=AFASTOW>, Frevert, Mark </o=ENRON/ou=NA/cn=Recipients/cn=MFREVERT>, Horton, Stanley </o=ENRON/ou=NA/cn=Recipients/cn=SHORTON>, aren S Owens@ees <K>, Rice, Ken </o=ENRON/ou=NA/cn=Recipients/cn=NOTESADDR/CN=A7DB55D9-F1759DDD-8825687A-69EC86>, Whalley, Greg </o=ENRON/ou=NA/cn=Recipients/cn=NOTESADDR/CN=DA82494B-FC99BFE6-862565DA-5FA576>, Sherriff, John </o=ENRON/ou=NA/cn=Recipients/cn=EU/CN=RECIPIENTS/CN=JSHERRIF>
+X-cc: Kean, Steven </o=ENRON/ou=NA/cn=Recipients/cn=NOTESADDR/CN=B86DC838-ECAFDC13-8625693C-57FA6D>, Hannon, Kevin </o=ENRON/ou=NA/cn=Recipients/cn=NOTESADDR/CN=A99B0059-D6E677D6-88256882-62B456>, Lay, Kenneth </o=ENRON/ou=NA/cn=Recipients/cn=KLAY>, Skilling, Jeff </o=ENRON/ou=NA/cn=Recipients/cn=JSKILLIN>
+X-bcc: 
+X-Folder: \Stanley_Horton_June2001\Inbox
+X-Origin: HORTON-S
+X-FileName: shorton.pst
+
+Attached for your information is a memo that we plan to send out to employees worldwide Monday afternoon or Tuesday morning discussing the Policy Committee's cost saving recommendations.  To the extent there are unique aspects of these policies as they apply to your business unit, please follow up with a further communication to your employees.  We will send you a list of frequently asked questions that deal with systems issues. 
+
+Thank you.
+
+Karen
+
+  
+
+From MAILER-DAEMON Tue Jun 15 13:19:04 2021
+Message-ID: <5997120.1075844986472.JavaMail.evans@thyme>
+Date: Fri, 1 Jun 2001 16:10:31 -0700 (PDT)
+From: eserver@enron.com
+To: stanley.horton@enron.com
+Subject: <<Concur Expense Document>> - January 2001
+Mime-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+X-From: eserver@enron.com@ENRON
+X-To: Horton, Stanley </o=ENRON/ou=NA/cn=Recipients/cn=SHORTON>
+X-cc: 
+X-bcc: 
+X-Folder: \Stanley_Horton_June2001\Inbox
+X-Origin: HORTON-S
+X-FileName: shorton.pst
+
+he following expense report is ready for approval:
+
+Employee Name: Charles P. Lowry
+Status last changed by:  Automated Administrator
+Expense Report Name: January 2001
+Report Total: $1,132.59
+Amount Due Employee: $1,132.59
+
+
+To approve this expense report, click on the following link for Concur Expense.
+http://xms.enron.com
+

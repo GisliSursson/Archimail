@@ -366,6 +366,7 @@ def enrichir_manifeste(csv, manifest):
         reference_id = soup.find("DataObjectGroupReferenceId", string = id_data_object_group)
         # Une fois qu'on a le DataObjectGroupReferenceId, on remonte à l'archive unit correspondante
         archive_unit = reference_id.find_parent("ArchiveUnit")
+        # print(archive_unit)
         # On trouve le content de l'archve unit (là où on insèrera les informations)
         archive_unit_content = archive_unit.findChild("Content")
         writer = archive_unit_content.findChild("Writer")
@@ -394,18 +395,12 @@ def enrichir_manifeste(csv, manifest):
     with open(nouv_man, "w+") as text_file:
         # Correction de ce que le beautifier de Beautiful Soup ne fait pas
         # On corrige l'encodage pour les balises tag et event
-        string = str(soup)
+        # Syntaxe pour préserver les entités XML générées par RESIP en n'encodant pas les accents français et en ne mettant pas
+        # d'entitées pour les balises rajoutées.
+        string = str(soup.prettify(formatter='minimal'))
         string = re.sub("&lt;Tag&gt;", "<Tag>", string)
         string = re.sub("&lt;/Tag&gt;", "</Tag>", string)
-        string = re.sub("&lt;Event&gt;", "<Event>", string)
-        string = re.sub("&lt;/Event&gt;", "</Event>", string)
-        string = re.sub("&lt;EventType&gt;", "<EventType>", string)
-        string = re.sub("&lt;/EventType&gt;", "</EventType>", string)
-        string = re.sub("&lt;EventDateTime&gt;", "<EventDateTime>", string)
-        string = re.sub("&lt;/EventDateTime&gt;", "</EventDateTime>", string)
-        string = re.sub("&lt;EventDetail&gt;", "<EventDetail>", string)
-        string = re.sub("&lt;/EventDetail&gt;", "</EventDetail>", string)
-        #string = re.sub("&", "&amp;", string)
+        # string = re.sub("&^([^;\\W]*([^;\\w]|$))", "&amp;", string)
         text_file.write(string)
     manifest.close()
     print("Génération terminée")
@@ -527,12 +522,23 @@ def doc_url(manifest):
     </DataObjectGroup>""".format(a="ID"+str(data_obj_group_id), b="ID"+str(binary_data_obj_id), c="ID"+str(binary_data_obj_id), d=hash, e=str(date))
     descri_meta.insert_before(soup_extend)
     with open(manifest, "w") as text_file:
-        string = str(soup.prettify(formatter=None))
-        string = string.replace("&", "&amp;")
+        # Pour éviter d'encoder les entités générées par RESIP
+        string = str(soup.prettify(formatter = None))
+        # string = string.replace("&", "&amp;")
         string = re.sub(r"<OriginatingSystemId>(.*?)</OriginatingSystemId>", "<OriginatingSystemId>&lt;\\1&gt;</OriginatingSystemId>", string, flags=re.DOTALL)
         string = re.sub(r"<OriginatingSystemIdReplyTo>(.*?)</OriginatingSystemIdReplyTo>", "<OriginatingSystemIdReplyTo>&lt;\\1&gt;</OriginatingSystemIdReplyTo>", string, flags=re.DOTALL)
         string = re.sub(r"&lt;\s*?<", "&lt;", string, flags=re.DOTALL)
         string = re.sub(r">\s*?&gt;", "&gt;", string, flags=re.DOTALL)
+        # string = re.sub("&lt;Event&gt;", "<Event>", string)
+        # string = re.sub("&lt;/Event&gt;", "</Event>", string)
+        # string = re.sub("&lt;EventType&gt;", "<EventType>", string)
+        # string = re.sub("&lt;/EventType&gt;", "</EventType>", string)
+        # string = re.sub("&lt;EventDateTime&gt;", "<EventDateTime>", string)
+        # string = re.sub("&lt;/EventDateTime&gt;", "</EventDateTime>", string)
+        # string = re.sub("&lt;EventDetail&gt;", "<EventDetail>", string)
+        # string = re.sub("&lt;/EventDetail&gt;", "</EventDetail>", string)
+        # Traitement des esperluettes qui ne sont pas dans des entités
+        string = re.sub("&(?![a-z]+;)", "&amp;", string)
         text_file.write(string)
     print("Documentation terminée")
     
@@ -670,4 +676,4 @@ if __name__ == '__main__':
     strip_xml(cible_xml)
     test_profil_minimum(nouv_man)
     remplacer_man(manifest)
-    zipDir(sip, "SIP_OK_2.zip")
+    zipDir(sip, "SIP_1506.zip")

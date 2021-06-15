@@ -16,7 +16,7 @@ chemin_actuel = dirname(abspath(__file__))
 rand = random.randint(1, 10)
 nb_mails = random.randint(100, 200)
 rand_2 = random.randint(1, 10)
-# URL valide qui sera insérée dans les mails dummy avec ID généré aléatoirement
+# URL qui sert de base à ce qui sera inséré dans les mails (ID généré aléatoirement) qui pourra être valide ou invalide
 wikidata = "https://www.wikidata.org/wiki/Q"
 # Adresses dummy pour populate les mails
 adress = ["timlinux@hotmail.com",
