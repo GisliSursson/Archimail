@@ -101,6 +101,8 @@ def trouver_url(texte):
                         pass
                     except requests.exceptions.InvalidSchema: # Erreur qui peut être causée par un problème d'encodage
                         pass
+                    except UnicodeError: # Erreur en cas d'URL trop longue ou de problème d'encodage
+                        pass
                 else:
                     pass
             else:
@@ -539,6 +541,9 @@ def doc_url(manifest):
         # string = re.sub("&lt;/EventDetail&gt;", "</EventDetail>", string)
         # Traitement des esperluettes qui ne sont pas dans des entités
         string = re.sub("&(?![a-z]+;)", "&amp;", string)
+        # Certaines personnes utilisent les chevrons comme "quotes"
+        string = re.sub("<<", "&lt;&lt;", string)
+        string = re.sub(">>", "&gt;&gt;", string)
         text_file.write(string)
     print("Documentation terminée")
     
