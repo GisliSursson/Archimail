@@ -193,49 +193,67 @@ deactivate
 
 ### Lancement
 
-Avant d'éxécuter le script, placez à la racine du dossier cloné votre SIP décompressé (dans un dossier nommé "SIP", en majuscules) à la racine du dépôt clôné. Se rapporter au schéma suivant :
+Avant d'éxécuter le script, placez votre SIP issu de RESIP (compressé en .zip) dans le dossier **`sip/`**.
 
-```
-dossier_clôné/
-│   main.py
-│___SIP/
-    |   content/
-    |   manifest.xml
-   
-```
 Ensuite, avec votre environnement virtuel activé, lancez dans votre terminal:
 ```bash
 python3 main.py 
 ```
 
-### Exemple d'affichage terminal
+Le script retournera le SIP enrichi (nommé "SIP_[date].zip") au niveau racine du dépôt clôné. 
+
+### Exemple de log terminal
 
 ```bash
 [nltk_data] Downloading package stopwords to /home/victor/nltk_data...
 [nltk_data]   Package stopwords is already up-to-date!
 [nltk_data] Downloading package punkt to /home/victor/nltk_data...
 [nltk_data]   Package punkt is already up-to-date!
-Début de l'analyse des fichiers dans le dossier 'content'...
-Nombre de mails traités : 56
-Nombre d'URL traitées : 55
-Nombre d'éléments détectés comme des noms propres : 169
-Nombre de requêtes réussies faites à Internet Archive : 15
-Temps de calcul : 0:01:39.847860
+Décompression du ZIP...
+Décompression terminée
+Début de l'analyse des fichiers des courriels...
+Mails traités : 1
+Mails traités : 2
+Mails traités : 3
+Mails traités : 4
+Mails traités : 5
+Mails traités : 6
+Mails traités : 7
+Mails traités : 8
+Mails traités : 9
+Mails traités : 10
+[...]
+Mails traités : 350
+Mails traités : 351
+Mails traités : 352
+Mails traités : 353
+Nombre total de mails traités : 353
+Nombre d'URL traitées : 76
+Nombre d'éléments détectés comme des noms propres : 1837
+Nombre de requêtes réussies faites à Internet Archive : 23
+Temps de calcul : 0:03:24.186472
 Génération du manifeste enrichi...
-Nombre de balises <tag> ajoutées : 163
+Nombre de balises <tag> ajoutées : 1058
 Documentation de l'enrichissement du manifest...
 Génération terminée
 Documentation dans le manifeste de la génération du CSV de pérennisation des URL...
 Documentation terminée
 Suppression des espaces blancs inutiles dans le nouveau manifeste...
 Suppression terminée
-Document testé par rapport au profil minimum ADAMANT : mon_dossier/manifest_new.xml
+Document testé par rapport au profil minimum ADAMANT : /home/victor/Documents/conseil_etat/sip_tempdir/manifest_new.xml
 Votre manifeste est conforme au profil minimum ADAMANT!
 Suppression de l'ancien manifeste et remplacement par le nouveau enrichi...
 Remplacement effectué
 Recompression du SIP...
 Compression du SIP terminée
+Suppresion des fichiers temporaires...
+Suppresion effectuée
+Script terminé avec succès
 ```
+
+### Exemple de visualisation d'un courriel traité avec l'outil RESIP
+
+![Resip](images/resip.png)
 
 ### Tests
 

@@ -2,7 +2,7 @@ import datetime, json, eml_parser, os, csv, spacy, re, requests, zipfile, lxml, 
 from bs4 import BeautifulSoup
 from io import StringIO
 from lxml import etree
-from datetime import timezone
+from datetime import timezone, date
 from typing import Dict
 import pandas as pd
 from bs4 import BeautifulSoup
@@ -15,6 +15,7 @@ from nltk.tokenize import word_tokenize
 from spacy.lang.fr.stop_words import STOP_WORDS as spacy_stop
 import time
 from zipfile import ZipFile
+import shutil
 
 # Calcul du timestamp de lancement du script (UTC)
 dt = datetime.datetime.now(timezone.utc)
@@ -383,8 +384,8 @@ def enrichir_manifeste(csv, manifest):
                 count += 1
         except AttributeError: #En cas de cellule vide dans la colonne top 3 mots
             pass
-        # print(soup_extend)
-        writer.insert_before(soup_extend)
+        # Insérer avant le Title peut causer des erreurs si RESIP n'a pas détecté de Title dans le mail
+        writer.insert_after(soup_extend)
     print("Nombre de balises <tag> ajoutées : " + str(count))
     print("Documentation de l'enrichissement du manifest...")
     descriptive = soup.find("DescriptiveMetadata")
@@ -412,7 +413,7 @@ def remplacer_man(manifest):
     print("Suppression de l'ancien manifeste et remplacement par le nouveau enrichi...")
     # os.remove(manifest)
     os.remove(manifest)
-    os.rename(os.path.join(chemin_actuel, "perso", "sip", "manifest_new.xml"), os.path.join(chemin_actuel, "perso", "sip", "manifest.xml"))
+    os.rename(os.path.join(source, "manifest_new.xml"), os.path.join(source, "manifest.xml"))
     print("Remplacement effectué")
 
 def zipDir(dirPath, zipPath):
@@ -460,12 +461,12 @@ def doc_url(manifest):
     soup_extend = "<Event><EventType>Génération d'un fichier CSV de pérennisation des URL</EventType><EventDateTime>{x}</EventDateTime><EventDetail>{y}</EventDetail></Event>".format(x=str(date), y=documentation)
     content.append(soup_extend)
     # Génération de la documentation au niveau du DataObjectGroup et de l'ArchiveUnit
-    cible = os.path.join(chemin_actuel,"perso","sip", "content", "urls.csv")
+    cible = os.path.join(source, "content", "urls.csv")
     with open(cible) as file:
         content = file.read()
         hash = hashlib.sha512(content.encode()).hexdigest()
     # Détermination du dernier ID (numériquement) généré par RESIP
-    liste_files = [name for name in sorted(os.listdir(os.path.join(chemin_actuel,"perso","sip", "content")))]
+    liste_files = [name for name in sorted(os.listdir(os.path.join(source, "content")))]
     liste_files = liste_files[:-1]
     liste_id_files = []
     for element in liste_files:
@@ -483,7 +484,7 @@ def doc_url(manifest):
     data_obj_group_id = binary_data_obj_id - 1
     archive_unit_id = binary_data_obj_id + 1
     id_string = 'ID' + str(binary_data_obj_id) + ".csv"
-    os.rename(cible, os.path.join(chemin_actuel,"perso","sip", "content", id_string))
+    os.rename(cible, os.path.join(source, "content", id_string))
     date = dt.isoformat()
     archive_unit_glob = soup.find("ArchiveUnit", {"id":"ID10"})
     #dern_arch_unit = archive_unit_glob.find_all("div")[-1]
@@ -653,7 +654,7 @@ def traiter_mails(source, output):
                         pass
                     # On écrit dans le CSV
                     writer.writerow(liste_val)
-        print("Nombre de mails traités : " + str(mail))
+        print("Nombre total de mails traités : " + str(mail))
         print("Nombre d'URL traitées : " + str(nb_url))
         # print("Nombre de ZIP décompressés : " + str(nb_zip))
         print("Nombre d'éléments détectés comme des noms propres : " + str(nb_noms))
@@ -663,19 +664,38 @@ def traiter_mails(source, output):
         except:
             pass
 
-source = os.path.join(chemin_actuel,"perso","sip")
-output = os.path.join(chemin_actuel, "perso", "sip", "content", "urls.csv")
+def unzip(path):
+    for root, dirs, files in os.walk(path, topdown=True):
+        for name in files:
+            filename = os.path.join(root, name)
+            if filename.endswith(".zip"):
+                with ZipFile(filename, 'r') as zip:
+                    print('Décompression du ZIP...')
+                    cible = os.path.join(chemin_actuel, "sip_tempdir")
+                    zip.extractall(cible)
+                    print('Décompression terminée')
+
+source = os.path.join(chemin_actuel, "sip_tempdir")
+output = os.path.join(chemin_actuel, "sip_tempdir", "content", "urls.csv")
 if __name__ == '__main__':
+    unzip(os.path.join(chemin_actuel,"sip"))
     traiter_mails(source, output)
     manifest = os.path.join(source, "manifest.xml")
     nouv_man = enrichir_manifeste(output, manifest)
     doc_url(nouv_man)
     # test_seda(nouv_man)
-    cible_content = os.path.join(chemin_actuel,"perso","sip", "content")
-    cible_xml = os.path.join(chemin_actuel,"perso","sip", "manifest_new.xml")
+    cible_content = os.path.join(source, "content")
+    cible_xml = os.path.join(chemin_actuel,source, "manifest_new.xml")
     liste_zip = [cible_content, cible_xml]
-    sip = os.path.join(chemin_actuel,"perso","sip")
+    sip = source
     strip_xml(cible_xml)
     test_profil_minimum(nouv_man)
     remplacer_man(manifest)
-    zipDir(sip, "SIP_1506.zip")
+    today = date.today()
+    date = today.strftime("%d%m%Y")
+    nom_sip = "SIP_" + str(date) + ".zip"
+    zipDir(sip, nom_sip)
+    print("Suppresion des fichiers temporaires...")
+    shutil.rmtree(source)
+    print("Suppresion effectuée")
+    print("Script terminé avec succès")

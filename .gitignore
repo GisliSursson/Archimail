@@ -5,6 +5,7 @@ dummy/
 docProps/
 _rels/
 word/
+sip_tempdir/
 [Content_Types].xml
 *.pdf
 *.odt
