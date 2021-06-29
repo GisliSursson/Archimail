@@ -144,7 +144,7 @@ S'il y a plusieurs éléments à afficher dans une cellule, ils sont séparés p
 
 ### URLs à éviter
 
-Le script propose une variable, de type liste, *url_a_eviter* que l'utilisateur peut mettre à jour. En effet, étant donné que le fait d'envoyer des requêtes HTTP à la chaîne est chronophage, il est recommandé de liste les URL dont le test systématique n'est pas utile (par exemple, le lien vers un réseau social placé en signature etc...).
+Le script propose une variable, de type liste, *url_a_eviter* que l'utilisateur peut mettre à jour. En effet, étant donné que le fait d'envoyer des requêtes HTTP à la chaîne est chronophage, il est recommandé de lister les URLs dont le test systématique n'est pas utile (par exemple, un lien vers un réseau social placé en signature etc...).
 
 ### Validation par rapport à un schéma XML
 
