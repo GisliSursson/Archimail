@@ -253,7 +253,7 @@ Script terminé avec succès
 
 ### Exemple de visualisation d'un courriel traité avec l'outil RESIP
 
-![Resip](images/resip.png)
+![Resip](images/resip_cropped.png)
 
 ### Tests
 
