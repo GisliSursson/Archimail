@@ -8,13 +8,13 @@ L'objectif est de fournir un script complémentaire aux outils développés dans
 
 ## Grands principes
 
-Le script prend en entrée un SIP généré via [RESIP](https://www.programmevitam.fr/pages/ressources/resip/) conforme au SEDA et décompressé. Il retourne ce même SIP avec un manifeste enrichi de nouvelles métadonnées et un nouveau fichier CSV de pérennisation des URL documenté dans le manifeste. Ce nouveau SIP, retourné zippé, est toujours conforme au profil minimum ADAMANT et peut être joué dans l'outil RESIP. 
+Le script prend en entrée un SIP généré via [RESIP](https://www.programmevitam.fr/pages/ressources/resip/) conforme au SEDA et au format .zip. Il retourne ce même SIP zippé avec un manifeste enrichi de nouvelles métadonnées et un nouveau fichier CSV de pérennisation des URL documenté dans le manifeste. Ce nouveau SIP, retourné zippé, est toujours conforme au profil minimum ADAMANT et peut être joué dans l'outil RESIP. 
 
 Le développement a été réalisé avec RESIP 2.5 Snapshot. La version en production au Conseil d'Etat est la 2.3.0.
 
-Il repose sur 3 grands principes:
+Le script repose sur 3 grands principes:
 
-- Enrichir le manifeste [SEDA](https://www.francearchives.fr/seda/index.html) avec des métadonnées type "mots-clefs" au niveau de chaque mail. Ces métadonnées complètent les métadonnées ajoutées habituellement aux plus hauts niveaux de description uniquement. 
+- Enrichir le manifeste [SEDA](https://www.francearchives.fr/seda/index.html) avec des métadonnées type "mots-clefs" au niveau de chaque mail, c'est-à-dire à la granularité la plus basse. Ces métadonnées complètent la description archivistique généralement limitée aux niveaux les plus hauts dans un versement d'archives numériques par manque de temps et de ressources humaines.
 - Tester la validité des éventuelles URL trouvées dans les mails au moment du traitement ainsi que leur éventuel archivage par [Internet Archive](https://archive.org/web/) et insérer la documentation de ces tests au format CSV dans le SIP.
 - Documenter toutes les modifications faites dans le manifeste.
 
@@ -67,18 +67,18 @@ Ces nouvelles métadonnées sont automatiquement insérées dans le manifeste SE
 ```
 NB : Ces fonctionnalités ne peuvent être utilisées à leur potentiel maximum qu'avec des données rédigées en langue française. 
 
-Ces enrichissements sont documentés à haut niveau dans le manifeste de la façon suivante:
+Ces enrichissements sont documentés au niveau le plus haut des métadonnées de description de la façon suivante:
 
 ```xml
 <DescriptiveMetadata>
       <ArchiveUnit id="ID10">
         <Management>
-         Lorem ipsum
+         [...]
         </Management>
         <Content>
-          <DescriptionLevel>Lorem</DescriptionLevel>
-          <Title>Lorem ipsum dolor sit amet</Title>
-          <Description>Ut id rutrum massa. Suspendisse porta malesuada leo, a accumsan mauris sollicitudin id. Suspendisse vitae pulvinar nunc.</Description>
+          <DescriptionLevel>RecordGrp</DescriptionLevel>
+          <Title>Messagerie de John Doe</Title>
+          <Description>Ce paquet d'archives contient la messagerie de John Doe, responsable du service Lorem Ipsum.</Description>
           <CustodialHistory>
             <CustodialHistoryItem>Vivamus ac hendrerit dolor, quis porttitor augue. In sed ex hendrerit odio tempus aliquam.</CustodialHistoryItem>
           </CustodialHistory>
@@ -142,13 +142,17 @@ Exemple d'organisation des données dans le CSV:
 
 S'il y a plusieurs éléments à afficher dans une cellule, ils sont séparés par une virgule.
 
+### URLs à éviter
+
+Le script propose une variable, de type liste, *url_a_eviter* que l'utilisateur peut mettre à jour. En effet, étant donné que le fait d'envoyer des requêtes HTTP à la chaîne est chronophage, il est recommandé de liste les URL dont le test systématique n'est pas utile (par exemple, le lien vers un réseau social placé en signature etc...).
+
 ### Validation par rapport à un schéma XML
 
-A l'heure de la rédaction de ces lignes (mai 2021), les manifestes produits par l'outil RESIP dans le cadre du traitement des courriels **ne sont pas conformes au SEDA 2.1** (ils incorporent des balises qui ne seront canonisées que dans le SEDA 2.2). Après enrichissement du manifeste, le script vérifie donc la conformité du nouveau manifeste uniquement avec le **profil minimum ADAMANT**.
+A l'heure de la rédaction de ces lignes (mai 2021), les manifestes produits par l'outil RESIP dans le cadre du traitement des courriels **ne sont pas conformes au SEDA 2.1 par défaut** (ils incorporent des balises qui ne seront canonisées que dans le SEDA 2.2). Après enrichissement du manifeste, le script vérifie donc la conformité du nouveau manifeste uniquement avec le **profil minimum ADAMANT**.
 
 ### Nota
 
-Le présent travail a été réalisé par rapport au SEDA 2.1. Toutes les institutions recevant des archives définitives n'utilisent pas le SEDA dans son entièreté.  
+Le présent travail a été réalisé par rapport au SEDA 2.1. Toutes les institutions recevant des archives définitives n'implémentent pas le SEDA de la même façon et certaines balises valides selon le SEDA peuvent être refusés pour des raions propres aux institutions en question.
 
 ## Installation
 

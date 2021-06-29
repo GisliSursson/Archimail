@@ -17,6 +17,9 @@ import time
 from zipfile import ZipFile
 import shutil
 
+# URL à éviter à mettre éventuellement à jour 
+url_a_eviter = ['http://www.chartes.psl.eu', 'https://fr.linkedin.com/in/victor-meynaud-72b2a3113/fr', 'http://www.enc-sorbonne.fr']
+
 # Calcul du timestamp de lancement du script (UTC)
 dt = datetime.datetime.now(timezone.utc)
 utc_time = dt.replace(tzinfo=timezone.utc)
@@ -38,8 +41,7 @@ autres_stop = ['être', 'avoir', 'suis','es','est','sommes','êtes','sont','éta
                'auront','aurais','aurais','aurait','aurions','auriez','auraient', 'aie','aies','ait','ayons','ayez',
                'aient','eusse','eusses','eût','eussions','eussiez','eussent']
 # Ajout manuel de stopwords qui ne semblent pas être dans les frameworhttp status code E+017
-# URLs qui sont dans les signatures, évitées pour gagner du temps. 
-url_a_eviter = ['http://www.chartes.psl.eu', 'https://fr.linkedin.com/in/victor-meynaud-72b2a3113/fr', 'http://www.enc-sorbonne.fr']
+
 # Ajout manuel de stopwords qui ne semblent pas être dans les frameworks utilisés
 autres_sw = ['www', 'https', 'http', 'je', 'tu', 'il', 'nous', 'vous', 'ils', 'elle', 'elles', 'on', 'leur', 'leurs', 'moi', 'toi',
              'mon','ma','mes','ton','ta','tes','son','sa','ses','person','notre','nos','votre','vos','leur','leurs', 'très']
