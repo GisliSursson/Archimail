@@ -248,7 +248,9 @@ def traitement_nlt(texte):
     print(frequence.items())
     # On crée un dict du type {mot:fréquence}
     freq_dict = dict((word, freq) for word, freq in frequence.items())
-    # print(freq_dict)
+    # On classe par ordre décroissant
+    freq_dict = dict(sorted(freq_dict.items(), key=lambda item: item[1], reverse=True))
+    print(freq_dict)
     # On prend le top cinq des mots les plus fréquents
     # Le top est limité à 3 selon les recommandaitions des AN pour la balise "tag" (SEDA 2.1)
     top_trois = sorted(freq_dict.keys(), reverse=True)[0:3]
