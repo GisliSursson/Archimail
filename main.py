@@ -245,7 +245,7 @@ def traitement_nlt(texte):
                     pass
     # On calcule la fréquence d'apparition des mots
     frequence = nltk.FreqDist(tokens_sans_sw)
-    print(frequence.items())
+    # print(frequence.items())
     # On crée un dict du type {mot:fréquence}
     freq_dict = dict((word, freq) for word, freq in frequence.items())
     # On classe par ordre décroissant
@@ -253,7 +253,9 @@ def traitement_nlt(texte):
     print(freq_dict)
     # On prend le top cinq des mots les plus fréquents
     # Le top est limité à 3 selon les recommandaitions des AN pour la balise "tag" (SEDA 2.1)
-    top_trois = sorted(freq_dict.keys(), reverse=True)[0:3]
+    top_trois = freq_dict[0:3]
+    top_trois = top_trois.keys()
+    # top_trois = sorted(freq_dict.keys(), reverse=True)[0:3]
     print(top_trois)
     # Classement par ordre alphabétique
     top_trois = sorted(top_trois)
