@@ -253,6 +253,7 @@ def traitement_nlt(texte):
     print(freq_dict)
     # On prend le top cinq des mots les plus fréquents
     # Le top est limité à 3 selon les recommandaitions des AN pour la balise "tag" (SEDA 2.1)
+    top_trois = []
     for key, value in freq_dict.items():
         top_trois.append(key)
     top_trois = top_trois[0:3]
