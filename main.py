@@ -247,9 +247,11 @@ def traitement_nlt(texte):
     frequence = nltk.FreqDist(tokens_sans_sw)
     # On crée un dict du type {mot:fréquence}
     freq_dict = dict((word, freq) for word, freq in frequence.items())
+    print(freq_dict)
     # On prend le top cinq des mots les plus fréquents
     # Le top est limité à 3 selon les recommandaitions des AN pour la balise "tag" (SEDA 2.1)
     top_trois = sorted(freq_dict.keys(), reverse=True)[0:3]
+    print(top_trois)
     # Classement par ordre alphabétique
     top_trois = sorted(top_trois)
     # On utilise Spacy pour la lemmatisation car il est mieux entraîné pour le français que 
