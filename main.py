@@ -245,7 +245,7 @@ def traitement_nlt(texte):
                     pass
     # On calcule la fréquence d'apparition des mots
     frequence = nltk.FreqDist(tokens_sans_sw)
-    print(frequence)
+    print(frequence.items())
     # On crée un dict du type {mot:fréquence}
     freq_dict = dict((word, freq) for word, freq in frequence.items())
     # print(freq_dict)
