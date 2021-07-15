@@ -255,10 +255,10 @@ def traitement_nlt(texte):
     # Le top est limité à 3 selon les recommandaitions des AN pour la balise "tag" (SEDA 2.1)
     top_trois = []
     iter = 0
-    while iter < 3:
-        for key, value in freq_dict.items():
-            top_trois.append(key)
-            iter += 1
+    for key, value in freq_dict.items():
+            while iter < 3:
+                top_trois.append(key)
+                iter += 1
     # top_trois = freq_dict[0:3]
     # top_trois = top_trois.keys()
     # top_trois = sorted(freq_dict.keys(), reverse=True)[0:3]
