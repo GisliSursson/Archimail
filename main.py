@@ -251,7 +251,7 @@ def traitement_nlt(texte):
     # On classe par ordre décroissant
     freq_dict = dict(sorted(freq_dict.items(), key=lambda item: item[1], reverse=True))
     print(freq_dict)
-    # On prend le top cinq des mots les plus fréquents
+    # On prend le top trois des mots les plus fréquents
     # Le top est limité à 3 selon les recommandaitions des AN pour la balise "tag" (SEDA 2.1)
     top_trois = []
     for key, value in freq_dict.items():
@@ -266,7 +266,7 @@ def traitement_nlt(texte):
     # On utilise Spacy pour la lemmatisation car il est mieux entraîné pour le français que 
     # NLTK.
     liste_lem = []
-    # On crée une liste des lemmes des cinq mots les plus fréquents. Par exemple, si le mot est "chantait",
+    # On crée une liste des lemmes des trois mots les plus fréquents. Par exemple, si le mot est "chantait",
     # le lemme sera "chanter".
     for element in top_trois:
         sp = spacy_fr(element)
