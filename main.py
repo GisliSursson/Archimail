@@ -250,7 +250,7 @@ def traitement_nlt(texte):
     freq_dict = dict((word, freq) for word, freq in frequence.items())
     # On classe par ordre décroissant
     freq_dict = dict(sorted(freq_dict.items(), key=lambda item: item[1], reverse=True))
-    print(freq_dict)
+    # print(freq_dict)
     # On prend le top trois des mots les plus fréquents
     # Le top est limité à 3 selon les recommandaitions des AN pour la balise "tag" (SEDA 2.1)
     top_trois = []
@@ -260,7 +260,7 @@ def traitement_nlt(texte):
     # top_trois = freq_dict[0:3]
     # top_trois = top_trois.keys()
     # top_trois = sorted(freq_dict.keys(), reverse=True)[0:3]
-    print(top_trois)
+    # print(top_trois)
     # Classement par ordre alphabétique
     top_trois = sorted(top_trois)
     # On utilise Spacy pour la lemmatisation car il est mieux entraîné pour le français que 
@@ -377,6 +377,7 @@ def enrichir_manifeste(csv, manifest):
         # On trouve le binary data object correspondant au fichier en cours de traitement
         bdo_tag = soup.find("BinaryDataObject", {"id":id_binary_data_object})
         # On récupère l'id du data object group correspondant
+        # print(bdo_tag)
         id_data_object_group = bdo_tag.find_parent("DataObjectGroup")["id"]
         # On accède à l'archive unit via la balise DataObjectGroupReferenceId
         reference_id = soup.find("DataObjectGroupReferenceId", string = id_data_object_group)
@@ -474,7 +475,7 @@ def doc_url(manifest):
     soup_extend = "<Event><EventType>Génération d'un fichier CSV de pérennisation des URL</EventType><EventDateTime>{x}</EventDateTime><EventDetail>{y}</EventDetail></Event>".format(x=str(date), y=documentation)
     content.append(soup_extend)
     # Génération de la documentation au niveau du DataObjectGroup et de l'ArchiveUnit
-    cible = os.path.join(source, "content", "urls.csv")
+    cible = os.path.join(source, "content", "ArchimailMetadata.csv")
     with open(cible) as file:
         content = file.read()
         hash = hashlib.sha512(content.encode()).hexdigest()
@@ -483,15 +484,17 @@ def doc_url(manifest):
     liste_files = liste_files[:-1]
     liste_id_files = []
     for element in liste_files:
-        for letter in element:
-            if letter.isnumeric() == False:
-                element = element.replace(letter, "")
-        liste_id_files.append(element)
+        # On récupère la liste des ID dans le content sans prendre en compte le CSV des métadonnées
+        if element != "ArchimailMetadata.csv":
+            for letter in element:
+                if letter.isnumeric() == False and letter != "":
+                    element = element.replace(letter, "")
+            liste_id_files.append(element)
     for element in liste_id_files:
         element = int(element)
     liste_id_files.sort(key=int)
     # L'ID du binary data object créé (et donc aussi le nom du fichier correspondant) sera égal à l'id du dernier fichier 
-    # (avant urls.csv) dans le dossier content +2 
+    # (avant ArchimailMetadata.csv) dans le dossier content +2 
     last_id = liste_id_files[-1]
     binary_data_obj_id = int(last_id) + 3
     data_obj_group_id = binary_data_obj_id - 1
@@ -505,7 +508,7 @@ def doc_url(manifest):
     <ArchiveUnit id="{a}">
           <Content>
             <DescriptionLevel>Item</DescriptionLevel>
-            <Title>urls.csv</Title>
+            <Title>ArchimailMetadata.csv</Title>
             <Event>
               <EventType>Création</EventType>
               <EventDateTime>{b}</EventDateTime>
@@ -531,7 +534,7 @@ def doc_url(manifest):
           <FormatId>x-fmt/18</FormatId>
         </FormatIdentification>
         <FileInfo>
-          <Filename>urls.csv</Filename>
+          <Filename>ArchimailMetadata.csv</Filename>
           <LastModified>{e}</LastModified>
         </FileInfo>
       </BinaryDataObject>
@@ -689,7 +692,7 @@ def unzip(path):
                     print('Décompression terminée')
 
 source = os.path.join(chemin_actuel, "sip_tempdir")
-output = os.path.join(chemin_actuel, "sip_tempdir", "content", "urls.csv")
+output = os.path.join(chemin_actuel, "sip_tempdir", "content", "ArchimailMetadata.csv")
 if __name__ == '__main__':
     unzip(os.path.join(chemin_actuel,"sip"))
     traiter_mails(source, output)
