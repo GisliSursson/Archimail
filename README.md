@@ -199,7 +199,7 @@ deactivate
 
 ### Lancement
 
-Avant d'éxécuter le script, placez votre SIP issu de RESIP (compressé en .zip) dans le dossier **`sip/`**.
+Avant d'éxécuter le script, placez votre SIP issu de RESIP (compressé en .zip) dans le dossier **`sip/`**. Le script travaille sur une copie des données et ne modifie donc pas le SIP originel donné en entrée par l'utilisateur.
 
 Ensuite, avec votre environnement virtuel activé, lancez dans votre terminal:
 ```bash
@@ -215,8 +215,9 @@ Le script retournera le SIP enrichi (nommé "SIP_[date].zip") au niveau racine d
 [nltk_data]   Package stopwords is already up-to-date!
 [nltk_data] Downloading package punkt to /home/victor/nltk_data...
 [nltk_data]   Package punkt is already up-to-date!
-Décompression du ZIP...
+Décompression du ZIP du SIP...
 Décompression terminée
+465 mails ont été détectés dans le dossier 'content' du SIP
 Début de l'analyse des fichiers des courriels...
 Mails traités : 1
 Mails traités : 2
@@ -229,20 +230,17 @@ Mails traités : 8
 Mails traités : 9
 Mails traités : 10
 [...]
-Mails traités : 350
-Mails traités : 351
-Mails traités : 352
-Mails traités : 353
-Nombre total de mails traités : 353
-Nombre d'URL traitées : 76
-Nombre d'éléments détectés comme des noms propres : 1837
-Nombre de requêtes réussies faites à Internet Archive : 23
-Temps de calcul : 0:03:24.186472
+Mails traités : 465
+Nombre total de mails traités : 465
+Nombre d'URL traitées : 180
+Nombre d'éléments détectés comme des noms propres : 9158
+Nombre de requêtes réussies faites à Internet Archive : 119
+Temps de calcul : 0:11:52.654727
 Génération du manifeste enrichi...
-Nombre de balises <tag> ajoutées : 1058
+Nombre de balises <tag> ajoutées : 1392
 Documentation de l'enrichissement du manifest...
-Génération terminée
-Documentation dans le manifeste de la génération du CSV de pérennisation des URL...
+Documentation terminée
+Documentation dans le manifeste de la génération du CSV de métadonnées Archimail (mots-clefs et URL)...
 Documentation terminée
 Suppression des espaces blancs inutiles dans le nouveau manifeste...
 Suppression terminée

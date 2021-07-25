@@ -290,30 +290,9 @@ def extraire_contenu_mail(mail):
         parsed_eml = ep.decode_email_bytes(raw_email)
         return parsed_eml
 
-def unzip(path):
-    """ A SUPPRIMER
-    """
-    dirname = os.path.dirname(path)
-    file = os.path.basename(path)
-    new_dir = str(file) + "_unzip"
-    new_path = os.path.join(dirname, new_dir)
-    os.mkdir(new_path)
-    with zipfile.ZipFile(path, 'r') as zip_ref:
-        zip_ref.extractall(new_path)
-    os.remove(path)
-    return 1
-
-def doc_unzip(path):
-    """ A SUPPRIMER
-
-    """
-    id = os.path.basename(path)
-    id = re.sub("\..+", "", id)
-    
-"""
 def test_seda(path):
-     Fonction qui teste si le document est valide au schéma SEDA 2.1 (schéma téléchargé le 06/05/21)
-    Au 20/05/21 il est normal que la balise OriginatingSystemIdReplyTo ne soit pas dans le SEDA
+    """ Fonction qui teste si le document est valide au schéma SEDA 2.1 (schéma téléchargé le 06/05/21)
+    Au 20/05/21 il est normal que la balise OriginatingSystemIdReplyTo ne soit pas dans le SEDA"""
     
     print("Document testé en tant que manifeste SEDA 2.1 : " + str(path))
     xml_file = lxml.etree.parse(path)
@@ -321,7 +300,7 @@ def test_seda(path):
     xml_validator = lxml.etree.XMLSchema(file=schema_loc)
     xml_validator.assert_(xml_file)
     # Le code crashera avec message d'erreur précis si le manifeste n'est pas conforme au SEDA
-    print("Votre manifeste est valide par rapport au SEDA 2.1!") """
+    print("Votre manifeste est valide par rapport au SEDA 2.1!") 
     
 def test_profil_minimum(path):
     """ Fonction qui teste si le document est conforme au profil minimum ADAMANT (version du SEDA 2.1 spécifique à ADAMANT). 
@@ -420,7 +399,7 @@ def enrichir_manifeste(csv, manifest):
         # string = re.sub("&^([^;\\W]*([^;\\w]|$))", "&amp;", string)
         text_file.write(string)
     manifest.close()
-    print("Génération terminée")
+    print("Documentation terminée")
     return nouv_man
             
 def remplacer_man(manifest):
@@ -455,7 +434,7 @@ def strip_xml(xml):
 def doc_url(manifest):
     """Documentation dans le manifeste de la génération du CSV sur les URL
     """
-    print("Documentation dans le manifeste de la génération du CSV de pérennisation des URL...")
+    print("Documentation dans le manifeste de la génération du CSV de métadonnées Archimail (mots-clefs et URL)...")
     documentation = """Fichier généré automatiquement via un script écrit dans le langage Python par le Bureau des Archives du
     Conseil d'Etat. Le fichier CSV (comma separated values), pour chaque courriel, indique les 3 mots-clefs qui ont été déterminés et insérés dans le manifeste. 
     Le script réalise également une opération de pérennisation des URL (Uniform Resource Locator) selon les recommandations du groupe de recherche
@@ -481,7 +460,7 @@ def doc_url(manifest):
         hash = hashlib.sha512(content.encode()).hexdigest()
     # Détermination du dernier ID (numériquement) généré par RESIP
     liste_files = [name for name in sorted(os.listdir(os.path.join(source, "content")))]
-    liste_files = liste_files[:-1]
+    # liste_files = liste_files[:-1]
     liste_id_files = []
     for element in liste_files:
         # On récupère la liste des ID dans le content sans prendre en compte le CSV des métadonnées
@@ -680,25 +659,51 @@ def traiter_mails(source, output):
         except:
             pass
 
+def total_mails(path):
+    """Fonction servant à compter le nombre total de fichiers .eml dans le dossier content du SIP. 
+    
+    :param path: chemin vers SIP/content
+    :type source: str
+    """
+    count = 0
+    for root, dirs, files in os.walk(path, topdown=True):
+        for name in files:
+            filename = os.path.join(root, name)
+            if filename.endswith(".eml"):
+                count += 1
+    print("{x} mails ont été détectés dans le dossier 'content' du SIP".format(x=count))
+
 def unzip(path):
+    """Fonction servant à dézipper le SIP donné par l'utilisateur. 
+    
+    :param path: chemin vers le SIP
+    :type source: str
+    """
     for root, dirs, files in os.walk(path, topdown=True):
         for name in files:
             filename = os.path.join(root, name)
             if filename.endswith(".zip"):
                 with ZipFile(filename, 'r') as zip:
-                    print('Décompression du ZIP...')
+                    print('Décompression du ZIP du SIP...')
                     cible = os.path.join(chemin_actuel, "sip_tempdir")
                     zip.extractall(cible)
                     print('Décompression terminée')
 
+
+# Création du dossier temporaire dans lequel travaille le script
 source = os.path.join(chemin_actuel, "sip_tempdir")
 output = os.path.join(chemin_actuel, "sip_tempdir", "content", "ArchimailMetadata.csv")
+content = os.path.join(chemin_actuel, "sip_tempdir", "content")
+
 if __name__ == '__main__':
     unzip(os.path.join(chemin_actuel,"sip"))
+    total_mails(content)
     traiter_mails(source, output)
     manifest = os.path.join(source, "manifest.xml")
     nouv_man = enrichir_manifeste(output, manifest)
     doc_url(nouv_man)
+    # On ne teste pas par rapport au SEDA 2.1 étant donné que RESIP produit par défaut des données non 
+    # conformes lorsqu'on a importé un conteneur courriel
     # test_seda(nouv_man)
     cible_content = os.path.join(source, "content")
     cible_xml = os.path.join(chemin_actuel,source, "manifest_new.xml")
