@@ -29,6 +29,7 @@ start_time = utc_time.now()
 print("Installation de la librairie de traitement du langage naturel Spacy pour la langue française...")
 bashCommand = "python3 -m spacy download fr_core_news_md"
 process = subprocess.Popen(bashCommand.split(), stdout=subprocess.PIPE)
+import fr_core_news_md
 print("Installation terminée.")
 output, error = process.communicate()
 
