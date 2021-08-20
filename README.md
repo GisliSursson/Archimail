@@ -163,7 +163,7 @@ Le présent travail a été réalisé par rapport au SEDA 2.1. Toutes les instit
 Les packages suivants sont nécessaires. Lancez depuis votre terminal (Mac / Linux) la commande suivante qui vérifiera si les packages existent sur votre système et les installera sinon
 
 ```bash
-sudo apt-get install python3 libfreetype6-dev python3-pip python3-virtualenv sqlite3
+sudo apt-get install python3 libfreetype6-dev python3-pip python3-virtualenv
 ```
 
 Clonez le présent *repository* dans un dossier de votre choix
@@ -189,6 +189,11 @@ Dans le dossier où vous avez cloné le projet, installez ensuite les librairies
 
 ```bash
 pip install -r requirements.txt
+```
+puis :
+
+```bash
+python3 -m spacy download fr_core_news_md
 ```
 
 Pour désactiver l'environnement virtuel, tapez

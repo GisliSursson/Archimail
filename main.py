@@ -25,14 +25,6 @@ dt = datetime.datetime.now(timezone.utc)
 utc_time = dt.replace(tzinfo=timezone.utc)
 start_time = utc_time.now()
 
-# Installation de spaCy pour la langue française
-print("Installation de la librairie de traitement du langage naturel Spacy pour la langue française...")
-bashCommand = "python3 -m spacy download fr_core_news_md"
-process = subprocess.Popen(bashCommand.split(), stdout=subprocess.PIPE)
-import fr_core_news_md
-print("Installation terminée.")
-output, error = process.communicate()
-
 # Natural language processing
 # On deux listes de stopwords (mots-outils à éviter)
 spacy_fr = spacy.load('fr_core_news_md')
