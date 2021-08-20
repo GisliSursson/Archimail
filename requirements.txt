@@ -9,3 +9,4 @@ spacy
 lxml
 pytest
 pytest-repeat
+click==7.1.1

@@ -1,4 +1,4 @@
-import datetime, json, eml_parser, os, csv, spacy, re, requests, zipfile, lxml, hashlib
+import datetime, json, eml_parser, os, csv, spacy, re, requests, zipfile, lxml, hashlib, subprocess
 from bs4 import BeautifulSoup
 from io import StringIO
 from lxml import etree
@@ -24,6 +24,13 @@ url_a_eviter = ['http://www.chartes.psl.eu', 'https://fr.linkedin.com/in/victor-
 dt = datetime.datetime.now(timezone.utc)
 utc_time = dt.replace(tzinfo=timezone.utc)
 start_time = utc_time.now()
+
+# Installation de spaCy pour la langue française
+print("Installation de la librairie de traitement du langage naturel Spacy pour la langue française...")
+bashCommand = "python3 -m spacy download fr_core_news_md"
+process = subprocess.Popen(bashCommand.split(), stdout=subprocess.PIPE)
+print("Installation terminée.")
+output, error = process.communicate()
 
 # Natural language processing
 # On deux listes de stopwords (mots-outils à éviter)
@@ -520,21 +527,13 @@ def doc_url(manifest):
     </DataObjectGroup>""".format(a="ID"+str(data_obj_group_id), b="ID"+str(binary_data_obj_id), c="ID"+str(binary_data_obj_id), d=hash, e=str(date))
     descri_meta.insert_before(soup_extend)
     with open(manifest, "w") as text_file:
-        # Pour éviter d'encoder les entités générées par RESIP
+        # Les formatages de Beautifulsoup et celui de RESIP peuvent causer des conflits
         string = str(soup.prettify(formatter = None))
-        # string = string.replace("&", "&amp;")
+        # Gestion de l'encodage des chevrons en entités XML pour les balises OriginatingSystemId
         string = re.sub(r"<OriginatingSystemId>(.*?)</OriginatingSystemId>", "<OriginatingSystemId>&lt;\\1&gt;</OriginatingSystemId>", string, flags=re.DOTALL)
         string = re.sub(r"<OriginatingSystemIdReplyTo>(.*?)</OriginatingSystemIdReplyTo>", "<OriginatingSystemIdReplyTo>&lt;\\1&gt;</OriginatingSystemIdReplyTo>", string, flags=re.DOTALL)
         string = re.sub(r"&lt;\s*?<", "&lt;", string, flags=re.DOTALL)
         string = re.sub(r">\s*?&gt;", "&gt;", string, flags=re.DOTALL)
-        # string = re.sub("&lt;Event&gt;", "<Event>", string)
-        # string = re.sub("&lt;/Event&gt;", "</Event>", string)
-        # string = re.sub("&lt;EventType&gt;", "<EventType>", string)
-        # string = re.sub("&lt;/EventType&gt;", "</EventType>", string)
-        # string = re.sub("&lt;EventDateTime&gt;", "<EventDateTime>", string)
-        # string = re.sub("&lt;/EventDateTime&gt;", "</EventDateTime>", string)
-        # string = re.sub("&lt;EventDetail&gt;", "<EventDetail>", string)
-        # string = re.sub("&lt;/EventDetail&gt;", "</EventDetail>", string)
         # Traitement des esperluettes qui ne sont pas dans des entités
         string = re.sub("&(?![a-z]+;)", "&amp;", string)
         # Certaines personnes utilisent les chevrons comme "quotes"
