@@ -18,7 +18,7 @@ from zipfile import ZipFile
 import shutil
 
 # URL à éviter à mettre éventuellement à jour 
-url_a_eviter = ['http://www.chartes.psl.eu', 'https://fr.linkedin.com/in/victor-meynaud-72b2a3113/fr', 'http://www.enc-sorbonne.fr']
+url_a_eviter = ['http://www.chartes.psl.eu', 'https://fr.linkedin.com/in/victor-meynaud-72b2a3113/fr', 'http://www.enc-sorbonne.fr', 'http://www.conseil-etat.fr', 'http://twitter.com/Conseil_Etat']
 
 # Calcul du timestamp de lancement du script (UTC)
 dt = datetime.datetime.now(timezone.utc)
