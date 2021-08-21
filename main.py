@@ -385,7 +385,6 @@ def enrichir_manifeste(csv, manifest):
         string = str(soup.prettify(formatter='minimal'))
         string = re.sub("&lt;Tag&gt;", "<Tag>", string)
         string = re.sub("&lt;/Tag&gt;", "</Tag>", string)
-        # string = re.sub("&^([^;\\W]*([^;\\w]|$))", "&amp;", string)
         text_file.write(string)
     manifest.close()
     print("Documentation terminée")
@@ -521,6 +520,13 @@ def doc_url(manifest):
         # Certaines personnes utilisent les chevrons comme "quotes"
         string = re.sub("<<", "&lt;&lt;", string)
         string = re.sub(">>", "&gt;&gt;", string)
+        # Gestion des titres (seuls éléments de texte libre dans le manifeste) qui peuvent contenir des chevrons faisant échouer
+        # la validation XML
+        for hit in soup.find_all('Title'):
+            hit = str(hit.string)
+            if "<" in hit or ">" in hit:
+                new_title = re.sub(r"<(.*?)>", "&lt;\\1&gt;", hit, flags=re.DOTALL)
+                string = string.replace(hit, new_title)
         text_file.write(string)
     print("Documentation terminée")
     
@@ -552,6 +558,7 @@ def traiter_mails(source, output):
                 filename = os.path.join(root, name)
                 # Si le fichier est un mail    
                 if filename.endswith(".eml"):
+                    print("Mail en cours de traitement : " + str(filename))
                     mail += 1
                     print("Mails traités : " + str(mail))
                     liste_val = []
@@ -577,7 +584,9 @@ def traiter_mails(source, output):
                         # On ne lance pas la fonction sur texte_sans_nom au cas où des noms auraient été supprimés d'URL
                         # S'il y a des noms dans les URL dans le CSV de métadonnées, il y a peu de risques de diffusion 
                         # à une personne non autorisée contrairement aux métadonnées qui se trouvent dans le manifeste
+
                         liste_uri, liste_statut, liste_date_test, liste_pers = trouver_url(texte)
+                        liste_uri = []
                         # liste_uri sera une liste vide si il n'y avait dans le mail que des URL marquées comme à éviter
                         if len(liste_uri) != 0:
                             # On insère les données pour les URL (si URL il y a)
