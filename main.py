@@ -83,7 +83,7 @@ def trouver_url(texte):
                     try:
                         # Charger que le header est plus court que charger toute la page
                         # On cherche les infos voulues...
-                        req = requests.head(uri_testee, timeout=5)
+                        req = requests.head(uri_testee, timeout=1)
                         statut = str(req.status_code)
                         date_test = str(utc_time.now())
                         pers = str(re.findall(r'/{2}([a-zA-Z0-9\.-]+\.[a-z]{2,3})?', uri_testee)[0])
@@ -314,17 +314,6 @@ def test_profil_minimum(path):
         doc = etree.parse(doc)
         relaxng.assertValid(doc)
         print("Votre manifeste est conforme au profil minimum ADAMANT!")
-
-def donnees_perso(parsed_mail, path):
-    # A SUPPRIMER
-    cibles = ["perso", "personnel", "vacance", "enfant"]
-    objet = (parsed_mail["header"]["subject"]).lower()
-    corps = (parsed_mail["body"][0]["content"]).lower()
-    with open("donnees_personnelles.csv", "w") as file:
-        f = csv.writer(file, delimiter=",")
-        for mot in cibles:
-            if mot in objet or mot in corps:
-                f.writerow(path)
 
 def enrichir_manifeste(csv, manifest):
     """Fonction qui, à partir du CSV récapitulatif des métadonnées, enrichi le manifeste SEDA en y insérant les mots clefs
