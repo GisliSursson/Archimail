@@ -216,6 +216,14 @@ def traitement_nlt(texte):
     """ xxx
 
     """
+    # Suppression des URL dans le texte pour ne pas qu'elles soient prises en compte dans le NLT
+    urls = re.findall("""(https?:\/\/(?:www\.|(?!www))[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s<>"']{2,}|www\.[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s<>"']{2,}|https?:\/\/(?:www\.|(?!www))[a-zA-Z0-9]+\.[^\s<>"']{2,}|www\.[a-zA-Z0-9]+\.[^\s<>"']{2,})""", texte)
+    for element in urls:
+        texte = texte.replace(element, "")
+    # Même chose pour les paragraphes de métadonnées dans les fils de mails
+    meta = re.findall(r"(De\s:(.+\n)+)", texte, flags=re.MULTILINE)
+    for element in meta:
+        texte = texte.replace(element[0], "")
     try:
         texte = nltk.clean_html(texte)
     except:
