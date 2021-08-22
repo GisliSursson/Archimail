@@ -584,9 +584,8 @@ def traiter_mails(source, output):
                         # On ne lance pas la fonction sur texte_sans_nom au cas où des noms auraient été supprimés d'URL
                         # S'il y a des noms dans les URL dans le CSV de métadonnées, il y a peu de risques de diffusion 
                         # à une personne non autorisée contrairement aux métadonnées qui se trouvent dans le manifeste
-
                         liste_uri, liste_statut, liste_date_test, liste_pers = trouver_url(texte)
-                        liste_uri = []
+                        #liste_uri = []
                         # liste_uri sera une liste vide si il n'y avait dans le mail que des URL marquées comme à éviter
                         if len(liste_uri) != 0:
                             # On insère les données pour les URL (si URL il y a)
