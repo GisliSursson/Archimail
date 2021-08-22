@@ -212,11 +212,17 @@ def url_wayback(url):
         time = None
         return status, available, url_2, time
 
-def traitement_nlt(texte): 
-    """ xxx
-
+def traitement_nlp(texte): 
+    """ 
+        Fonction qui réalise le traitement NLP (natural language processing) sur le coprs d'un e-mail : tokenisation, calcul des 3 mots
+        ayant la plus haute fréquente (en ne prenant pas en compte les stopwords et les éventuels nombres), lemmatisation de ces mots.  
+    
+    :param texte: corps d'un e-mail
+    :type url: str
+    :return liste_lem: liste des lemmes des 3 mots ayant la plus haute fréquence
+    :rtype status: list
     """
-    # Suppression des URL dans le texte pour ne pas qu'elles soient prises en compte dans le NLT
+    # Suppression des URL dans le texte pour ne pas qu'elles soient prises en compte dans le NLP
     urls = re.findall("""(https?:\/\/(?:www\.|(?!www))[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s<>"']{2,}|www\.[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s<>"']{2,}|https?:\/\/(?:www\.|(?!www))[a-zA-Z0-9]+\.[^\s<>"']{2,}|www\.[a-zA-Z0-9]+\.[^\s<>"']{2,})""", texte)
     for element in urls:
         texte = texte.replace(element, "")
@@ -584,7 +590,7 @@ def traiter_mails(source, output):
                     parent_dir = filename.split(os.path.sep)[-2]
                     liste_val.append(parent_dir + "/" + name)
                     # On lance le calcul des mots-clefs
-                    top = traitement_nlt(texte)
+                    top = traitement_nlp(texte)
                     string = ','.join(str(valeur) for valeur in top)
                     liste_val.append(string)
                     try:
