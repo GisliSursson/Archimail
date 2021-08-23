@@ -572,7 +572,7 @@ def traiter_mails(source, output):
                 filename = os.path.join(root, name)
                 # Si le fichier est un mail    
                 if filename.endswith(".eml"):
-                    print("Mail en cours de traitement : " + str(filename))
+                    print("Mail en cours de traitement : " + str(name))
                     mail += 1
                     print("Mails traités : " + str(mail))
                     liste_val = []
