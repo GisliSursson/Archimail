@@ -224,16 +224,16 @@ Décompression du ZIP du SIP...
 Décompression terminée
 465 mails ont été détectés dans le dossier 'content' du SIP
 Début de l'analyse des fichiers des courriels...
+Mail en cours de traitement : ID1258.eml
 Mails traités : 1
+Mail en cours de traitement : ID1615.eml
 Mails traités : 2
+Mail en cours de traitement : ID3006.eml
 Mails traités : 3
+Mail en cours de traitement : ID2800.eml
 Mails traités : 4
+Mail en cours de traitement : ID1764.eml
 Mails traités : 5
-Mails traités : 6
-Mails traités : 7
-Mails traités : 8
-Mails traités : 9
-Mails traités : 10
 [...]
 Mails traités : 465
 Nombre total de mails traités : 465
