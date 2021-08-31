@@ -14,3 +14,4 @@ sip_tempdir/
 *.zip
 donnees_personnelles.csv
 stat_tag_brouillon,.py
+!sip_exemples/
