@@ -8,13 +8,13 @@ L'objectif est de fournir un script complémentaire aux outils développés dans
 
 ## Grands principes
 
-Le script prend en entrée un SIP généré via [RESIP](https://www.programmevitam.fr/pages/ressources/resip/) conforme au SEDA et au format .zip. Il retourne ce même SIP zippé avec un manifeste enrichi de nouvelles métadonnées et un nouveau fichier CSV de pérennisation des URL documenté dans le manifeste. Ce nouveau SIP, retourné zippé, est toujours conforme au profil minimum ADAMANT et peut être joué dans l'outil RESIP. 
+Le script prend en entrée un SIP généré via [RESIP](https://www.programmevitam.fr/pages/ressources/resip/) (quasi-conforme au [SEDA 2.1](https://francearchives.fr/seda/) avec RESIP 2.3) et au format .zip. Il retourne ce même SIP zippé avec un manifeste enrichi de nouvelles métadonnées et un nouveau fichier CSV de pérennisation des URL documenté dans le manifeste. Ce nouveau SIP est toujours conforme au profil minimum ADAMANT (cf. dossier **`seda/`**) et peut être joué dans l'outil RESIP. 
 
-Le développement a été réalisé avec RESIP 2.5 Snapshot. La version en production au Conseil d'Etat est la 2.3.0.
+Le développement a été réalisé avec RESIP dans ses versions 2.3 et 2.5.
 
 Le script repose sur 3 grands principes:
 
-- Enrichir le manifeste [SEDA](https://www.francearchives.fr/seda/index.html) avec des métadonnées type "mots-clefs" au niveau de chaque mail, c'est-à-dire à la granularité la plus basse. Ces métadonnées complètent la description archivistique généralement limitée aux niveaux les plus hauts dans un versement d'archives numériques par manque de temps et de ressources humaines.
+- Enrichir le manifeste SEDA avec des métadonnées type "mots-clefs" au niveau de chaque mail, c'est-à-dire à la granularité la plus basse (pièce/*item*). Ces métadonnées seront utiles pour les besoins de recherche dans les archives définitives.
 - Tester la validité des éventuelles URL trouvées dans les mails au moment du traitement ainsi que leur éventuel archivage par [Internet Archive](https://archive.org/web/) et insérer la documentation de ces tests au format CSV dans le SIP.
 - Documenter toutes les modifications faites dans le manifeste.
 
@@ -23,7 +23,8 @@ Le script repose sur 3 grands principes:
 Le script propose les fonctionnalités suivantes :
 
 - Détermination de 3 mots-clefs par mail (tokenisation, lemmatisation, évitement des noms propres) qui serviront de métadonnées de recherche basiques.
-- Enrichissement du manifeste SEDA avec ces métadonnées.
+- Dans le cas des [fils de mails](https://docs.microsoft.com/fr-fr/microsoft-365/compliance/email-threading-in-advanced-ediscovery?view=o365-worldwide), évitement du bloc de métadonnées présent dans chaque segment des fils dans le calcul des mots-clefs.
+- Enrichissement du manifeste SEDA avec ces nouvelles métadonnées.
 - Test des URLs ainsi que leur éventuel enregistrement par la Wayback Machine (Internet Archive).
 - Génération d'un fichier CSV rassemblant pour chaque mail les mots-clefs et les URLs testées. Ce fichier est joint au SIP.
 - Documentation de ces modifications dans le manifeste via des *events*. 
@@ -90,11 +91,7 @@ Ces enrichissements sont documentés au niveau le plus haut des métadonnées de
           <Event>
             <EventType>Enrichissement des métadonnées au niveau de chaque message via un script Python</EventType>
             <EventDateTime>2021-05-14T14:00:00</EventDateTime>
-            <EventDetail>Enrichissement du manifeste SEDA par le Bureau des Archives du Conseil d'Etat via un script rédigé dans le langage de 
-    programmation Python. Pour le corps chaque courriel (fichier .eml), le script réalise une tokenisation (on évite de prendre en compte les mots
-    grammaticaux etc.), une lemmatisation (le fait de ramener chaque mot à sa forme du dictionaire) et un évitement des noms propres.
-    Le script calcule ensuite la fréquence de chaque mot dans le courriel et associe audit courriel les trois mots les plus fréquents
-    via la balise 'tag' dans le manifeste SEDA.</EventDetail>
+            <EventDetail>Enrichissement du manifeste SEDA par le Bureau des Archives [...]</EventDetail>
           </Event>
     [...]
 </DescriptiveMetadata>
@@ -103,13 +100,13 @@ Ces enrichissements sont documentés au niveau le plus haut des métadonnées de
 
 ### La pérennisation des URLs
 
-Le script génère un fichier CSV (séparateur : point-virgule) qui, pour chaque mail, comporte les colonnes suivantes:
+Le script génère un fichier CSV nommé par défaut ArchimailMetadata (séparateur : point-virgule) qui, pour chaque mail, comporte les colonnes suivantes (recommandation [INTERPARES](http://interpares.org/)):
 - Le nom du mail (chemin relatif)
 - Les 3 mots-clefs
 - Les URLs trouvées
 - Le statut du test (code HTTP)
 - Le *timestamp* du test
-- Le nom du responsable de l'URL sous la forme subdomain + domain + top-level domain (recommandation [INTERPARES](http://interpares.org/)) 
+- Le nom du responsable de l'URL sous la forme subdomain + domain + top-level domain 
 - Le statut (HTTP) et la disponibilité renvoyée par l'API de la Wayback Machine. 
 - Le lien vers cet enregistrement
 - Le *timestamp* de l'enregistrement
@@ -119,12 +116,11 @@ Ce fichier est inséré dans le SIP comme document de description complémentair
 ```xml
 <Content>
     <DescriptionLevel>Item</DescriptionLevel>
-    <Title>urls.csv</Title>
+    <Title>ArchimailMetadata.csv</Title>
     <Event>
         <EventType>Création</EventType>
         <EventDateTime>2021-05-14T14:00:00</EventDateTime>
-        <EventDetail>Fichier généré automatiquement via un script écrit dans le langage Python par le Bureau des Archives du
-    Conseil d'Etat. Le fichier CSV (comma separated values), pour chaque courriel, indique les 3 mots-clefs qui ont été déterminés et insérés dans le manifeste. 
+        <EventDetail>Fichier généré automatiquement via un script écrit dans le langage Python par le Bureau des Archives. Le fichier CSV (comma separated values), pour chaque courriel, indique les 3 mots-clefs qui ont été déterminés et insérés dans le manifeste. 
     Le script réalise également une opération de pérennisation des URL (Uniform Resource Locator) selon les recommandations du groupe de recherche
     INTERPARES. Dans le corps des mails, les URL sont détectées via une expression régulière. Le script inscrit dans le CSV le
     code HTTP renvoyé (permettant de vérifier si l'URL est encore active lors du traitement par les Archives), la date
@@ -134,7 +130,7 @@ Ce fichier est inséré dans le SIP comme document de description complémentair
 </Content>
 ````
 
-Exemple d'organisation des données dans le CSV:
+Exemple de données structurées dans le CSV:
 
 | nom_fichier        | top_trois_mots      | url(s)                    | resultat_test_url | date_test_url              | responsable_url    | internet_archive_dispo | internet_archive_url                                                | internet_archive_timestamp |
 |--------------------|---------------------|---------------------------|-------------------|----------------------------|--------------------|------------------------|---------------------------------------------------------------------|----------------------------|
@@ -144,17 +140,17 @@ S'il y a plusieurs éléments à afficher dans une cellule, ils sont séparés p
 
 ### URLs à éviter
 
-Le script propose une variable, de type liste, *url_a_eviter* que l'utilisateur peut mettre à jour. En effet, étant donné que le fait d'envoyer des requêtes HTTP à la chaîne est chronophage, il est recommandé de lister les URLs dont le test systématique n'est pas utile (par exemple, un lien vers un réseau social placé en signature etc...).
+Le script propose une variable, de type liste, *url_a_eviter* que l'utilisateur peut mettre à jour. En effet, étant donné que le fait d'envoyer des requêtes HTTP est chronophage, il est recommandé de lister les URLs dont le test systématique n'est pas utile intellectuellement (par exemple, un lien vers un réseau social systématiquement placé en signature etc...).
 
 ### Validation par rapport à un schéma XML
 
-A l'heure de la rédaction de ces lignes (mai 2021), les manifestes produits par l'outil RESIP dans le cadre du traitement des courriels **ne sont pas conformes au SEDA 2.1 par défaut** (ils incorporent des balises qui ne seront canonisées que dans le SEDA 2.2). Après enrichissement du manifeste, le script vérifie donc la conformité du nouveau manifeste uniquement avec le **profil minimum ADAMANT**.
+A l'heure de la rédaction de ces lignes (mai 2021), les manifestes produits par l'outil RESIP dans le cadre du traitement des courriels ne sont pas conformes au SEDA 2.1 par défaut (ils incorporent des balises qui ne sont pas encore canonisées dans le standard SEDA). Après enrichissement du manifeste, le script vérifie donc la conformité du nouveau manifeste uniquement avec le **profil minimum ADAMANT**.
 
-Le dossier **`seda/`** contient les schémas du SEDA 2.1. Celui-ci devra éventuellement être mis à jour avec les nouvelles versions du SEDA.
+Le dossier **`seda/`** contient les schémas du SEDA 2.1. Celui-ci pourra éventuellement être mis à jour avec les nouvelles versions du SEDA.
 
 ### Nota
 
-Le présent travail a été réalisé par rapport au SEDA 2.1. Toutes les institutions recevant des archives définitives n'implémentent pas le SEDA de la même façon et certaines balises valides selon le SEDA peuvent être refusés pour des raions propres aux institutions en question.
+Le présent travail a été réalisé par rapport au SEDA 2.1. Toutes les institutions publiques françaises recevant des archives définitives n'implémentent pas le SEDA de la même façon et certaines balises valides selon le SEDA peuvent être refusés pour des raions propres aux institutions en question.
 
 ## Installation
 
@@ -172,17 +168,17 @@ Clonez le présent *repository* dans un dossier de votre choix
 git clone https://github.com/GisliSursson/Archimail.git
 ```
 
-Créez un environnement virtuel (dossier) dans lequel seront installées les librairies
+Créez un environnement virtuel (dossier) dans lequel seront installées les librairies nécessaires au script
 
 ```bash
 
-virtualenv [chemin vers le dossier où vous voulez stocker votre environnement] -p python3
+virtualenv {chemin vers le dossier où vous voulez stocker votre environnement} -p python3
 ```
 
 Activez l'environnement virtuel 
 
 ```bash
-source [chemin vers le dossier de votre environnement]/bin/activate
+source {chemin vers le dossier de votre environnement}/bin/activate
 ```
 
 Dans le dossier où vous avez cloné le projet, installez ensuite les librairies nécessaires (avec votre environnement virtuel activé)
@@ -190,13 +186,13 @@ Dans le dossier où vous avez cloné le projet, installez ensuite les librairies
 ```bash
 pip install -r requirements.txt
 ```
-puis :
+Ensuite, téléchargez les données nécessaires à la librairie Spacy pour la langue française
 
 ```bash
 python3 -m spacy download fr_core_news_md
 ```
 
-Pour désactiver l'environnement virtuel, tapez
+Pour désactiver l'environnement virtuel, faire
 
 ```bash
 deactivate 
@@ -211,7 +207,7 @@ Ensuite, avec votre environnement virtuel activé, lancez dans votre terminal:
 python3 main.py 
 ```
 
-Le script retournera le SIP enrichi (nommé "SIP_[date].zip") au niveau racine du dépôt clôné. 
+Le script retournera le SIP enrichi (nommé "SIP_{date}.zip") au niveau racine du dépôt clôné. 
 
 ### Exemple de log terminal
 
