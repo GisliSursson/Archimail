@@ -138,6 +138,8 @@ Exemple de données structurées dans le CSV:
 
 S'il y a plusieurs éléments à afficher dans une cellule, ils sont séparés par une virgule.
 
+Il est recommandé d'ouvrir le fichier *ArchimailMetadata.csv* avec une application du type [Open Refine](https://openrefine.org/).
+
 ### URLs à éviter
 
 Le script propose une variable, de type liste, *url_a_eviter* que l'utilisateur peut mettre à jour. En effet, étant donné que le fait d'envoyer des requêtes HTTP est chronophage, il est recommandé de lister les URLs dont le test systématique n'est pas utile intellectuellement (par exemple, un lien vers un réseau social systématiquement placé en signature etc...).
@@ -276,4 +278,4 @@ Le script a également été testé manuellement avec des données e-mail réali
 
 ### SIP exemples
 
-Le dossier dossier **`sip_exemples/`** contient des SIP issus du dataset Enron, généré avec RESIP avec un traitement minimaliste. Ils peuvent être utilisés pour tester le script. N.B. : étant donné que ces messageries sont en langue anglaise, le calcul des mots-clefs ne sera pas pertinent. 
+Le dossier dossier **`sip_exemples/`** contient des SIP générés à partir de données e-mails issues du dataset Enron. Le sous-dossier **`sip_ntraités_resip/`** contient les SIP minimalistes générés via RESIP. On peut les utiliser pour tester le script. Le sous-dossier **`sip_traités_archimail/`** contient les mêmes SIP traités avec le script. On peut les jouer dans RESIP pour visualiser le résultat d'Archimail. N.B. : étant donné que ces messageries sont en langue anglaise, le calcul des mots-clefs ne sera pas pertinent. 
