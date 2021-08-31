@@ -106,6 +106,8 @@ def trouver_url(texte):
                         pass
                     except UnicodeError: # Erreur en cas d'URL trop longue ou de problème d'encodage
                         pass
+                    except LocationParseError: # S'il y a un problème avec l'adresse IP
+                        pass
                 else:
                     pass
             else:
@@ -354,25 +356,27 @@ def enrichir_manifeste(csv, manifest):
     soup = BeautifulSoup(source_xml, 'xml')
     df = pd.read_csv(csv, sep=";", error_bad_lines=True)
     for index, line in enumerate(df["nom_fichier"]):
-        # On récupère l'ID du binary data object correspondant à l'email en cours de traitement
-        id_binary_data_object = re.findall(r"(ID[0-9]+)\.eml$", line)[0]
-        # On trouve le binary data object correspondant au fichier en cours de traitement
-        bdo_tag = soup.find("BinaryDataObject", {"id":id_binary_data_object})
-        # On récupère l'id du data object group correspondant
-        # print(bdo_tag)
-        id_data_object_group = bdo_tag.find_parent("DataObjectGroup")["id"]
-        # On accède à l'archive unit via la balise DataObjectGroupReferenceId
-        reference_id = soup.find("DataObjectGroupReferenceId", string = id_data_object_group)
-        # Une fois qu'on a le DataObjectGroupReferenceId, on remonte à l'archive unit correspondante
-        archive_unit = reference_id.find_parent("ArchiveUnit")
-        # print(archive_unit)
-        # On trouve le content de l'archve unit (là où on insèrera les informations)
-        archive_unit_content = archive_unit.findChild("Content")
-        writer = archive_unit_content.findChild("Writer")
-        # Parfois l'expéditeur d'un mail n'est pas renseigné
-        if writer is None:
-            writer = archive_unit_content.findChild("Title")
-        soup_extend = ""
+        try:
+            # On récupère l'ID du binary data object correspondant à l'email en cours de traitement
+            id_binary_data_object = re.findall(r"(ID[0-9]+)\.eml$", line)[0]
+            # On trouve le binary data object correspondant au fichier en cours de traitement
+            bdo_tag = soup.find("BinaryDataObject", {"id":id_binary_data_object})
+            # On récupère l'id du data object group correspondant
+            # print(bdo_tag)
+            id_data_object_group = bdo_tag.find_parent("DataObjectGroup")["id"]
+            # On accède à l'archive unit via la balise DataObjectGroupReferenceId
+            reference_id = soup.find("DataObjectGroupReferenceId", string = id_data_object_group)
+            # Une fois qu'on a le DataObjectGroupReferenceId, on remonte à l'archive unit correspondante
+            archive_unit = reference_id.find_parent("ArchiveUnit")
+            # print(archive_unit)
+            # On trouve le content de l'archve unit (là où on insèrera les informations)
+            archive_unit_content = archive_unit.findChild("Content")
+            # On insère la balise Tag après la balise OriginatingSystemId (bien que la documentation SEDA ne 
+            # précise aucun ordre des balises, RESIP ne valide pas l'XML si on place la balise Tag ailleurs)
+            writer = archive_unit_content.findChild("OriginatingSystemId")
+            soup_extend = ""
+        except AttributeError:
+            pass
         try:
             # On ajoute à la soupe une str XML bien formée
             for mot in df["top_trois_mots"][index].split(","):

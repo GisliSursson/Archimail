@@ -273,3 +273,7 @@ pytest test_archimail.py
 ```
 
 Le script a également été testé manuellement avec des données e-mail réalistes anonymisées et rendues publiques par la justice américaine après le scandale [Enron](https://fr.wikipedia.org/wiki/Enron) et hébergées par la [Faculté d'informatique de l'Université Carnegie Mellon](https://www.cs.cmu.edu/~enron/). Ces tests manuels visent à tester l'insertion des métadonnées nouvelles dans le manifeste, les aspects linguistiques du script n'étant pertinents que pour la langue française. 
+
+### SIP exemples
+
+Le dossier dossier **`sip_exemples/`** contient des SIP issus du dataset Enron, généré avec RESIP avec un traitement minimaliste. Ils peuvent être utilisés pour tester le script. N.B. : étant donné que ces messageries sont en langue anglaise, le calcul des mots-clefs ne sera pas pertinent. 
